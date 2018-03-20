@@ -1,87 +1,142 @@
 import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
+import { Container, Row, Col } from 'reactstrap';
 
 export default () => (
   <div>
-    <Head title="Home" />
-    <Nav />
+      <Container fluid>
 
-    <div className="hero">
-      <h1 className="title">Welcome to Next!</h1>
-      <p className="description">To get started, edit <code>pages/index.js</code> and save to reload.</p>
+        <Row>
+          <Col xs="11" md="11">
+            <Col xs="1" md="1"></Col>
+            <Col xs="3" md="3">
+            </Col>
+            <Col xs="3" md="3">
+            </Col>
+            <Col xs="3" md="3">
+            </Col>
+          </Col>
+          <Col xs="1" md="1">
+          </Col>
+        </Row>
 
-      <div className="row">
-        <Link href="https://github.com/zeit/next.js#getting-started">
-          <a className="card">
-          <Link href="/about">
-            <a>About Page</a>
-          </Link>
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next on Github and in their examples</p>
-          </a>
-        </Link>
-        <Link href="https://open.segment.com/create-next-app">
-          <a className="card">
-            <h3>Examples &rarr;</h3>
-            <p>
-              Find other example boilerplates on the <code>create-next-app</code> site
-            </p>
-          </a>
-        </Link>
-        <Link href="https://github.com/segmentio/create-next-app">
-          <a className="card">
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it</p>
-          </a>
-        </Link>
-      </div>
-    </div>
+        <Row>
+          <Col xs="6" md="6">
+            <img src="" />
+          </Col>
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title, .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9B9B9B;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
+          <Col xs="6" md="6">
+          <h1>Our Work</h1><br></br><h2>is Human Centered</h2>
+            <Link
+              className="link"
+              to={'#'}>
+              See Our Work
+            </Link>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs="12" md="12">
+            <Col xs="12" md="8">
+              <img src="" />
+              <h1>Our Process</h1><br></br><h2>is Collaborative</h2>
+            </Col>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="12" md="12">
+            <Col xs="12" md="4">
+                <p>Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.</p>
+                <Link
+                  className="link"
+                  to={'#'}>
+                  See More
+                </Link>
+            </Col>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="1" md="1"></Col>
+          <Col xs="3" md="3">
+            <h1>Consulting,</h1><br></br><h2>Learning, & Doing</h2>
+            <Link
+              className="link"
+              to={'#'}>
+              See More
+            </Link>
+            <h6>PROUD PARTNERS OF <img /><img /></h6>
+
+          </Col>
+          <Col xs="1" md="1"></Col>
+          <Col xs="6" md="6">
+            <Row>
+              <Col xs="2" md="2">
+                <img src="" />
+                <h4>Workshops</h4>
+              </Col>
+              <Col xs="10" md="10">
+                <p>Join top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.</p>
+              </Col>
+              </Row>
+              <Row>
+                <Col xs="2" md="2">
+                  <img src="" />
+                  <h4>Bootcamps</h4>
+                </Col>
+                <Col xs="10" md="10">
+                  <p>This two week bootcamp is built for product teams of 5-7 people. The bootcamp will be customized and centered around solving a real challenge your product is facing.</p>
+                </Col>
+                </Row>
+                <Row>
+                  <Col xs="2" md="2">
+                    <img src="" />
+                    <h4>Special Ops</h4>
+                  </Col>
+                  <Col xs="10" md="10">
+                    <p>Our teams will work side by side running Design Sprints and building products that endure.</p>
+                  </Col>
+                  </Row>
+            </Col>
+          <Col xs="1" md="1"></Col>
+        </Row>
+
+        <Row>
+          <Col xs="12" md="9"></Col>
+          <Col xs="12" md="2"><h1>Upcoming</h1><br></br><h2>Workshops</h2></Col>
+          <Col xs="12" md="1"></Col>
+        </Row>
+        <Row>
+          <Col xs="12" md="1"></Col>
+          <Col xs="12" md="5">
+          </Col>
+          <Col xs="12" md="5">
+          </Col>
+          <Col xs="12" md="1"></Col>
+        </Row>
+
+        <Row>
+          <Col xs="12" md="1"></Col>
+          <Col xs="12" md="2"><h1>Blog/</h1><br></br><h2>Press</h2></Col>
+          <Col xs="12" md="9"></Col>
+        </Row>
+        <Row>
+          <Col xs="12" md="1"></Col>
+          <Col xs="12" md="3">
+          </Col>
+          <Col xs="12" md="3">
+          </Col>
+          <Col xs="12" md="3">
+          </Col>
+          <Col xs="12" md="2">
+            <Link
+              className="link"
+              to="#">
+              See More
+            </Link>
+          </Col>
+        </Row>
+
+      </Container>
   </div>
 )
