@@ -25,7 +25,7 @@ function SimpleAppBar(props) {
           </Link>
 
           <Link href="/process">
-            <a>Process</a>
+            <a>Our Process</a>
           </Link>
 
           <Link href="/workshops">
