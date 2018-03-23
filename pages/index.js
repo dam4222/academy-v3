@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Hero from '../components/hero'
 import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
-import Workshops from '../components/workshops'
+import OurWorkshops from '../components/ourWorkshops'
 
 const styles = theme => ({
   root: {
@@ -30,7 +30,7 @@ function Index(props) {
 
           <OurProcess />
 
-          <Workshops />
+          <OurWorkshops />
 
           </Grid>
       </Grid>

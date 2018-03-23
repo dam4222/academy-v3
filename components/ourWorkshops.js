@@ -15,7 +15,7 @@ const styles = theme => ({
   },
 });
 
-function OurWork(props) {
+function OurWorkshops(props) {
   const { classes } = props;
 
     return (
@@ -23,7 +23,7 @@ function OurWork(props) {
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={4}>
-          <h1>Teach</h1><br></br><h2>a team to fish</h2>
+          <h1>Our</h1><br></br><h2>Workshops</h2>
           <Link href="/workhops">
             <a>See Our Workshops</a>
           </Link>
@@ -37,8 +37,8 @@ function OurWork(props) {
     );
   }
 
-OurWork.propTypes = {
+OurWorkshops.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OurWork);
+export default withStyles(styles)(OurWorkshops);
