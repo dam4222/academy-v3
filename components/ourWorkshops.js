@@ -24,7 +24,7 @@ function OurWorkshops(props) {
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={4}>
           <h1>Our</h1><br></br><h2>Workshops</h2>
-          <Link href="/workhops">
+          <Link href="/workshops">
             <a>See Our Workshops</a>
           </Link>
         </Grid>

@@ -24,12 +24,20 @@ function SimpleAppBar(props) {
             </Typography>
           </Link>
 
+          <Link href="/work">
+            <a>Our Work</a>
+          </Link>
+
           <Link href="/process">
             <a>Our Process</a>
           </Link>
 
           <Link href="/workshops">
             <a>Workshops</a>
+          </Link>
+
+          <Link href="/blog">
+            <a>Blog</a>
           </Link>
 
           <SimpleDrawer />

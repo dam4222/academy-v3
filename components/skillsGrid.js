@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import Paper from 'material-ui/Paper';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Airbnb from '../assets/airbnb.svg';
 import AmericanExpress from '../assets/american-express-1.svg';
@@ -60,8 +61,9 @@ const styles = theme => ({
     alignItems: 'center'
   },
   gridList: {
-    width: 500,
-    height: 300,
+    width: 800,
+    height: 800,
+    background:'white',
   },
   tile: {
     justifyContent: 'center',
@@ -72,7 +74,7 @@ const styles = theme => ({
   },
 });
 
-function LogoGrid(props) {
+function SkillsGrid(props) {
   const { classes } = props;
 
   return (
@@ -86,13 +88,14 @@ function LogoGrid(props) {
         align-self: center !important;
         align-items: center !important;
         overflow: visible;
+        flex-wrap: wrap;
       }
     `}</style>
 
-      <GridList cols={3} cellHeight={80} className={classes.gridList}>
+      <GridList cols={3} cellHeight={167} spacing={8} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} className={classes.tile} style={classes.style}>
-            {tile.img}
+          {tile.img}
           </GridListTile>
         ))}
       </GridList>
@@ -100,8 +103,8 @@ function LogoGrid(props) {
   );
 }
 
-LogoGrid.propTypes = {
+SkillsGrid.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(LogoGrid);
+export default withStyles(styles)(SkillsGrid);
