@@ -2,42 +2,50 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Airbnb from '../assets/airbnb.svg';
+import AmericanExpress from '../assets/american-express-1.svg';
+import ATT from '../assets/att.svg';
+import CBRE from '../assets/cbre.svg';
+import Facebook from '../assets/facebook.svg';
+import Google from '../assets/google.svg';
+import LG from '../assets/lg.svg';
+import NBC from '../assets/nbc.svg';
+import TIME from '../assets/time.svg';
 
  const tileData = [
     {
-      img: Airbnb,
+      img: <Google />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <Facebook />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <ATT />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <TIME />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <Airbnb />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <LG />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <CBRE />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <AmericanExpress />,
       title: "airbnb",
     },
     {
-      img: Airbnb,
+      img: <NBC />,
       title: "airbnb",
     },
   ];
@@ -61,10 +69,10 @@ function LogoGrid(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cols={3} cellHeight={180} className={classes.gridList}>
+      <GridList cols={3} cellHeight={80} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+            {tile.img}
           </GridListTile>
         ))}
       </GridList>
