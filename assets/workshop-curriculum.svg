@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="607" height="864" viewBox="0 0 607 864">
+    <defs>
+        <rect id="b" width="527" height="784" rx="4"/>
+        <filter id="a" width="127.5%" height="118.5%" x="-13.8%" y="-6.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="25" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+        </filter>
+        <path id="c" d="M0 77h527v36H0z"/>
+        <path id="d" d="M0 0h527v630H0z"/>
+        <path id="f" d="M91 0h436v69H91z"/>
+        <path id="g" d="M0 68h527v69H0z"/>
+        <path id="h" d="M0 136h527v69H0z"/>
+        <path id="i" d="M0 204h527v69H0z"/>
+        <path id="j" d="M0 272h527v69H0z"/>
+        <path id="k" d="M0 340h527v69H0z"/>
+        <path id="l" d="M0 408h527v69H0z"/>
+        <path id="m" d="M0 476h527v69H0z"/>
+        <path id="n" d="M0 544h527v69H0z"/>
+        <path id="o" d="M4 77h88v708H4a4 4 0 0 1-4-4V81a4 4 0 0 1 4-4z"/>
+        <path id="p" d="M0 0h50v680H0z"/>
+        <rect id="r" width="413" height="68" rx="4"/>
+        <rect id="s" width="413" height="25" rx="4"/>
+        <rect id="t" width="413" height="89" rx="4"/>
+        <rect id="u" width="413" height="36" rx="4"/>
+        <rect id="v" width="413" height="47" rx="4"/>
+        <rect id="w" width="413" height="25" rx="4"/>
+        <rect id="x" width="413" height="36" rx="4"/>
+        <rect id="y" width="413" height="58" rx="4"/>
+        <rect id="z" width="413" height="68" rx="4"/>
+        <rect id="A" width="413" height="34" rx="4"/>
+        <rect id="B" width="413" height="25" rx="4"/>
+        <rect id="C" width="413" height="25" rx="4"/>
+        <rect id="D" width="413" height="36" rx="4"/>
+        <rect id="E" width="413" height="36" rx="4"/>
+        <rect id="F" width="413" height="36" rx="4"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(40 15)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FFF" xlink:href="#b"/>
+            <rect width="526" height="783" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text font-family="Montserrat-Medium, Montserrat" font-size="12" font-weight="400" transform="translate(69 47)">
+            <tspan x="0" y="12" fill="#000">DESIGN SPRINT MASTER CLASS CURRICULUM | </tspan> <tspan x="291.204" y="12" fill="#754BDB">1 DAY WORKSHOP</tspan>
+        </text>
+        <g transform="translate(40 15)">
+            <use fill="#FFF" xlink:href="#c"/>
+            <path stroke="#E7E7E7" d="M.5 77.5h526v35H.5z"/>
+        </g>
+        <g transform="translate(40 127)">
+            <mask id="e" fill="#fff">
+                <use xlink:href="#d"/>
+            </mask>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#f"/>
+                <path stroke="#E7E7E7" d="M91.5.5h435v68h-435z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#g"/>
+                <path stroke="#E7E7E7" d="M.5 68.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#h"/>
+                <path stroke="#E7E7E7" d="M.5 136.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#i"/>
+                <path stroke="#E7E7E7" d="M.5 204.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#j"/>
+                <path stroke="#E7E7E7" d="M.5 272.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#k"/>
+                <path stroke="#E7E7E7" d="M.5 340.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#l"/>
+                <path stroke="#E7E7E7" d="M.5 408.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#m"/>
+                <path stroke="#E7E7E7" d="M.5 476.5h526v68H.5z"/>
+            </g>
+            <g mask="url(#e)">
+                <use fill="#FFF" xlink:href="#n"/>
+                <path stroke="#E7E7E7" d="M.5 544.5h526v68H.5z"/>
+            </g>
+        </g>
+        <g transform="translate(40 15)">
+            <use fill="#FFF" xlink:href="#o"/>
+            <path stroke="#E7E7E7" d="M91.5 784.5v-707H4A3.5 3.5 0 0 0 .5 81v700a3.5 3.5 0 0 0 3.5 3.5h87.5z"/>
+        </g>
+        <g transform="translate(69 117)">
+            <mask id="q" fill="#fff">
+                <use xlink:href="#p"/>
+            </mask>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="15">8am</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="83">9am</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="151">10am</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="219">11am</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="287">12pm</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="355">1am</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="423">2pm</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="491">3pm</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="559">4pm</tspan>
+            </text>
+            <text fill="#8F8F8F" font-family="Montserrat-Light, Montserrat" font-size="15" font-weight="300" mask="url(#q)">
+                <tspan x="0" y="627">5pm</tspan>
+            </text>
+        </g>
+        <g transform="translate(143 128)">
+            <use fill="#F7F7F7" xlink:href="#r"/>
+            <rect width="412" height="67" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 128)">
+            <tspan x="19" y="39">REGISTRATION</tspan>
+        </text>
+        <g transform="translate(143 195)">
+            <use fill="#F7F7F7" xlink:href="#s"/>
+            <rect width="412" height="24" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 195)">
+            <tspan x="18.989" y="17">WELCOME / BIO / RULES / AGENDA</tspan>
+        </text>
+        <g transform="translate(143 219)">
+            <use fill="#F7F7F7" xlink:href="#t"/>
+            <rect width="412" height="88" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 219)">
+            <tspan x="19" y="50">INTRODUCTION EXERCISE</tspan>
+        </text>
+        <g transform="translate(143 307)">
+            <use fill="#F7F7F7" xlink:href="#u"/>
+            <rect width="412" height="35" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 307)">
+            <tspan x="19" y="23">BREAK</tspan>
+        </text>
+        <g transform="translate(143 342)">
+            <use fill="#F7F7F7" xlink:href="#v"/>
+            <rect width="412" height="46" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 342)">
+            <tspan x="19" y="21">WHAT IS UX, DESIGN THINKING, DESIGN SPRINTS, AGILE </tspan> <tspan x="19" y="36">DEVELOPMENT AND PRODUCT RELAYS?</tspan>
+        </text>
+        <g transform="translate(143 388)">
+            <use fill="#F7F7F7" xlink:href="#w"/>
+            <rect width="412" height="24" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 388)">
+            <tspan x="19" y="17">IDENTIFY THE PROBLEM</tspan>
+        </text>
+        <g transform="translate(143 412)">
+            <use fill="#F7F7F7" xlink:href="#x"/>
+            <rect width="412" height="35" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 412)">
+            <tspan x="19" y="23">PHASE 1: DISCOVERY</tspan>
+        </text>
+        <g transform="translate(143 447)">
+            <use fill="#F7F7F7" xlink:href="#y"/>
+            <rect width="412" height="57" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 447)">
+            <tspan x="19" y="34">LUNCH</tspan>
+        </text>
+        <g>
+            <g transform="translate(143 504)">
+                <use fill="#F7F7F7" xlink:href="#z"/>
+                <rect width="412" height="67" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 504)">
+                <tspan x="19" y="39">PHASE II: SKETCH &amp; WIREFRAME</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 571)">
+                <use fill="#F7F7F7" xlink:href="#A"/>
+                <rect width="412" height="33" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 571)">
+                <tspan x="19" y="22">BREAK</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 604)">
+                <use fill="#F7F7F7" xlink:href="#B"/>
+                <rect width="412" height="24" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 604)">
+                <tspan x="19" y="17">PHASE III: DESIGN</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 629)">
+                <use fill="#F7F7F7" xlink:href="#C"/>
+                <rect width="412" height="24" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 629)">
+                <tspan x="19" y="17">PHASE IV: PROTOTYPE</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 653)">
+                <use fill="#F7F7F7" xlink:href="#D"/>
+                <rect width="412" height="35" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 653)">
+                <tspan x="19" y="23">PHASE V: USER TESTING</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 689)">
+                <use fill="#F7F7F7" xlink:href="#E"/>
+                <rect width="412" height="35" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 689)">
+                <tspan x="19" y="23">PHASE VI: LEARN &amp; REPEAT / DEVELOP &amp; LAUNCH</tspan>
+            </text>
+        </g>
+        <g>
+            <g transform="translate(143 725)">
+                <use fill="#F7F7F7" xlink:href="#F"/>
+                <rect width="412" height="35" x=".5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="12" transform="translate(143 725)">
+                <tspan x="19" y="23">HOW TO SELL IT / CASE STUDY / DEBRIEF / Q&amp;A</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

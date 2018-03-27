@@ -9,7 +9,8 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-jss": "latest"
+    "react-jss": "latest",
+    "react-swipeable-views": "^0.12.13"
   },
   "scripts": {
     "dev": "next",

@@ -15,7 +15,7 @@ class WorkshopPanels extends React.Component {
 
     return (
       <div className={classes.root}>
-      <Grid container spacing={24}>
+      <Grid container spacing={8}>
         <Grid container>
           <Grid item xs={6} sm={2}>
             <img src="#" />

@@ -16,26 +16,30 @@ const styles = {
     display:'flex'
   },
   rightAlign:{
-    flexGrow:1,
+    flexFlow:'row wrap',
   }
+};
+
+const style = {
+  background: 'none',
+  borderRadius: 3,
+  border: 0,
+  height: 60,
+  padding: '0 30px',
+  boxShadow: 'none',
 };
 
 function SimpleAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="sticky" color="default">
+      <AppBar position="fixed" color="default" style={style}>
         <Toolbar>
 
-        <Grid item xs lg={4}>
-          <IconButton href="#flat-buttons" className={classes.button}>
-            <Link href="/">
+          <IconButton href="/" className={classes.button}>
               <AcademyLogoSmall />
-            </Link>
           </IconButton>
-        </Grid>
 
-          <Grid item xs lg={8} className={classes.rightAlign}>
           <Button href="/work" className={classes.button}>
             <Typography variant="title" color="inherit">
               Work
@@ -59,7 +63,6 @@ function SimpleAppBar(props) {
               Blog
             </Typography>
           </Button>
-          </Grid>
 
           <SimpleDrawer />
         </Toolbar>

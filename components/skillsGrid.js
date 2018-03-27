@@ -58,19 +58,22 @@ const styles = theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    alignItems: 'center'
   },
   gridList: {
     width: 800,
     height: 800,
-    background:'white',
   },
   tile: {
     justifyContent: 'center',
     display: 'flex',
     alignContent: 'center',
     alignSelf: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    display: 'flex',
+    overflow: 'visible',
+    flexWrap: 'wrap',
+    backgroundColor: theme.palette.background.paper,
+    border: '1px solid gray'
   },
 });
 
@@ -80,19 +83,7 @@ function SkillsGrid(props) {
   return (
     <div className={classes.root}>
 
-    <style>{`
-      .MuiGridListTile-tile-205 {
-        justify-content: center !important;
-        display: flex !important;
-        align-content: center !important;
-        align-self: center !important;
-        align-items: center !important;
-        overflow: visible;
-        flex-wrap: wrap;
-      }
-    `}</style>
-
-      <GridList cols={3} cellHeight={167} spacing={8} className={classes.gridList}>
+      <GridList cols={3} cellHeight={247} spacing={8} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} className={classes.tile} style={classes.style}>
           {tile.img}

@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1198" height="384" viewBox="0 0 1198 384">
+    <defs>
+        <rect id="a" width="1197" height="383" y="1" rx="4"/>
+        <path id="b" d="M866.256.711h165.885v382.746H866.256z"/>
+        <path id="c" d="M1031.49.711h165.885v382.746H1031.49z"/>
+        <path id="d" d="M700.648.711h165.885v382.746H700.648z"/>
+        <path id="e" d="M534.347.711h165.885v382.746H534.347z"/>
+        <path id="f" d="M368.739.711h165.885v382.746H368.739z"/>
+        <path id="g" d="M203.131.711h165.885v382.746H203.131z"/>
+        <rect id="h" width="166" height="27" x="187" rx="4"/>
+        <linearGradient id="i" x1="0%" x2="98.208%" y1="14.347%" y2="98.465%">
+            <stop offset="0%" stop-color="#4200B3"/>
+            <stop offset="100%" stop-color="#754BDB"/>
+        </linearGradient>
+        <rect id="j" width="142" height="26" x="542" rx="4"/>
+        <rect id="k" width="30" height="26" x="684" rx="4"/>
+        <rect id="l" width="136" height="26" x="714" rx="4"/>
+        <rect id="m" width="61" height="26" x="849" rx="4"/>
+        <rect id="n" width="107" height="26" x="909" rx="4"/>
+        <rect id="o" width="107" height="26" x="1015" y="26" rx="4"/>
+        <rect id="p" width="28" height="27" x="351" rx="4"/>
+        <rect id="q" width="28" height="26" x="378" rx="4"/>
+        <rect id="r" width="116" height="25" x="403" rx="4"/>
+        <rect id="s" width="29" height="26" x="517" rx="4"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="#FFF" xlink:href="#a"/>
+            <rect width="1196" height="382" x=".5" y="1.5" stroke="#E7E7E7" rx="4"/>
+            <text fill="#000" font-family="Montserrat-Medium, Montserrat" font-size="12" font-weight="400" transform="translate(16 16)">
+                <tspan x="0" y="12">DESIGN SPRINT TIMELINE</tspan>
+            </text>
+            <use fill="#FFF" xlink:href="#b"/>
+            <path stroke="#E7E7E7" stroke-width=".5" d="M866.506.961h165.385v382.246H866.506z"/>
+            <use fill="#FFF" xlink:href="#c"/>
+            <path stroke="#E7E7E7" stroke-width=".5" d="M1031.74.961h165.385v382.246H1031.74z"/>
+            <use fill="#FFF" xlink:href="#d"/>
+            <path stroke="#E7E7E7" stroke-width=".5" d="M700.898.961h165.385v382.246H700.898z"/>
+            <use fill="#FFF" xlink:href="#e"/>
+            <path stroke="#E7E7E7" stroke-width=".5" d="M534.597.961h165.385v382.246H534.597z"/>
+            <g>
+                <use fill="#FFF" xlink:href="#f"/>
+                <path stroke="#E7E7E7" stroke-width=".5" d="M368.989.961h165.385v382.246H368.989z"/>
+            </g>
+            <g>
+                <use fill="#FFF" xlink:href="#g"/>
+                <path stroke="#E7E7E7" stroke-width=".5" d="M203.381.961h165.385v382.246H203.381z"/>
+            </g>
+            <rect width="1196" height="382" x=".5" y="1.5" stroke="#E7E7E7" rx="4"/>
+            <path stroke="#E7E7E7" d="M.5 44.5h1196V5a3.5 3.5 0 0 0-3.5-3.5H4A3.5 3.5 0 0 0 .5 5v39.5z"/>
+            <g fill="#848484" font-family="Montserrat-Medium, Montserrat" font-size="12" font-weight="400">
+                <text transform="translate(220 16)">
+                    <tspan x="0" y="12">WEEK 1</tspan>
+                </text>
+                <text transform="translate(220 16)">
+                    <tspan x="166" y="12">WEEK 2</tspan>
+                </text>
+                <text transform="translate(220 16)">
+                    <tspan x="331" y="12">WEEK 3</tspan>
+                </text>
+                <text transform="translate(220 16)">
+                    <tspan x="496" y="12">WEEK 4</tspan>
+                </text>
+                <text transform="translate(220 16)">
+                    <tspan x="663" y="12">WEEK 5</tspan>
+                </text>
+                <text transform="translate(220 16)">
+                    <tspan x="827" y="12">WEEK 6</tspan>
+                </text>
+            </g>
+        </g>
+        <g transform="translate(16 64)">
+            <use fill="#42238E" xlink:href="#h"/>
+            <rect width="165" height="26" x="187.5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(16 64)">
+            <tspan x="0" y="17">UX RESEARCH</tspan>
+        </text>
+        <g opacity=".75" transform="translate(17 208)">
+            <use fill="url(#i)" xlink:href="#j"/>
+            <rect width="141" height="25" x="542.5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 208)">
+            <tspan x="0" y="16">DESIGN</tspan>
+        </text>
+        <g opacity=".7" transform="translate(17 234)">
+            <use fill="url(#i)" xlink:href="#k"/>
+            <rect width="29" height="25" x="684.5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 234)">
+            <tspan x="0" y="16">DESIGN REVIEW / APPROVAL</tspan>
+        </text>
+        <g opacity=".65" transform="translate(17 260)">
+            <use fill="url(#i)" xlink:href="#l"/>
+            <rect width="135" height="25" x="714.5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 260)">
+            <tspan x="0" y="16">PROTOTYPE</tspan>
+        </text>
+        <g opacity=".6" transform="translate(17 285)">
+            <use fill="url(#i)" xlink:href="#m"/>
+            <rect width="60" height="25" x="849.5" y=".5" stroke="#E7E7E7" rx="4"/>
+        </g>
+        <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 285)">
+            <tspan x="0" y="16">USER STUDY</tspan>
+        </text>
+        <g>
+            <g opacity=".55" transform="translate(17 310)">
+                <use fill="url(#i)" xlink:href="#n"/>
+                <rect width="106" height="25" x="909.5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <g transform="translate(17 310)">
+                <use fill="url(#i)" fill-opacity=".5" xlink:href="#o"/>
+                <rect width="106" height="25" x="1015.5" y="26.5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 310)">
+                <tspan x="0" y="16">ANALYSIS / FEEDBACK</tspan>
+            </text>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(17 310)">
+                <tspan x="0" y="42">HANDOFF</tspan>
+            </text>
+        </g>
+        <g>
+            <g opacity=".95" transform="translate(16 95)">
+                <use fill="url(#i)" xlink:href="#p"/>
+                <rect width="27" height="26" x="351.5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(16 95)">
+                <tspan x="0" y="17">TEAM UNDERSTANDING</tspan>
+            </text>
+        </g>
+        <g>
+            <g opacity=".9" transform="translate(16 125)">
+                <use fill="url(#i)" xlink:href="#q"/>
+                <rect width="27" height="25" x="378.5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(16 125)">
+                <tspan x="0" y="17">SKETCH / DECIDE</tspan>
+            </text>
+        </g>
+        <g>
+            <g opacity=".85" transform="translate(16 151)">
+                <use fill="url(#i)" xlink:href="#r"/>
+                <rect width="115" height="24" x="403.5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(16 151)">
+                <tspan x="0" y="16">WIREFRAME </tspan>
+            </text>
+        </g>
+        <g>
+            <g opacity=".8" transform="translate(16 179)">
+                <use fill="url(#i)" xlink:href="#s"/>
+                <rect width="28" height="25" x="517.5" y=".5" stroke="#E7E7E7" rx="4"/>
+            </g>
+            <text fill="#000" font-family="Montserrat-Regular, Montserrat" font-size="10" transform="translate(16 179)">
+                <tspan x="0" y="16">WIREFRAME REVIEW / APPROVAL</tspan>
+            </text>
+        </g>
+        <text fill="#EF485B" font-family="Montserrat-Medium, Montserrat" font-size="10" font-weight="400">
+            <tspan x="376" y="81">Client Required</tspan>
+        </text>
+        <text fill="#EF485B" font-family="Montserrat-Medium, Montserrat" font-size="10" font-weight="400">
+            <tspan x="401" y="113">Client Required</tspan>
+        </text>
+        <text fill="#EF485B" font-family="Montserrat-Medium, Montserrat" font-size="10" font-weight="400">
+            <tspan x="428" y="142">Client Required</tspan>
+        </text>
+    </g>
+</svg>

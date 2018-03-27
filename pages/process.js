@@ -8,6 +8,8 @@ import Link from 'next/link'
 import Paper from 'material-ui/Paper';
 import Card from '../components/card'
 import SkillsGrid from '../components/skillsGrid'
+import AgileSprint from '../assets/agile-sprint-t-imeline.svg'
+import DesignSprint from '../assets/design-sprint-t-imeline.svg'
 
 const textStyles = {
   color: '#848484',
@@ -18,11 +20,17 @@ const styles = theme => ({
     flexGrow: 1,
     display: 'flex',
     alignItems: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   centerAlign: {
     justifyContent:'center',
     display:'flex'
+  },
+  wrap: {
+    flexGrow: 1,
+    display: 'flex',
+    flexFlow: 'row wrap',
+    alignItems: 'center',
   }
 });
 
@@ -94,7 +102,7 @@ function Process(props) {
           <Grid container spacing={8}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="#" />
+              <DesignSprint />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -102,19 +110,20 @@ function Process(props) {
           <Grid container spacing={8}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="#" />
+              <AgileSprint />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
 
 
-            <Grid item xs={12} className={classes.root}>
+            <Grid item xs={12} className={classes.wrap}>
               <Grid item xs={1} sm={1} lg={1}></Grid>
 
               <Grid item xs={10} sm={6} lg={6}>
                 <SkillsGrid />
               </Grid>
-              <Grid item xs={1} sm={1} lg={1}></Grid>
+              <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
+              <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
               <Grid item xs sm={2} lg={2}>
                 <Typography variant='display2' gutterBottom>
                   Our Skills
