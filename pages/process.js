@@ -47,10 +47,10 @@ function Process(props) {
 
           <Grid item xs={1} md={3} lg={4}></Grid>
           <Grid item xs={10} md={6} lg={4}>
-            <Typography variant="display3" align="center" gutterBottom>
+            <Typography variant="display3" align="center">
               Introducing
             </Typography>
-            <Typography style={textStyles} variant="display3" align="center" gutterBottom>
+            <Typography style={textStyles} variant="display3" align="center">
                 Product Relays™
             </Typography>
 
@@ -125,7 +125,7 @@ function Process(props) {
               <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
               <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
               <Grid item xs sm={2} lg={2}>
-                <Typography variant='display2' gutterBottom>
+                <Typography variant='display2'>
                   Our Skills
                 </Typography>
                 <Typography variant='display1' gutterBottom>

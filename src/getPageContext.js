@@ -5,21 +5,44 @@ import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
 import purple from 'material-ui/colors/purple';
 import green from 'material-ui/colors/green';
 
+
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: purple[300],
-      main: purple[500],
-      dark: purple[700],
+  typography: {
+      // Use the system font over Roboto.
+      fontFamily: 'Montserrat, sans-serif',
+      fontWeightMedium: 500,
+      fontSize: 10,
+      body1: {
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 300,
+        lineHeight: 1.7,
+        fontSize: 14,
+      },
+      display2: {
+        fontFamily: 'Crimson Text, serif',
+        color: 'black',
+        fontSize: 36,
+      },
+      display1: {
+        fontFamily: 'Crimson Text, serif',
+        color: '#848484',
+        fontSize: 36,
+      },
+      title: {
+        fontSize: 12,
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 600,
+        letterSpacing:'1.8px',
+        textTransform:'uppercase'
+      },
+      headline: {
+        fontFamily: 'Crimson Text, serif',
+        fontWeight: 400,
+        fontSize: 26,
+      },
     },
-    secondary: {
-      light: green[300],
-      main: green[500],
-      dark: green[700],
-    },
-  },
 });
 
 function createPageContext() {

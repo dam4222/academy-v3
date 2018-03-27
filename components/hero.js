@@ -3,6 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Link from 'next/link'
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
@@ -20,10 +21,16 @@ function Hero(props) {
       <div className={classes.root}>
       <Grid item xs={1} sm={2}></Grid>
       <Grid item xs={10} sm={4} md={3}>
-        <h1>Think Better, Build Better</h1><h2>with UX & Design Thinking</h2>
-        <p>
+        <Typography variant='display2'>
+          Think Better, Build Better
+        </Typography>
+        <Typography variant='display1' gutterBottom>
+          with UX & Design Thinking
+        </Typography>
+
+        <Typography variant='body1' gutterBottom>
         We are Designers, Developers. Product Managers, Researchers and Consultants devoted to creating human-centered digital experiences for our clients. We offer end-to-end Research, Design, Development & Analytics as well as Trainings for teams.
-        </p>
+        </Typography>
       </Grid>
       <Grid item xs={1} sm={6}></Grid>
       </div>

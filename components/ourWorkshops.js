@@ -4,6 +4,8 @@ import Button from 'material-ui/Button';
 import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import WorkshopPanels from './workshopPanels';
+import Typography from 'material-ui/Typography';
+
 
 
 const styles = theme => ({
@@ -23,10 +25,18 @@ function OurWorkshops(props) {
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={4}>
-          <h1>Our</h1><br></br><h2>Workshops</h2>
-          <Link href="/workshops">
-            <a>See Our Workshops</a>
-          </Link>
+          <Typography variant='display2'>
+            Our
+          </Typography>
+          <Typography variant='display1' gutterBottom>
+            Workshops
+          </Typography>
+
+          <Button href="/work" className={classes.button}>
+            <Typography variant="title" color="inherit">
+              See Our Workshops
+          </Typography>
+        </Button>
         </Grid>
         <Grid item xs sm={6}>
           <WorkshopPanels />

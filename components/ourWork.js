@@ -4,6 +4,7 @@ import Button from 'material-ui/Button';
 import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import LogoGrid from './logoGrid'
+import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
@@ -21,10 +22,19 @@ function OurWork(props) {
       <div className={classes.root}>
       <Grid item xs={1} sm={2}></Grid>
       <Grid item xs={10} sm={4}>
-        <h1>Our Work</h1><br></br><h2>is Human Centered</h2>
-        <Link href="/work">
-          <a>See Our Work</a>
-        </Link>
+        <Typography variant='display2'>
+          Our Work
+        </Typography>
+        <Typography variant='display1' gutterBottom>
+          is Human Centered
+        </Typography>
+
+        <Button href="/work" className={classes.button}>
+          <Typography variant="title" color="inherit">
+            See Our Work
+          </Typography>
+        </Button>
+        
       </Grid>
       <Grid item xs sm={6}>
         <LogoGrid />

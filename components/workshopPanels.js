@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
+
 
 const styles = theme => ({
   root: {
@@ -21,10 +23,14 @@ class WorkshopPanels extends React.Component {
             <img src="#" />
           </Grid>
           <Grid item xs={6} sm={2}>
-            <h3>Workshops</h3>
+            <Typography variant='headline'>
+              Workshops
+            </Typography>
           </Grid>
           <Grid item xs sm={6}>
-            <p>Join NYC{"'"}s top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.</p>
+            <Typography variant='body1'>
+              Join NYC{"'"}s top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
+            </Typography>
           </Grid>
           <hr></hr>
         </Grid>
@@ -34,10 +40,14 @@ class WorkshopPanels extends React.Component {
             <img src="#" />
           </Grid>
           <Grid item xs={6} sm={2}>
-            <h3>Bootcamps</h3>
+            <Typography variant='headline'>
+              Bootcamps
+            </Typography>
           </Grid>
           <Grid item xs sm={6}>
-            <p>This two week bootcamp is built for product teams of 5-7 people. The bootcamp will be customized and centered around solving a real challenge your product is facing.</p>
+            <Typography variant='body1'>
+            This two week bootcamp is built for product teams of 5-7 people. The bootcamp will be customized and centered around solving a real challenge your product is facing.
+            </Typography>
           </Grid>
           <hr></hr>
         </Grid>
@@ -47,10 +57,14 @@ class WorkshopPanels extends React.Component {
             <img src="#" />
           </Grid>
           <Grid item xs={6} sm={2}>
-            <h3>Special Ops</h3>
+            <Typography variant='headline'>
+              Embed w/ Team
+            </Typography>
           </Grid>
           <Grid item xs sm={6}>
-            <p>Our teams will work side by side running Design Sprints and building products that endure.</p>
+            <Typography variant='body1'>
+              Our teams will work side by side running Design Sprints and building products that endure.
+            </Typography>
           </Grid>
           <hr></hr>
         </Grid>

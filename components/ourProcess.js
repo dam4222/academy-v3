@@ -3,6 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Link from 'next/link'
 import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
 
 
 const styles = theme => ({
@@ -31,10 +32,19 @@ function OurProcess(props) {
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={6}>
-          <h1>Our Process</h1><br></br><h2>is Collaborative</h2>
-          <Link href="/process">
-            <a>See Our Process</a>
-          </Link>
+          <Typography variant='display2'>
+            Our Process
+          </Typography>
+          <Typography variant='display1' gutterBottom>
+            is Collaborative
+          </Typography>
+
+          <Button href="/process" className={classes.button}>
+            <Typography variant="title" color="inherit">
+              See Our Process
+            </Typography>
+          </Button>
+
         </Grid>
         <Grid item xs={1} sm={4}></Grid>
       </Grid>
@@ -42,8 +52,9 @@ function OurProcess(props) {
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={6}>
-          <p>Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.<br></br>We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
-          </p>
+          <Typography variant='body1' gutterBottom>
+          Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.<br></br>We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
+          </Typography>
         </Grid>
         <Grid item xs={1} sm={2}></Grid>
       </Grid>

@@ -20,7 +20,7 @@ class Card extends React.Component {
       <div className={classes.root}>
       <Paper style={{ padding: 20 }} elevation={1}>
 
-        <Typography variant="title" align="left" gutterBottom>
+        <Typography variant="title" align="left" gutterBottom style={{paddingBottom:'10px'}}>
           {this.props.title}
         </Typography>
 

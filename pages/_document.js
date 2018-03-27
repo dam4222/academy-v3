@@ -23,10 +23,7 @@ class MyDocument extends Document {
           />
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-          />
+          <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600|Montserrat:300,400,700" rel="stylesheet" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         </Head>
         <body>
