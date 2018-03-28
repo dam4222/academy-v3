@@ -43,6 +43,24 @@ const theme = createMuiTheme({
         fontSize: 26,
       },
     },
+    overrides: {
+      MuiButton: {
+        // Name of the styleSheet
+        root: {
+          // Name of the rule
+          borderRadius: 3,
+          border: 0,
+          height: 48,
+          padding: '0px',
+
+          '&:hover': {
+            textDecoration: 'none',
+            // Reset on mouse devices
+            backgroundColor: 'none',
+          },
+        },
+    },
+  },
 });
 
 function createPageContext() {
