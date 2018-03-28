@@ -52,11 +52,22 @@ const theme = createMuiTheme({
           border: 0,
           height: 48,
           padding: '0px',
+          fontSize: 12,
+          fontFamily: 'Montserrat, sans-serif',
+          fontWeight: 600,
+          letterSpacing:'1.8px',
+          textTransform:'uppercase',
+          minWidth: 'auto',
+          transition: 'all 2s cubic-bezier(0.19, 1, 0.22, 1)',
+          borderBottom: '2px solid #fafafa',
+          display:'inline-block',
+          borderRadius:0,
 
           '&:hover': {
             textDecoration: 'none',
             // Reset on mouse devices
             backgroundColor: 'none',
+            borderBottom: '2px solid black',
           },
         },
     },

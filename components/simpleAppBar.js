@@ -9,14 +9,25 @@ import SimpleDrawer from './simpleDrawer';
 import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
 import Grid from 'material-ui/Grid';
+import Hidden from 'material-ui/Hidden';
 
 const styles = {
   root: {
-    flexGrow: 1,
-    display:'flex'
-  },
-  rightAlign:{
+    display:'flex',
     flexFlow:'row wrap',
+  },
+  left:{
+    display:'flex',
+    justifyContent: 'flex-start',
+  },
+  right:{
+    display:'flex',
+    justifyContent: 'flex-end',
+  },
+  spacing:{
+    display:'flex',
+    justifyContent: 'space-between',
+    marginRight: 40,
   }
 };
 
@@ -35,36 +46,45 @@ function SimpleAppBar(props) {
     <div className={classes.root}>
       <AppBar position="fixed" color="default" style={style}>
         <Toolbar>
+            <Grid item xs={6} className={classes.left}>
+              <IconButton href="/">
+                  <AcademyLogoSmall />
+              </IconButton>
+            </Grid>
 
-          <IconButton href="/" className={classes.button}>
-              <AcademyLogoSmall />
-          </IconButton>
+            <Grid item mdUp xs={6} className={classes.right}>
+              <Hidden mdDown>
+                <Button href="/work" className={classes.spacing}>
+                  <Typography variant="title" color="inherit">
+                    Work
+                  </Typography>
+                </Button>
 
-          <Button href="/work" className={classes.button}>
-            <Typography variant="title" color="inherit">
-              Work
-            </Typography>
-          </Button>
+                <Button href="/process" className={classes.spacing}>
+                  <Typography variant="title" color="inherit">
+                    Our Process
+                  </Typography>
+                </Button>
 
-          <Button href="/process" className={classes.button}>
-            <Typography variant="title" color="inherit">
-              Our Process
-            </Typography>
-          </Button>
+                <Button href="/workshops" className={classes.spacing}>
+                  <Typography variant="title" color="inherit">
+                    Workshops
+                  </Typography>
+                </Button>
 
-          <Button href="/workshops" className={classes.button}>
-            <Typography variant="title" color="inherit">
-              Workshops
-            </Typography>
-          </Button>
 
-          <Button href="/blog" className={classes.button}>
-            <Typography variant="title" color="inherit">
-              Blog
-            </Typography>
-          </Button>
+                <Button href="/blog" className={classes.spacing}>
+                  <Typography variant="title" color="inherit">
+                    Blog
+                  </Typography>
+                </Button>
 
-          <SimpleDrawer />
+              </Hidden>
+
+              <SimpleDrawer className={classes.spacing} />
+
+            </Grid>
+
         </Toolbar>
       </AppBar>
     </div>

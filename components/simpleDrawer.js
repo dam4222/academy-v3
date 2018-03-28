@@ -7,8 +7,13 @@ import Icon from 'material-ui/Icon';
 import Link from 'next/link'
 import Typography from 'material-ui/Typography';
 
-const styles = {
 
+const styles = {};
+
+const spacing = {
+  display:'flex',
+  justifyContent: 'space-between',
+  marginRight: 40,
 };
 
 const transition1 = {
@@ -57,16 +62,30 @@ class SimpleDrawer extends React.Component {
             onKeyDown={this.toggleDrawer('top', false)}
           >
 
-          <Link href="/">
-            <Typography variant="display2" color="inherit">
+          <Button href="/work" style={spacing}>
+            <Typography variant="title" color="inherit">
               Work
             </Typography>
-          </Link>
-          <Link href="/about">
-            <Typography variant="display2" color="inherit">
-              About
+          </Button>
+
+          <Button href="/process" style={spacing}>
+            <Typography variant="title" color="inherit">
+              Our Process
             </Typography>
-          </Link>
+          </Button>
+
+          <Button href="/workshops" style={spacing}>
+            <Typography variant="title" color="inherit">
+              Workshops
+            </Typography>
+          </Button>
+
+
+          <Button href="/blog" style={spacing}>
+            <Typography variant="title" color="inherit">
+              Blog
+            </Typography>
+          </Button>
 
           <div style={transition2}></div>
           <div style={transition1}></div>
