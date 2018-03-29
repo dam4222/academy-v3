@@ -21,7 +21,8 @@ const styles = theme => ({
 const root = {
   display:'flex',
   flexFlow:'row wrap',
-  width:'100%'
+  width:'100%',
+  marginBottom: '100px'
 }
 
 const left = {
