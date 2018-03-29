@@ -1,0 +1,21 @@
+.scrolling {
+  background: #eeeeee !important;
+  border-radius: 0;
+  border: 0;
+  height: 60px;
+  padding: 0 30px;
+  box-shadow: none !important;
+  transition: .5s all;
+  z-index: 3;
+}
+
+.notscrolled {
+  background: none !important;
+  border-radius: 0;
+  border: 0;
+  height: 60px;
+  padding: 0 30px;
+  box-shadow: none !important;
+  transition: .5s all;
+  z-index: 3;
+}

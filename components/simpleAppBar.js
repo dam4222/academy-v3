@@ -10,85 +10,108 @@ import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
 import Grid from 'material-ui/Grid';
 import Hidden from 'material-ui/Hidden';
+import styled from 'styled-components';
+import OnScroll from 'react-on-scroll';
+import "../styles.scss"
 
-const styles = {
-  root: {
-    display:'flex',
-    flexFlow:'row wrap',
-  },
-  left:{
-    display:'flex',
-    justifyContent: 'flex-start',
-  },
-  right:{
-    display:'flex',
-    justifyContent: 'flex-end',
-  },
-  spacing:{
-    display:'flex',
-    justifyContent: 'space-between',
-    marginRight: 40,
-  }
-};
+const styles = theme => ({
 
-const style = {
-  background: 'none',
-  borderRadius: 3,
-  border: 0,
-  height: 60,
-  padding: '0 30px',
-  boxShadow: 'none',
-};
+});
 
-function SimpleAppBar(props) {
-  const { classes } = props;
+const root = {
+  display:'flex',
+  flexFlow:'row wrap',
+  width:'100%'
+}
+
+const left = {
+  display:'flex',
+  justifyContent: 'flex-start',
+}
+
+const right = {
+  display:'flex',
+  justifyContent: 'flex-end',
+}
+
+const spacing = {
+  display:'flex',
+  justifyContent: 'space-between',
+  marginRight: 40,
+}
+
+class SimpleAppBar extends React.Component {
+
+  state = {
+		sticky: false,
+	};
+
+	setSticky = sticky => this.setState({ sticky });
+
+  render() {
+
+  const { sticky } = this.state;
+
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" color="default" style={style}>
-        <Toolbar>
-            <Grid item xs={6} className={classes.left}>
-              <IconButton href="/">
-                  <AcademyLogoSmall />
-              </IconButton>
-            </Grid>
+    <div style={root}>
 
-            <Grid item mdUp xs={6} className={classes.right}>
-              <Hidden mdDown>
-                <Button href="/work" className={classes.spacing}>
-                  <Typography variant="title" color="inherit">
-                    Work
-                  </Typography>
-                </Button>
+    <OnScroll
+				className="section"
+				triggers={[
+					{ top: 50, bottom: -50, callback: visible => this.setSticky(visible) },
+				]}
+			>
+            <AppBar
 
-                <Button href="/process" className={classes.spacing}>
-                  <Typography variant="title" color="inherit">
-                    Our Process
-                  </Typography>
-                </Button>
+            color="default"
+            className={`${sticky ? 'notscrolled' : 'scrolling'}`}
+            >
+              <Toolbar>
+                  <Grid item xs={6} style={left}>
+                    <IconButton href="/">
+                        <AcademyLogoSmall />
+                    </IconButton>
+                  </Grid>
 
-                <Button href="/workshops" className={classes.spacing}>
-                  <Typography variant="title" color="inherit">
-                    Workshops
-                  </Typography>
-                </Button>
+                  <Grid item mdUp xs={6} style={right}>
+                    <Hidden mdDown>
+                      <Button href="/work" style={spacing}>
+                        <Typography variant="title" color="inherit">
+                          Work
+                        </Typography>
+                      </Button>
+
+                      <Button href="/process" style={spacing}>
+                        <Typography variant="title" color="inherit">
+                          Our Process
+                        </Typography>
+                      </Button>
+
+                      <Button href="/workshops" style={spacing}>
+                        <Typography variant="title" color="inherit">
+                          Workshops
+                        </Typography>
+                      </Button>
 
 
-                <Button href="/blog" className={classes.spacing}>
-                  <Typography variant="title" color="inherit">
-                    Blog
-                  </Typography>
-                </Button>
+                      <Button href="/blog" style={spacing}>
+                        <Typography variant="title" color="inherit">
+                          Blog
+                        </Typography>
+                      </Button>
 
-              </Hidden>
+                    </Hidden>
 
-              <SimpleDrawer className={classes.spacing} />
+                    <SimpleDrawer style={spacing} />
 
-            </Grid>
+                  </Grid>
 
-        </Toolbar>
-      </AppBar>
+              </Toolbar>
+            </AppBar>
+			</OnScroll>
     </div>
   );
+}
 }
 
 SimpleAppBar.propTypes = {

@@ -25,6 +25,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
           <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600|Montserrat:300,400,700" rel="stylesheet" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+          <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body>
           <Main />
