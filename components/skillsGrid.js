@@ -14,40 +14,8 @@ import TIME from '../assets/time.svg';
 
  const tileData = [
     {
-      img: <Google />,
-      title: "Google",
-    },
-    {
-      img: <Facebook />,
-      title: "Facebook",
-    },
-    {
-      img: <ATT />,
-      title: "AT&T",
-    },
-    {
-      img: <TIME />,
-      title: "Time",
-    },
-    {
-      img: <AmericanExpress />,
-      title: "American Express",
-    },
-    {
-      img: <LG />,
-      title: "LG",
-    },
-    {
-      img: <CBRE />,
-      title: "CBRE",
-    },
-    {
-      img: <Airbnb />,
-      title: "Airbnb",
-    },
-    {
-      img: <NBC />,
-      title: "NBC",
+      img: <img src="#" />,
+      title: "Image",
     },
   ];
 

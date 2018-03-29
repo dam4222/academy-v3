@@ -9,7 +9,6 @@ import SimpleDrawer from './simpleDrawer';
 import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
 import Grid from 'material-ui/Grid';
-import Hidden from 'material-ui/Hidden';
 import styled from 'styled-components';
 import OnScroll from 'react-on-scroll';
 import "../styles.scss"
@@ -22,7 +21,7 @@ const root = {
   display:'flex',
   flexFlow:'row wrap',
   width:'100%',
-  marginBottom: '100px'
+  marginBottom: '100px',
 }
 
 const left = {
@@ -74,8 +73,8 @@ class SimpleAppBar extends React.Component {
                     </IconButton>
                   </Grid>
 
-                  <Grid item mdUp xs={6} style={right}>
-                    <Hidden mdDown>
+                  <Grid item xs={6} style={right}>
+
                       <Button href="/work" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Work
@@ -101,7 +100,7 @@ class SimpleAppBar extends React.Component {
                         </Typography>
                       </Button>
 
-                    </Hidden>
+
 
                     <SimpleDrawer style={spacing} />
 

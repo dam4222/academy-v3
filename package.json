@@ -14,9 +14,6 @@
     "react-dom": "latest",
     "react-jss": "latest",
     "react-on-scroll": "^0.2.2",
-    "react-scroll-trigger": "^0.3.0",
-    "react-sticky": "^6.0.1",
-    "react-stickynode": "^1.4.1",
     "react-swipeable-views": "^0.12.13",
     "style-loader": "^0.20.3",
     "styled-components": "^3.2.3"

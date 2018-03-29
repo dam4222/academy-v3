@@ -122,8 +122,10 @@ function Process(props) {
               <Grid item xs={10} sm={6} lg={6}>
                 <SkillsGrid />
               </Grid>
-              <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
-              <Grid item xs={1} sm={0} md={0} lg={0}></Grid>
+
+              <Grid item xs={1}></Grid>
+              <Grid item xs={1}></Grid>
+      
               <Grid item xs sm={2} lg={2}>
                 <Typography variant='display2'>
                   Our Skills

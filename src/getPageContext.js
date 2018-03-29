@@ -58,18 +58,23 @@ const theme = createMuiTheme({
           letterSpacing:'1.8px',
           textTransform:'uppercase',
           minWidth: 'auto',
-          transition: 'all 2s cubic-bezier(0.19, 1, 0.22, 1)',
-          borderBottom: '2px solid #fafafa',
           display:'inline-block',
           borderRadius:0,
+          boxShadow:'none',
+          backgroundColor: 'none',
 
           '&:hover': {
             textDecoration: 'none',
             // Reset on mouse devices
             backgroundColor: 'none',
-            borderBottom: '2px solid black',
           },
         },
+    },
+    MuiAppBar: {
+      root: {
+        boxShadow:'none',
+        backgroundColor: 'none',
+      },
     },
   },
 });
