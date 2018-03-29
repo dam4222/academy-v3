@@ -52,7 +52,7 @@ class SimpleDrawer extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.toggleDrawer('top', true)}><Icon>short_text</Icon></Button>
+        <Button disableRipple={true} onClick={this.toggleDrawer('top', true)}><Icon>short_text</Icon></Button>
 
         <Drawer anchor="top" open={this.state.top} onClose={this.toggleDrawer('top', false)}>
           <div
@@ -62,26 +62,26 @@ class SimpleDrawer extends React.Component {
             onKeyDown={this.toggleDrawer('top', false)}
           >
 
-          <Button href="/work" style={spacing}>
+          <Button disableRipple={true} href="/work" style={spacing}>
             <Typography variant="title" color="inherit">
               Work
             </Typography>
           </Button>
 
-          <Button href="/process" style={spacing}>
+          <Button disableRipple={true} href="/process" style={spacing}>
             <Typography variant="title" color="inherit">
               Our Process
             </Typography>
           </Button>
 
-          <Button href="/workshops" style={spacing}>
+          <Button disableRipple={true} href="/workshops" style={spacing}>
             <Typography variant="title" color="inherit">
               Workshops
             </Typography>
           </Button>
 
 
-          <Button href="/blog" style={spacing}>
+          <Button disableRipple={true} href="/blog" style={spacing}>
             <Typography variant="title" color="inherit">
               Blog
             </Typography>

@@ -39,7 +39,7 @@ function OurProcess(props) {
             is Collaborative
           </Typography>
 
-          <Button href="/process" className={classes.button}>
+          <Button disableRipple={true} className={"underline"} href="/process">
             <Typography variant="title" color="inherit">
               See Our Process
             </Typography>

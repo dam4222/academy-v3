@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { MuiThemeProvider } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
 import getPageContext from './getPageContext';
-import SimpleAppBar from '../components/simpleAppBar.js';
+import SimpleAppBar from '../components/simpleAppBar';
+import SimpleAppFooter from '../components/simpleAppFooter';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -34,6 +35,7 @@ function withRoot(Component) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...this.props} />
+          <SimpleAppFooter />
         </MuiThemeProvider>
       );
     }

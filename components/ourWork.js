@@ -29,12 +29,12 @@ function OurWork(props) {
           is Human Centered
         </Typography>
 
-        <Button href="/work" className={classes.button}>
+        <Button disableRipple={true} className={"underline"} href="/work">
           <Typography variant="title" color="inherit">
             See Our Work
           </Typography>
         </Button>
-        
+
       </Grid>
       <Grid item xs sm={6}>
         <LogoGrid />

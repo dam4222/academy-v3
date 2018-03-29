@@ -32,7 +32,7 @@ function OurWorkshops(props) {
             Workshops
           </Typography>
 
-          <Button href="/work" className={classes.button}>
+          <Button disableRipple={true} className={"underline"} href="/work">
             <Typography variant="title" color="inherit">
               See Our Workshops
           </Typography>

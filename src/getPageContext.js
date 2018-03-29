@@ -50,7 +50,7 @@ const theme = createMuiTheme({
           // Name of the rule
           borderRadius: 3,
           border: 0,
-          height: 48,
+          height: 'auto',
           padding: '0px',
           fontSize: 12,
           fontFamily: 'Montserrat, sans-serif',

@@ -9,6 +9,7 @@ import Hero from '../components/hero'
 import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
 import OurWorkshops from '../components/ourWorkshops'
+import LatestNews from '../components/latestNews'
 
 const styles = theme => ({
   root: {
@@ -32,7 +33,12 @@ function Index(props) {
 
           <OurWorkshops />
 
+          <LatestNews />
+          
+          <br></br>
+
           </Grid>
+
       </Grid>
     </div>
     );
