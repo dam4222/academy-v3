@@ -7,7 +7,12 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog';
+import Slide from 'material-ui/transitions/Slide';
 import "../styles.scss"
+
+function Transition(props) {
+  return <Slide direction="up" {...props} />;
+}
 
 const spacing = {
   display:'flex',
@@ -17,10 +22,7 @@ const spacing = {
 export default class FormDialog extends React.Component {
   state = {
     open: false,
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
+    multiline: '',
   };
 
   handleClickOpen = () => {
@@ -46,6 +48,7 @@ export default class FormDialog extends React.Component {
           </Typography>
         </Button>
         <Dialog
+          transition={Transition}
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
@@ -62,6 +65,7 @@ export default class FormDialog extends React.Component {
               label="Email Address"
               type="email"
               fullWidth
+              placeholder="Type your e-mail..."
             />
             <TextField
               id="multiline-flexible"
@@ -72,6 +76,7 @@ export default class FormDialog extends React.Component {
               onChange={this.handleChange('multiline')}
               margin="normal"
               fullWidth
+              placeholder="Type your message..."
             />
           </DialogContent>
           <DialogActions>
