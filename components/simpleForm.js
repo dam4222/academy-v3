@@ -1,0 +1,93 @@
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
+import Typography from 'material-ui/Typography';
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from 'material-ui/Dialog';
+import "../styles.scss"
+
+const spacing = {
+  display:'flex',
+  justifyContent: 'space-evenly',
+}
+
+export default class FormDialog extends React.Component {
+  state = {
+    open: false,
+    name: 'Cat in the Hat',
+    age: '',
+    multiline: 'Controlled',
+    currency: 'EUR',
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.handleClickOpen} disableRipple={true} className={"underline"} style={spacing}>
+          <Typography variant="title" color="inherit">
+            Contact Us
+          </Typography>
+        </Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Say Hello</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              We can answer any questions you might have. Just send us a note and we will get back to you promptly.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Email Address"
+              type="email"
+              fullWidth
+            />
+            <TextField
+              id="multiline-flexible"
+              label="Message"
+              multiline
+              rows="4"
+              value={this.state.multiline}
+              onChange={this.handleChange('multiline')}
+              margin="normal"
+              fullWidth
+            />
+          </DialogContent>
+          <DialogActions>
+          <Button onClick={this.handleClose} disableRipple={true} className={"underline"} style={spacing}>
+            <Typography variant="title" color="inherit">
+              Cancel
+            </Typography>
+          </Button>
+          <Button onClick={this.handleClose} disableRipple={true} className={"underline"} style={spacing}>
+            <Typography variant="title" color="inherit">
+              Send
+            </Typography>
+          </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  }
+}

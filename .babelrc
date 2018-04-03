@@ -2,6 +2,7 @@
   "presets": [ "next/babel" ],
   "plugins": [
     [ "inline-react-svg" ],
-    ["transform-define", "./env-config.js"]
+    ["transform-define", "./env-config.js"],
+    ["dynamic-import-node"]
   ]
 }

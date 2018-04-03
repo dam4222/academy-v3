@@ -9,6 +9,19 @@ import green from 'material-ui/colors/green';
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#000',
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contast with palette.primary.main
+    },
+    secondary: {
+      main: '#848484',
+      // dark: will be calculated from palette.secondary.main,
+    },
+    // error: will us the default color
+  },
   typography: {
       // Use the system font over Roboto.
       fontFamily: 'Montserrat, sans-serif',
@@ -18,6 +31,11 @@ const theme = createMuiTheme({
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 300,
         lineHeight: 1.7,
+        fontSize: 14,
+      },
+      body2: {
+        fontFamily: 'Crimson Text, serif',
+        color: '#8b8b8b',
         fontSize: 14,
       },
       display2: {

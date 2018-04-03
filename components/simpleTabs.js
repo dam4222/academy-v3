@@ -21,13 +21,16 @@ TabContainer.propTypes = {
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: 'none !important',
     width: '100%'
   },
   center:{
     display: 'block',
     margin: 'auto',
     width: '100%'
+  },
+  colorDefault: {
+    backgroundColor: 'none !important',
   }
 });
 
@@ -49,7 +52,7 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="default">
+
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
@@ -61,7 +64,7 @@ class SimpleTabs extends React.Component {
             <Tab label="Bootcamp" />
             <Tab label="Embed w/ Team" href="#basic-tabs" />
           </Tabs>
-        </AppBar>
+  
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}

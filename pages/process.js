@@ -125,7 +125,7 @@ function Process(props) {
 
               <Grid item xs={1}></Grid>
               <Grid item xs={1}></Grid>
-      
+
               <Grid item xs sm={2} lg={2}>
                 <Typography variant='display2'>
                   Our Skills
