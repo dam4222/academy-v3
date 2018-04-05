@@ -66,3 +66,7 @@ html, body{
   left:0 !important;
   top:25%;
 }
+
+.noFocus:focus{
+  outline: 0 !important;
+}

@@ -10,6 +10,7 @@ import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
 import OurWorkshops from '../components/ourWorkshops'
 import LatestNews from '../components/latestNews'
+import Carousel from '../components/carousel'
 
 const styles = theme => ({
   root: {
@@ -22,10 +23,11 @@ function Index(props) {
   return (
     <div className={classes.root}>
 
-      <Grid container spacing={8}>
         <Grid item xs={12}>
 
           <Hero />
+
+          <Carousel />
 
           <OurWork />
 
@@ -34,12 +36,12 @@ function Index(props) {
           <OurWorkshops />
 
           <LatestNews />
-          
+
           <br></br>
 
-          </Grid>
+        </Grid>
 
-      </Grid>
+
     </div>
     );
   }

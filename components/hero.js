@@ -10,7 +10,7 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
-    height: '540px'
+    height: '80vh'
   }
 });
 
@@ -19,12 +19,12 @@ function Hero(props) {
 
     return (
       <div className={classes.root}>
-      <Grid item xs={1} sm={2}></Grid>
-      <Grid item xs={10} sm={4} md={3}>
-        <Typography variant='display2'>
+      <Grid item xs={1} sm={3}></Grid>
+      <Grid item xs={10} sm={3} md={3}>
+        <Typography variant='display4'>
           Think Better, Build Better
         </Typography>
-        <Typography variant='display1' gutterBottom>
+        <Typography variant='display3' gutterBottom>
           with UX & Design Thinking
         </Typography>
 

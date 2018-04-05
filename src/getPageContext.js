@@ -38,6 +38,16 @@ const theme = createMuiTheme({
         color: '#8b8b8b',
         fontSize: 14,
       },
+      display4: {
+        fontFamily: 'Crimson Text, serif',
+        color: 'black',
+        fontSize: 56,
+      },
+      display3: {
+        fontFamily: 'Crimson Text, serif',
+        color: '#848484',
+        fontSize: 56,
+      },
       display2: {
         fontFamily: 'Crimson Text, serif',
         color: 'black',
