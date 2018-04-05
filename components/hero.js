@@ -29,7 +29,7 @@ function Hero(props) {
         </Typography>
 
         <Typography variant='body1' gutterBottom>
-        We are Designers, Developers. Product Managers, Researchers and Consultants devoted to creating human-centered digital experiences for our clients. We offer end-to-end Research, Design, Development & Analytics as well as Trainings for teams.
+        We craft experiences that makes peoples lives simpler. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.
         </Typography>
       </Grid>
       <Grid item xs={1} sm={6}></Grid>

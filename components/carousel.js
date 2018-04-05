@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
 import Icon from 'material-ui/Icon';
+import Typography from 'material-ui/Typography';
 import "../styles.scss"
 
 class Carousel extends React.Component {
@@ -48,19 +49,39 @@ class Carousel extends React.Component {
             ref={slider => (this.slider1 = slider)}
           >
             <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>1</div>
+              <div className={"noFocus"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
+                <Typography variant="display4" color="secondary">
+                1
+                </Typography>
+              </div>
             </div>
             <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'darkgrey', height:'80vh'}}>2</div>
+              <div className={"noFocus"} style={{background:'darkgrey', height:'80vh'}}>
+                <Typography variant="display4" color="secondary">
+                2
+                </Typography>
+                </div>
+              </div>
+            <div className={"noFocus"}>
+              <div className={"noFocus"} style={{background:'blue', height:'80vh'}}>
+                <Typography variant="display4" color="secondary">
+                3
+                </Typography>
+                </div>
             </div>
             <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'blue', height:'80vh'}}>3</div>
+              <div className={"noFocus"} style={{background:'red', height:'80vh'}}>
+                <Typography variant="display4" color="secondary">
+                4
+                </Typography>
+              </div>
             </div>
             <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'red', height:'80vh'}}>4</div>
-            </div>
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'green', height:'80vh'}}>5</div>
+              <div className={"noFocus"} style={{background:'green', height:'80vh'}}>
+                <Typography variant="display4" color="secondary">
+                5
+                </Typography>
+              </div>
             </div>
           </Slider>
         </Grid>
@@ -75,21 +96,41 @@ class Carousel extends React.Component {
             speed={1000}
             cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
           >
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>1</div>
+          <div className={"noFocus"}>
+            <div className={"noFocus"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
+              <Typography variant="display4" color="secondary">
+              1
+              </Typography>
             </div>
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'darkgrey', height:'80vh'}}>2</div>
+          </div>
+          <div className={"noFocus"}>
+            <div className={"noFocus"} style={{background:'darkgrey', height:'80vh'}}>
+              <Typography variant="display4" color="secondary">
+              2
+              </Typography>
+              </div>
             </div>
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'blue', height:'80vh'}}>3</div>
+          <div className={"noFocus"}>
+            <div className={"noFocus"} style={{background:'blue', height:'80vh'}}>
+              <Typography variant="display4" color="secondary">
+              3
+              </Typography>
+              </div>
+          </div>
+          <div className={"noFocus"}>
+            <div className={"noFocus"} style={{background:'red', height:'80vh'}}>
+              <Typography variant="display4" color="secondary">
+              4
+              </Typography>
             </div>
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'red', height:'80vh'}}>4</div>
+          </div>
+          <div className={"noFocus"}>
+            <div className={"noFocus"} style={{background:'green', height:'80vh'}}>
+              <Typography variant="display4" color="secondary">
+              5
+              </Typography>
             </div>
-            <div className={"noFocus"}>
-              <div className={"noFocus"} style={{background:'green', height:'80vh'}}>5</div>
-            </div>
+          </div>
           </Slider>
         </Grid>
         </Grid>
