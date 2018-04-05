@@ -52,3 +52,17 @@ html, body{
     }
   }
 }
+
+.hide{
+  visibility: hidden !important;
+  position: absolute !important;
+  left:0 !important;
+  top:25%;
+}
+
+.show{
+  visibility: visible !important;
+  position: absolute !important;
+  left:0 !important;
+  top:25%;
+}
