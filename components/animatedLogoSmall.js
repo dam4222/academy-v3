@@ -18,7 +18,7 @@ const AnimatedLogoSmall = () => {
 }
 
 AnimatedLogoSmall.propTypes = {
-  classes: PropTypes.object.isRequired,
+
 };
 
 export default AnimatedLogoSmall

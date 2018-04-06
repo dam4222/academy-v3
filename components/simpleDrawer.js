@@ -62,6 +62,12 @@ class SimpleDrawer extends React.Component {
             onKeyDown={this.toggleDrawer('top', false)}
           >
 
+          <Button disableRipple={true} href="/" style={spacing}>
+            <Typography variant="title" color="inherit">
+              Home
+            </Typography>
+          </Button>
+
           <Button disableRipple={true} href="/work" style={spacing}>
             <Typography variant="title" color="inherit">
               Work

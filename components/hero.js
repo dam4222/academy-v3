@@ -19,8 +19,8 @@ function Hero(props) {
 
     return (
       <div className={classes.root}>
-      <Grid item xs={1} sm={3}></Grid>
-      <Grid item xs={10} sm={3} md={3}>
+      <Grid item xs={1} sm={4}></Grid>
+      <Grid item xs={10} sm={5} md={6} lg={5}>
         <Typography variant='display4'>
           Think Better, Build Better
         </Typography>
@@ -29,7 +29,7 @@ function Hero(props) {
         </Typography>
 
         <Typography variant='body1' gutterBottom>
-        We craft experiences that makes peoples lives simpler. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.
+        We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.
         </Typography>
       </Grid>
       <Grid item xs={1} sm={6}></Grid>

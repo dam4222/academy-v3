@@ -55,7 +55,7 @@ function Process(props) {
             </Typography>
 
             <Typography variant="body1" align="center" gutterBottom>
-            Product Relays™ unify Design Sprints and Agile Developement Sprints into one fluid process. It’s our secret sauce and sets us apart from any other design/development teams you will work with. See the chart to right for an example of our flow.
+            Product Relays™ unify Design Sprints and Agile Developement Sprints into one fluid process. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
             </Typography>
           </Grid>
           <Grid item xs={1} md={3} lg={4}></Grid>

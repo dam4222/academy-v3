@@ -11,6 +11,7 @@ html, body{
   box-shadow: none ;
   transition: .5s all;
   z-index: 3;
+  justify-content: center;
 }
 
 .notscrolled {
@@ -22,6 +23,7 @@ html, body{
   box-shadow: none !important;
   transition: .5s all;
   z-index: 3;
+  justify-content: center;
 }
 
 .underline {
@@ -65,6 +67,20 @@ html, body{
   position: absolute !important;
   left:0 !important;
   top:25%;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.carousel-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .noFocus:focus{
