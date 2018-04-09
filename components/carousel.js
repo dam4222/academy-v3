@@ -8,12 +8,21 @@ import "../styles.scss"
 
 const expand = {
   display: 'flex',
-  justifyContent: 'flex-end',
+  justifyContent: 'flex-end'
+}
+
+const expandBtn = {
   background: '#fafafa',
   position: 'relative',
   zIndex: 500,
-  top: '-36px',
-  paddingRight:'50px',
+  top: '-64px',
+  padding:'25px',
+  display: 'flex',
+  alignItems: 'center'
+}
+
+const iconMargin = {
+  marginRight: '10px'
 }
 
 class Carousel extends React.Component {
@@ -167,8 +176,8 @@ class Carousel extends React.Component {
             <Grid item xs={2} sm={6} md={7} lg={9}></Grid>
             <Grid item xs={10} sm={6} md={5} lg={3}>
               <Button disableRipple={true} style={expand} href="/project">
-                <Typography variant="title" color="inherit">
-                  See More
+                <Typography style={expandBtn} variant="title" color="inherit">
+                  <Icon style={iconMargin}>add_circle</Icon>See More
                 </Typography>
               </Button>
             </Grid>
