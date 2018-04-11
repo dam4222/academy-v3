@@ -59,9 +59,9 @@ class Carousel extends React.Component {
     return (
       <div>
       <Grid container spacing={0}>
-        <Grid item xs sm={2}>
+        <Grid item xs sm={1}>
         </Grid>
-        <Grid item xs={5} sm={4}>
+        <Grid item xs={5} sm={7}>
           <Slider className={"noFocus carousel"}
             {...settings}
             asNavFor={this.state.nav2}
@@ -114,7 +114,7 @@ class Carousel extends React.Component {
           </Slider>
         </Grid>
 
-        <Grid item xs={6} sm={6}>
+        <Grid item xs={6} sm={4}>
           <Slider
             asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
