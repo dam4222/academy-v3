@@ -8,21 +8,21 @@ import "../styles.scss"
 
 const expand = {
   display: 'flex',
-  justifyContent: 'flex-end'
+  justifyContent: 'flex-end',
+  top: '-74px;',
 }
 
 const expandBtn = {
   background: '#fafafa',
   position: 'relative',
   zIndex: 500,
-  top: '-64px',
   padding:'25px',
   display: 'flex',
   alignItems: 'center'
 }
 
 const iconMargin = {
-  marginRight: '10px'
+  marginLeft: '10px'
 }
 
 class Carousel extends React.Component {
@@ -44,7 +44,6 @@ class Carousel extends React.Component {
   render() {
 
     var settings = {
-      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -52,7 +51,7 @@ class Carousel extends React.Component {
       arrows:false,
       focusOnSelect: false,
       autoplay: false,
-      speed: 2000,
+      speed: 1500,
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)"
     };
@@ -86,8 +85,8 @@ class Carousel extends React.Component {
                 2
                 </Typography>
                 <img src='#' />
-                </div>
               </div>
+            </div>
             <div className={"noFocus carousel"}>
               <div className={"noFocus carousel"} style={{background:'#A18494', height:'80vh'}}>
                 <Typography variant="display4" color="secondary">
@@ -122,8 +121,9 @@ class Carousel extends React.Component {
             swipeToSlide={true}
             focusOnSelect={false}
             arrows={false}
-            speed={1000}
+            speed={2000}
             cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
+            dots={true}
           >
           <div className={"noFocus carousel-two"}>
             <div className={"noFocus carousel-two"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
@@ -173,11 +173,10 @@ class Carousel extends React.Component {
           </div>
           </Slider>
           <Grid container spacing={0}>
-            <Grid item xs={2} sm={6} md={7} lg={9}></Grid>
-            <Grid item xs={10} sm={6} md={5} lg={3}>
+            <Grid item xs={12}>
               <Button disableRipple={true} style={expand} href="/project">
                 <Typography style={expandBtn} variant="title" color="inherit">
-                  <Icon style={iconMargin}>add_circle</Icon>See More
+                  See Case Study<Icon style={iconMargin}>add_circle</Icon>
                 </Typography>
               </Button>
             </Grid>

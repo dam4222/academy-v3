@@ -14,7 +14,6 @@ import styled from 'styled-components';
 import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import SimpleForm from '../components/simpleForm';
-
 import "../styles.scss"
 
 const styles = theme => ({

@@ -9,36 +9,47 @@ import Typography from 'material-ui/Typography';
 const styles = theme => ({
   root: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexGrow: 1,
-    flexWrap:'wrap'
+    flexWrap:'wrap',
+    paddingTop: '100px',
   },
 });
+
+const paddingBottom = {
+  paddingBottom:'15%'
+}
 
 function OurWork(props) {
   const { classes } = props;
 
     return (
       <div className={classes.root}>
-      <Grid item xs={1} sm={2}></Grid>
-      <Grid item xs={10} sm={4}>
-        <Typography variant='display2'>
-          Our Work
-        </Typography>
-        <Typography variant='display1' gutterBottom>
-          is Human Centered
-        </Typography>
+        <Grid container spacing={8}>
+          <Grid item xs={1} sm={1} md={2} lg={4} xl={5}></Grid>
+          <Grid item xs={10} sm={10} md={4} lg={3} xl={2}>
+            <Typography variant='display2'>
+              Our Work
+            </Typography>
+            <Typography variant='display1' gutterBottom>
+              is Human Centered
+            </Typography>
 
-        <Button disableRipple={true} className={"underline"} href="/work">
-          <Typography variant="title" color="inherit">
-            See Our Work
-          </Typography>
-        </Button>
+            <Button disableRipple={true} className={"underline"} href="/work">
+              <Typography variant="title" color="inherit">
+                See Our Work
+              </Typography>
+            </Button>
 
-      </Grid>
-      <Grid item xs sm={6}>
-        <LogoGrid />
-      </Grid>
+          </Grid>
+          <Grid item xs sm md={5} lg={4} xl={3}>
+            <Typography variant="body1" color="inherit" style={paddingBottom}>
+              We are a UX & Design Thinking Studio that takes a User-Centric approach to design and development and helps transform organizations products, services, and strategies.
+            </Typography>
+            <LogoGrid />
+          </Grid>
+          <Grid item xs={1} xl={1}></Grid>
+        </Grid>
       </div>
 
     );

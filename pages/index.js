@@ -23,8 +23,6 @@ function Index(props) {
   return (
     <div className={classes.root}>
 
-        <Grid item xs={12}>
-
           <Hero />
 
           <Carousel />
@@ -38,9 +36,6 @@ function Index(props) {
           <LatestNews />
 
           <br></br>
-
-        </Grid>
-
 
     </div>
     );

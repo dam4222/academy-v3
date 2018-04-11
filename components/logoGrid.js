@@ -55,9 +55,10 @@ const styles = theme => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     overflow: 'hidden',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft: '-35px'
   },
   gridList: {
     width: 500,

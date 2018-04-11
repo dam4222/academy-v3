@@ -14,7 +14,6 @@ import AnimatedLogoSmall from '../components/animatedLogoSmall';
 import Grid from 'material-ui/Grid';
 import styled from 'styled-components';
 import OnScroll from 'react-on-scroll';
-
 import "../styles.scss"
 
 const styles = theme => ({

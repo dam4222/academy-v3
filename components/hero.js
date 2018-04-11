@@ -10,7 +10,7 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
-    height: '80vh'
+    height: '90vh'
   }
 });
 
@@ -19,8 +19,8 @@ function Hero(props) {
 
     return (
       <div className={classes.root}>
-      <Grid item xs={1} sm={4}></Grid>
-      <Grid item xs={10} sm={5} md={6} lg={5}>
+      <Grid item xs={1} sm={3}></Grid>
+      <Grid item xs={10} sm={5} md={6} lg={5} xl={4}>
         <Typography variant='display4'>
           Think Better, Build Better
         </Typography>
