@@ -4,6 +4,7 @@ import Grid from 'material-ui/Grid';
 import Icon from 'material-ui/Icon';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
+import Divider from 'material-ui/Divider';
 import "../styles.scss"
 
 const expand = {
@@ -19,6 +20,18 @@ const expandBtn = {
   padding:'25px',
   display: 'flex',
   alignItems: 'center'
+}
+
+const verticalText = {
+	transform: 'rotate(-90deg)',
+  position: 'relative',
+  top: '130px'
+}
+
+const verticalLine = {
+	transform: 'rotate(-90deg)',
+  position: 'relative',
+  top: '260px'
 }
 
 const iconMargin = {
@@ -60,6 +73,10 @@ class Carousel extends React.Component {
       <div>
       <Grid container spacing={0}>
         <Grid item xs sm={1}>
+          <Typography style={verticalText} variant="caption" color="secondary">
+            Client – CBRE
+          </Typography>
+          <Divider style={verticalLine} />
         </Grid>
         <Grid item xs={5} sm={7}>
           <Slider className={"noFocus carousel"}

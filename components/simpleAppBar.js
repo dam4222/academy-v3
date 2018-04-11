@@ -74,42 +74,42 @@ class SimpleAppBar extends React.Component {
                         <AnimatedLogoSmall />
                     </IconButton>
                     <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
-                        <AnimatedLogo />
+                        <AcademyLogoSmall />
                     </IconButton>
                   </Grid>
 
-                  <Grid item xs={6} style={right}>
+                  <Grid item xs={5} className={`${sticky ? 'hide' : 'show'}`} style={right}>
                     <Hidden smDown>
-                      <Button disableRipple={true} className={"underline"} href="/work" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Work
                         </Typography>
                       </Button>
 
-                      <Button disableRipple={true} className={"underline"} href="/process" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/process" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Our Process
                         </Typography>
                       </Button>
 
-                      <Button disableRipple={true} className={"underline"} href="/workshops" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/workshops" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Workshops
                         </Typography>
                       </Button>
 
 
-                      <Button disableRipple={true} className={"underline"} href="/blog" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Blog
                         </Typography>
                       </Button>
                     </Hidden>
 
+                  </Grid>
 
-
+                  <Grid item xs={1}>
                     <SimpleDrawer style={spacing} />
-
                   </Grid>
 
               </Toolbar>
