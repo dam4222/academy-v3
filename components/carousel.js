@@ -71,14 +71,14 @@ class Carousel extends React.Component {
 
     return (
       <div>
-      <Grid container spacing={0}>
+      <Grid container spacing={0} wrap-xs-wrap-reverse>
         <Grid item xs sm={1}>
           <Typography style={verticalText} variant="caption" color="secondary">
             Client – CBRE
           </Typography>
           <Divider style={verticalLine} />
         </Grid>
-        <Grid item xs={5} sm={7}>
+        <Grid item xs={12} sm={7}>
           <Slider className={"noFocus carousel"}
             {...settings}
             asNavFor={this.state.nav2}
@@ -89,7 +89,7 @@ class Carousel extends React.Component {
                 <img src='/static/CBRE_Featured_1.png'
                 style=
                 {{
-                  width: '80%',
+                  width: '30%',
                   minWidth: '400px',
                   height: 'auto',
                   marginRight: '30px',
@@ -131,7 +131,7 @@ class Carousel extends React.Component {
           </Slider>
         </Grid>
 
-        <Grid item xs={6} sm={4}>
+        <Grid item xs={12} sm={4}>
           <Slider
             asNavFor={this.state.nav1}
             ref={slider => (this.slider2 = slider)}
@@ -148,9 +148,10 @@ class Carousel extends React.Component {
 
               style=
               {{
-                width: '100%',
                 minWidth: '400px',
                 height: 'auto',
+                width: '600px',
+                position: 'absolute',
               }}
 
               />
@@ -189,15 +190,7 @@ class Carousel extends React.Component {
             </div>
           </div>
           </Slider>
-          <Grid container spacing={0}>
-            <Grid item xs={12}>
-              <Button disableRipple={true} style={expand} href="/project">
-                <Typography style={expandBtn} variant="title" color="inherit">
-                  See Case Study<Icon style={iconMargin}>add_circle</Icon>
-                </Typography>
-              </Button>
-            </Grid>
-          </Grid>
+
         </Grid>
         </Grid>
       </div>

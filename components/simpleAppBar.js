@@ -9,6 +9,7 @@ import Typography from 'material-ui/Typography';
 import SimpleDrawer from './simpleDrawer';
 import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
+import AcademyLogo from '../assets/academy-logo.svg'
 import AnimatedLogo from '../components/animatedLogo';
 import AnimatedLogoSmall from '../components/animatedLogoSmall';
 import Grid from 'material-ui/Grid';
@@ -70,11 +71,11 @@ class SimpleAppBar extends React.Component {
             >
               <Toolbar>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
-                        <AnimatedLogoSmall />
-                    </IconButton>
-                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{position: 'relative', left:0, width:'130px', height:'auto'}} disableRipple={true} href="/">
                         <AcademyLogoSmall />
+                    </IconButton>
+                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{position: 'relative', left:'-75px', width:'130px', height:'auto'}} disableRipple={true} href="/">
+                        <AcademyLogo />
                     </IconButton>
                   </Grid>
 
