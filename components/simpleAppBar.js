@@ -9,6 +9,7 @@ import Typography from 'material-ui/Typography';
 import SimpleDrawer from './simpleDrawer';
 import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
+import AcademyLogo from '../assets/academy-logo.svg'
 import AnimatedLogo from '../components/animatedLogo';
 import AnimatedLogoSmall from '../components/animatedLogoSmall';
 import Grid from 'material-ui/Grid';
@@ -70,46 +71,46 @@ class SimpleAppBar extends React.Component {
             >
               <Toolbar>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
-                        <AnimatedLogoSmall />
+                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{position: 'relative', left:0, width:'130px', height:'auto'}} disableRipple={true} href="/">
+                        <AcademyLogoSmall />
                     </IconButton>
-                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
-                        <AnimatedLogo />
+                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{position: 'relative', left:'-75px', width:'130px', height:'auto'}} disableRipple={true} href="/">
+                        <AcademyLogo />
                     </IconButton>
                   </Grid>
 
-                  <Grid item xs={6} style={right}>
+                  <Grid item xs={5} className={`${sticky ? 'hide' : 'show'}`} style={right}>
                     <Hidden smDown>
-                      <Button disableRipple={true} className={"underline"} href="/work" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Work
                         </Typography>
                       </Button>
 
-                      <Button disableRipple={true} className={"underline"} href="/process" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/process" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Our Process
                         </Typography>
                       </Button>
 
-                      <Button disableRipple={true} className={"underline"} href="/workshops" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/workshops" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Workshops
                         </Typography>
                       </Button>
 
 
-                      <Button disableRipple={true} className={"underline"} href="/blog" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
                         <Typography variant="title" color="inherit">
                           Blog
                         </Typography>
                       </Button>
                     </Hidden>
 
+                  </Grid>
 
-
+                  <Grid item xs={1}>
                     <SimpleDrawer style={spacing} />
-
                   </Grid>
 
               </Toolbar>

@@ -56,17 +56,50 @@ html, body{
 }
 
 .hide{
-  visibility: hidden !important;
-  position: absolute !important;
-  left:0 !important;
-  top:25%;
+
+  opacity: 1; animation: fadeOut 650ms cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards; animation-delay: 0s;
+  align-items: center;
+  display: flex;
+
+  a{&:nth-child(4) { opacity: 1; animation: fadeOut 650ms cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards; animation-delay: 0s; }}
+  a{&:nth-child(3) { opacity: 1; animation: fadeOut 650ms cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards; animation-delay: .1s; }}
+  a{&:nth-child(2) { opacity: 1; animation: fadeOut 650ms cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards; animation-delay: .2s; }}
+  a{&:nth-child(1) { opacity: 1; animation: fadeOut 650ms cubic-bezier(0.95, 0.05, 0.795, 0.035) forwards; animation-delay: .3s; }}
+
+    @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0, -100px);
+    }
+  }
 }
 
 .show{
-  visibility: visible !important;
-  position: absolute !important;
-  left:0 !important;
-  top:25%;
+
+  opacity: 0; animation: fadeIn 650ms cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: .5s;
+  align-items: center;
+  display: flex;
+
+  a{&:nth-child(1) { opacity: 0; animation: fadeIn 650ms cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: .5s;}}
+  a{&:nth-child(2) { opacity: 0; animation: fadeIn 650ms cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: .6s; }}
+  a{&:nth-child(3) { opacity: 0; animation: fadeIn 650ms cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: .7s; }}
+  a{&:nth-child(4) { opacity: 0; animation: fadeIn 650ms cubic-bezier(0.19, 1, 0.22, 1) forwards; animation-delay: .8s; }}
+
+
+    @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate(0, -100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
 }
 
 .carousel {
@@ -85,4 +118,18 @@ html, body{
 
 .noFocus:focus{
   outline: 0 !important;
+}
+
+.slick-dots{
+  bottom:15px !important;
+}
+
+.slick-slide {
+visibility: hidden;
+transition: 1s all;
+}
+
+.slick-active {
+visibility: visible;
+transition: 1s all;
 }
