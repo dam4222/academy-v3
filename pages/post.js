@@ -18,7 +18,7 @@ class Post extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       /* initial state */
       content: {
       },
@@ -32,14 +32,14 @@ class Post extends React.Component {
     const res = await fetch(url)
     const blog = await res.json()
     //console.log(blog[0])
-    
+
     await this.setState({
       content: blog[0].content.rendered,
       title: blog[0].acf.title,
     })
   }
 
-  
+
 
   render() {
     const { classes } = this.props;
@@ -49,7 +49,7 @@ class Post extends React.Component {
         {this.state.title}
       </Typography>
       <Typography>
-        <div  dangerouslySetInnerHTML={{__html: this.state.content}}>
+        <div dangerouslySetInnerHTML={{__html: this.state.content}}>
         </div>
       </Typography>
       </div>
