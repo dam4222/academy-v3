@@ -27,10 +27,11 @@ function Hero(props) {
         <Typography variant='display3' gutterBottom>
           with UX & Design Thinking
         </Typography>
-
-        <Typography variant='body1' gutterBottom>
-        We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.
-        </Typography>
+        <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
+          <Typography variant='body1' gutterBottom>
+          We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.
+          </Typography>
+        </Grid>
       </Grid>
       <Grid item xs={1} sm={6}></Grid>
       </div>

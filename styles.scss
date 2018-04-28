@@ -32,7 +32,7 @@ html, body{
   display: inline-block;
   color: black;
   padding: 0 0px;
-  transition: color cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.3s;
+  transition: all cubic-bezier(0.6, 0.04, 0.98, 0.335) 0.65s;
 
   &::after {
     content: '';
@@ -122,14 +122,4 @@ html, body{
 
 .slick-dots{
   bottom:15px !important;
-}
-
-.slick-slide {
-visibility: hidden;
-transition: 1s all;
-}
-
-.slick-active {
-visibility: visible;
-transition: 1s all;
 }

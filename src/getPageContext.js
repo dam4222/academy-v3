@@ -41,22 +41,22 @@ const theme = createMuiTheme({
       display4: {
         fontFamily: 'Crimson Text, serif',
         color: 'black',
-        fontSize: 56,
+        fontSize: 'calc(1.5em + 1.25vw)',
       },
       display3: {
         fontFamily: 'Crimson Text, serif',
         color: '#848484',
-        fontSize: 56,
+        fontSize: 'calc(1.5em + 1.25vw)',
       },
       display2: {
         fontFamily: 'Crimson Text, serif',
         color: 'black',
-        fontSize: 36,
+        fontSize: 34,
       },
       display1: {
         fontFamily: 'Crimson Text, serif',
         color: '#848484',
-        fontSize: 36,
+        fontSize: 34,
       },
       title: {
         fontSize: 12,
@@ -69,6 +69,14 @@ const theme = createMuiTheme({
         fontFamily: 'Crimson Text, serif',
         fontWeight: 400,
         fontSize: 26,
+      },
+      button: {
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 400,
+        fontSize: 12,
+        color: '#2f2f40',
+        textTransform:'none',
+        letterSpacing: 'normal',
       },
     },
     overrides: {
@@ -97,6 +105,17 @@ const theme = createMuiTheme({
             backgroundColor: 'none',
           },
         },
+    },
+    MuiIconButton: {
+      // Name of the styleSheet
+      root: {
+        // Name of the rule
+        '&:hover': {
+          textDecoration: 'none',
+          // Reset on mouse devices
+          backgroundColor: 'none',
+        },
+      },
     },
     MuiAppBar: {
       root: {

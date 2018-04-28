@@ -64,6 +64,7 @@ class SimpleAppBar extends React.Component {
 					{ top: 50, bottom: -50, callback: visible => this.setSticky(visible) },
 				]}
 			>
+
             <AppBar
 
             color="default"
