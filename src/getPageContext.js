@@ -59,11 +59,11 @@ const theme = createMuiTheme({
         fontSize: 34,
       },
       title: {
-        fontSize: 12,
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 600,
         letterSpacing:'1.8px',
-        textTransform:'uppercase'
+        textTransform:'uppercase',
+        fontSize: '10px'
       },
       headline: {
         fontFamily: 'Crimson Text, serif',

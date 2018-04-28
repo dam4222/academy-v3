@@ -74,7 +74,7 @@ class Carousel extends React.Component {
 
     return (
       <div>
-      <Grid container spacing={0} wrap-xs-wrap-reverse>
+      <Grid container spacing={0}>
         <Grid item xs sm={1}>
           <Typography style={verticalText} variant="caption" color="secondary">
             Client – CBRE

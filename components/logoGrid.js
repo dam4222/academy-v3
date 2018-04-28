@@ -13,39 +13,39 @@ import TIME from '../assets/time.svg';
 
  const tileData = [
     {
-      img: <Google />,
+      img: <Google style={{width: '100%'}}/>,
       title: "Google",
     },
     {
-      img: <Facebook />,
+      img: <Facebook style={{width: '100%'}}/>,
       title: "Facebook",
     },
     {
-      img: <ATT />,
+      img: <ATT style={{width: '100%'}}/>,
       title: "AT&T",
     },
     {
-      img: <TIME />,
+      img: <TIME style={{width: '100%'}}/>,
       title: "Time",
     },
     {
-      img: <AmericanExpress />,
+      img: <AmericanExpress style={{width: '100%'}}/>,
       title: "American Express",
     },
     {
-      img: <LG />,
+      img: <LG style={{width: '100%'}}/>,
       title: "LG",
     },
     {
-      img: <CBRE />,
+      img: <CBRE style={{width: '100%'}}/>,
       title: "CBRE",
     },
     {
-      img: <Airbnb />,
+      img: <Airbnb style={{width: '100%'}}/>,
       title: "Airbnb",
     },
     {
-      img: <NBC />,
+      img: <NBC style={{width: '100%'}}/>,
       title: "NBC",
     },
   ];
@@ -87,6 +87,7 @@ function LogoGrid(props) {
         align-self: center !important;
         align-items: center !important;
         overflow: visible;
+        width:100vw;
       }
     `}</style>
 

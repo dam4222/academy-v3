@@ -39,7 +39,7 @@ const right = {
 
 const spacing = {
   display:'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   marginRight: 40,
 }
 
@@ -70,12 +70,12 @@ class SimpleAppBar extends React.Component {
             color="default"
             className={`${sticky ? 'notscrolled' : 'scrolling'}`}
             >
-              <Toolbar>
+              <Toolbar disableGutters>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{position: 'relative', left:0, width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{position: 'absolute', left: '-50px', width:'130px', height:'auto'}} disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
-                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{position: 'relative', left:'-75px', width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
                         <AcademyLogo />
                     </IconButton>
                   </Grid>
@@ -110,7 +110,7 @@ class SimpleAppBar extends React.Component {
 
                   </Grid>
 
-                  <Grid item xs={1}>
+                  <Grid item xs={1} style={spacing}>
                     <SimpleDrawer style={spacing} />
                   </Grid>
 

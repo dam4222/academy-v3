@@ -35,8 +35,6 @@ function Index(props) {
 
           <LatestNews />
 
-          <br></br>
-
     </div>
     );
   }

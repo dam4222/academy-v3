@@ -26,26 +26,8 @@ const root = {
   width:'100%',
   height: '167px',
   alignItems:'center',
-  background: '#f5f5f5',
-  paddingLeft: '30px',
-  paddingRight:'30px',
-  paddingTop:'20px',
-  paddingBottom:'20px'
-}
-
-const left = {
-  display:'flex',
-  justifyContent: 'flex-start',
-  alignItems:'center',
-  flexFlow:'row wrap',
-}
-
-const right = {
-  display:'flex',
-  justifyContent: 'flex-end',
-  alignItems:'center',
-  flexFlow:'row wrap',
-  textAlign:'center'
+  background: '#fafafa',
+  marginTop:'40px'
 }
 
 const spacing = {
@@ -66,39 +48,40 @@ class SimpleAppFooter extends React.Component {
 
   return (
     <div style={root}>
-                <Grid container spacing={8}>
-                  <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={left}>
-                    <IconButton style={{width:'124px'}} disableRipple={true} href="/">
+                <Grid container spacing={0}>
+                  <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+                  <Grid item xs={10} sm={11} md={5} lg={5} xl={5}>
+                    <div style={{display:'flex', alignItems:'center'}}>
+                    <IconButton style={{width:'114px'}} disableRipple={true} href="/">
                         <AcademyLogo />
                     </IconButton>
-                    <div style={{padding:'15px'}}>
-                      <Typography variant="body2" color="secondary">
-                        |
-                      </Typography>
-                    </div>
+                    <Typography style={{padding:'10px'}} variant="body2" color="secondary">
+                      |
+                    </Typography>
                     <Typography variant="body2" color="secondary" gutterBottom>
                       UX & Design Thinking Studio
                     </Typography>
+                    </div>
 
 
-                    <Grid item xs={12} sm={12} md={12} lg={9} xl={10}>
-                      <Divider style={divider}/>
-                      <Typography variant="title" color="inherit">
-                        130 GRAND ST. SUITE #3D | BROOKLYN, NY 11249
-                      </Typography>
-                    </Grid>
+                      <Grid item xs={12} sm={12} md={12} lg={9} xl={10}>
+                        <Divider style={divider}/>
+                        <Typography variant="title" style={{fontSize:9.5}} color="inherit">
+                          130 GRAND ST. SUITE #3D | BROOKLYN, NY 11249
+                        </Typography>
+                      </Grid>
                   </Grid>
-
-                  <Grid item xs={12} sm={6} md={6} lg={6} style={right}>
+                  <Hidden mdUp><div style={{width:'100%', paddingTop:'15px'}}></div></Hidden>
+                  <Grid item xs={11} sm={11} md={5} lg={5} xl={5} style={{display:'flex', justifyContent:'flex-end', alignItems:'center'}}>
 
                       <Button disableRipple={true} className={"underline"} href="/about" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           About
                         </Typography>
                       </Button>
 
                       <Button disableRipple={true} className={"underline"} href="/blog" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           Blog
                         </Typography>
                       </Button>
@@ -106,6 +89,7 @@ class SimpleAppFooter extends React.Component {
                       <SimpleForm />
 
                       </Grid>
+                    <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
                   </Grid>
 
 

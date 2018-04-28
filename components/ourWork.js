@@ -18,16 +18,12 @@ const styles = theme => ({
   },
 });
 
-const paddingBottom = {
-  paddingBottom:'15%'
-}
-
 function OurWork(props) {
   const { classes } = props;
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={8}>
+        <Grid container spacing={0}>
           <Grid item xs={1} sm={1} md={2} lg={3} xl={5}></Grid>
           <Grid item xs={10} sm={10} md={4} lg={3} xl={2}>
             <Typography variant='display2'>
@@ -41,9 +37,12 @@ function OurWork(props) {
           <Grid item xs={1} xl={1}></Grid>
         </Grid>
 
+        <Grid container spacing={8}>
         <Grid item xs={1} sm={1} md={6} lg={6} xl={5}></Grid>
 
-        <Grid item xs sm md={5} lg={4} xl={3}>
+        <Grid item xs={10} sm={10} md={5} lg={4} xl={3}>
+        <Grid container spacing={8}>
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Typography variant="body1" color="inherit" gutterBottom>
             We are a UX & Design Thinking Studio that takes a User-Centric approach to design and development and helps transform organizations products, services, and strategies.
           </Typography>
@@ -54,7 +53,11 @@ function OurWork(props) {
           </Button>
           <LogoGrid />
         </Grid>
+        </Grid>
+        </Grid>
+
         <Grid item xs sm md={1} lg={2} xl={2}></Grid>
+        </Grid>
       </div>
 
     );

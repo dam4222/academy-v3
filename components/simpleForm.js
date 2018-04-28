@@ -16,7 +16,7 @@ function Transition(props) {
 
 const spacing = {
   display:'flex',
-  justifyContent: 'space-evenly',
+  justifyContent: 'space-between',
 }
 
 export default class FormDialog extends React.Component {
@@ -41,9 +41,9 @@ export default class FormDialog extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={spacing}>
         <Button onClick={this.handleClickOpen} disableRipple={true} className={"underline"} style={spacing}>
-          <Typography variant="title" color="inherit">
+          <Typography variant="button" color="inherit">
             Contact Us
           </Typography>
         </Button>
