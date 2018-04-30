@@ -27,6 +27,7 @@ const root = {
   height: '167px',
   alignItems:'center',
   background: '#fafafa',
+  position:'relative'
 }
 
 const spacing = {
