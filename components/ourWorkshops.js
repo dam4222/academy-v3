@@ -8,10 +8,7 @@ import Icon from 'material-ui/Icon';
 import WorkshopPanels from './workshopPanels';
 import Typography from 'material-ui/Typography';
 import DesignBetter from '../assets/design-better.svg';
-
-
-
-
+import { Parallax } from 'react-scroll-parallax';
 
 const styles = theme => ({
   root: {
@@ -67,12 +64,23 @@ function OurWorkshops(props) {
         </Typography>
 
         </Grid>
-          <Grid item xs={10} sm={6}>
+          <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6}>
-                <img src="#"/>
+                <Parallax
+                    className="custom-class"
+                    offsetYMax={-20}
+                    offsetYMin={10}
+                    slowerScrollRate
+                >
+
+                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+
+                </Parallax>
+
               </Grid>
-              <Grid item xs={10} sm={10} md={6}>
+              <Grid item xs={1} sm={1} md={1}></Grid>
+              <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
                   1 Day Workshop
                 </Typography>
@@ -91,11 +99,53 @@ function OurWorkshops(props) {
             </Grid>
             <Grid container>
               <Grid item xs={10} sm={10} md={6}>
-                <img src="#"/>
+                <Parallax
+                    className="custom-class"
+                    offsetYMax={-20}
+                    offsetYMin={10}
+                    slowerScrollRate
+                >
+
+                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+
+                </Parallax>
+
               </Grid>
-              <Grid item xs={10} sm={10} md={6}>
+              <Grid item xs={1} sm={1} md={1}></Grid>
+              <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  2 Week Bootcamp
+                  1 Day Workshop
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
+                </Typography>
+                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/work">
+                  <Typography variant="button" color="inherit">
+                    Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                  </Typography>
+                </Button>
+              </Grid>
+            </Grid><Grid container>
+              <Grid item xs={10} sm={10} md={6}>
+                <Parallax
+                    className="custom-class"
+                    offsetYMax={-20}
+                    offsetYMin={10}
+                    slowerScrollRate
+                >
+
+                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+
+                </Parallax>
+
+              </Grid>
+              <Grid item xs={1} sm={1} md={1}></Grid>
+              <Grid item xs={10} sm={10} md={4}>
+                <Typography variant='headline' style={{paddingBottom:'20px'}}>
+                  1 Day Workshop
                 </Typography>
                 <Typography variant='body1' gutterBottom>
                 Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
@@ -110,29 +160,8 @@ function OurWorkshops(props) {
                 </Button>
               </Grid>
             </Grid>
-            <Grid container>
-              <Grid item xs={10} sm={10} md={6}>
-                <img src="#"/>
-              </Grid>
-              <Grid item xs={10} sm={10} md={6}>
-                <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Special Ops
-                </Typography>
-                <Typography variant='body1' gutterBottom>
-                Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
-                </Typography>
-                <Typography variant='body1' gutterBottom>
-                We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
-                </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/work">
-                  <Typography variant="button" color="inherit">
-                    Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
-                  </Typography>
-                </Button>
-              </Grid>
-            </Grid>
           </Grid>
-        <Grid item xs={1} sm={3}></Grid>
+        <Grid item xs={1} sm={2}></Grid>
       </Grid>
       </div>
 

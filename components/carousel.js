@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
 import IconButton from 'material-ui/IconButton';
+import { Parallax } from 'react-scroll-parallax';
 import "../styles.scss"
 
 const expand = {
@@ -99,11 +100,21 @@ class Carousel extends React.Component {
               <div className={"noFocus carousel"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh', display: 'flex'}}>
 
               <Grid item xs={5} sm={6} md={8} lg={8} xl={8} style={{justifyContent: 'flex-end', display: 'flex'}}>
-                <img src='/static/CBRE_Featured_1.png'
-                style=
-                {{
-                  height: '70vh',
-                }} />
+                {/*<Parallax
+                    className="custom-class"
+                    offsetYMax={0}
+                    offsetYMin={20}
+                    slowerScrollRate
+                    tag="figure"
+                >*/}
+
+                  <img src='/static/CBRE_Featured_1.png'
+                  style=
+                  {{
+                    height: '70vh',
+                  }} />
+                  {/*</Parallax>*/}
+
                 </Grid>
               </div>
             </div>
@@ -159,15 +170,24 @@ class Carousel extends React.Component {
             >
           <div className={"noFocus carousel-two"}>
             <div className={"noFocus carousel-two"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
-              <img src='/static/CBRE_Featured_2.png'
+              {/*<Parallax
+                  className="custom-class"
+                  offsetXMax={-20}
+                  offsetXMin={20}
+                  slowerScrollRate
+                  tag="figure"
+              >*/}
 
-              style=
-              {{
-                width: '13%',
-                position: 'absolute'
-              }}
+                <img src='/static/CBRE_Featured_2.png'
 
-              />
+                style=
+                {{
+                  position: 'relative',
+                  width: '50vw'
+                }}
+
+                />
+            {/*</Parallax>*/}
             </div>
           </div>
           <div className={"noFocus carousel-two"}>

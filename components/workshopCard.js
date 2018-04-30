@@ -34,7 +34,7 @@ class WorkshopCard extends React.Component {
           </Grid>
 
             <Grid item md={5} lg={5}>
-              <Grid container wrap spacing={8}>
+              <Grid container wrap={"wrap"} spacing={8}>
                 <Typography variant="body2" align="left" gutterBottom>
                   {this.props.month}
                 </Typography>

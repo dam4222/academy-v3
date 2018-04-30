@@ -5,6 +5,7 @@ import CssBaseline from 'material-ui/CssBaseline';
 import getPageContext from './getPageContext';
 import SimpleAppBar from '../components/simpleAppBar';
 import SimpleAppFooter from '../components/simpleAppFooter';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -27,6 +28,7 @@ function withRoot(Component) {
     render() {
       // MuiThemeProvider makes the theme available down the React tree thanks to React context.
       return (
+        <ParallaxProvider>
         <MuiThemeProvider
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
@@ -37,6 +39,7 @@ function withRoot(Component) {
           <Component {...this.props} />
           <SimpleAppFooter />
         </MuiThemeProvider>
+        </ParallaxProvider>
       );
     }
   }
