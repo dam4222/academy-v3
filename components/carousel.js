@@ -6,6 +6,7 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import Divider from 'material-ui/Divider';
 import Hidden from 'material-ui/Hidden';
+import IconButton from 'material-ui/IconButton';
 import "../styles.scss"
 
 const expand = {
@@ -39,6 +40,9 @@ const iconMargin = {
   marginRight: '10px',
 }
 
+const nextArrow = <IconButton><Icon>chevron_right</Icon></IconButton>
+const prevArrow = <IconButton><Icon>chevron_left</Icon></IconButton>
+
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
@@ -64,12 +68,16 @@ class Carousel extends React.Component {
       slidesToScroll: 1,
       focusOnSelect: false,
       autoplay: false,
-      speed: 1500,
+      speed: 750,
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
       lazyLoad: 'ondemand',
       dots: true,
-      arrows:false,
+      touchThreshold:5,
+      vertical:false,
+      verticalSwiping:false,
+      nextArrow,
+      prevArrow
     };
 
     return (
@@ -141,9 +149,13 @@ class Carousel extends React.Component {
             swipeToSlide={true}
             arrows={false}
             focusOnSelect={false}
-            speed={2000}
+            speed={950}
             cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
             lazyLoad= {'ondemand'}
+            className={'slider-two'}
+            touchThreshold={5}
+            vertical={false}
+            verticalSwiping={false}
             >
           <div className={"noFocus carousel-two"}>
             <div className={"noFocus carousel-two"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
@@ -193,6 +205,7 @@ class Carousel extends React.Component {
           </Slider>
 
         </Grid>
+
 
         </Grid>
       </div>

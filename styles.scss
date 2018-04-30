@@ -110,6 +110,8 @@ html, body{
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
 }
 
 .carousel-two {
@@ -124,5 +126,67 @@ html, body{
 }
 
 .slick-dots{
-  bottom:15px !important;
+  bottom:-25px !important;
+}
+
+.slider-two{
+  @media (max-width: 599px) {
+    display:none;
+  }
+}
+
+.slick-arrow {
+  display: none;
+}
+
+.slick-prev {
+  left: 25px;
+  opacity:.5;
+  z-index: 100000000000;
+  position: absolute !important;
+  transition: all ease 0.25s !important;
+  transform-origin: 50% 150%;
+
+  &::before{
+    display: none;
+  }
+
+  &:focus{
+    color: black;
+    outline: 0;
+    background: none;
+  }
+
+  &:hover{
+    color: black;
+    outline: 0;
+    background: none;
+    transform:scale(1.5);
+  }
+}
+
+.slick-next {
+  right: 25px;
+  opacity:.5;
+  z-index: 10000000000000;
+  position: absolute !important;
+  transition: all ease 0.25s !important;
+  transform-origin: 50% 150%;
+
+  &::before{
+    display: none;
+  }
+
+  &:focus{
+    color: black;
+    outline: 0;
+    background: none;
+  }
+
+  &:hover{
+    color: black;
+    outline: 0;
+    background: none;
+    transform:scale(1.5);
+  }
 }
