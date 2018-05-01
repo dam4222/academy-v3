@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import Icon from 'material-ui/Icon';
 import Typography from 'material-ui/Typography';
+import { Parallax } from 'react-scroll-parallax';
 
 
 const styles = theme => ({

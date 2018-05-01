@@ -1,24 +1,30 @@
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    flexWrap:'wrap'
+    flexWrap:'wrap',
   },
 });
 
 class Card extends React.Component {
 
   render() {
-    const { classes } = this.props;
+    const { classes, backgroundColor } = this.props;
 
     return (
       <div className={classes.root}>
-      <Paper style={{ padding: 20 }} elevation={1}>
+      <div style={{
+        padding:20,
+        minHeight:'590px',
+        justifyContent: 'space-evenly',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor
+      }}>
 
         <Typography variant="title" align="left" gutterBottom style={{paddingBottom:'10px'}}>
           {this.props.title}
@@ -58,7 +64,7 @@ class Card extends React.Component {
         <Typography variant="body1" align="left" gutterBottom>
           {this.props.description5}
         </Typography>
-      </Paper>
+      </div>
       </div>
     );
   }

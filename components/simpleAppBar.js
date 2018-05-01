@@ -83,26 +83,26 @@ class SimpleAppBar extends React.Component {
                   <Grid item xs={5} className={`${sticky ? 'hide' : 'show'}`} style={right}>
                     <Hidden smDown>
                       <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           Work
                         </Typography>
                       </Button>
 
                       <Button className={`underline`} disableRipple={true} href="/process" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           Our Process
                         </Typography>
                       </Button>
 
                       <Button className={`underline`} disableRipple={true} href="/workshops" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           Workshops
                         </Typography>
                       </Button>
 
 
                       <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
-                        <Typography variant="title" color="inherit">
+                        <Typography variant="button" color="inherit">
                           Blog
                         </Typography>
                       </Button>

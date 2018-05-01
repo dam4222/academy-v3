@@ -14,7 +14,7 @@ const styles = theme => ({
     flexGrow: 1,
     flexWrap:'wrap',
     paddingTop: '100px',
-    height:'100vh'
+    height:'60vh'
   },
 });
 
@@ -24,8 +24,8 @@ function OurWork(props) {
     return (
       <div className={classes.root}>
         <Grid container spacing={0}>
-          <Grid item xs={1} sm={1} md={2} lg={3} xl={5}></Grid>
-          <Grid item xs={10} sm={10} md={4} lg={3} xl={2}>
+          <Grid item xs={1} sm={1} md={2} lg={3} xl={3}></Grid>
+          <Grid item xs={10} sm={10} md={4} lg={3} xl={3}>
             <Typography variant='display2'>
               Our Work
             </Typography>

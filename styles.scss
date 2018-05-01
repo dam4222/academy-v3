@@ -190,3 +190,13 @@ html, body{
     transform:scale(1.5);
   }
 }
+
+.scaleUp {
+  opacity:0;
+  transition:1s all ease;
+}
+
+.scaleDown {
+  opacity:1;
+  transition:1s all ease;
+}

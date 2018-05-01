@@ -17,6 +17,38 @@ import TIME from '../assets/time.svg';
       img: <img src="#" />,
       title: "Image",
     },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
+    {
+      img: <img src="#" />,
+      title: "Image",
+    },
   ];
 
 
@@ -26,22 +58,23 @@ const styles = theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
+    position:'relative',
   },
   gridList: {
-    width: 800,
-    height: 800,
+    width: 900,
+    height: 900,
   },
   tile: {
-    justifyContent: 'center',
+    width: 20,
+    justifyContent: 'space-around',
     display: 'flex',
     alignContent: 'center',
-    alignSelf: 'center',
-    alignItems: 'center',
     display: 'flex',
     overflow: 'visible',
     flexWrap: 'wrap',
     backgroundColor: theme.palette.background.paper,
-    border: '1px solid gray'
+    border: '1px solid gray',
+
   },
 });
 
@@ -51,7 +84,7 @@ function SkillsGrid(props) {
   return (
     <div className={classes.root}>
 
-      <GridList cols={3} cellHeight={247} spacing={8} className={classes.gridList}>
+      <GridList cols={3} cellHeight={247} spacing={4} className={classes.gridList}>
         {tileData.map(tile => (
           <GridListTile key={tile.img} className={classes.tile} style={classes.style}>
           {tile.img}

@@ -61,14 +61,14 @@ const theme = createMuiTheme({
       title: {
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 600,
-        letterSpacing:'1.8px',
+        letterSpacing:'.5px',
         textTransform:'uppercase',
-        fontSize: '10px'
+        fontSize: '12px'
       },
       headline: {
         fontFamily: 'Crimson Text, serif',
         fontWeight: 400,
-        fontSize: 26,
+        fontSize: 24,
       },
       button: {
         fontFamily: 'Montserrat, sans-serif',
