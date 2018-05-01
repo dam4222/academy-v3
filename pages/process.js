@@ -13,7 +13,6 @@ import AgileSprint from '../assets/agile-sprint-t-imeline.svg'
 import DesignSprint from '../assets/design-sprint-t-imeline.svg'
 import "../styles.scss"
 import { Parallax } from 'react-scroll-parallax';
-import OnScroll from 'react-on-scroll';
 
 
 
@@ -131,7 +130,7 @@ class Process extends React.Component {
           <Grid item xs={1} sm={7}></Grid>
           <Grid item xs={10} sm={3} style={{
             paddingTop:'60px',
-            paddingBottom:'250px'
+            paddingBottom:'100px'
           }}>
             <Typography variant='body1' gutterBottom paragraph={true}>
               <strong>Product Relays™</strong> unify Design Sprints and Agile Developement Sprints into one fluid process.
@@ -164,7 +163,7 @@ class Process extends React.Component {
                       backgroundColor='#f5f7fa'
                       title={'Design Sprints 101'}
                       headline1={'Research & Understanding'}
-                      description1={'Where we map out the problems space and create a shared understanding.'}
+                      description1={'We map out the problems space and create a shared understanding.'}
                       headline2={'Sketch / Wireframe'}
                       description2={'Generate a broad range of ideas and narrow down to a select group. As a team determine what to prototype to answer your sprint questions.'}
                       headline3={'Design'}
@@ -180,13 +179,13 @@ class Process extends React.Component {
                       backgroundColor='#f9f4f5'
                       title={'Agile Sprints 101'}
                       headline1={'Plan'}
-                      description1={'Where the team gathers product requirments, maps out API endpoints, Database schemas, feature prioritization, JIRA Epics etc.'}
+                      description1={'The team gathers product requirements, maps out API endpoints, Database schemas, feature prioritization, JIRA Epics etc.'}
                       headline2={'Build'}
                       description2={'Start building a shell of your product. All we need is an Minimum Viable Product.'}
                       headline3={'Test'}
-                      description3={'We will validate our beta launch with both quantative and qualitative data.'}
+                      description3={'We validate our beta launch with both quantative and qualitative data.'}
                       headline4={'Review'}
-                      description4={'Let’s QA and implement any remaining changes based on user feedback.'}
+                      description4={'QA and implement any remaining changes based on user feedback.'}
                       headline5={'Launch'}
                       description5={'It’s go time. Let’s get our MVP into a beta and start building the rest of this experience.'}
                     />
