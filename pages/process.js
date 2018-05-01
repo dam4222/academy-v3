@@ -9,7 +9,6 @@ import Paper from 'material-ui/Paper';
 import Icon from 'material-ui/Icon';
 import Hidden from 'material-ui/Hidden';
 import Card from '../components/card'
-import SkillsGrid from '../components/skillsGrid'
 import AgileSprint from '../assets/agile-sprint-t-imeline.svg'
 import DesignSprint from '../assets/design-sprint-t-imeline.svg'
 import "../styles.scss"
@@ -38,8 +37,11 @@ const styles = theme => ({
     display: 'flex',
     flexFlow: 'row wrap',
     alignItems: 'center',
-    height:'80vh',
-    background: '#f5f5f5'
+    justifyContent: 'space-evenly',
+    background: '#f5f5f5',
+    position:'relative',
+    paddingTop: '100px',
+    paddingBottom: '100px',
   },
   content: {
     width: '100%',
@@ -56,6 +58,18 @@ const styles = theme => ({
   },
   spacing:{
     paddingBottom:'100px',
+  },
+  skillItem:{
+    width:'100%',
+    height:'255px',
+    background: 'rgba(255, 255, 255, .3)',
+    textAlign: 'center',
+    padding:'20px',
+    margin:'0 auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
   }
 });
 
@@ -200,14 +214,113 @@ class Process extends React.Component {
           </Grid>
           </Hidden>
 
-            <Grid item xs={12} className={classes.skillGrid}>
+            <Grid container spacing={8} className={classes.skillGrid} style={{flexWrap:'wrap-reverse'}} >
               <Grid item xs={1} sm={1} lg={1}></Grid>
 
-              <Grid item xs={10} sm={6} lg={6} style={{alignContent: 'center', display: 'flex'}}>
-                <SkillsGrid />
+              <Grid item xs={12} sm={8} md={6} lg={5} xl={4} style={{alignContent: 'center', display: 'flex', flexWrap:'wrap'}}>
+                <Grid container spacing={8} style={{alignContent: 'center', justifyContent: 'center', display:'flex'}}>
+                  <Grid item xs={6} sm={6} md={4}>
+                    <Paper elevation={0} className={classes.skillItem}>
+                      <img src="#" />
+                      <Typography variant='title' gutterBottom paragraph={true}>
+                        RESEARCH
+                      </Typography>
+                      <Typography variant='body2' gutterBottom paragraph={true}>
+                        Stakeholder Interviews, Data Analysis, Field Studies, Personas
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      UX/UI DESIGN
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Sketch, Design Language Systems, Branding, Zeplin, Icons, Logos
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      PROTOTYPING
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      InVision, Craft, UXPin, Framer, Flinto, Marvel, Principal, Keynote
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      USABILITY TESTING
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Qualitative Research, Scripts, Questions, Analysis, Recruitment
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      PRODUCT MANAGEMENT
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Timelines, Budgets, JIRA, Stand Ups, SCRUM, Agile, Sprint Planning
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      DEVELOPMENT
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Front-end, Back-end, Atomic Design, Mobile Apps, Web Apps
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      BUSINESS ANALYTICS
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      BI Dashboards, PowerBI, Tableau, Qlik Sense
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      CONSULTING
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Workshops, Team Training, Strategy, Design Thinking
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <img src="#" />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      BRANDING
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Logos, Design Language Systems, Marketing Materials
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                </Grid>
               </Grid>
-
-              <Grid item xs sm={2} lg={2}>
+              <Grid item xs={9} sm={10} md={2} style={{paddingBottom:'20px', paddingTop:'20px'}}>
                 <Typography variant='display2'>
                   Our Skills
                 </Typography>

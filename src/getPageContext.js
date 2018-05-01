@@ -34,9 +34,10 @@ const theme = createMuiTheme({
         fontSize: 14,
       },
       body2: {
-        fontFamily: 'Crimson Text, serif',
-        color: '#8b8b8b',
-        fontSize: 14,
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 300,
+        lineHeight: 1.7,
+        fontSize: 12,
       },
       display4: {
         fontFamily: 'Crimson Text, serif',
