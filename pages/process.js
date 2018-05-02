@@ -44,7 +44,7 @@ const styles = theme => ({
   },
   content: {
     width: '100%',
-    marginTop: '80vh',
+    marginTop: '95vh',
     background: 'white',
     position: 'relative',
     height: '100%',
@@ -52,7 +52,7 @@ const styles = theme => ({
   fixed: {
     position:'fixed',
     top:0,
-    height: '80vh',
+    height: '95vh',
     overflow:'hidden'
   },
   spacing:{
@@ -83,7 +83,7 @@ class Process extends React.Component {
   return (
       <div className={classes.root}>
 
-      <Grid container className={classes.fixed} style={{paddingTop:'200px', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
+      <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
 
       <Grid container>
       <Parallax
@@ -118,9 +118,19 @@ class Process extends React.Component {
             src='/static/product-relay.png'
             />
           </Grid>
-          <Grid item xs sm={1}></Grid>
-
+        <Grid item xs sm={1}></Grid>
         </Grid>
+
+        <Grid container>
+          <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
+          <Grid item xs={3} sm={3} md={1} lg={1} xl={1}>
+            <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
+              Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
+            </Typography>
+          </Grid>
+          <Grid item xs></Grid>
+        </Grid>
+
         </Parallax>
         </Grid>
         </Grid>
@@ -151,7 +161,7 @@ class Process extends React.Component {
             <Grid container>
               <Grid item xs={1} sm={2} md={3} lg={4} xl={4}></Grid>
               <Hidden xsDown>
-                <Grid item xs={10} sm={8} md={6} lg={4} xl={4}><div style={{borderLeft:'3px dashed lightgray', borderRight:'3px dashed lightgray', borderTop:'3px dashed lightgray', height:'10px'}}></div></Grid>
+                <Grid item xs={10} sm={8} md={6} lg={4} xl={4}><div style={{borderLeft:'3px dashed lightgray', borderRight:'3px dashed lightgray', borderTop:'3px dashed lightgray', height:'30px'}}></div></Grid>
               </Hidden>
               <Grid item xs={1} sm={2} md={3} lg={4} xl={4}></Grid>
             </Grid>

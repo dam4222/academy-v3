@@ -28,13 +28,13 @@ const expandBtn = {
 const verticalText = {
 	transform: 'rotate(-90deg)',
   position: 'relative',
-  top: '130px'
+  top: '4vh'
 }
 
 const verticalLine = {
 	transform: 'rotate(-90deg)',
   position: 'relative',
-  top: '260px'
+  top: '22vh'
 }
 
 const iconMargin = {
