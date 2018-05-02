@@ -13,7 +13,8 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
-    flexWrap:'wrap'
+    flexWrap:'wrap',
+    height:'auto'
   }
 });
 
@@ -24,8 +25,8 @@ function OurProcess(props) {
       <div className={classes.root}>
 
       <Grid container>
-        <Grid item xs={1} sm={3}></Grid>
-        <Grid item xs={10} sm={6}>
+        <Grid item xs={1} sm={1} md={2} lg={3} xl={3}></Grid>
+        <Grid item xs={10} sm={6} md={6} lg={6} xl={6}>
           <Typography variant='display2'>
             Our Process
           </Typography>
@@ -33,12 +34,12 @@ function OurProcess(props) {
             is Collaborative
           </Typography>
         </Grid>
-        <Grid item xs={1} sm={3}></Grid>
+        <Grid item xs={1} sm={5} md={4} lg={3} xl={3}></Grid>
       </Grid>
 
       <Grid container>
-        <Grid item xs={1} sm={4}></Grid>
-        <Grid item xs={10} sm={6}>
+        <Grid item xs={1} sm={1} md={4} lg={4}></Grid>
+        <Grid item xs={10} sm={10} md={6} lg={5}>
           <img width="100%"
           style={{
             paddingTop:'60px',
@@ -47,12 +48,12 @@ function OurProcess(props) {
           src='/static/product-relay.png'
           />
         </Grid>
-        <Grid item xs={1} sm={2}></Grid>
+        <Grid item xs={1} sm={1} md={2} lg={2}></Grid>
       </Grid>
 
       <Grid container>
-        <Grid item xs={1} sm={7}></Grid>
-        <Grid item xs={10} sm={3}>
+        <Grid item xs={1} sm={1} md={7} lg={7}></Grid>
+        <Grid item xs={10} sm={10} md={3} lg={3}>
           <Typography variant='body1' gutterBottom>
           Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
           </Typography>
@@ -65,7 +66,7 @@ function OurProcess(props) {
             </Typography>
           </Button>
         </Grid>
-        <Grid item xs={1} sm={2}></Grid>
+        <Grid item xs={1} sm={1} md={2} lg={2}></Grid>
       </Grid>
       </div>
     );

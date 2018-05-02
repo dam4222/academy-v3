@@ -14,7 +14,8 @@ const styles = theme => ({
     flexGrow: 1,
     flexWrap:'wrap',
     paddingTop: '100px',
-    height:'60vh'
+    height:'auto',
+    paddingBottom:'100px'
   },
 });
 
