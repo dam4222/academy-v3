@@ -9,8 +9,15 @@ import Paper from 'material-ui/Paper';
 import Icon from 'material-ui/Icon';
 import Hidden from 'material-ui/Hidden';
 import Card from '../components/card'
-import AgileSprint from '../assets/agile-sprint-t-imeline.svg'
-import DesignSprint from '../assets/design-sprint-t-imeline.svg'
+import Browser from '../assets/skills/browser.svg'
+import Calender from '../assets/skills/calendar.svg'
+import Consulting from '../assets/skills/consulting.svg'
+import Img from '../assets/skills/img.svg'
+import Lab from '../assets/skills/lab.svg'
+import MagnifyingGlass from '../assets/skills/magnifying-glass.svg'
+import Star from '../assets/skills/star.svg'
+import Stats from '../assets/skills/stats.svg'
+import User from '../assets/skills/user.svg'
 import "../styles.scss"
 import { Parallax } from 'react-scroll-parallax';
 
@@ -209,7 +216,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <DesignSprint />
+              <img src="/static/Design-Sprint-Timeline.jpg"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -217,11 +224,30 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <AgileSprint />
+              <img src="/static/Agile-Sprint-Timeline.jpg" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
           </Hidden>
+
+          <Hidden lgUp>
+          <Grid container spacing={8} style={{paddingBottom:'20px'}}>
+            <Grid item xs={1} md={1} lg={1}></Grid>
+            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
+              <img src="/static/Design-Sprint-Timeline-Mobile.jpg"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
+            </Grid>
+            <Grid item xs={1} md={1} lg={1}></Grid>
+          </Grid>
+
+          <Grid container spacing={8} className={classes.spacing}>
+            <Grid item xs={1} md={1} lg={1}></Grid>
+            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
+              <img src="/static/Agile-Sprint-Timeline-Mobile.jpg" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
+            </Grid>
+            <Grid item xs={1} md={1} lg={1}></Grid>
+          </Grid>
+          </Hidden>
+
 
             <Grid container spacing={8} className={classes.skillGrid} style={{flexWrap:'wrap-reverse'}} >
               <Grid item xs={1} sm={1} lg={1}></Grid>
@@ -230,7 +256,7 @@ class Process extends React.Component {
                 <Grid container spacing={8} style={{alignContent: 'center', justifyContent: 'center', display:'flex'}}>
                   <Grid item xs={6} sm={6} md={4}>
                     <Paper elevation={0} className={classes.skillItem}>
-                      <img src="#" />
+                      <MagnifyingGlass style={{marginBottom:'20px'}} />
                       <Typography variant='title' gutterBottom paragraph={true}>
                         RESEARCH
                       </Typography>
@@ -241,7 +267,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Img style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       UX/UI DESIGN
                     </Typography>
@@ -252,7 +278,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Lab style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       PROTOTYPING
                     </Typography>
@@ -263,7 +289,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <User style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       USABILITY TESTING
                     </Typography>
@@ -274,7 +300,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Calender style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       PRODUCT MANAGEMENT
                     </Typography>
@@ -285,7 +311,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Browser style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       DEVELOPMENT
                     </Typography>
@@ -296,7 +322,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Stats style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       BUSINESS ANALYTICS
                     </Typography>
@@ -307,7 +333,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Consulting style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       CONSULTING
                     </Typography>
@@ -318,7 +344,7 @@ class Process extends React.Component {
                   </Grid>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
-                    <img src="#" />
+                    <Star style={{marginBottom:'20px'}} />
                     <Typography variant='title' gutterBottom paragraph={true}>
                       BRANDING
                     </Typography>

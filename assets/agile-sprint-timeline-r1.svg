@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1030px" height="247px" viewBox="0 0 1030 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Agile Sprint Timeline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0.859368804" width="1028.78558" height="245.779478" rx="3.16063157"></rect>
+        <rect id="path-2" x="744.521456" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <rect id="path-3" x="886.534338" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <rect id="path-4" x="602.18613" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <rect id="path-5" x="459.255259" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <rect id="path-6" x="316.919934" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <rect id="path-7" x="174.584608" y="0.610957509" width="142.57354" height="245.380155"></rect>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#F13858" offset="0%"></stop>
+            <stop stop-color="#EC7567" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-9" x="160.51258" y="0" width="142.487103" height="22.9753603" rx="3.16063157"></rect>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#63FF75" offset="0%"></stop>
+            <stop stop-color="#8EFCC5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-11" x="886.74961" y="201.864534" width="142.712988" height="22.256114" rx="3.16063157"></rect>
+        <rect id="path-12" x="777.155461" y="0" width="95.4250621" height="22.1876337" rx="3.16063157"></rect>
+        <rect id="path-13" x="301.591876" y="0" width="286.984862" height="22.9753603" rx="3.16063157"></rect>
+        <rect id="path-14" x="587.916493" y="0" width="69.62169" height="22.1876337" rx="3.16063157"></rect>
+        <rect id="path-15" x="656.899844" y="0" width="29.2337627" height="21.4001096" rx="3.16063157"></rect>
+        <rect id="path-16" x="685.21522" y="0" width="93.7119937" height="22.1876337" rx="3.16063157"></rect>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-205.000000, -3263.000000)">
+            <g transform="translate(205.000000, 3263.000000)">
+                <g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.790157894" x="0.395078947" y="1.25444775" width="1027.99542" height="244.98932" rx="3.16063157"></rect>
+                    </g>
+                    <g transform="translate(13.751520, 13.749901)" fill="#000000" font-family="Montserrat-Medium, Montserrat" font-size="9.48189472" font-weight="400">
+                        <text>
+                            <tspan x="0" y="9.50905422">AGILE SPRINT TIMELINE</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="744.794232" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="886.807114" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="602.458906" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="459.528035" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-6"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="317.192709" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <g>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.545550847" x="174.857383" y="0.883732933" width="142.027989" height="244.834605"></rect>
+                    </g>
+                    <rect stroke="#E7E7E7" stroke-width="0.790157894" x="0.395078947" y="1.25444775" width="1027.99542" height="244.98932" rx="3.16063157"></rect>
+                    <path d="M0.395078947,38.2765172 L1028.3905,38.2765172 L1028.3905,4.02000038 C1028.3905,2.49262784 1027.15232,1.25444775 1025.62495,1.25444775 L3.16063157,1.25444775 C1.63325903,1.25444775 0.395078947,2.49262784 0.395078947,4.02000038 L0.395078947,38.2765172 Z" stroke="#E7E7E7" stroke-width="0.790157894"></path>
+                    <g transform="translate(189.083398, 13.749901)" fill="#848484" font-family="Montserrat-Medium, Montserrat" font-size="9.48189472" font-weight="400">
+                        <text>
+                            <tspan x="0" y="9.50905422">WEEK 7</tspan>
+                        </text>
+                        <text>
+                            <tspan x="142.672018" y="9.50905422">WEEK 8</tspan>
+                        </text>
+                        <text>
+                            <tspan x="284.484567" y="9.50905422">WEEK 9</tspan>
+                        </text>
+                        <text>
+                            <tspan x="426.297115" y="9.50905422">WEEK 10</tspan>
+                        </text>
+                        <text>
+                            <tspan x="569.828603" y="9.50905422">WEEK 11</tspan>
+                        </text>
+                        <text>
+                            <tspan x="710.781681" y="9.50905422">WEEK 12</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g transform="translate(14.114134, 54.796051)">
+                    <g>
+                        <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-9"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.790157894" x="160.907659" y="0.395078947" width="141.696946" height="22.1852024" rx="3.16063157"></rect>
+                    </g>
+                    <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                        <tspan x="0" y="14.3078316">PLANNING</tspan>
+                    </text>
+                </g>
+                <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                    <tspan x="14.9967769" y="214.525084">LAUNCH</tspan>
+                </text>
+                <g>
+                    <use fill="url(#linearGradient-10)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                    <rect stroke="#E7E7E7" stroke-width="0.790157894" x="887.144689" y="202.259613" width="141.922831" height="21.4659561" rx="3.16063157"></rect>
+                </g>
+                <g transform="translate(14.944378, 178.502287)">
+                    <g>
+                        <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-12"></use>
+                        <rect stroke="#E7E7E7" stroke-width="0.790157894" x="777.55054" y="0.395078947" width="94.6349042" height="21.3974758" rx="3.16063157"></rect>
+                    </g>
+                    <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                        <tspan x="0" y="13.4855302">REVIEW / APPROVE</tspan>
+                    </text>
+                </g>
+                <g transform="translate(14.114134, 81.363833)">
+                    <g>
+                        <g>
+                            <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-13"></use>
+                            <rect stroke="#E7E7E7" stroke-width="0.790157894" x="301.986955" y="0.395078947" width="286.194704" height="22.1852024" rx="3.16063157"></rect>
+                        </g>
+                        <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                            <tspan x="0" y="14.3078316">BUILDING</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g transform="translate(14.114134, 107.101372)">
+                    <g>
+                        <g>
+                            <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-14"></use>
+                            <rect stroke="#E7E7E7" stroke-width="0.790157894" x="588.311572" y="0.395078947" width="68.8315321" height="21.3974758" rx="3.16063157"></rect>
+                        </g>
+                        <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                            <tspan x="0" y="14.3389007">QA</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g transform="translate(14.114134, 129.517939)">
+                    <g>
+                        <g>
+                            <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-15"></use>
+                            <rect stroke="#E7E7E7" stroke-width="0.790157894" x="657.294923" y="0.395078947" width="28.4436048" height="20.6099517" rx="3.16063157"></rect>
+                        </g>
+                        <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                            <tspan x="0" y="13.5165544">REVIEW  / APPROVAL</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g transform="translate(14.114134, 153.594991)">
+                    <g>
+                        <g>
+                            <use fill="url(#linearGradient-8)" fill-rule="evenodd" xlink:href="#path-16"></use>
+                            <rect stroke="#E7E7E7" stroke-width="0.790157894" x="685.610299" y="0.395078947" width="92.9218358" height="21.3974758" rx="3.16063157"></rect>
+                        </g>
+                        <text font-family="Montserrat-Regular, Montserrat" font-size="7.90157894" font-weight="normal" fill="#000000">
+                            <tspan x="0" y="13.4855302">TEST</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
