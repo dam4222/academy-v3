@@ -34,10 +34,6 @@ const styles = theme => ({
     height: '100%',
     background:'#f5f5f5',
   },
-  right:{
-    justifyContent: 'flex-end',
-    display: 'flex'
-  },
   colorDefault: {
     backgroundColor: 'none !important',
   },
@@ -60,6 +56,10 @@ const styles = theme => ({
   },
   right:{
     float: 'right',
+    maxWidth:'500px'
+  },
+  selected:{
+    borderLeft:'2px solid black'
   }
 });
 
@@ -118,21 +118,21 @@ class SimpleTabs extends React.Component {
             }}
           >
 
-            <Tab classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root}}
+            <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Workshops</h3>
               <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
               </p>
               </div>
             }/>
-            <Tab classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root}}
+            <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Bootcamps</h3>
               <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
               </p>
               </div>
             }/>
-            <Tab classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root}}
+            <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Embed w/ Team</h3>
               <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.

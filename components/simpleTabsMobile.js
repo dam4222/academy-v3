@@ -30,7 +30,8 @@ const styles = theme => ({
     margin: 'auto',
     width: '100%',
     height:'auto',
-    top:0
+    top:0,
+    maxWidth:'500px'
   },
   colorDefault: {
     backgroundColor: 'none !important',

@@ -14,6 +14,8 @@ import SimpleTabsMobile from '../components/simpleTabsMobile';
 import WorkshopCard from '../components/workshopCard';
 import { Parallax } from 'react-scroll-parallax';
 
+
+
 const textStyles = {
   color: '#848484',
 };
@@ -48,6 +50,11 @@ const styles = theme => ({
     position: 'relative',
     height: '100%',
   },
+  imageContainer:{
+    width:'400px',
+    height:'430px',
+    overflow: 'hidden'
+  }
 });
 
 function Workshops(props) {
@@ -55,7 +62,7 @@ function Workshops(props) {
   return (
     <div className={classes.root}>
 
-    <Grid container className={classes.fixed} style={{paddingTop:'200px', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
+    <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
 
     <Grid container>
     <Parallax
@@ -69,7 +76,7 @@ function Workshops(props) {
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={10} sm={5}>
           <Typography variant='display2'>
-            Consulting &
+            Our
           </Typography>
           <Typography variant='display1' gutterBottom>
             Workshops
@@ -81,18 +88,30 @@ function Workshops(props) {
       <Grid container>
         <Grid item xs={1} sm={1} md={3} lg={4}></Grid>
         <Grid item xs={12} sm={10} md={7} lg={6} xl={6}>
-          <img width="100%"
+          <div className={classes.imageContainer}>
+          <img
           style={{
             paddingTop:'60px',
             paddingBottom:'60px',
-            maxWidth:'100%'
+            width:'1000px'
           }}
-          src='/static/product-relay.png'
+          src='/static/designbetter-class@2x.jpg'
           />
+          </div>
         </Grid>
-        <Grid item xs sm={1}></Grid>
-
+      <Grid item xs sm={1}></Grid>
       </Grid>
+
+      <Grid container>
+        <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
+        <Grid item xs={3} sm={3} md={1} lg={1} xl={1}>
+          <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
+            Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
+          </Typography>
+        </Grid>
+        <Grid item xs></Grid>
+      </Grid>
+
       </Parallax>
       </Grid>
       </Grid>

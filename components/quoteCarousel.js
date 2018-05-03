@@ -4,6 +4,7 @@ import Icon from 'material-ui/Icon';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
+import Quote from '../assets/quote.svg'
 
 const root = {
   display:'flex',
@@ -38,22 +39,33 @@ class QuoteCarousel extends React.Component {
           <Slider {...settings} className={"noFocus carousel"} style={{display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
             <div className={"noFocus carousel"}>
               <Typography variant='display4' gutterBottom paragraph={true}>
-                <strong>{'"'}</strong>
+                <Quote />
               </Typography>
               <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
               Adam has a knack to boil down complex UX and product design concepts into simple, digestible ideas. He stands as an expert at the intersection of UX, Design Thinking, and Commerce. As a master facilitator, Adam spearheads a compelling workshop that will surely change the way your company builds products.
               </Typography>
-              <img style={{display:'inline'}}src="#" />
+              <img style={{display:'inline', width:'60px'}} src="static/adam-fry-pierce@2x.jpg" />
               <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
                 Adam Fry-Pierce
               </Typography>
               <Typography variant='caption' gutterBottom paragraph={true} style={{paddingBottom:'20px'}}>
                 Director, Design Community @ INVISION
               </Typography>
-
             </div>
             <div className={"noFocus carousel"}>
-              <h3>2</h3>
+              <Typography variant='display4' gutterBottom paragraph={true}>
+                <Quote />
+              </Typography>
+              <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
+              Adam has a knack to boil down complex UX and product design concepts into simple, digestible ideas. He stands as an expert at the intersection of UX, Design Thinking, and Commerce. As a master facilitator, Adam spearheads a compelling workshop that will surely change the way your company builds products.
+              </Typography>
+              <img style={{display:'inline', width:'60px'}} src="static/adam-fry-pierce@2x.jpg" />
+              <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
+                Adam Fry-Pierce
+              </Typography>
+              <Typography variant='caption' gutterBottom paragraph={true} style={{paddingBottom:'20px'}}>
+                Director, Design Community @ INVISION
+              </Typography>
             </div>
             <div className={"noFocus carousel"}>
               <h3>3</h3>

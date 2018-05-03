@@ -223,3 +223,12 @@ p{
   opacity:1;
   transition:1s all ease;
 }
+
+.tabHover {
+  transition:.65s ease all;
+  div:hover{
+    color:black;
+    cursor:pointer;
+    transition:.65s ease all;
+  }
+}
