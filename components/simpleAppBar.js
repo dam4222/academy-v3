@@ -14,7 +14,6 @@ import AnimatedLogo from '../components/animatedLogo';
 import AnimatedLogoSmall from '../components/animatedLogoSmall';
 import Grid from 'material-ui/Grid';
 import styled from 'styled-components';
-import OnScroll from 'react-on-scroll';
 import "../styles.scss"
 
 const styles = theme => ({
@@ -45,8 +44,40 @@ const spacing = {
 
 class SimpleAppBar extends React.Component {
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleInitLoad)
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+
+  handleInitLoad = () => {
+    if(window.scrollY > 50){
+      this.setState({
+        initLoad:false
+      })
+      console.log(this.state.initLoad)
+    }
+  }
+
+  handleScroll = () => {
+    if (window.scrollY > 50) {
+      this.setState({
+        sticky: true,
+      })
+    } else {
+      this.setState({
+        sticky: false,
+      })
+    }
+  }
+
   state = {
 		sticky: false,
+    initLoad: true,
 	};
 
 	setSticky = sticky => this.setState({ sticky });
@@ -58,29 +89,29 @@ class SimpleAppBar extends React.Component {
   return (
     <div style={root}>
 
-    <OnScroll
+    {/*<OnScroll
 				className="section"
 				triggers={[
-					{ top: 50, bottom: -50, callback: visible => this.setSticky(visible) },
+					{ top: -100, bottom: 0, callback: visible => this.setSticky(visible) },
 				]}
-			>
+			>*/}
 
             <AppBar
 
             color="default"
-            className={`${sticky ? 'notscrolled' : 'scrolling'}`}
+            className={`${sticky ? 'scrolling' : 'notscrolled'}`}
             >
               <Toolbar disableGutters>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={`${sticky ? 'hide' : 'show'}`} style={{position: 'absolute', left: '-50px', width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)} style={{position: 'absolute', left: '-50px', width:'130px', height:'auto'}} disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
-                    <IconButton className={`${sticky ? 'show' : 'hide'}`} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
                         <AcademyLogo />
                     </IconButton>
                   </Grid>
 
-                  <Grid item xs={5} className={`${sticky ? 'hide' : 'show'}`} style={right}>
+                  <Grid item xs={5} className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)} style={right}>
                     <Hidden smDown>
                       <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="button" color="inherit">
@@ -116,7 +147,7 @@ class SimpleAppBar extends React.Component {
 
               </Toolbar>
             </AppBar>
-			</OnScroll>
+			{/*</OnScroll>*/}
     </div>
   );
 }

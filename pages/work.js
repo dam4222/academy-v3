@@ -89,12 +89,12 @@ class Work extends React.Component {
                           Client &nbsp;
                         </Typography>
                         <Typography variant="title" color="primary" className={classes.projectLegend}>
-                          {project.acf.project_name}
+                          {project.acf.client_name}
                         </Typography>
                       </div>
                       <div className={classes.subLegend}>
                         <Typography variant="display2" color="inherit">
-                          {project.acf.project_description}
+                          {project.acf.project_name}
                         </Typography>
                       </div>
                           <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"}>
