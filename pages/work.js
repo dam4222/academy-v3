@@ -62,6 +62,7 @@ const styles = {
   }
 };
 
+
 class Work extends React.Component {
 
   //fetch list of projects here

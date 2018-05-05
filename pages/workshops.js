@@ -8,11 +8,14 @@ import Hidden from 'material-ui/Hidden';
 import Icon from 'material-ui/Icon';
 import Link from 'next/link'
 import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
 import SimpleTabs from '../components/simpleTabs';
 import QuoteCarousel from '../components/quoteCarousel';
 import SimpleTabsMobile from '../components/simpleTabsMobile';
 import WorkshopCard from '../components/workshopCard';
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+import DesignBetterH from '../assets/design-better-horizontal.svg';
+import InVisionH from '../assets/invision-logo-pink-horizontal.svg';
 
 
 
@@ -26,6 +29,12 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
+    height:'auto'
+  },
+  hero:{
+    alignItems: 'center',
+    height: '100vh',
+    display: 'flex'
   },
   centerAlign: {
     justifyContent:'center',
@@ -37,24 +46,6 @@ const styles = theme => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
   },
-  fixed: {
-    position:'fixed',
-    top:0,
-    height: '80vh',
-    overflow:'hidden'
-  },
-  content: {
-    width: '100%',
-    marginTop: '80vh',
-    background: 'white',
-    position: 'relative',
-    height: '100%',
-  },
-  imageContainer:{
-    width:'400px',
-    height:'430px',
-    overflow: 'hidden'
-  }
 });
 
 function Workshops(props) {
@@ -62,15 +53,9 @@ function Workshops(props) {
   return (
     <div className={classes.root}>
 
-    <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
+    <Grid container className={classes.hero}>
 
-    <Grid container>
-    <Parallax
-        className="custom-class"
-        offsetYMax={100}
-        offsetYMin={-100}
-        slowerScrollRate={false}
-    >
+    <Grid item xs={12}>
 
       <Grid container>
         <Grid item xs={1} sm={2}></Grid>
@@ -78,7 +63,7 @@ function Workshops(props) {
           <Typography variant='display2'>
             Our
           </Typography>
-          <Typography variant='display1' gutterBottom>
+          <Typography variant='display1' gutterBottom style={{paddingBottom:'20px'}}>
             Workshops
           </Typography>
         </Grid>
@@ -86,18 +71,54 @@ function Workshops(props) {
       </Grid>
 
       <Grid container>
-        <Grid item xs={1} sm={1} md={3} lg={4}></Grid>
-        <Grid item xs={12} sm={10} md={7} lg={6} xl={6}>
-          <div className={classes.imageContainer}>
-          <img
-          style={{
-            paddingTop:'60px',
-            paddingBottom:'60px',
-            width:'1000px'
-          }}
-          src='/static/designbetter-class@2x.jpg'
-          />
-          </div>
+        <Grid item xs={1} sm={1} md={3} lg={6} xl={6}>
+          <Grid container>
+          <Grid item xs={5} xl={5}></Grid>
+          <Grid item xs={3} xl={3} style={{marginTop:'40px', borderLeft:'1px solid black', height:'40vh'}}></Grid>
+        </Grid>
+        </Grid>
+        <Grid item xs={10} sm={10} md={7} lg={6} xl={4}>
+          <Grid container style={{flexWrap:'nowrap'}}>
+            <Grid item xs={12} md={6}>
+
+              <ParallaxBanner
+                className="heroImgWorkshops"
+                layers={[
+                    {
+                        image: '/static/designbetter-class@2x.jpg',
+                        amount: 0.1,
+                        slowerScrollRate: false,
+                    },
+                ]}
+                style={{
+                    height: '50vh',
+                    top: '0',
+                    left: '-100px',
+                }}
+              >
+              </ParallaxBanner>
+
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <ParallaxBanner
+                  className="your-class"
+                  layers={[
+                      {
+                          image: '/static/stickies-blur@2x.jpg',
+                          amount: 0.2,
+                          slowerScrollRate: false,
+                      },
+                  ]}
+                  style={{
+                      height: '50vh',
+                      top: '100px',
+                      left: '-200px',
+                      zIndex: -1,
+                  }}
+                >
+                </ParallaxBanner>
+                </Grid>
+          </Grid>
         </Grid>
       <Grid item xs sm={1}></Grid>
       </Grid>
@@ -105,23 +126,64 @@ function Workshops(props) {
       <Grid container>
         <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
         <Grid item xs={3} sm={3} md={1} lg={1} xl={1}>
-          <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
+          <Typography variant="button" color="inherit" style={{paddingTop:'40px'}}>
             Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
           </Typography>
         </Grid>
         <Grid item xs></Grid>
       </Grid>
-
-      </Parallax>
       </Grid>
       </Grid>
 
-      <Grid container className={classes.content}>
-      <Grid container>
-        <Grid item xs={1} sm={7}></Grid>
-        <Grid item xs={10} sm={3} style={{
+      <Grid container style={{height:'auto', paddingBottom:'200px', flexWrap:'wrap-reverse'}}>
+        <Grid item xs={10} sm={10} md={7} lg={7} xl={7}>
+            <Grid container style={{flexWrap:'nowrap'}}>
+              <Grid item xs={12} md={6} xl={4}>
+
+                <ParallaxBanner
+                  className="your-class"
+                  layers={[
+                      {
+                          image: '/static/survival-kit@2x.jpg',
+                          amount: 0.1,
+                          slowerScrollRate: false,
+                      },
+                  ]}
+                  style={{
+                      height: '50vh',
+                      top: '0',
+                      left: '-100px',
+                  }}
+                >
+                </ParallaxBanner>
+
+                </Grid>
+                <Grid item xs={12} md={6} xl={4}>
+                  <ParallaxBanner
+                    className="your-class"
+                    layers={[
+                        {
+                            image: '/static/process-stickies@2x.jpg',
+                            amount: 0.2,
+                            slowerScrollRate: false,
+                        },
+                    ]}
+                    style={{
+                        height: '50vh',
+                        top: '100px',
+                        left: '-200px',
+                        zIndex: -1,
+                    }}
+                  >
+                  </ParallaxBanner>
+                  </Grid>
+            </Grid>
+          </Grid>
+
+        <Grid item xs={10} sm={10} md={3} lg={3} xl={3} style={{
           paddingTop:'60px',
-          paddingBottom:'100px'
+          paddingBottom:'100px',
+          paddingLeft:'30px'
         }}>
           <Typography variant='body1' gutterBottom paragraph={true}>
             We have worked with Agencies, Fortune 500 Companies, and Governments to deliver the top UX & Design Thinking experts in the field.
@@ -136,17 +198,36 @@ function Workshops(props) {
         <Grid item xs={1} sm={2}></Grid>
       </Grid>
 
-          <Hidden lgUp>
+          <Hidden mdUp>
+            <Grid container>
+            <Grid xs={1}></Grid>
+            <Grid xs={10} sm={10}>
+              <Grid container>
+                <Grid item xs={4}></Grid>
+                <Grid item xs={4} style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '30px',
+                }}>
+                  <Typography variant="caption" color="secondary" style={{textAlign:'center'}}>
+                    PROUD PARTNERS OF <DesignBetterH style={{width:'50vh', marginBottom:'10px', marginTop:'10px'}}/> <InVisionH style={{width:'50vh'}} />
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}></Grid>
+              </Grid>
+            </Grid>
+            </Grid>
             <SimpleTabsMobile />
           </Hidden>
 
-          <Hidden mdDown>
+          <Hidden smDown>
             <SimpleTabs />
           </Hidden>
 
           <QuoteCarousel />
 
-          <Grid container spacing={8}>
+          {/*<Grid container spacing={8}>
             <Grid item xs sm md={1} lg={1} xl={3}></Grid>
             <Grid item xs={12} sm={12} md={5} lg={5} xl={3}>
               <WorkshopCard
@@ -164,9 +245,9 @@ function Workshops(props) {
               day={'4'}
               />
             </Grid>
-            <Grid item xs sm md={1} lg={1} xl={3}></Grid>
-          </Grid>
-          </Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={3}></Grid>
+          </Grid>*/}
+
     </div>
     );
   }

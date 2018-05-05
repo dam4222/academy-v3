@@ -7,6 +7,8 @@ import WorkshopCurriculum from '../assets/workshop-curriculum.svg';
 import SwipeableViews from 'react-swipeable-views';
 import Grid from 'material-ui/Grid';
 import TouchRipple from 'material-ui/ButtonBase/TouchRipple';
+import DesignBetter from '../assets/design-better.svg';
+import InVision from '../assets/invision-logo-pink.svg';
 
 TouchRipple.prototype.render = () => null;
 
@@ -47,7 +49,8 @@ const styles = theme => ({
   },
   textColorPrimary:{
     color:'rgba(47, 47, 64, .2)',
-    transition:'.65s ease all'
+    transition:'.65s ease all',
+    borderLeft:'2px solid transparent'
   },
   label:{
     textAlign:'left',
@@ -56,12 +59,32 @@ const styles = theme => ({
   },
   right:{
     float: 'right',
-    maxWidth:'500px'
+    maxWidth:'500px',
+    paddingTop:'100px',
+    paddingBottom:'100px'
   },
   selected:{
     borderLeft:'2px solid black'
   }
 });
+
+const verticalText = {
+  transform: 'rotate(-90deg)',
+  position: 'absolute',
+  transformOrigin: 0,
+  width: '100vh',
+  height: '100vh',
+  display: 'flex',
+  alignItems: 'center',
+}
+
+const verticalLogo = {
+  transform: 'rotate(90deg)',
+  position: 'relative',
+  display: 'flex',
+  marginLeft: '70px',
+  marginRight: '30px'
+}
 
 class SimpleTabs extends React.Component {
   state = {
@@ -81,21 +104,24 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-      <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
-      <Grid item xs={10} md={6} lg={6} xl={4}>
+      <Grid item xs={1} md={1} lg={2} xl={2}></Grid>
+      <Grid item xs={10} md={7} lg={6} xl={4}>
+        <Typography style={verticalText} variant="caption" color="secondary">
+          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVision style={verticalLogo} />
+        </Typography>
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.right}/>
+            <img src="/static/workshop.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.right}/>
+            <img src="/static/workshop.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.right}/>
+            <img src="/static/workshop.jpg" className={classes.right} />
           </TabContainer>
         </SwipeableViews>
         </Grid>

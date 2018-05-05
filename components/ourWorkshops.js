@@ -8,6 +8,7 @@ import Icon from 'material-ui/Icon';
 import WorkshopPanels from './workshopPanels';
 import Typography from 'material-ui/Typography';
 import DesignBetter from '../assets/design-better.svg';
+import InVision from '../assets/invision-logo-pink.svg';
 import { Parallax } from 'react-scroll-parallax';
 
 const styles = theme => ({
@@ -35,6 +36,7 @@ const verticalLogo = {
   position: 'relative',
   display: 'flex',
   marginLeft: '70px',
+  marginRight: '30px'
 }
 
 function OurWorkshops(props) {
@@ -60,7 +62,7 @@ function OurWorkshops(props) {
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={1} sm={1}>
         <Typography style={verticalText} variant="caption" color="secondary">
-          PROUD PARTNERS OF <DesignBetter style={verticalLogo} />
+          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVision style={verticalLogo} />
         </Typography>
 
         </Grid>

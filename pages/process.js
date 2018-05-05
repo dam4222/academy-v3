@@ -44,7 +44,7 @@ const styles = theme => ({
     flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    background: '#f5f5f5',
+    background: 'linear-gradient(56deg, #ebeff5, #faf5f5)',
     position:'relative',
     paddingTop: '100px',
     paddingBottom: '100px',
@@ -67,7 +67,7 @@ const styles = theme => ({
   },
   skillItem:{
     width:'100%',
-    height:'255px',
+    height:'210px',
     background: 'rgba(255, 255, 255, .3)',
     textAlign: 'center',
     padding:'20px',
@@ -90,7 +90,7 @@ class Process extends React.Component {
   return (
       <div className={classes.root}>
 
-      <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)'}}>
+      <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)', paddingTop: '60px'}}>
 
       <Grid container>
       <Parallax

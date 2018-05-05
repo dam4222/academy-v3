@@ -5,6 +5,8 @@ import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import WorkshopCurriculum from '../assets/workshop-curriculum.svg';
 import SwipeableViews from 'react-swipeable-views'
+import Grid from 'material-ui/Grid';
+
 
 function TabContainer({ children, dir }) {
   return (
@@ -35,7 +37,7 @@ const styles = theme => ({
   },
   colorDefault: {
     backgroundColor: 'none !important',
-  }
+  },
 });
 
 class SimpleTabsMobile extends React.Component {
@@ -56,7 +58,7 @@ class SimpleTabsMobile extends React.Component {
 
     return (
       <div className={classes.root}>
-
+          <Grid xs={12}>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
@@ -77,15 +79,16 @@ class SimpleTabsMobile extends React.Component {
 
         >
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.center} />
+            <img src="/static/workshop.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.center} />
+            <img src="/static/workshop.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <WorkshopCurriculum className={classes.center} />
+            <img src="/static/workshop.jpg" className={classes.center} />
           </TabContainer>
         </SwipeableViews>
+        </Grid>
       </div>
     );
   }
