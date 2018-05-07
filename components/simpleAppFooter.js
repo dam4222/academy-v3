@@ -13,7 +13,7 @@ import Grid from 'material-ui/Grid';
 import styled from 'styled-components';
 import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
-import SimpleForm from '../components/simpleForm';
+import ContactForm from '../components/ContactForm';
 import "../styles.scss"
 
 const styles = theme => ({
@@ -86,7 +86,7 @@ class SimpleAppFooter extends React.Component {
                         </Typography>
                       </Button>
 
-                      <SimpleForm />
+                      <ContactForm />
 
                       </Grid>
                     <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>

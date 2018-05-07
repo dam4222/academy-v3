@@ -1,0 +1,4 @@
+export CLIENT_ID="l6bp5mpsmpmk86mlmghd5gokvo8ro5gr.apps.googleusercontent.com"
+export CLIENT_SECRET="7sBK2bCe6syHz17UWPdIvoOi"
+export REFRESH_TOKEN="1/i9d2MSzed0PT-gMu_34Vo2ka5yXme1WToW1nSlVzSQDO6gyQYai5J-F4lSyyvKIc"
+export ACCESS_TOKEN="ya29.GluyBQgqRhMadB50ONFB1ntFvqTOyuuSkKQ0i3CqHNNCB30ydSzygo0AHIs5wTVUNNY6GhY-MtqX_elrisYs4r9j-0sO-W7IMwa1lLFBH2DYSfUkGhiq-N9o8xFP"
