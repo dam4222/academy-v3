@@ -74,7 +74,7 @@ function Workshops(props) {
         <Grid item xs={1} sm={1} md={3} lg={6} xl={6}>
           <Grid container>
           <Grid item xs={5} xl={5}></Grid>
-          <Grid item xs={3} xl={3} style={{marginTop:'40px', borderLeft:'1px solid black', height:'40vh'}}></Grid>
+          <Grid item xs={3} xl={3} style={{marginTop:'40px', borderLeft:'1px solid #e7e7e7', height:'40vh'}}></Grid>
         </Grid>
         </Grid>
         <Grid item xs={10} sm={10} md={7} lg={6} xl={4}>
@@ -107,6 +107,7 @@ function Workshops(props) {
                           image: '/static/stickies-blur@2x.jpg',
                           amount: 0.2,
                           slowerScrollRate: false,
+                          position: 'bottom'
                       },
                   ]}
                   style={{
@@ -166,6 +167,7 @@ function Workshops(props) {
                             image: '/static/process-stickies@2x.jpg',
                             amount: 0.2,
                             slowerScrollRate: false,
+                            position: 'left'
                         },
                     ]}
                     style={{

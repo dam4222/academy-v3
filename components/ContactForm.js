@@ -2,16 +2,15 @@
 import { Component } from 'react'
 import Head from 'next/head'
 import 'isomorphic-fetch'
+import PropTypes from 'prop-types';
 
 // App Specific
-import Layout from 'layout'
-
-import ProgressButton from 'components/ProgressButton'
+import ProgressButton from './progressButton.js'
 
 import {
   Form,
   Input
-} from 'components/forms/index'
+} from './microForm.js'
 
 class ContactForm extends Component {
   constructor (props) {
@@ -36,10 +35,6 @@ class ContactForm extends Component {
   render () {
     const title = 'Contact Page'
     return (
-      <Layout>
-        <Head>
-          <title>{title}</title>
-        </Head>
         <div id='container' className='contact'>
           <div>
             <div>
@@ -77,7 +72,7 @@ class ContactForm extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+
     )
   }
 }
