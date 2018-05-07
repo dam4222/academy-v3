@@ -107,6 +107,7 @@ function Workshops(props) {
                           image: '/static/stickies-blur@2x.jpg',
                           amount: 0.2,
                           slowerScrollRate: false,
+                          position: 'bottom'
                       },
                   ]}
                   style={{
@@ -147,6 +148,7 @@ function Workshops(props) {
                           image: '/static/survival-kit@2x.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
+                          position: 'center'
                       },
                   ]}
                   style={{
@@ -166,6 +168,7 @@ function Workshops(props) {
                             image: '/static/process-stickies@2x.jpg',
                             amount: 0.2,
                             slowerScrollRate: false,
+                            position: 'left'
                         },
                     ]}
                     style={{

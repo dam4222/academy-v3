@@ -9,6 +9,7 @@ import Grid from 'material-ui/Grid';
 import TouchRipple from 'material-ui/ButtonBase/TouchRipple';
 import DesignBetter from '../assets/design-better.svg';
 import InVision from '../assets/invision-logo-pink.svg';
+import SkillsGrid from './skillsGrid.js'
 
 TouchRipple.prototype.render = () => null;
 
@@ -118,10 +119,10 @@ class SimpleTabs extends React.Component {
             <img src="/static/workshop.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.right} />
+            <img src="/static/bootcamp-curriculum.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.right} />
+            <SkillsGrid className={classes.right} />
           </TabContainer>
         </SwipeableViews>
         </Grid>
@@ -154,15 +155,14 @@ class SimpleTabs extends React.Component {
             <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Bootcamps</h3>
-              <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
+              <p>The leader-led bootcamp will train your team on how to run a Design Sprints start to finish. Our team of experts will instruct you every step of the way while working on a real problem your team is facing.
               </p>
               </div>
             }/>
             <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Embed w/ Team</h3>
-              <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
-              </p>
+              <p>If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.</p>
               </div>
             }/>
             </Tabs>

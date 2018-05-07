@@ -3,9 +3,12 @@ import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
+import Paper from 'material-ui/Paper';
+import Icon from 'material-ui/Icon';
 import WorkshopCurriculum from '../assets/workshop-curriculum.svg';
 import SwipeableViews from 'react-swipeable-views'
 import Grid from 'material-ui/Grid';
+import SkillsGrid from './skillsGrid.js'
 
 
 function TabContainer({ children, dir }) {
@@ -82,10 +85,17 @@ class SimpleTabsMobile extends React.Component {
             <img src="/static/workshop.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.center} />
+            <img src="/static/bootcamp-curriculum.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.center} />
+            <Paper className={classes.center} style={{padding:'20px'}}>
+                <Typography variant='body1' gutterBottom paragraph>
+                  If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.
+                </Typography>
+                <Typography variant="button" color="inherit">
+                  Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                </Typography>
+            </Paper>
           </TabContainer>
         </SwipeableViews>
         </Grid>
