@@ -6,7 +6,6 @@ import getPageContext from './getPageContext';
 import SimpleAppBar from '../components/simpleAppBar';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import Router, { withRoute } from 'next/router';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -22,26 +21,19 @@ function withRoot(Component) {
       if (jssStyles && jssStyles.parentNode) {
         jssStyles.parentNode.removeChild(jssStyles);
       }
-
-
     }
 
     pageContext = null;
 
     render() {
-
-
       // MuiThemeProvider makes the theme available down the React tree thanks to React context.
       return (
-
         <ParallaxProvider>
         <MuiThemeProvider
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
-
           <SimpleAppBar />
-
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...this.props} />

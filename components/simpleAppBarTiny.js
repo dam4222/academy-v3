@@ -50,13 +50,13 @@ class SimpleAppBarTiny extends React.Component {
     <div style={root}>
 
             <AppBar
-
             color="default"
+            style={{background:'#fafafa', height:'60px'}}
             >
-              <Toolbar disableGutters>
-                  <Grid item xs={6} style={left}>
-                    <IconButton style={{position: 'absolute', left: '-50px', width:'130px', height:'auto'}} disableRipple={true} href="/">
-                        <AcademyLogoSmall style={{background:'white'}} />
+              <Toolbar>
+                  <Grid item xs={11} style={left}>
+                    <IconButton className="iconLogo" disableRipple={true} href="/">
+                        <AcademyLogoSmall />
                     </IconButton>
                   </Grid>
 

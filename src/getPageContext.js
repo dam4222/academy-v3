@@ -20,6 +20,7 @@ const theme = createMuiTheme({
       main: '#848484',
       // dark: will be calculated from palette.secondary.main,
     },
+    default: 'rgba(0,0,0,0)',
     // error: will us the default color
   },
   typography: {
@@ -114,6 +115,7 @@ const theme = createMuiTheme({
     MuiIconButton: {
       // Name of the styleSheet
       root: {
+        borderRadius: '0',
         // Name of the rule
         '&:hover': {
           textDecoration: 'none',
@@ -125,7 +127,7 @@ const theme = createMuiTheme({
     MuiAppBar: {
       root: {
         boxShadow:'none',
-        backgroundColor: 'none',
+        backgroundColor: 'transparent',
       },
     },
   },

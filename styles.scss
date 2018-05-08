@@ -267,3 +267,16 @@ p{
     background-position: 30% !important;
   }
 }
+
+.iconLogo{
+  position: absolute !important;
+  left: 0;
+  width: 85px !important;
+  height: 85px !important;
+  background: black !important;
+  top: 0;
+
+  svg path{
+    fill:white;
+  }
+}
