@@ -30,8 +30,7 @@ class QuoteCarousel extends React.Component {
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
       lazyLoad: 'ondemand',
-      autoplay:false,
-      adaptiveHeight: true
+      autoplay:true,
     };
     return (
       <Grid item xs={12} sm={12} md={12} style={root}>

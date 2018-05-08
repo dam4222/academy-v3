@@ -144,6 +144,10 @@ p{
   justify-content: flex-end;
 }
 
+.carousel-inner{
+  overflow: hidden;
+}
+
 .noFocus:focus{
   outline: 0 !important;
 }

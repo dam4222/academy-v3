@@ -68,7 +68,7 @@ class Carousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       focusOnSelect: false,
-      autoplay: false,
+      autoplay: true,
       speed: 750,
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
@@ -97,7 +97,7 @@ class Carousel extends React.Component {
             ref={slider => (this.slider1 = slider)}
           >
             <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh', display: 'flex'}}>
+              <div className={"noFocus carousel carousel-inner"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh', display: 'flex'}}>
 
               <Grid item xs={5} sm={6} md={8} lg={8} xl={8} style={{justifyContent: 'flex-end', display: 'flex'}}>
                 {/*<Parallax
@@ -119,7 +119,7 @@ class Carousel extends React.Component {
               </div>
             </div>
             <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel"} style={{background:'#D99296', height:'80vh'}}>
+              <div className={"noFocus carousel carousel-inner"} style={{background:'#D99296', height:'80vh'}}>
                 <Typography variant="display4" color="secondary">
                 2
                 </Typography>
@@ -127,7 +127,7 @@ class Carousel extends React.Component {
               </div>
             </div>
             <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel"} style={{background:'#A18494', height:'80vh'}}>
+              <div className={"noFocus carousel carousel-inner"} style={{background:'#A18494', height:'80vh'}}>
                 <Typography variant="display4" color="secondary">
                 3
                 </Typography>
@@ -135,7 +135,7 @@ class Carousel extends React.Component {
                 </div>
             </div>
             <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel"} style={{background:'#39696E', height:'80vh'}}>
+              <div className={"noFocus carousel carousel-inner"} style={{background:'#39696E', height:'80vh'}}>
                 <Typography variant="display4" color="secondary">
                 4
                 </Typography>
@@ -143,7 +143,7 @@ class Carousel extends React.Component {
               </div>
             </div>
             <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel"} style={{background:'#849EA1', height:'80vh'}}>
+              <div className={"noFocus carousel carousel-inner"} style={{background:'#849EA1', height:'80vh'}}>
                 <Typography variant="display4" color="secondary">
                 5
                 </Typography>
@@ -169,7 +169,7 @@ class Carousel extends React.Component {
             verticalSwiping={false}
             >
           <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
+            <div className={"noFocus carousel-two carousel-inner"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
               {/*<Parallax
                   className="custom-class"
                   offsetXMax={-20}
@@ -191,7 +191,7 @@ class Carousel extends React.Component {
             </div>
           </div>
           <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two"} style={{background:'#D99296', height:'80vh'}}>
+            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#D99296', height:'80vh'}}>
               <Typography variant="display4" color="secondary">
               2
               </Typography>
@@ -199,7 +199,7 @@ class Carousel extends React.Component {
               </div>
             </div>
           <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two"} style={{background:'#A18494', height:'80vh'}}>
+            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#A18494', height:'80vh'}}>
               <Typography variant="display4" color="secondary">
               3
               </Typography>
@@ -207,7 +207,7 @@ class Carousel extends React.Component {
               </div>
           </div>
           <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two"} style={{background:'#39696E', height:'80vh'}}>
+            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#39696E', height:'80vh'}}>
               <Typography variant="display4" color="secondary">
               4
               </Typography>
@@ -215,7 +215,7 @@ class Carousel extends React.Component {
             </div>
           </div>
           <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two"} style={{background:'#849EA1', height:'80vh'}}>
+            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#849EA1', height:'80vh'}}>
               <Typography variant="display4" color="secondary">
               5
               </Typography>
