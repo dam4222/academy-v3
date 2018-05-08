@@ -21,17 +21,19 @@ import Dialog, {
 } from 'material-ui/Dialog'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 
+import { LinearProgress } from 'material-ui/Progress'
+import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
+
+import { FormControl } from 'material-ui/Form';
+
 
 const fetchUrl = process.env.fetchUrl;
 let currPage = 1;
 let limit = '';
-const url = 'http://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
+const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
 
 const styles = {
-  paddFive:{
-    padding: '2.5%',
-    height:'auto'
-  },
+  
   featuredImage: {
     maxWidth: '100%',
     maxHeight: '150px'
@@ -64,7 +66,7 @@ class Blog extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = { 
       /* initial state */
       blogs: {},
       isLoading: false,
@@ -72,14 +74,25 @@ class Blog extends React.Component {
       blogPassword: '',
       inputPassword: '',
       currPost: null,
-      errorMessage: ''
+      errorMessage: '',
+      blogSearch: '',
+      fetching: true,
+      featuredBlog: [{
+        date: '',
+        acf: {
+          featured_image: '',
+          author: {
+            display_name: ''
+          }
+        },
+      }],
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.onChange = this.onChange.bind(this);
     this.verifyPassword = this.verifyPassword.bind(this);
-
+    
   }
 
   componentDidMount() {
@@ -98,9 +111,10 @@ class Blog extends React.Component {
       currPage += 1;
       await this.setState({
         isLoading: true,
+        fetching: true
       })
-      const url = 'http://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
-
+      const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
+    
       const res = await fetch(url)
       const blogs = await res.json()
       //console.log(this.state)
@@ -117,19 +131,33 @@ class Blog extends React.Component {
         blogs:  ("code" in blogs ? prevBlogs : prevBlogs.concat(blogs)),
         isLoading: false,
         open: false,
+        fetching: false
       })
     }
   }
 
+
   //fetch list of blogs here
   async UNSAFE_componentWillMount(){
     //console.log(url)
-    const res = await fetch(url)
-    const blogs = await res.json()
+    
+    let res = await fetch(url)
+    let blogs = await res.json()
     //console.log(blogs)
     await this.setState({
       blogs: blogs
     })
+
+    //fetch featured here
+    const url_feat = "https://" + fetchUrl + "/wp-json/wp/v2/blogs/?featured=true";
+    const res_feat = await fetch(url_feat);
+    const featured = await res_feat.json()
+    //console.log(featured[0]);
+    if (featured.length > 0){
+      await this.setState({
+        featuredBlog: featured,
+      })
+    }
   }
 
 
@@ -140,15 +168,15 @@ class Blog extends React.Component {
   }
 
   handleClickOpen = (blog) => {
-
-    if (!("password" in blog.acf)){
+    
+    if (blog.acf.password == ""){
       limit = "";
       Router.push(
         `/post?name=${blog.slug}`,
-
+        
       );
     }else{
-      this.setState({
+      this.setState({ 
         open: true,
         currPost: blog.slug,
         blogPassword: blog.acf.password,
@@ -164,14 +192,14 @@ class Blog extends React.Component {
   };
 
   verifyPassword = () =>{
-
-
+    
+    
     if (this.state.inputPassword == this.state.blogPassword){
       //console.log("correct", this.state.blogPassword, this.state.inputPassword)
       limit = "";
       Router.push(
         `/post?name=${this.state.currPost}`,
-
+        
       );
     }
     else{
@@ -180,6 +208,32 @@ class Blog extends React.Component {
         errorMessage: 'Something wrong with the password. Ask for permission or try again!'
       })
     }
+  }
+
+   searchBlogs = blogSearch => event => {
+
+     this.fetchSearch(event.target.value);
+  }
+
+  fetchSearch = async () =>{
+    await this.setState({
+      fetching: true
+    })
+    const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?search=' + event.target.value;
+    const res = await fetch(url)
+    const blogs = await res.json()
+    //console.log(blogs)
+    await this.setState({
+      blogs: blogs,
+      fetching: false
+    })
+  }
+
+  formatDate = (date) =>{
+    let format = new Date(date);
+    format = format.toDateString();
+    format = format.slice(4, 10) + ', ' + format.slice(10,);
+    return format;
   }
 
 
@@ -220,6 +274,7 @@ class Blog extends React.Component {
           </DialogActions>
         </Dialog>
 
+        
         <Grid container spacing={8} className={classes.container}>
 
             <Grid container spacing={8}>
@@ -237,7 +292,9 @@ class Blog extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container spacing={8}>
+            {this.state.fetching ? <div><LinearProgress variant="query" /><br/></div> : <div></div>}
+
+            <Grid container spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
               <Grid item xs={1} md={3}></Grid>
               <Grid item xs={10} md={6}>
                 <Grid container spacing={8} className={classes.centerImg}>
@@ -245,7 +302,7 @@ class Blog extends React.Component {
                     className="heroImgWorkshops"
                     layers={[
                         {
-                            image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
+                            image: this.state.featuredBlog[0].acf.featured_image,
                             amount: 0.2,
                             slowerScrollRate: false,
                         },
@@ -258,18 +315,18 @@ class Blog extends React.Component {
                   >
                   </ParallaxBanner>
                 </Grid>
-                <Grid container spacing={8} className={classes.headline}>
+                <Grid container spacing={8} className={classes.headline} >
                   <Grid item xs={1} md={4}></Grid>
-                  <Grid item xs={10} md={4} xl={3}>
+                  <Grid item xs={10} md={4} xl={3} >
                     <Paper elevation={0} style={{padding:'3vh'}}>
                     <Typography variant="display2" paragraph>
-                      How Ego Gets in the Way of Good Decision Making
+                      {this.state.featuredBlog[0].acf.title}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                      May 5, 2018
+                    {this.formatDate(this.state.featuredBlog[0].date)}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
-                      By Adam Perlis
+                      By {this.state.featuredBlog[0].acf.author.display_name}
                     </Typography>
                   </Paper>
                   </Grid>
@@ -281,243 +338,69 @@ class Blog extends React.Component {
 
             <Grid container spacing={8} style={{paddingTop:'200px'}}>
 
-              <Grid item xs={1} md={2}></Grid>
+<Grid item xs={1} md={2}></Grid>
 
-              <Grid item xs={10} md={8}>
-                <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
-                  Latest Posts
+<Grid item xs={10} md={8}>
+  <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
+    Latest Posts
+  </Typography>
+  <Grid container spacing={24}>
+  {
+    Object.keys(this.state.blogs).map((blog) => {
+      return (
+
+
+        
+          <Grid item xs={12} md={4}  style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
+
+              <ParallaxBanner
+                className="heroImgWorkshops"
+                layers={[
+                    {
+                        image: this.state.blogs[blog].acf.featured_image,
+                        amount: 0.2,
+                        slowerScrollRate: false,
+                    },
+                ]}
+                style={{
+                    height: '20vh',
+                    top: '0',
+                    maxWidth:'605px'
+                }}
+              >
+              </ParallaxBanner>
+
+              <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
+                <Typography variant="headline" paragraph>
+                {this.state.blogs[blog].acf.title}
                 </Typography>
-                <Grid container spacing={24}>
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
+                <Typography variant="body1" gutterBottom>
+                  {this.formatDate(this.state.blogs[blog].date)}
+                </Typography>
+                <Typography variant="caption" gutterBottom>
+                  By {this.state.blogs[blog].acf.author.display_name}
+                </Typography>
+              </Paper>
 
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-
-                <Grid item xs={12} md={4} style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-
-
-              </Grid>
-            </Grid>
+          
           </Grid>
+          
+
+
+          
+
+      )
+    })
+  }
+  </Grid>
+    </Grid>
+    </Grid>
+            
           <Grid item xs={1} md={2}></Grid>
         </Grid>
 
-        {
-          Object.keys(this.state.blogs).map((blog) => {
-            return (
 
-              <div key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
-                <a style={{textDecoration: 'none'}} >
-
-                  <Grid  container spacing={8}>
-
-                    <Grid item xs={3}>
-                      <img src={this.state.blogs[blog].acf.featured_image} className={classes.featuredImage}/>
-                    </Grid>
-
-                    <Grid item xs={9}>
-                      <Typography variant="title">
-                        {this.state.blogs[blog].acf.title}
-                      </Typography>
-                      <Typography>
-                        {this.state.blogs[blog].acf.description}
-                        </Typography>
-                    </Grid>
-                  </Grid>
-                </a>
-              </div>
-            )
-          })
-        }
+      
       </div>
     );
   }
