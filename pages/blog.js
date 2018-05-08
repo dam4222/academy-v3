@@ -53,10 +53,10 @@ const styles = {
     justifyContent: 'center',
   },
   headline:{
+    top: '60vh',
+    display: 'flex',
     position: 'absolute',
-    top: '45vh',
-    textAlign:'center',
-    display:'flex'
+    textAlign: 'center',
   }
 };
 
@@ -260,15 +260,15 @@ class Blog extends React.Component {
                 </Grid>
                 <Grid container spacing={8} className={classes.headline}>
                   <Grid item xs={1} md={4}></Grid>
-                  <Grid item xs={10} md={4}>
-                    <Paper elevation={0} style={{padding:'40px'}}>
+                  <Grid item xs={10} md={4} xl={3}>
+                    <Paper elevation={0} style={{padding:'3vh'}}>
                     <Typography variant="display2" paragraph>
                       How Ego Gets in the Way of Good Decision Making
                     </Typography>
-                    <Typography variant="body1" gutterBottom paragraph>
+                    <Typography variant="body1" gutterBottom>
                       May 5, 2018
                     </Typography>
-                    <Typography variant="caption" gutterBottom paragraph>
+                    <Typography variant="caption" gutterBottom>
                       By Adam Perlis
                     </Typography>
                   </Paper>
@@ -311,10 +311,10 @@ class Blog extends React.Component {
                       <Typography variant="headline" paragraph>
                         How Ego Gets in the Way of Good Decision Making
                       </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
+                      <Typography variant="body1" gutterBottom>
                         May 5, 2018
                       </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
+                      <Typography variant="caption" gutterBottom>
                         By Adam Perlis
                       </Typography>
                     </Paper>
@@ -343,10 +343,10 @@ class Blog extends React.Component {
                       <Typography variant="headline" paragraph>
                         How Ego Gets in the Way of Good Decision Making
                       </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
+                      <Typography variant="body1" gutterBottom>
                         May 5, 2018
                       </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
+                      <Typography variant="caption" gutterBottom>
                         By Adam Perlis
                       </Typography>
                     </Paper>
@@ -375,43 +375,10 @@ class Blog extends React.Component {
                       <Typography variant="headline" paragraph>
                         How Ego Gets in the Way of Good Decision Making
                       </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
+                      <Typography variant="body1" gutterBottom>
                         May 5, 2018
                       </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
-                        By Adam Perlis
-                      </Typography>
-                    </Paper>
-
-                </Grid>
-
-                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
-
-                    <ParallaxBanner
-                      className="heroImgWorkshops"
-                      layers={[
-                          {
-                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
-                      style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
-
-                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
-                      <Typography variant="headline" paragraph>
-                        How Ego Gets in the Way of Good Decision Making
-                      </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
-                        May 5, 2018
-                      </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
+                      <Typography variant="caption" gutterBottom>
                         By Adam Perlis
                       </Typography>
                     </Paper>
@@ -441,10 +408,43 @@ class Blog extends React.Component {
                       <Typography variant="headline" paragraph>
                         How Ego Gets in the Way of Good Decision Making
                       </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
+                      <Typography variant="body1" gutterBottom>
                         May 5, 2018
                       </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
+                      <Typography variant="caption" gutterBottom>
+                        By Adam Perlis
+                      </Typography>
+                    </Paper>
+
+                </Grid>
+
+                <Grid item xs={12} md={4}  style={{paddingTop:'50px'}}>
+
+                    <ParallaxBanner
+                      className="heroImgWorkshops"
+                      layers={[
+                          {
+                              image: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2c632b50335679.58ce07b24102f.jpg',
+                              amount: 0.2,
+                              slowerScrollRate: false,
+                          },
+                      ]}
+                      style={{
+                          height: '20vh',
+                          top: '0',
+                          maxWidth:'605px'
+                      }}
+                    >
+                    </ParallaxBanner>
+
+                    <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
+                      <Typography variant="headline" paragraph>
+                        How Ego Gets in the Way of Good Decision Making
+                      </Typography>
+                      <Typography variant="body1" gutterBottom>
+                        May 5, 2018
+                      </Typography>
+                      <Typography variant="caption" gutterBottom>
                         By Adam Perlis
                       </Typography>
                     </Paper>
@@ -474,10 +474,10 @@ class Blog extends React.Component {
                       <Typography variant="headline" paragraph>
                         How Ego Gets in the Way of Good Decision Making
                       </Typography>
-                      <Typography variant="body1" gutterBottom paragraph>
+                      <Typography variant="body1" gutterBottom>
                         May 5, 2018
                       </Typography>
-                      <Typography variant="caption" gutterBottom paragraph>
+                      <Typography variant="caption" gutterBottom>
                         By Adam Perlis
                       </Typography>
                     </Paper>

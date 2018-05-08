@@ -280,3 +280,18 @@ p{
     fill:white;
   }
 }
+
+img {
+  animation:600ms ease forwards fadeInUp;
+
+    @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate(0, 100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+}
