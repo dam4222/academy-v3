@@ -52,12 +52,16 @@ const theme = createMuiTheme({
       display2: {
         fontFamily: 'Crimson Text, serif',
         color: 'black',
-        fontSize: 34,
+        fontSize: 'calc(1.5em + 1vw)',
+        lineHeight:'1.20588em',
+        marginLeft:'0'
       },
       display1: {
         fontFamily: 'Crimson Text, serif',
         color: '#848484',
-        fontSize: 34,
+        fontSize: 'calc(1.5em + 1vw)',
+        lineHeight:'1.20588em',
+        marginLeft:'0'
       },
       title: {
         fontFamily: 'Montserrat, sans-serif',
@@ -69,7 +73,7 @@ const theme = createMuiTheme({
       headline: {
         fontFamily: 'Crimson Text, serif',
         fontWeight: 400,
-        fontSize: 24,
+        fontSize: 'calc(1em + .5vw)',
       },
       button: {
         fontFamily: 'Montserrat, sans-serif',
