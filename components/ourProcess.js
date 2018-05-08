@@ -60,7 +60,7 @@ function OurProcess(props) {
           <Typography variant='body1' gutterBottom>
           We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
           </Typography>
-          <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/work">
+          <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/process">
             <Typography variant="button" color="inherit">
               Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
             </Typography>

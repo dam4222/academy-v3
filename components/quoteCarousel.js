@@ -30,13 +30,14 @@ class QuoteCarousel extends React.Component {
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
       lazyLoad: 'ondemand',
-      autoplay:false
+      autoplay:false,
+      adaptiveHeight: true
     };
     return (
       <Grid item xs={12} sm={12} md={12} style={root}>
         <Grid item xs={1} sm={1} md={2}></Grid>
         <Grid item xs={10} sm={10} md={8}>
-          <Slider {...settings} className={"noFocus carousel"} style={{display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
+          <Slider {...settings} className={"noFocus carousel"} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', transition:'.5s all ease'}}>
             <div className={"noFocus carousel"}>
               <Typography variant='display4' gutterBottom paragraph={true}>
                 <Quote />
@@ -57,14 +58,16 @@ class QuoteCarousel extends React.Component {
                 <Quote />
               </Typography>
               <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
-              Adam has a knack to boil down complex UX and product design concepts into simple, digestible ideas. He stands as an expert at the intersection of UX, Design Thinking, and Commerce. As a master facilitator, Adam spearheads a compelling workshop that will surely change the way your company builds products.
+                I left the workshop feeling truly inspired by the new relationships I was able to make along with being able to apply the processes Adam shared immediately with my design team at Comcast.
+
+                I would highly recommend this workshop to anyone looking to validate their own design process or looking for a spark to reinvigorate their design thinking. Adam has a real gift to lead and inspire.
               </Typography>
-              <img style={{display:'inline', width:'60px'}} src="static/adam-fry-pierce@2x.jpg" />
+              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="static/tj.jpg" />
               <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
-                Adam Fry-Pierce
+                TJ DeGarmo
               </Typography>
               <Typography variant='caption' gutterBottom paragraph={true} style={{paddingBottom:'20px'}}>
-                Director, Design Community @ INVISION
+                Sr. Design Manager, Technology + Product, Comcast
               </Typography>
             </div>
             <div className={"noFocus carousel"}>

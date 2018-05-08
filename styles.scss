@@ -165,7 +165,7 @@ p{
 .slick-prev {
   left: 25px;
   opacity:.5;
-  z-index: 100000000000;
+  z-index: 1100;
   position: absolute !important;
   transition: all ease 0.25s !important;
   transform-origin: 50% 150%;
@@ -191,7 +191,7 @@ p{
 .slick-next {
   right: 25px;
   opacity:.5;
-  z-index: 10000000000000;
+  z-index: 1100;
   position: absolute !important;
   transition: all ease 0.25s !important;
   transform-origin: 50% 150%;

@@ -69,16 +69,9 @@ function OurWorkshops(props) {
           <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6}>
-                <Parallax
-                    className="custom-class"
-                    offsetYMax={-20}
-                    offsetYMin={10}
-                    slowerScrollRate
-                >
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop5.jpg"/>
 
-                </Parallax>
 
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
@@ -87,12 +80,9 @@ function OurWorkshops(props) {
                   1 Day Workshop
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
+                Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
                 </Typography>
-                <Typography variant='body1' gutterBottom>
-                We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
-                </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/work">
+                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
@@ -101,30 +91,20 @@ function OurWorkshops(props) {
             </Grid>
             <Grid container>
               <Grid item xs={10} sm={10} md={6}>
-                <Parallax
-                    className="custom-class"
-                    offsetYMax={-20}
-                    offsetYMin={10}
-                    slowerScrollRate
-                >
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop9.jpg"/>
 
-                </Parallax>
 
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  1 Day Workshop
+                  Bootcamp
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
+                  The leader-led bootcamp will train your team on how to run a Design Sprints start to finish. Our team of experts will instruct you every step of the way while working on a real problem your team is facing.
                 </Typography>
-                <Typography variant='body1' gutterBottom>
-                We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
-                </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/work">
+                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
@@ -132,30 +112,20 @@ function OurWorkshops(props) {
               </Grid>
             </Grid><Grid container>
               <Grid item xs={10} sm={10} md={6}>
-                <Parallax
-                    className="custom-class"
-                    offsetYMax={-20}
-                    offsetYMin={10}
-                    slowerScrollRate
-                >
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/images/2017/10/terrier-puppy.jpg?itok=Ppdi06hH&fc=50,50"/>
+                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop1.jpg"/>
 
-                </Parallax>
 
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  1 Day Workshop
+                  Embed w/ Team
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and Our process is Product Relays™.
+                If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.
                 </Typography>
-                <Typography variant='body1' gutterBottom>
-                We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
-                </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/work">
+                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
