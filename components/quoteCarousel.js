@@ -66,20 +66,23 @@ class QuoteCarousel extends React.Component {
                 TJ DeGarmo
               </Typography>
               <Typography variant='caption' gutterBottom paragraph={true} style={{paddingBottom:'20px'}}>
-                Sr. Design Manager, Technology + Product, Comcast
+                Sr. Design Manager, Technology + Product @ Comcast
               </Typography>
             </div>
             <div className={"noFocus carousel"}>
-              <h3>3</h3>
-            </div>
-            <div className={"noFocus carousel"}>
-              <h3>4</h3>
-            </div>
-            <div className={"noFocus carousel"}>
-              <h3>5</h3>
-            </div>
-            <div className={"noFocus carousel"}>
-              <h3>6</h3>
+              <Typography variant='display4' gutterBottom paragraph={true}>
+                <Quote />
+              </Typography>
+              <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
+                Adam’s Design Sprints Workshop was a highly focused, interactive, collaborative day packed with valuable information and insights. The small setting and Adam’s enthusiasm made the session effective and inspiring. These forums are instrumental in shifting the mindset and advocating the principles of design-thinking within our organization.
+              </Typography>
+              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="static/fred.jpg" />
+              <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
+                Fred LaSenna
+              </Typography>
+              <Typography variant='caption' gutterBottom paragraph={true} style={{paddingBottom:'20px'}}>
+                Director of Design/UX @ CNBC Digital
+              </Typography>
             </div>
           </Slider>
         </Grid>

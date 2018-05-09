@@ -1,3 +1,3 @@
 module.exports = {
-    'process.env.fetchUrl': '107.23.153.21'
+    'process.env.fetchUrl': 'admin.academyv3.tk'
 }

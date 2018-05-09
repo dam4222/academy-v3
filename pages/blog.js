@@ -40,7 +40,8 @@ const styles = {
     background:'linear-gradient(119deg, #ebf5f4, #efebf5)',
     height:'100%',
     display:'flex',
-    justifyContent:'center'
+    justifyContent:'center',
+    paddingBottom:'200px'
   },
   center:{
     textAlign:'center',
