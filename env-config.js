@@ -1,3 +1,3 @@
 module.exports = {
-    'process.env.fetchUrl': 'test-this-domain.tk'
+    'process.env.fetchUrl': 'admin.academyv3.tk'
 }
