@@ -21,7 +21,7 @@ import Dialog, {
 } from 'material-ui/Dialog'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 
-import { LinearProgress } from 'material-ui/Progress'
+import { CircularProgress } from 'material-ui/Progress';
 import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
 
 import { FormControl } from 'material-ui/Form';
@@ -33,7 +33,11 @@ let limit = '';
 const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
 
 const styles = {
-  
+  root:{
+    display: 'flex',
+    alignItems: 'center',
+    flexGrow: 1,
+  },
   featuredImage: {
     maxWidth: '100%',
     maxHeight: '150px'
@@ -60,7 +64,11 @@ const styles = {
     display: 'flex',
     position: 'absolute',
     textAlign: 'center',
-  }
+  },
+  progress: {
+    width: '100px',
+    margin: 'auto',
+  },
 };
 
 class Blog extends React.Component {
@@ -69,6 +77,7 @@ class Blog extends React.Component {
     super(props);
     this.state = { 
       /* initial state */
+      initFetching: true,
       blogs: {},
       isLoading: false,
       open: false,
@@ -157,6 +166,7 @@ class Blog extends React.Component {
     if (featured.length > 0){
       await this.setState({
         featuredBlog: featured,
+        initFetching: false,
       })
     }
   }
@@ -242,7 +252,7 @@ class Blog extends React.Component {
   render() {
     const { classes } = this.props;
      return (
-      <div className={classes.paddFive}>
+      <div className={classes.root}>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -275,7 +285,7 @@ class Blog extends React.Component {
           </DialogActions>
         </Dialog>
 
-        
+        { this.state.initFetching ? <CircularProgress className={classes.progress}  size={'50vw'} /> : (
         <Grid container spacing={8} className={classes.container}>
 
             <Grid container spacing={8}>
@@ -292,8 +302,6 @@ class Blog extends React.Component {
               <Grid item xs={3}></Grid>
               </Grid>
             </Grid>
-
-            {this.state.fetching ? <div><LinearProgress variant="query" /><br/></div> : <div></div>}
 
             <Grid container spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
               <Grid item xs={1} md={3}></Grid>
@@ -339,19 +347,17 @@ class Blog extends React.Component {
 
             <Grid container spacing={8} style={{paddingTop:'200px'}}>
 
-<Grid item xs={1} md={2}></Grid>
+    <Grid item xs={1} md={2}></Grid>
 
-<Grid item xs={10} md={8}>
-  <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
-    Latest Posts
-  </Typography>
-  <Grid container spacing={24}>
-  {
-    Object.keys(this.state.blogs).map((blog) => {
-      return (
-
-
-        
+    <Grid item xs={10} md={8}>
+      <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
+        Latest Posts
+      </Typography>
+    <Grid container spacing={24}>
+      {
+      Object.keys(this.state.blogs).map((blog) => {
+        return (
+       
           <Grid item xs={12} md={4}  style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
 
               <ParallaxBanner
@@ -384,23 +390,17 @@ class Blog extends React.Component {
               </Paper>
 
           
+            </Grid>
+              )
+            })
+          }
+           </Grid>
           </Grid>
-          
-
-
-          
-
-      )
-    })
-  }
-  </Grid>
-    </Grid>
-    </Grid>
+          </Grid>
             
           <Grid item xs={1} md={2}></Grid>
         </Grid>
-
-
+      )}
       
       </div>
     );

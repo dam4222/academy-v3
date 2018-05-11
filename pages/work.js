@@ -11,10 +11,18 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import 'isomorphic-fetch'
+import { CircularProgress } from 'material-ui/Progress';
 
+import TextField from 'material-ui/TextField';
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from 'material-ui/Dialog'
 const fetchUrl = process.env.fetchUrl;
 
-const url = 'http://' + fetchUrl + '/wp-json/wp/v2/projects?_embed'
+const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?'
 
 const styles = {
   root : {
@@ -59,28 +67,129 @@ const styles = {
     alignItems: 'center',
     height:'60vh',
     textAlign:'right'
-  }
+  },
+  progress: {
+    
+    width: '100px',
+    margin: 'auto',
+  },
 };
 
 
 class Work extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { 
+      /* initial state */
+      fetching: true,
+      open: false,
+      errorMessage: '',
+    }
+  }
+
+  handleClose = (blog) => {
+    this.setState({ open: false });
+
+  }
+
+  handleClickOpen = (blog) => {
+    
+    if (blog.acf.password == ""){
+      limit = "";
+      Router.push(
+        `/post?name=${blog.slug}`,
+        
+      );
+    }else{
+      this.setState({ 
+        open: true,
+        currPost: blog.slug,
+        blogPassword: blog.acf.password,
+      });
+    }
+  }
+
+  onChange = inputPassword => event => {
+    //console.log(event.target.value)
+    this.setState({
+      inputPassword: event.target.value,
+    });
+  };
+
+  verifyPassword = () =>{
+    
+    
+    if (this.state.inputPassword == this.state.blogPassword){
+      //console.log("correct", this.state.blogPassword, this.state.inputPassword)
+      limit = "";
+      Router.push(
+        `/post?name=${this.state.currPost}`,
+        
+      );
+    }
+    else{
+      //console.log("wrong", this.state.blogPassword, this.state.inputPassword)
+      this.setState({
+        errorMessage: 'Something wrong with the password. Ask for permission or try again!'
+      })
+    }
+  }
+
   //fetch list of projects here
-  static async getInitialProps({ req }) {
-    console.log(url)
+  async componentWillMount (){
     const res = await fetch(url)
     const projects = await res.json()
-    return { projects }
+    await this.setState({
+      projects: projects,
+      fetching: false,
+    })
   }
+
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-          {this.props.projects.map((project, i) => {
+       
+      <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Private post!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Provide passsword to view blog post.
+              <div style={{color: 'red'}}>
+              {this.state.errorMessage}
+                </div>
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="password"
+              label="Password"
+              type="password"
+              onChange={this.onChange('password')}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Back
+            </Button>
+            <Button onClick={this.verifyPassword} color="primary">
+              View Post!
+            </Button>
+          </DialogActions>
+        </Dialog>
+
+      {this.state.fetching ? <CircularProgress style={{marginTop: '100'}} className={classes.progress} size={200} /> : (
+        <Grid container>
+          {this.state.projects.map((project, i) => {
 
             return (
-            <Grid container>
+              <Grid container>
                 <Grid item xs={1} sm={1}></Grid>
                 <Grid item xs={12} sm={5} className={classes.center}>
                 <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
@@ -95,7 +204,7 @@ class Work extends React.Component {
                       </div>
                       <div className={classes.subLegend}>
                         <Typography variant="display2" color="inherit">
-                          {project.acf.project_name}
+                          {project.acf.project_title}
                         </Typography>
                       </div>
                           <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"}>
@@ -118,7 +227,7 @@ class Work extends React.Component {
                         <Card className={classes.card}>
                           <CardMedia
                             className={classes.media}
-                            image={project.acf.poster}
+                            image={project.acf.featured_image}
                           />
                         </Card>
                       </a>
@@ -126,13 +235,14 @@ class Work extends React.Component {
                     </Parallax>
                   </Grid>
                   <Grid item xs={1} sm={1}></Grid>
-                </Grid>
-
+                
+            </Grid>
             )
 
           })
           }
-
+        </Grid>
+      )}
       </div>
     );
   }
