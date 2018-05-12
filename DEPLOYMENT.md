@@ -79,8 +79,7 @@ Follow these steps to host a WordPress installation
 	2. In the system log window, scroll through to the bottom to find the password that's surrounded by hash marks.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Password.09b1827978db35368f5fa3ecbb8e1d233b2fa205.png)
 	
-	3. Now that you have your password, switch back to the tab that you used to access the WordPress **Hello World** page. Add **/admin** to the end of the URL so it looks something like **54.192.32.144/admin**. Hit enter.
-	Enter the Username **user** and the Password that you read from the log file.
+	3. Now that you have your password, switch back to the tab that you used to access the WordPress **Hello World** page. Add **/admin** to the end of the URL so it looks something like **54.192.32.144/admin**. Hit enter. Enter the Username **user** and the **Password** that you read from the log file.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Login.c5abc6de858e49e17aed5459d90a368b17b5c562.png)
 			
 	> Congratulations! You now have your WordPress site up and running. You can now manage, customize, and configure it as you like.
