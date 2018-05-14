@@ -47,7 +47,7 @@ const imgContainer = {
 }
 
 const imgStyle = {
-  paddingBottom:'10px',
+  paddingBottom:'20px',
   maxWidth:'370px',
   margin: '0 auto',
   height: 'auto',
