@@ -12,12 +12,12 @@
 
 ## Table of Contents
 
-1. Where should I write my `fetch()` calls?
-2. Why async/await?
-3. fetchUrl in env-config.js and why?
-4. Basic WordPress REST API requests/response(#wordpress-rest-api)
-5. Test API with Postman
-6. Requests specific to a Custom Post Type
+1. [Where should I write my `fetch()` calls?](#where-should-i-write-my-fetch-calls)
+2. [Why async/await?](#why-asyncawait)
+3. [fetchUrl in env-config.js and why?](#fetchurl-in-env-configjs-and-why)
+4. [Basic WordPress REST API requests/response](#wordpress-rest-api)
+5. [Test API with Postman](#testing-api-via-postman)
+6. [Requests specific to a Custom Post Type](#requests-specific-to-a-custom-post-type)
     - [Blogs API](#blogs-api)
     - [Projects API](#projects-api)
 
