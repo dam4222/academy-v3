@@ -39,6 +39,20 @@ const verticalLogo = {
   marginRight: '30px'
 }
 
+const imgContainer = {
+  justifyContent: 'center',
+  alignItems: 'center',
+  display: 'flex',
+  height: '100%',
+}
+
+const imgStyle = {
+  paddingBottom:'10px',
+  maxWidth:'370px',
+  margin: '0 auto',
+  height: 'auto',
+}
+
 function OurWorkshops(props) {
   const { classes } = props;
 
@@ -68,9 +82,9 @@ function OurWorkshops(props) {
         </Grid>
           <Grid item xs={10} sm={7}>
             <Grid container>
-              <Grid item xs={10} sm={10} md={6}>
+              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop5.jpg"/>
+                  <img width='100%' style={imgStyle} src="static/workshop5.jpg"/>
 
 
               </Grid>
@@ -90,9 +104,9 @@ function OurWorkshops(props) {
               </Grid>
             </Grid>
             <Grid container>
-              <Grid item xs={10} sm={10} md={6}>
+              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop9.jpg"/>
+                  <img width='100%' style={imgStyle} src="static/workshop9.jpg"/>
 
 
               </Grid>
@@ -110,12 +124,13 @@ function OurWorkshops(props) {
                   </Typography>
                 </Button>
               </Grid>
-            </Grid><Grid container>
-              <Grid item xs={10} sm={10} md={6}>
+            </Grid>
+            <Grid container>
 
-                  <img width='100%' style={{paddingBottom:'10px'}} src="static/workshop1.jpg"/>
-
-
+              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
+                  <Link href='/workshops'>
+                  <img width='100%' style={imgStyle} src="static/workshop1.jpg"/>
+                  </Link>
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
