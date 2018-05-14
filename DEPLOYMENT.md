@@ -4,8 +4,6 @@
 
 
 
-
-
 ## Table of Contents
 
 - Install and configure WordPress
@@ -15,16 +13,20 @@
 	* [Install Node on ec2](#install-node-on-ec2)
 	* [Clone/Pull App from git](#clone-app)
 	* [Build and Run](#build-and-run)
+- How to point DNS to the Domain name
+	* [Setting up A records]()
 - Configure Apache server
 	* [Domain configuration](#domain-configuration)
 	* [Generate and configure SSL certificate](#generate-and-configure-ssl-certificate)
 	* [Create Virtual Host](#create-virtual-host)
 	* [Proxy Node via Apache](#proxy-node-via-apache)
+- Re-deployment of NextJS app(#re-deployment-of-nextjs-app)
 - Troubleshoot [OOPS]
 	1. [System can't find Apache modules - a2enmod ?](#system-cant-find-apache-modules---a2enmod-)
 	2. [Fetch URL is changed in `env-config.js` but isn't updated in the app](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-the-app)
 	3. [Domain name conflicts while registering for let's encrypts' certificates](#domain-name-conflicts-while-registering-for-lets-encrypts-certificates)
 	4. [How do I connect to my ec2 instance ?](#how-do-i-connect-to-my-ec2-instance-)
+
 
 
 ## Setup
@@ -77,7 +79,7 @@ Follow these steps to host a WordPress installation
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20System%20Log.1842ebdc9c91c6e4594d709fa10ff4d66036e3e2.png)
 	
 	2. In the system log window, scroll through to the bottom to find the password that's surrounded by hash marks.
-	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Password.09b1827978db35368f5fa3ecbb8e1d233b2fa205.png)
+	![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/14185321/WP-Password.png)
 	
 	3. Now that you have your password, switch back to the tab that you used to access the WordPress **Hello World** page. Add **/admin** to the end of the URL so it looks something like **54.192.32.144/admin**. Hit enter. Enter the Username **user** and the **Password** that you read from the log file.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Login.c5abc6de858e49e17aed5459d90a368b17b5c562.png)
@@ -163,12 +165,12 @@ Follow these steps to host a WordPress installation
 ## Clone App
 
 Clone the app to user directory
-	```git
+	```bash
 	cd 
 	```
 
 1. Assuming we have the NextApp ready to clone
-	```git
+	```bash
 	git clone https://github.com/dam4222/academy-v3.git
 	```
 2. Go into the `academyv3` folder
@@ -179,7 +181,7 @@ Clone the app to user directory
 	```bash
 	npm install
 	```
-	Wait for the packages to finish download
+	Wait for the packages to finish downloading
 	
 4. **OPTIONAL**
 	- If the `Fetch URL` was changed in `env-config.js`
@@ -425,6 +427,23 @@ Using a Virtual Host allows you to access an application at (for example) `http:
 	sudo /opt/bitnami/ctlscript.sh restart apache
 	```
 	
+## Re-deployment of NextJS app
+
+**Changed the fetchUrl in `enc-config.js`**?
+Follow [this first](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-the-app)
+
+- Stop the pm2 process for 'next' app or whatever appName
+	```bash
+	pm2 stop next
+	```
+	or 
+	```bash
+	pm2 stop appName
+	```
+
+- Build and run the app from the steps [here](#build-and-run)
+
+
 
 ## Troubleshoot | FAQs
 
