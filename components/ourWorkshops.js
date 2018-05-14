@@ -9,7 +9,7 @@ import WorkshopPanels from './workshopPanels';
 import Typography from 'material-ui/Typography';
 import DesignBetter from '../assets/design-better.svg';
 import InVision from '../assets/invision-logo-pink.svg';
-import { Parallax } from 'react-scroll-parallax';
+import { ParallaxBanner } from 'react-scroll-parallax';
 
 const styles = theme => ({
   root: {
@@ -41,13 +41,12 @@ const verticalLogo = {
 
 const imgContainer = {
   justifyContent: 'center',
-  alignItems: 'center',
   display: 'flex',
-  height: '100%',
+  paddingBottom:'20px',
+  minHeight: '250px'
 }
 
 const imgStyle = {
-  paddingBottom:'20px',
   maxWidth:'370px',
   margin: '0 auto',
   height: 'auto',
@@ -83,10 +82,18 @@ function OurWorkshops(props) {
           <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-
-                  <img width='100%' style={imgStyle} src="static/workshop5.jpg"/>
-
-
+                <ParallaxBanner
+                  className=""
+                  layers={[
+                      {
+                          image: 'static/workshop5.jpg',
+                          amount: 0.1,
+                          slowerScrollRate: false,
+                      },
+                  ]}
+                  style={imgStyle}
+                >
+                </ParallaxBanner>
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -96,7 +103,7 @@ function OurWorkshops(props) {
                 <Typography variant='body1' gutterBottom>
                 Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
                 </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
@@ -105,10 +112,19 @@ function OurWorkshops(props) {
             </Grid>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-
-                  <img width='100%' style={imgStyle} src="static/workshop9.jpg"/>
-
-
+                <ParallaxBanner
+                  className=""
+                  layers={[
+                      {
+                          image: '/static/workshop9.jpg',
+                          amount: 0.1,
+                          slowerScrollRate: false,
+                          position:'bottom'
+                      },
+                  ]}
+                  style={imgStyle}
+                >
+                </ParallaxBanner>
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -118,7 +134,7 @@ function OurWorkshops(props) {
                 <Typography variant='body1' gutterBottom>
                   The leader-led bootcamp will train your team on how to run a Design Sprints start to finish. Our team of experts will instruct you every step of the way while working on a real problem your team is facing.
                 </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
@@ -128,9 +144,18 @@ function OurWorkshops(props) {
             <Grid container>
 
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                  <Link href='/workshops'>
-                  <img width='100%' style={imgStyle} src="static/workshop1.jpg"/>
-                  </Link>
+                <ParallaxBanner
+                  className=""
+                  layers={[
+                      {
+                          image: '/static/workshop1.jpg',
+                          amount: 0.1,
+                          slowerScrollRate: false,
+                      },
+                  ]}
+                  style={imgStyle}
+                >
+                </ParallaxBanner>
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -140,7 +165,7 @@ function OurWorkshops(props) {
                 <Typography variant='body1' gutterBottom>
                 If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.
                 </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'186px'}} disableRipple={true} className={"underline"} href="/workshops">
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
