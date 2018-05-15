@@ -24,3 +24,8 @@ npm run dev
 ## For deployment instructions:
 
 [Go here](DEPLOYMENT.md)
+
+
+## For WordPress REST API request instructions:
+
+[Go here](API-DOCUMENTATION.md)
