@@ -8,11 +8,19 @@ import Router from 'next/router'
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
 import { LinearProgress } from 'material-ui/Progress'
-import Chip from 'material-ui/Chip';;
+import Grid from 'material-ui/Grid';
+import Icon from 'material-ui/Icon';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+import "../styles.scss"
+
+
 
 const styles = {
-  paddFive:{
-    padding: "5%"
+  root:{
+    height:'auto',
+    paddingTop:'100px'
   }
 };
 
@@ -20,7 +28,7 @@ class Post extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       /* initial state */
       fetching: true,
       content: {
@@ -54,32 +62,49 @@ class Post extends React.Component {
       title: blog[0].acf.title,
       tags: tags,
       author_name: blog[0].acf.author.display_name,
-      author_picutre: blog[0].acf.author.user_avatar,
+      author_picture: blog[0].acf.author.user_avatar,
       date_posted: date_posted,
       author_job_title: blog[0].acf.author_job_title,
       fetching: false,
     })
   }
 
-  
+
 
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.paddFive}>
-      {this.state.fetching ? 
+      <div className={classes.root}>
+      {this.state.fetching ?
         ( /*This is the load bar, when the post is being fetched*/
         <div><LinearProgress variant="query" /><br/></div>
-        ) : 
+        ) :
         (
+          <Grid container style={{marginBottom:'40px'}}>
+          <Grid xs={1} md={3} lg={4} xl={4}></Grid>
+          <Grid xs={10} md={6} lg={4} xl={4} >
           <div>
-            <Typography variant="headline">
+            <Typography variant="body1" paragraph>
+              {this.state.date_posted}
+            </Typography>
+            <Typography variant="display4" paragraph>
               {this.state.title}
             </Typography>
-            <Typography>
-              <div  dangerouslySetInnerHTML={{__html: this.state.content}}>
+
+            <Grid xs={12} style={{paddingBottom:'40px'}}>
+              <Grid container>
+                <Grid xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
+                <div className="author-profile" dangerouslySetInnerHTML={{__html: this.state.author_picture}}></div>
+                <div style={{display: 'inline-block', paddingLeft: '15px'}}>
+                <Typography variant="button">by {this.state.author_name}</Typography>
+                <Typography variant="caption">{this.state.author_job_title}</Typography>
+                </div>
+                </Grid>
+              </Grid>
+            </Grid>
+
+              <div className="content" dangerouslySetInnerHTML={{__html: this.state.content}}>
               </div>
-            </Typography>
 
             <div>
               {this.state.tags.map((tag ) => {
@@ -87,21 +112,62 @@ class Post extends React.Component {
                   <Chip label={tag} className={classes.chip} />
                 )
               })}
-              <hr/>
-              <Typography>
-              <div dangerouslySetInnerHTML={{__html: this.state.author_picutre}}>
-              </div>
-                By {this.state.author_name}
-                - {this.state.date_posted}<br/>
-                - <Chip label={this.state.author_job_title} className={classes.chip} />
-              
-              </Typography>
+
             </div>
 
           </div>
+
+            <Divider style={{margin:'100px'}}/>
+          </Grid>
+          <Grid xs={1} md={3} lg={4} xl={4}></Grid>
+
+          </Grid>
+
         ) }
-      
+
+        <Grid container spacing={24}>
+          <Grid xs={12} style={{margin:'0 2%', background: 'linear-gradient(116deg, #ebf5f4, #efebf5)'}}>
+            <Typography variant="title" style={{textAlign:'center', padding:'50px'}}>More Articles</Typography>
+            <Grid container>
+              <Grid xs={1} sm={2} md={4}></Grid>
+              <Grid item xs={10} sm={8} md={4} lg={2} className="heroHover" style={{paddingBottom:'50px'}}>
+
+                <ParallaxBanner
+                  className="heroImgWorkshops"
+                  layers={[
+                      {
+                          image: "https://cdn1.academy-ny.com/wp-content/uploads/2018/05/09222124/2c632b50335679.58ce07b24102f.jpg",
+                          amount: 0.2,
+                          slowerScrollRate: false,
+                      },
+                  ]}
+                  style={{
+                      height: '20vh',
+                      top: '0',
+                      maxWidth:'605px'
+                  }}
+                >
+                </ParallaxBanner>
+
+                <Paper elevation={0} style={{padding:'30px', textAlign:'center', width: '100%', maxWidth: '605px'}} className="headlineHover">
+                  <Typography variant="headline" paragraph>
+                  Title
+                  </Typography>
+                  <Typography variant="body1" gutterBottom>
+                    May 25th, 2018
+                  </Typography>
+                  <Typography variant="caption" gutterBottom>
+                    By Adam Perlis
+                  </Typography>
+                </Paper>
+              </Grid>
+              <Grid xs={1} sm={2} md={4}></Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
       </div>
+
     );
   }
 }

@@ -20,6 +20,7 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog'
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+import "../styles.scss"
 
 import { CircularProgress } from 'material-ui/Progress';
 import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
@@ -75,7 +76,7 @@ class Blog extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       /* initial state */
       initFetching: true,
       blogs: {},
@@ -102,7 +103,7 @@ class Blog extends React.Component {
     this.handleClickOpen = this.handleClickOpen.bind(this);
     this.onChange = this.onChange.bind(this);
     this.verifyPassword = this.verifyPassword.bind(this);
-    
+
   }
 
   componentDidMount() {
@@ -124,7 +125,7 @@ class Blog extends React.Component {
         fetching: true
       })
       const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
-    
+
       const res = await fetch(url)
       const blogs = await res.json()
       //console.log(this.state)
@@ -150,7 +151,7 @@ class Blog extends React.Component {
   //fetch list of blogs here
   async UNSAFE_componentWillMount(){
     //console.log(url)
-    
+
     let res = await fetch(url)
     let blogs = await res.json()
     //console.log(blogs)
@@ -179,15 +180,15 @@ class Blog extends React.Component {
   }
 
   handleClickOpen = (blog) => {
-    
+
     if (blog.acf.password == ""){
       limit = "";
       Router.push(
         `/post?name=${blog.slug}`,
-        
+
       );
     }else{
-      this.setState({ 
+      this.setState({
         open: true,
         currPost: blog.slug,
         blogPassword: blog.acf.password,
@@ -203,14 +204,14 @@ class Blog extends React.Component {
   };
 
   verifyPassword = () =>{
-    
-    
+
+
     if (this.state.inputPassword == this.state.blogPassword){
       //console.log("correct", this.state.blogPassword, this.state.inputPassword)
       limit = "";
       Router.push(
         `/post?name=${this.state.currPost}`,
-        
+
       );
     }
     else{
@@ -303,7 +304,7 @@ class Blog extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
+            <Grid container className="heroHover" spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
               <Grid item xs={1} md={3}></Grid>
               <Grid item xs={10} md={6}>
                 <Grid container spacing={8} className={classes.centerImg}>
@@ -326,8 +327,8 @@ class Blog extends React.Component {
                 </Grid>
                 <Grid container spacing={8} className={classes.headline} >
                   <Grid item xs={1} md={4}></Grid>
-                  <Grid item xs={10} md={4} xl={3} >
-                    <Paper elevation={0} style={{padding:'3vh'}}>
+                  <Grid item xs={10} md={4} xl={3}>
+                    <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
                     <Typography variant="display2" paragraph>
                       {this.state.featuredBlog[0].acf.title}
                     </Typography>
@@ -357,8 +358,8 @@ class Blog extends React.Component {
       {
       Object.keys(this.state.blogs).map((blog) => {
         return (
-       
-          <Grid item xs={12} md={4}  style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
+
+          <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
 
               <ParallaxBanner
                 className="heroImgWorkshops"
@@ -377,7 +378,7 @@ class Blog extends React.Component {
               >
               </ParallaxBanner>
 
-              <Paper elevation={0} style={{padding:'20px', textAlign:'center'}}>
+              <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
                 <Typography variant="headline" paragraph>
                 {this.state.blogs[blog].acf.title}
                 </Typography>
@@ -389,7 +390,7 @@ class Blog extends React.Component {
                 </Typography>
               </Paper>
 
-          
+
             </Grid>
               )
             })
@@ -397,11 +398,11 @@ class Blog extends React.Component {
            </Grid>
           </Grid>
           </Grid>
-            
+
           <Grid item xs={1} md={2}></Grid>
         </Grid>
       )}
-      
+
       </div>
     );
   }
