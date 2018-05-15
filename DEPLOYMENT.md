@@ -20,7 +20,7 @@
 	* [Generate and configure SSL certificate](#generate-and-configure-ssl-certificate)
 	* [Create Virtual Host](#create-virtual-host)
 	* [Proxy Node via Apache](#proxy-node-via-apache)
-- Re-deployment of NextJS app(#re-deployment-of-nextjs-app)
+- [Re-deployment of NextJS app](#re-deployment-of-nextjs-app)
 - Troubleshoot [OOPS]
 	1. [System can't find Apache modules - a2enmod ?](#system-cant-find-apache-modules---a2enmod-)
 	2. [Fetch URL is changed in `env-config.js` but isn't updated in the app](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-the-app)

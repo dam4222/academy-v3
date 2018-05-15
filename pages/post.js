@@ -54,7 +54,7 @@ class Post extends React.Component {
       title: blog[0].acf.title,
       tags: tags,
       author_name: blog[0].acf.author.display_name,
-      author_picutre: blog[0].acf.author.user_avatar,
+      author_picture: blog[0].acf.author.user_avatar,
       date_posted: date_posted,
       author_job_title: blog[0].acf.author_job_title,
       fetching: false,
@@ -89,7 +89,7 @@ class Post extends React.Component {
               })}
               <hr/>
               <Typography>
-              <div dangerouslySetInnerHTML={{__html: this.state.author_picutre}}>
+              <div dangerouslySetInnerHTML={{__html: this.state.author_picture}}>
               </div>
                 By {this.state.author_name}
                 - {this.state.date_posted}<br/>
