@@ -5,7 +5,7 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import Link from 'next/link'
-import { Parallax } from 'react-scroll-parallax';
+import { ParallaxBanner } from 'react-scroll-parallax';
 
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
@@ -51,25 +51,30 @@ const styles = {
     overflow: 'hidden',
     background: 'center center'
   },
-  media: {
-    height: '300px',
-    width: '300px',
-    background: 'center center'
-  },
   subLegend: {
   },
   projectLegend: {
     display:'inline-block',
   },
   center: {
+    height: '100vh',
     display: 'flex',
-    justifyContent: 'center',
+    textAlign: 'right',
     alignItems: 'center',
-    height:'60vh',
-    textAlign:'right'
+    justifyContent: 'center',
+    paddingTop: '100px',
+    marginBottom: '280px'
+  },
+  contentCenter:{
+    display: 'flex',
+    alignItems: 'center',
+    textAlign:'left',
+    paddingBottom: '50px',
+    paddingTop: '50px',
+    justifyContent: 'flex-start',
   },
   progress: {
-    
+
     width: '100px',
     margin: 'auto',
   },
@@ -80,7 +85,7 @@ class Work extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       /* initial state */
       fetching: true,
       open: false,
@@ -94,15 +99,15 @@ class Work extends React.Component {
   }
 
   handleClickOpen = (blog) => {
-    
+
     if (blog.acf.password == ""){
       limit = "";
       Router.push(
         `/post?name=${blog.slug}`,
-        
+
       );
     }else{
-      this.setState({ 
+      this.setState({
         open: true,
         currPost: blog.slug,
         blogPassword: blog.acf.password,
@@ -118,14 +123,14 @@ class Work extends React.Component {
   };
 
   verifyPassword = () =>{
-    
-    
+
+
     if (this.state.inputPassword == this.state.blogPassword){
       //console.log("correct", this.state.blogPassword, this.state.inputPassword)
       limit = "";
       Router.push(
         `/post?name=${this.state.currPost}`,
-        
+
       );
     }
     else{
@@ -146,12 +151,12 @@ class Work extends React.Component {
     })
   }
 
-
   render() {
-    const { classes } = this.props;
+    const { classes, backgroundColor } = this.props;
     return (
       <div className={classes.root}>
-       
+
+
       <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -185,15 +190,20 @@ class Work extends React.Component {
         </Dialog>
 
       {this.state.fetching ? <CircularProgress style={{marginTop: '100'}} className={classes.progress} size={200} /> : (
+
         <Grid container>
+
           {this.state.projects.map((project, i) => {
 
             return (
-              <Grid container>
-                <Grid item xs={1} sm={1}></Grid>
-                <Grid item xs={12} sm={5} className={classes.center}>
+
+              <Grid container className={classes.center}>
+                <Grid item xs={1} md={3}></Grid>
+                <Grid item xs={10} md={4} className={classes.contentCenter}>
+
                 <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
                   <a style={{textDecoration: 'none', color:'black'}}>
+
                       <div className={classes.projectLegend}>
                         <Typography variant="title" color="secondary" className={classes.projectLegend}>
                           Client &nbsp;
@@ -215,27 +225,28 @@ class Work extends React.Component {
                     </a>
                   </Link>
                 </Grid>
-                  <Grid item xs={12} sm={5} className={classes.center}>
-                    <Parallax
-                        className="custom-class"
-                        offsetYMax={-50}
-                        offsetYMin={50}
-                        slowerScrollRate
-                    >
+                  <Grid item xs={12} md={5} className={classes.contentCenter}>
                     <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
-                      <a style={{textDecoration: 'none'}}>
-                        <Card className={classes.card}>
-                          <CardMedia
-                            className={classes.media}
-                            image={project.acf.featured_image}
-                          />
-                        </Card>
+                      <a style={{textDecoration: 'none', width: '100%', padding:'5%'}}>
+                        <ParallaxBanner
+                          className=""
+                          layers={[
+                              {
+                                  image: project.acf.featured_image,
+                                  amount: 0.1,
+                                  slowerScrollRate: false,
+                              },
+                          ]}
+                          style={{
+                              height: '100vh',
+                          }}
+                        >
+
+
+                        </ParallaxBanner>
                       </a>
                     </Link>
-                    </Parallax>
                   </Grid>
-                  <Grid item xs={1} sm={1}></Grid>
-                
             </Grid>
             )
 
@@ -243,6 +254,7 @@ class Work extends React.Component {
           }
         </Grid>
       )}
+      <div className="mask"></div>
       </div>
     );
   }

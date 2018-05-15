@@ -451,3 +451,12 @@ img {
     padding-bottom: 40px;
   }
 }
+
+.mask{
+  width: 100%;
+  height: 4%;
+  bottom: 0;
+  position: fixed;
+  display: block;
+  background: #fafafa;
+}
