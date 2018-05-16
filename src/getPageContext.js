@@ -44,11 +44,13 @@ const theme = createMuiTheme({
         fontFamily: 'Crimson Text, serif',
         color: 'black',
         fontSize: 'calc(1.5em + 1.25vw)',
+        lineHeight:'1.3em'
       },
       display3: {
         fontFamily: 'Crimson Text, serif',
         color: '#848484',
         fontSize: 'calc(1.5em + 1.25vw)',
+        lineHeight:'1.3em'
       },
       display2: {
         fontFamily: 'Crimson Text, serif',

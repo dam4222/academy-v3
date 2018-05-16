@@ -4,8 +4,9 @@ import Icon from 'material-ui/Icon';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
-import Link from 'next/link'
+import Link from 'next/link';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import scrollToComponent from 'react-scroll-to-component-ssr';
 
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
@@ -20,6 +21,7 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog'
+
 const fetchUrl = process.env.fetchUrl;
 
 const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?'
@@ -82,7 +84,6 @@ const styles = {
 
 
 class Work extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -90,7 +91,15 @@ class Work extends React.Component {
       fetching: true,
       open: false,
       errorMessage: '',
+      active: false
     }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    this.setState({
+      active: !this.state.active
+    })
   }
 
   handleClose = (blog) => {
@@ -156,7 +165,6 @@ class Work extends React.Component {
     return (
       <div className={classes.root}>
 
-
       <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -198,12 +206,13 @@ class Work extends React.Component {
             return (
 
               <Grid container className={classes.center}>
+
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={4} className={classes.contentCenter}>
 
                 <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
                   <a style={{textDecoration: 'none', color:'black'}}>
-
+                      <section className={project.acf.client_name} ref={(section) => { project.acf.client_name = section; }}></section>
                       <div className={classes.projectLegend}>
                         <Typography variant="title" color="secondary" className={classes.projectLegend}>
                           Client &nbsp;
@@ -222,6 +231,7 @@ class Work extends React.Component {
                               Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                             </Typography>
                           </Button>
+
                     </a>
                   </Link>
                 </Grid>
@@ -249,9 +259,21 @@ class Work extends React.Component {
                   </Grid>
             </Grid>
             )
-
           })
           }
+
+          <ul className="scrollableAnchor">
+          {this.state.projects.map((project, i) => {
+            return (
+                <li key={i} onClick={this.handleClick}>
+                  <div onClick={() => scrollToComponent( project.acf.client_name, { offset: 0, align: 'middle', duration: 500, ease:'inExpo'})} className={this.state.active ? "activeClass" : null}></div>
+                </li>
+
+            )
+          })
+          }
+          </ul>
+
         </Grid>
       )}
       <div className="mask"></div>

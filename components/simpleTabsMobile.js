@@ -88,7 +88,7 @@ class SimpleTabsMobile extends React.Component {
             <img src="/static/bootcamp-curriculum.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <Paper className={classes.center} style={{padding:'20px'}}>
+            <Paper elevation={0} className={classes.center} style={{padding:'20px', border:'1px solid #e7e7e7'}}>
                 <Typography variant='body1' gutterBottom paragraph>
                   If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.
                 </Typography>
