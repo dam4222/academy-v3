@@ -45,7 +45,7 @@ function OurProcess(props) {
             paddingTop:'60px',
             paddingBottom:'60px'
           }}
-          src='/static/product-relay.png'
+          src='https://cdn1.academy-ny.com/product-relay.png'
           />
         </Grid>
         <Grid item xs={1} sm={1} md={2} lg={2}></Grid>

@@ -116,7 +116,7 @@ function OurWorkshops(props) {
                   className=""
                   layers={[
                       {
-                          image: '/static/workshop9.jpg',
+                          image: 'https://cdn1.academy-ny.com/workshop9.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                           position:'bottom'
@@ -148,7 +148,7 @@ function OurWorkshops(props) {
                   className=""
                   layers={[
                       {
-                          image: '/static/workshop1.jpg',
+                          image: 'https://cdn1.academy-ny.com/workshop1.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                       },
