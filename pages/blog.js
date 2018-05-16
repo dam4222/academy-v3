@@ -318,7 +318,7 @@ class Blog extends React.Component {
                         },
                     ]}
                     style={{
-                        height: '60vh',
+                        height: '80vh',
                         top: '0',
                         maxWidth:'605px'
                     }}
