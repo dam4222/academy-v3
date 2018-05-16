@@ -84,6 +84,13 @@ const theme = createMuiTheme({
         textTransform:'none',
         letterSpacing: 'normal',
       },
+      caption: {
+        color: 'rgba(0, 0, 0, .5)',
+        fontFamily: 'Montserrat, sans-serif',
+        fontWeight: 300,
+        lineHeight: 1.75,
+        fontSize: 12,
+      }
     },
     overrides: {
       MuiButton: {

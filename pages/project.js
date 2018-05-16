@@ -12,6 +12,7 @@ import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import ReactPlayer from 'react-player';
 import { CircularProgress } from 'material-ui/Progress';
+import { Parallax } from 'react-scroll-parallax';
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
@@ -28,12 +29,55 @@ const styles = theme => ( {
     width: '100px',
     margin: 'auto',
   },
+  content: {
+    width: '100%',
+    marginTop: '95vh',
+    background: 'white',
+    position: 'relative',
+    height: '100%',
+  },
+  fixed: {
+    position:'fixed',
+    top:0,
+    height: '95vh',
+    overflow:'hidden'
+  },
+  spacer: {
+    width: 'calc(100% + 16px)',
+    margin: '-8px',
+    height: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop:'100px',
+    paddingBottom:'100px',
+  },
+  process:{
+    paddingBottom: '20vh',
+    paddingTop: '20vh',
+    height:'auto',
+    display:'flex',
+    alignItems:'center'
+  },
+  verticalLine:{
+    display:'flex',
+    justifyContent:'center',
+    width:'2px',
+    height:'100%',
+    background:'#dadada'
+  },
+  spacerNextProject:{
+    width: 'calc(100% + 16px)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });
 
 class Project extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       /* initial state */
       fetching: true,
       project: {
@@ -67,162 +111,229 @@ class Project extends React.Component {
     return (
       <div className={classes.root}>
       { this.state.fetching ? <CircularProgress className={classes.progress} size={200} /> : (
-        <Grid container spacing={8}>
-          <Grid item xs={12} sm={1}></Grid>
+        <div>
+        <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(121deg, #f4f8fa, #f3f7fa)', paddingTop: '60px'}}>
 
-          <Grid item xs={12} sm={10}>
-            <Grid container spacing={16}>
-              <Grid item xs={12} md={2}></Grid>
-              <Grid item xs={12} md={8}>
-                {/*Feature Image displayed here*/}
-                <img style={{ maxWidth: '100%' }} src={this.state.project.featured_image} alt="featured image" />
-              </Grid>
-              <Grid item xs={12} md={2}></Grid>
-            </Grid>
-            
-            
-            <Grid container spacing={16}>
-              <Grid item xs={12} md={1}></Grid>
+        <Grid container>
+        <Parallax
+            className="custom-class"
+            offsetYMax={100}
+            offsetYMin={-100}
+            slowerScrollRate={false}
+        >
+              <img width="100%"
+              style={{
+                paddingTop:'60px',
+                paddingBottom:'60px',
+                maxWidth:'100%'
+              }}
+              src={this.state.project.featured_image}
+              alt="featured image"
+              />
 
-              <Grid item xs={12} md={6}>
-                <Typography variant="body1" align="justify" gutterBottom>
+          </Parallax>
+          </Grid>
+        </Grid>
+
+
+        <Grid container spacing={8} className={classes.content}>
+
+          <Grid item xs={12} sm={12}>
+
+
+            <Grid container spacing={16} className={classes.spacer}>
+              <Grid item xs={10} md={1}></Grid>
+
+              <Grid item xs={10} md={4}>
+                <Typography variant="body1" style={{fontSize:'24px'}} gutterBottom>
                   <div dangerouslySetInnerHTML={{__html: this.state.project.project_description}}></div>
                 </Typography>
               </Grid>
 
-              <Grid item xs={12} md={2}></Grid>
-              <Grid item xs={12} md={2}>
-                <Typography variant="body1" >
-                  <a href="#section-one" style={{textDecoration: 'none', color: '#000000'}}>
-                    01 - {this.state.project.section_1_title}
+              <Grid item xs={10} md={2}></Grid>
+              <Grid item xs={10} md={2}>
+                <Typography variant="button" paragraph>
+                  <a href="#section-one" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                    01   —   {this.state.project.section_1_title}
                   </a>
                 </Typography>
-                <Typography variant="body1">
-                <a href="#section-two" style={{textDecoration: 'none', color: '#000000'}}>
-                    02 - {this.state.project.section_2_title}
+                <Typography variant="button" paragraph>
+                <a href="#section-two" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                    02   —   {this.state.project.section_2_title}
                   </a>
                 </Typography>
-                <Typography variant="body1">
-                  <a href="#section-three" style={{textDecoration: 'none', color: '#000000'}}>
-                    03 - {this.state.project.section_3_title}
+                <Typography variant="button" paragraph>
+                  <a href="#section-three" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                    03   —   {this.state.project.section_3_title}
                   </a>
                 </Typography>
               </Grid>
               <Grid item xs={12} md={1}></Grid>
             </Grid>
 
-            <Grid container spacing={24} direction="row-reverse" id="section-one">
-              <Grid item xs={12} md={1}></Grid>
-              <Grid item xs={12} md={4} >
-                <Typography variant="body1" >
-                  <b>{this.state.project.section_1_title}</b>. {this.state.project.section_1_description}
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={2}></Grid>
-              <Grid item xs={12} md={4} >
-                <div  dangerouslySetInnerHTML={{__html: this.state.project.section_1_media}}></div>
-              </Grid>
-            </Grid>
-
-            <Grid container spacing={24} id="section-two">
-              <Grid item xs={12} md={2}></Grid>
-              <Grid item xs={12} md={4} >
+            <Grid container style={{background:'linear-gradient(121deg, #f4f8fa, #f3f7fa)'}}>
+              <Grid container spacing={24} direction="row-reverse" id="section-one" className={classes.process}>
+                <Grid item xs={1} md={2}></Grid>
+                <Grid item xs={10} md={3} >
                   <Typography variant="body1" >
-                    <b>{this.state.project.section_2_title}</b>. {this.state.project.section_2_description}
+                    <b>{this.state.project.section_1_title}</b>. {this.state.project.section_1_description}
                   </Typography>
+                </Grid>
+                <Grid item xs={12} md={5} >
+                  <Parallax
+                      className="custom-class"
+                      offsetYMax={25}
+                      offsetYMin={-25}
+                      slowerScrollRate={false}
+                  >
+                      <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_1_media}}></div>
+                    </Parallax>
+                </Grid>
+                <Grid item xs={1} md={2}></Grid>
               </Grid>
-              <Grid item xs={12} md={1}></Grid>
-              <Grid item xs={12} md={4} >
-                  <div  dangerouslySetInnerHTML={{__html: this.state.project.section_2_media}}></div>
+
+              <Grid container spacing={24} id="section-two" className={classes.process}>
+                <Grid item xs={1} md={2}></Grid>
+                <Grid item xs={10} md={3} >
+                    <Typography variant="body1" >
+                      <b>{this.state.project.section_2_title}</b>. {this.state.project.section_2_description}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={5} >
+                  <Parallax
+                      className="custom-class"
+                      offsetYMax={25}
+                      offsetYMin={-25}
+                      slowerScrollRate={false}
+                  >
+                        <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_2_media}}></div>
+
+                    </Parallax>
+
+                </Grid>
+                <Grid item xs={1} md={2}></Grid>
               </Grid>
-              <Grid item xs={12} md={1}></Grid>
-            </Grid>
 
 
-            <Grid container spacing={24} direction="row-reverse" id="section-three">
-              <Grid item xs={12} md={2}></Grid>
-              <Grid item xs={12} md={4} >
-                  <Typography variant="body1" >
-                    <b>{this.state.project.section_3_title}</b>. {this.state.project.section_3_description}
-                  </Typography>
+              <Grid container spacing={24} direction="row-reverse" id="section-three" className={classes.process}>
+                <Grid item xs={1} md={2}></Grid>
+                <Grid item xs={10} md={3} >
+                    <Typography variant="body1" >
+                      <b>{this.state.project.section_3_title}</b>. {this.state.project.section_3_description}
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={5} >
+                  <Parallax
+                      className="custom-class"
+                      offsetYMax={25}
+                      offsetYMin={-25}
+                      slowerScrollRate={false}
+                  >
+                        <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_3_media}}></div>
+
+                    </Parallax>
+
+                </Grid>
+                <Grid item xs={1} md={2}></Grid>
               </Grid>
-              <Grid item xs={12} md={1}></Grid>
-              <Grid item xs={12} md={4} >
-                  <div  dangerouslySetInnerHTML={{__html: this.state.project.section_3_media}}></div>
-              </Grid>
-              <Grid item xs={12} md={1}></Grid>
             </Grid>
 
-            <Grid container spacing={16} justify="space-between">
-            <Grid item xs={12} md={1}></Grid>
-              
-              <Grid item xs={12} md={2}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.flow_image_1} alt="flow-image-1" />
+            <Grid container spacing={16} justify="space-between" className={classes.spacer}>
+              <Grid item xs={1} md={1}></Grid>
+              <Grid item xs={10} md={10}>
+                <Grid container>
+                  <Grid item xs={6} md={3}>
+                    <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.state.project.flow_image_1} alt="flow-image-1" />
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.state.project.flow_image_2} alt="flow-image-1" />
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.state.project.flow_image_3} alt="flow-image-1" />
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.state.project.flow_image_4} alt="flow-image-1" />
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12} md={2}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.flow_image_2} alt="flow-image-1" />
-              </Grid>
-              <Grid item xs={12} md={2}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.flow_image_3} alt="flow-image-1" />
-              </Grid>
-              <Grid item xs={12} md={2}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.flow_image_4} alt="flow-image-1" />
-              </Grid>
-              
-              <Grid item xs={12} md={1}></Grid>
+
+              <Grid item xs={1} md={1}></Grid>
             </Grid>
 
-            <Grid container spacing={16} justify="space-between">
-              <Grid item xs={12} md={1}></Grid>
-              <Grid item xs={12} md={5}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.large_image_1} alt="large-image-1" />
-              </Grid> 
-              <Grid item xs={12} md={5}>
-                <img style={{ maxWidth: '90%' }} src={this.state.project.large_image_2} alt="large-image-2" /> 
-              </Grid>
-              <Grid item xs={12} md={1}></Grid>
+            <Grid container justify="space-between" className={classes.spacer} style={{background:'#ebf1fa', paddingBottom:'0'}}>
+                <Grid container spacing={24}>
+                  <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
+                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.state.project.large_image_1} alt="large-image-1" />
+                  </Grid>
+                  <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
+                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.state.project.large_image_2} alt="large-image-2" />
+                  </Grid>
+                </Grid>
             </Grid>
+
 
             <Grid container>
               <Grid item xs={12} md={12}>
-                <img style={{ width: '100%' }} src={this.state.project.large_image} alt="large image 2" />
+                <img style={{ width: '100%', height:'100%' }} src={this.state.project.large_image} alt="large image 2" />
               </Grid>
             </Grid>
 
-            <Grid container spacing={16} justify="space-between">
-              <Grid item xs={12} md={4}> 
-                <Grid container spacing={16}>
-                  <Grid item xs={12} md={12}>
-                    <Typography variant="title">
+            <Grid container className={classes.spacerNextProject} justify="space-between">
+              <Grid item xs={1} md={1}></Grid>
+              <Grid item xs={10} md={5}>
+                <Grid container style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height:'100%',
+                  paddingTop: '100px',
+                  paddingBottom: '100px'
+                }}>
+                  <Grid item xs={1} md={1}></Grid>
+                  <Grid item xs={10} md={10}>
+                    <Grid container>
+                    <Typography variant="headline" style={{fontSize:'16px', color:' #848484', paddingBottom:'10px'}}>
                       More Projects
                     </Typography>
+                    </Grid>
+
+                    <Grid container>
+                    {this.state.moreProjects.map((project) => {
+                        return(
+                          <Grid key={project.slug} item xs={4} md={4}>
+                            <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + project.slug}>
+                              <Typography variant="button">{project.acf.client_name}</Typography>
+                            </a>
+                          </Grid>
+                        )
+                      })
+                    }
                   </Grid>
-                  {this.state.moreProjects.map((project) => {
-                      return(
-                        <Grid key={project.slug} item xs={4} md={4}>
-                          <a style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + project.slug}> 
-                            {project.acf.client_name}
-                          </a>
-                        </Grid>
-                      )
-                    })
-                  }
+                </Grid>
+                <Grid item xs={1} md={1}></Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} md={3}> </Grid>
-              <Grid item xs={12} md={5}> 
+              <Grid item xs={12} md={6} style={{
+                background:'linear-gradient(121deg, rgba(13, 72, 139, .1), rgba(234, 246, 255, 1))',
+                height:'100%', display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingTop: '115px',
+                paddingBottom: '115px'
+              }}>
                   <Typography variant="body1">
-                    Next Project    <a style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + this.state.project.next_project_link.post_name}> 
+                    Next Project    <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + this.state.project.next_project_link.post_name}>
                       <b>{this.state.project.next_project_link.post_title} <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon></b>
                     </a>
-                    
+
                   </Typography>
               </Grid>
+              <Grid item xs={1} md></Grid>
             </Grid>
+
           </Grid>
-          
-          <Grid item xs={12} sm={1}></Grid>
         </Grid>
+      </div>
       )}
       </div>
     )
