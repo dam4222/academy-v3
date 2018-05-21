@@ -33,26 +33,6 @@ const spacing = {
   marginLeft:'40px'
 };
 
-const transition1 = {
-  background: 'lightgray',
-  width: '100%',
-  height: '100vh',
-  position: 'relative',
-  zIndex: -1,
-  display:'block',
-  transition: '650ms cubic-bezier(0.19, 1, 0.22, 1) all'
-};
-
-const transition2 = {
-  background: 'gray',
-  width: '100%',
-  height: '100vh',
-  position: 'relative',
-  zIndex: -1,
-  display:'block',
-  transition: '650ms cubic-bezier(0.19, 1, 0.22, 1) all'
-};
-
 class SimpleDrawer extends React.Component {
 
   state = {
@@ -87,55 +67,57 @@ class SimpleDrawer extends React.Component {
         </Button>
 
 
-          <Grid container style={{height:'100vh', display:'flex', alignItems:'center', background:'black', paddingTop:'40px'}}>
+          <Grid container style={{height:'100vh', display:'flex', alignItems:'center', background:'black'}}>
           <Grid item xs={1} md={2}></Grid>
           <Grid item xs={10} md={4} className="showDrawer" style={{display: 'flex', flexDirection: 'column'}}>
 
             <Button disableRipple={true} href="/work" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'24px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
                 Work
               </Typography>
             </Button>
 
             <Button disableRipple={true} href="/process" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'24px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
                 Our Process
               </Typography>
             </Button>
 
             <Button disableRipple={true} href="/workshops" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'24px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
                 Workshops
               </Typography>
             </Button>
 
             <Button disableRipple={true} href="/blog" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'24px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
                 Design Tinkering
               </Typography>
             </Button>
 
-            <Button disableRipple={true} href="/about" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'16px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                About Us
-              </Typography>
-            </Button>
+            <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
+              <Button disableRipple={true} href="/about" style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
+                  About Us
+                </Typography>
+              </Button>
 
-            <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'16px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Careers
-              </Typography>
-            </Button>
+              <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
+                  Careers
+                </Typography>
+              </Button>
 
-            <Button disableRipple={true} href="/contact" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'16px', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Contact Us
-              </Typography>
-            </Button>
+              <Button disableRipple={true} href="/contact" style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
+                  Contact Us
+                </Typography>
+              </Button>
+          </Grid>
 
           </Grid>
 
-          <Grid item xs={10} md={4} className="showDrawer" style={{display: 'flex', flexDirection: 'column', alignItems:'flex-end', textAlign:'right', flexWrap:'wrap'}}>
+          <Grid item xs={10} md={4} className="showDrawer" style={{display: 'flex', flexDirection: 'column', alignItems:'flex-end', textAlign:'right', flexWrap:'wrap', position:'relative', top:'-100px'}}>
             <Button style={{width:'130px', height:'auto', paddingBottom:'20px'}} disableRipple={true} href="/">
                 <AcademyLogoWhite style={{width:'100%'}}/>
             </Button>
