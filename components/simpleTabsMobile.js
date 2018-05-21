@@ -82,10 +82,10 @@ class SimpleTabsMobile extends React.Component {
 
         >
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.center} />
+            <img src="https://cdn1.academy-ny.com/workshop.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/bootcamp-curriculum.jpg" className={classes.center} />
+            <img src="https://cdn1.academy-ny.com/Bootcamp-curriculum.jpg" className={classes.center} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <Paper elevation={0} className={classes.center} style={{padding:'20px', border:'1px solid #e7e7e7'}}>

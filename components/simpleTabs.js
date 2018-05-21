@@ -116,10 +116,10 @@ class SimpleTabs extends React.Component {
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-            <img src="/static/workshop.jpg" className={classes.right} />
+            <img src="https://cdn1.academy-ny.com/workshop.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <img src="/static/bootcamp-curriculum.jpg" className={classes.right} />
+            <img src="https://cdn1.academy-ny.com/Bootcamp-curriculum.jpg" className={classes.right} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <SkillsGrid className={classes.right} />

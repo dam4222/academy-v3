@@ -134,7 +134,7 @@ class SimpleAppBar extends React.Component {
 
                       <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
                         <Typography variant="button" color="inherit">
-                          Blog
+                          Design Tinkering
                         </Typography>
                       </Button>
                     </Hidden>

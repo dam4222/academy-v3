@@ -89,7 +89,7 @@ function LatestNews(props) {
           </Grid>
           <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center'}}>
 
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/work">
+            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/blog">
               <Typography variant="button" color="inherit">
                 See more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
               </Typography>

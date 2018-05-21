@@ -85,7 +85,7 @@ function Workshops(props) {
                 className="heroImgWorkshops"
                 layers={[
                     {
-                        image: '/static/designbetter-class@2x.jpg',
+                        image: 'https://cdn1.academy-ny.com/designbetter-class@2x.jpg',
                         amount: 0.1,
                         slowerScrollRate: false,
                     },
@@ -104,7 +104,7 @@ function Workshops(props) {
                   className="your-class"
                   layers={[
                       {
-                          image: '/static/stickies-blur@2x.jpg',
+                          image: 'https://cdn1.academy-ny.com/stickies-blur@2x.jpg',
                           amount: 0.2,
                           slowerScrollRate: false,
                           position: 'bottom'
@@ -145,7 +145,7 @@ function Workshops(props) {
                   className="your-class"
                   layers={[
                       {
-                          image: '/static/survival-kit@2x.jpg',
+                          image: 'https://cdn1.academy-ny.com/survival-kit@2x.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                           position: 'center'
@@ -165,7 +165,7 @@ function Workshops(props) {
                     className="your-class"
                     layers={[
                         {
-                            image: '/static/process-stickies@2x.jpg',
+                            image: 'https://cdn1.academy-ny.com/process-stickies@2x.jpg',
                             amount: 0.2,
                             slowerScrollRate: false,
                             position: 'left'

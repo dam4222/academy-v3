@@ -68,7 +68,7 @@ class Carousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       focusOnSelect: false,
-      autoplay: true,
+      autoplay: false,
       speed: 750,
       autoplaySpeed: 4000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",

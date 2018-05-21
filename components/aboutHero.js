@@ -10,7 +10,9 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
-    height: '100vh'
+    height: 'auto',
+    paddingTop:'20vh',
+    paddingBottom:'30vh',
   }
 });
 

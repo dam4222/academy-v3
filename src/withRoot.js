@@ -6,6 +6,7 @@ import getPageContext from './getPageContext';
 import SimpleAppBar from '../components/simpleAppBar';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { CircularProgress } from 'material-ui/Progress';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
