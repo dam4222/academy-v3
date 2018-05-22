@@ -399,9 +399,43 @@ p{
   background: black !important;
   top: 0;
 
-  svg path{
-    fill:white;
+  svg {
+    transition: 1s ease all;
+    transform: translate(0, 0);
+
+    &:hover{
+      cursor: pointer;
+      transform: translate(0, -5px);
+    }
+
+    path{
+      fill:white;
+    }
   }
+}
+
+.arrowBack{
+  display: block;
+  position: relative !important;
+  width: 85px !important;
+  height: 85px !important;
+  background: black !important;
+  color:white !important;
+  top: 95px;
+  left: -24px;
+  transition: 1s ease all;
+  padding:20px;
+
+  span {
+    transition: 1s ease all;
+    transform: translate(0, 0);
+
+    &:hover{
+      transform: translate(-5px, 0);
+    }
+  }
+
+
 }
 
 img {

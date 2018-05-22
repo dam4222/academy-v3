@@ -57,7 +57,7 @@ class SimpleAppBarTinyBack extends React.Component {
       {console.log(Router)}
             <AppBar
             color="default"
-            style={{background:'#fafafa', height:'60px'}}
+            style={{background:'transparent', height:'60px'}}
             className="tinyAppBar"
             >
               <Toolbar>
@@ -65,7 +65,7 @@ class SimpleAppBarTinyBack extends React.Component {
                     <IconButton className="iconLogo" disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
-                    <IconButton onClick={this.handleClick}>arrow_back</IconButton>
+                    <IconButton className="arrowBack" onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton>
                   </Grid>
 
                   <Grid item xs={1} style={spacing}>
