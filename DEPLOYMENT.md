@@ -26,6 +26,7 @@
 	2. [Fetch URL is changed in `env-config.js` but isn't updated in the app](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-the-app)
 	3. [Domain name conflicts while registering for let's encrypts' certificates](#domain-name-conflicts-while-registering-for-lets-encrypts-certificates)
 	4. [How do I connect to my ec2 instance ?](#how-do-i-connect-to-my-ec2-instance-)
+	5. [How to serve Images via CDN ?](#how-to-serve-images-via-cdn)
 
 
 
@@ -46,44 +47,44 @@ Follow these steps to host a WordPress installation
 4. **Configure** your Instance
 	1. Click on **AWS Marketplace** on the left-hand side, search for **WordPress**, look for WordPress powered by **BitNami**, then click Select.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20AMI.8dcfa97e04c6daaf3b1681f1e509419e9cdce962.png)
-	
+
 	2. You will be presented a detailed pricing page. In this case, the price will be $0.00 for the software regardless of the size of the instance that you use. Scroll to the bottom and click Continue.
-	
+
 	3. we will be using a free-tier eligible **t2.micro** instance. Click on t2.micro in the Type column (it should be the first one), then click **Next: Configure Instance Details**. It may take a few seconds to load. On the following screens, click Next: Add Storage and then Next: Tag Instance.
 	![Shown here](https://d1.awsstatic.com/Getting%20Started/Getting%20Started%20-%20Choose%20an%20instance%20-%20WordPress.9d737b75cee928529ebef8197293d6976dbae3cf.png)
-	
+
 	4. Click **Review and Launch** to continue.
-	
+
 	5. You can review your instance configurations, then click **Launch** when you’re ready to start your Amazon EC2 instance running WordPress.
-	
+
 	6. The next screen deals with key-pairs. Key-pairs are how you can connect to your EC2 instances via a terminal program using Secure Shell (SSH). Select Proceed with **Create a key pair**, give a name to the Key, then **Download Key Pair**.
 		> This is the key which we're gonna use later on to connect via SSH, so save it or maybe have a secure copy somewhere.
 	![Shown here](https://rancher.com/docs/one-point-x/img/os/Rancher_aws3.png)
-	
+
 	7. Click **Launch Instances** to launch your instance. Be aware that starting the instance up may take a few minutes.
-	
+
 	8. Click View Instances on the bottom right of the page (you may need to scroll down to see it). Then select the WordPress instance, make sure the Instance State says running. If Instance State says launching then AWS is still preparing your WordPress instance.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Instance%20Running.08b5c01e053a3bd40472a42ef3e81c4114c76c7f.png)
-	
+
 	9. Once your instance is running, you can now test your WordPress website. Find the **Public IP** for your instance at the bottom of this page.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Public%20IP.60f367ead27257f83c3438836ff5a2198c6cb252.png)
-	
+
 	10. Copy the Public IP into a new tab in your web browser, and you should see a **Hello World** blog page appear.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Hello%20World.b37fd52d3989f063d94ac0aa613ad70bf9a86656.png)
-	
-5. Make Changes to Your Website 
+
+5. Make Changes to Your Website
 
 	> Now that you have your WordPress site up and running, it’s time to log into its administration page so you can customize your site. To find your password, please follow the steps below:
 
 	1. Switch back to your EC2 management console in your web browser. Select **WordPress** instance, and click the **Actions** button. In the drop down menu, select **Instance Setting**, and choose **Get System Log**.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20System%20Log.1842ebdc9c91c6e4594d709fa10ff4d66036e3e2.png)
-	
+
 	2. In the system log window, scroll through to the bottom to find the password that's surrounded by hash marks.
 	![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/14185321/WP-Password.png)
-	
+
 	3. Now that you have your password, switch back to the tab that you used to access the WordPress **Hello World** page. Add **/admin** to the end of the URL so it looks something like **54.192.32.144/admin**. Hit enter. Enter the Username **user** and the **Password** that you read from the log file.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Login.c5abc6de858e49e17aed5459d90a368b17b5c562.png)
-			
+
 	> Congratulations! You now have your WordPress site up and running. You can now manage, customize, and configure it as you like.
 
 
@@ -117,17 +118,17 @@ Follow these steps to host a WordPress installation
 		> You should see a new Blogs option appear in the sidebar:
 		![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/12013659/CPT-UI.png)
 		7. Similarly add `Projects` Post type
-		
+
 	2. **Advanced Custom Fields**
 		1. Go to Custom Fields>Field Groups
 		2. Click **Add New**
 		3. For the Field Group title, enter something like `Blog Data`
 		4. Scroll down until you see the Location metabox. Set this Field Group to only show if Post Type is equal to Blog:![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/12013718/Custom-Field.png)
 		5. Similarly Create `Projects` field group with appropriate data structure
-		
+
 	3. **ACF to REST API**
 		- Now that we have our Custom Fields, we need to expose them to the WP-API. ACF doesn’t currently ship with WP-API support, but there’s a great plugin solution from the community called ACF to REST API. All you have to do is install (you can find it by searching for it at Plugins>Add New) and activate it, and it will immediately expose your ACF custom fields to the API.
-		
+
 	4. **WP Offload S3 Lite**
 		- Follow the guide [here](https://deliciousbrains.com/wp-offload-s3/doc/quick-start-guide/) to setup
 
@@ -154,7 +155,7 @@ Follow these steps to host a WordPress installation
 	nvm install --lts
 	```
 	Installing Node.js also installs the Node Package Manager (npm) so you can install additional modules as needed.
-	
+
 5. Test that Node.js is installed and running correctly by typing the following at the command line.
 	```bash
 	node -e "console.log('Running Node.js ' + process.version)"
@@ -166,7 +167,7 @@ Follow these steps to host a WordPress installation
 
 Clone the app to user directory
 	```bash
-	cd 
+	cd
 	```
 
 1. Assuming we have the NextApp ready to clone
@@ -182,13 +183,13 @@ Clone the app to user directory
 	npm install
 	```
 	Wait for the packages to finish downloading
-	
+
 4. **OPTIONAL**
 	- If the `Fetch URL` was changed in `env-config.js`
 	- Delete the folder /node_modules/.cache/babel_loader
 		`rm -rf node_modules/.cache/babel_loader`
-		
-		
+
+
 ## Build and Run
 
 1. Build App
@@ -219,10 +220,10 @@ Clone the app to user directory
 - You own a domain name `academy-ny.com`.
 
 ###### Now:
-1. Login to your Domain name provider 
+1. Login to your Domain name provider
 2. Forward your domain name, `academy-ny.com` , to the public IP of the ec2 instance, created [here](#setup)
 3. Create a subdomain name (usually an `A record`), `admin.academy-ny.com`, to the public IP of the ec2 instance.
-	
+
 ###### Note:
 - Here `admin` is the name for sub-domain to access the WordPress backend
 - `academy-ny.com` would be landing page of the NextJS App
@@ -260,7 +261,7 @@ Clone the app to user directory
 	tar xf lego_linux_amd64.tar.xz
 	sudo mv lego_linux_amd64 /usr/local/bin/lego
 	```
-	- These steps will download, extract and copy the Lego client to a directory in your path. 
+	- These steps will download, extract and copy the Lego client to a directory in your path.
 
 2. Generate Let's Encrypt Certificate For Your Domain
 	- Turn off all Bitnami services:
@@ -281,8 +282,8 @@ Clone the app to user directory
 
 
 3. Configure The Web Server To Use The Let's Encrypt Certificate
-	- Assuming certificates were generated for ```admin.academy-ny.com``` and ```acadeny-ny.com``` 
-	- Link the new SSL certificate and certificate key file to the correct locations, depending on which Web server you're using. Update the file permissions to make them readable by the root user only. 
+	- Assuming certificates were generated for ```admin.academy-ny.com``` and ```acadeny-ny.com```
+	- Link the new SSL certificate and certificate key file to the correct locations, depending on which Web server you're using. Update the file permissions to make them readable by the root user only.
 	```bash
 	sudo mv /opt/bitnami/apache2/conf/server.crt /opt/bitnami/apache2/conf/server.crt.old
 	sudo mv /opt/bitnami/apache2/conf/server.key /opt/bitnami/apache2/conf/server.key.old
@@ -303,7 +304,7 @@ Clone the app to user directory
 
 ## Renew The Let's Encrypt Certificate
 
-> Let's Encrypt certificates are only valid for 90 days. 
+> Let's Encrypt certificates are only valid for 90 days.
 > To automatically renew your certificates before they expire, write a script to perform the above tasks and schedule a cron job to run the script periodically. To do this:
 - Create a script at /etc/lego/renew-certificate.sh with the following content. Remember to replace the **EMAIL-ADDRESS** placeholder with your email address.
 	```bash
@@ -337,7 +338,7 @@ Using a Virtual Host allows you to access an application at (for example) `http:
 1. Comment out the line that includes the prefix configuration file in the `/opt/bitnami/apache2/conf/bitnami/bitnami-apps-prefix.conf` file:
 	```php
 	# Include "/opt/bitnami/apps/wordpress/conf/httpd-prefix.conf"
-	```	
+	```
 2. Include the virtual host configuration file for WordPress in the /opt/bitnami/apache2/conf/bitnami/bitnami-apps-vhosts.conf file:
 	```php
 	Include "/opt/bitnami/apps/wordpress/conf/httpd-vhosts.conf"
@@ -426,7 +427,7 @@ Using a Virtual Host allows you to access an application at (for example) `http:
 	```bash
 	sudo /opt/bitnami/ctlscript.sh restart apache
 	```
-	
+
 ## Re-deployment of NextJS app
 
 **Changed the fetchUrl in `enc-config.js`**?
@@ -436,7 +437,7 @@ Follow [this first](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-th
 	```bash
 	pm2 stop next
 	```
-	or 
+	or
 	```bash
 	pm2 stop appName
 	```
@@ -459,7 +460,7 @@ Follow [this first](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-th
 
 ### Fetch URL is changed in env-config.js but isn't updated in the app
 
-- Delete the folder under /academyv3/node_modules/.cache/babel_loader 
+- Delete the folder under /academyv3/node_modules/.cache/babel_loader
 	```bash
 	cd academyv3
 	rm -rf node_modules/.cache/babel_loader
@@ -489,3 +490,5 @@ Follow [this first](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-th
 	```bash
 	ssh -i /path/to/your/key/key-pair.pem ubuntu@public-ip
 	```
+
+### How to serve Images via CDN ?

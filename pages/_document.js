@@ -13,7 +13,7 @@ class MyDocument extends Document {
     return (
       <html lang="en" dir="ltr">
         <Head>
-          <title>My page</title>
+          <title>Academy – Field Engineer</title>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
@@ -22,6 +22,7 @@ class MyDocument extends Document {
               'user-scalable=0, initial-scale=1, ' +
               'minimum-scale=1, width=device-width, height=device-height'
             }
+            description="Description needed"
           />
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />

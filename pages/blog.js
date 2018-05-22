@@ -60,12 +60,6 @@ const styles = {
     textAlign:'center',
     justifyContent: 'center',
   },
-  headline:{
-    top: '60vh',
-    display: 'flex',
-    position: 'absolute',
-    textAlign: 'center',
-  },
   progress: {
     width: '100px',
     margin: 'auto',
@@ -292,7 +286,7 @@ class Blog extends React.Component {
             <Grid container spacing={8}>
               <Grid item xs={3}></Grid>
               <Grid item xs={6}>
-                <Grid container spacing={8} className={classes.center}>
+                <Grid container spacing={8} className="designTinkering">
                   <Typography variant="display2" gutterBottom>
                     Design
                   </Typography>
@@ -325,7 +319,7 @@ class Blog extends React.Component {
                   >
                   </ParallaxBanner>
                 </Grid>
-                <Grid container spacing={8} className={classes.headline} >
+                <Grid container spacing={8} className="blogHeadline" >
                   <Grid item xs={1} md={4}></Grid>
                   <Grid item xs={10} md={4} xl={3}>
                     <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
@@ -346,7 +340,7 @@ class Blog extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container spacing={8} style={{paddingTop:'200px'}}>
+            <Grid container spacing={8} style={{paddingTop:'100px'}}>
 
     <Grid item xs={1} md={2}></Grid>
 

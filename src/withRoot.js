@@ -4,19 +4,39 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import CssBaseline from 'material-ui/CssBaseline';
 import getPageContext from './getPageContext';
 import SimpleAppBar from '../components/simpleAppBar';
+import SimpleAppBarTiny from '../components/simpleAppBarTiny';
+import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { CircularProgress } from 'material-ui/Progress';
+import Router from 'next/router'
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
     constructor(props, context) {
       super(props, context);
-
+      this.state = {
+        loadTiny:false,
+        loadTinyBack:false
+      }
       this.pageContext = this.props.pageContext || getPageContext();
     }
 
     componentDidMount() {
+
+        if(Router.router.route == "/blog"){
+        this.setState({
+          loadTiny:true
+        })
+      }
+
+        if(Router.router.route == "/post" || Router.router.route == "/project" ){
+        this.setState({
+          loadTiny:true,
+          loadTinyBack:true
+        })
+      }
+
       // Remove the server-side injected CSS.
       const jssStyles = document.querySelector('#jss-server-side');
       if (jssStyles && jssStyles.parentNode) {
@@ -34,7 +54,21 @@ function withRoot(Component) {
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
-          <SimpleAppBar />
+
+          {this.state.loadTiny ?
+            (
+              <SimpleAppBarTiny />
+            )
+            :(<SimpleAppBar />)
+          }
+
+          {this.state.loadTinyBack ?
+            (
+              <SimpleAppBarTinyBack />
+            )
+            :<span></span>
+          }
+
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...this.props} />

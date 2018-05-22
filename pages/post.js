@@ -84,7 +84,7 @@ class Post extends React.Component {
           <Grid xs={1} md={3} lg={4} xl={4}></Grid>
           <Grid xs={10} md={6} lg={4} xl={4} >
           <div>
-            <Typography variant="body1" paragraph>
+            <Typography variant="body1" style={{fontSize:'12px'}} paragraph>
               {this.state.date_posted}
             </Typography>
             <Typography variant="display4" paragraph>
@@ -133,7 +133,7 @@ class Post extends React.Component {
               <Grid item xs={10} sm={8} md={4} lg={2} className="heroHover" style={{paddingBottom:'50px'}}>
 
                 <ParallaxBanner
-                  className="heroImgWorkshops"
+                  className="blogHeadline"
                   layers={[
                       {
                           image: "https://cdn1.academy-ny.com/wp-content/uploads/2018/05/09222124/2c632b50335679.58ce07b24102f.jpg",

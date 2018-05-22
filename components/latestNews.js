@@ -44,7 +44,7 @@ function LatestNews(props) {
         <Grid item xs={1} sm={1} md={1} lg={1}></Grid>
         <Grid item xs={10} sm={11} md={11} lg={10}>
         <Grid container spacing={40}>
-          <Grid item xs={12} sm={3} md={3} lg={3} style={{borderRight:'1px solid #ede7e7'}}>
+          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
             <Typography variant='title' gutterBottom>
               Product Relays™
             </Typography>
@@ -58,7 +58,7 @@ function LatestNews(props) {
               </Typography>
             </Button>
           </Grid>
-          <Grid item xs={12} sm={3} md={3} lg={3} style={{borderRight:'1px solid #ede7e7'}}>
+          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
             <Typography variant='title' gutterBottom>
               Product Relays™
             </Typography>
@@ -72,7 +72,7 @@ function LatestNews(props) {
               </Typography>
             </Button>
           </Grid>
-          <Grid item xs={12} sm={3} md={3} lg={3} style={{borderRight:'1px solid #ede7e7'}}>
+          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
             <Typography variant='title' gutterBottom>
               Product Relays™
             </Typography>
