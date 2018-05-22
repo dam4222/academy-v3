@@ -492,3 +492,5 @@ Follow [this first](#fetch-url-is-changed-in-env-configjs-but-isnt-updated-in-th
 	```
 
 ### How to serve Images via CDN ?
+`
+- Follow this tutorial be sure to put `*.nameofyoursite.com` so that it includes all subfolders. https://deliciousbrains.com/wp-offload-s3/doc/custom-domain-https-cloudfront/
