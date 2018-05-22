@@ -17,7 +17,8 @@ function withRoot(Component) {
       super(props, context);
       this.state = {
         loadTiny:false,
-        loadTinyBack:false
+        loadTinyBack:false,
+        loadAppBar:true
       }
       this.pageContext = this.props.pageContext || getPageContext();
     }
@@ -26,16 +27,28 @@ function withRoot(Component) {
 
         if(Router.router.route == "/blog"){
         this.setState({
-          loadTiny:true
+          loadTiny:true,
+          loadAppBar:false,
+          loadTinyBack:false
         })
       }
 
         if(Router.router.route == "/post" || Router.router.route == "/project" ){
         this.setState({
-          loadTiny:true,
-          loadTinyBack:true
+          loadTiny:false,
+          loadTinyBack:true,
+          loadAppBar:false
         })
-      }
+        }
+
+        if(!Router.router.route == "/post" || !Router.router.route == "/project" || !Router.router.route == "/blog" ){
+        this.setState({
+          loadTiny:false,
+          loadTinyBack:false,
+          loadAppBar:true
+        })
+        }
+
 
       // Remove the server-side injected CSS.
       const jssStyles = document.querySelector('#jss-server-side');
@@ -59,12 +72,19 @@ function withRoot(Component) {
             (
               <SimpleAppBarTiny />
             )
-            :(<SimpleAppBar />)
+            :<span></span>
           }
 
           {this.state.loadTinyBack ?
             (
               <SimpleAppBarTinyBack />
+            )
+            :<span></span>
+          }
+
+          {this.state.loadAppBar ?
+            (
+              <SimpleAppBar />
             )
             :<span></span>
           }
