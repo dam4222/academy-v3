@@ -5,6 +5,7 @@ import flush from 'styled-jsx/server';
 import getPageContext from '../src/getPageContext';
 import Grid from 'material-ui/Grid';
 import "../styles.scss"
+import { GA_TRACKING_ID } from '../gtag'
 
 class MyDocument extends Document {
   render() {
@@ -13,6 +14,22 @@ class MyDocument extends Document {
     return (
       <html lang="en" dir="ltr">
         <Head>
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+         <script
+           async
+           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+         />
+         <script
+           dangerouslySetInnerHTML={{
+             __html: `
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+           gtag('config', '${GA_TRACKING_ID}');
+         `}}
+         />
+
           <title>Academy – Field Engineer</title>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
