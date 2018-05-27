@@ -8,34 +8,22 @@ import SimpleAppBarTiny from '../components/simpleAppBarTiny';
 import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { LinearProgress } from 'material-ui/Progress';
+import { CircularProgress } from 'material-ui/Progress';
 import Router from 'next/router'
-
-const loadDelay = 2
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
-
-    
-
     constructor(props, context) {
       super(props, context);
       this.state = {
-        loading: true,
         loadTiny:false,
         loadTinyBack:false
       }
       this.pageContext = this.props.pageContext || getPageContext();
     }
 
-    slowLoad = () => {
-      //Start the timer
-        this.setState({loading: false}) 
-        
-    }
-
     componentDidMount() {
-        setTimeout(this.slowLoad(), loadDelay * 1000)
+
         if(Router.router.route == "/blog"){
         this.setState({
           loadTiny:true
@@ -66,35 +54,25 @@ function withRoot(Component) {
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
-        <CssBaseline />
-        { this.state.loading ? <LinearProgress color="secondary" /> :
-          <div style={{
-             opacity: '0', animation: 'fadeIn 3.2s forwards', animationDelay: '.3s'
-          }} >
-            { this.state.loadTiny ?
-              (
-                <SimpleAppBarTiny />
-              )
-              :(<SimpleAppBar />)
-            }
 
-            {this.state.loadTinyBack ?
-              (
-                <SimpleAppBarTinyBack />
-              )
-              :<span></span>
-            }
+          {this.state.loadTiny ?
+            (
+              <SimpleAppBarTiny />
+            )
+            :(<SimpleAppBar />)
+          }
 
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            
-           
-            <Component {...this.props} />
+          {this.state.loadTinyBack ?
+            (
+              <SimpleAppBarTinyBack />
+            )
+            :<span></span>
+          }
 
-            <SimpleAppFooter />
-            
-          </div>
-       }
-          
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Component {...this.props} />
+          <SimpleAppFooter />
         </MuiThemeProvider>
         </ParallaxProvider>
       );
