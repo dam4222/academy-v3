@@ -86,7 +86,7 @@ function OurWorkshops(props) {
                   className=""
                   layers={[
                       {
-                          image: 'static/workshop5.jpg',
+                          image: 'https://cdn1.academyux.com/workshop5.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                       },
@@ -116,7 +116,7 @@ function OurWorkshops(props) {
                   className=""
                   layers={[
                       {
-                          image: 'https://cdn1.academy-ny.com/workshop9.jpg',
+                          image: 'https://cdn1.academyux.com/workshop9.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                           position:'bottom'
@@ -148,7 +148,7 @@ function OurWorkshops(props) {
                   className=""
                   layers={[
                       {
-                          image: 'https://cdn1.academy-ny.com/workshop1.jpg',
+                          image: 'https://cdn1.academyux.com/workshop1.jpg',
                           amount: 0.1,
                           slowerScrollRate: false,
                       },

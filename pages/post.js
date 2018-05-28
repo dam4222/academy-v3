@@ -136,7 +136,7 @@ class Post extends React.Component {
                   className="blogHeadline"
                   layers={[
                       {
-                          image: "https://cdn1.academy-ny.com/wp-content/uploads/2018/05/09222124/2c632b50335679.58ce07b24102f.jpg",
+                          image: "https://cdn1.academyux.com/wp-content/uploads/2018/05/09222124/2c632b50335679.58ce07b24102f.jpg",
                           amount: 0.2,
                           slowerScrollRate: false,
                       },

@@ -9,7 +9,8 @@ import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { CircularProgress } from 'material-ui/Progress';
-import Router from 'next/router'
+import Transition from '../components/transition';
+import Router from 'next/router';
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
@@ -67,6 +68,7 @@ function withRoot(Component) {
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
+          <Transition />
 
           {this.state.loadTiny ?
             (

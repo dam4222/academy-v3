@@ -85,10 +85,12 @@ class Carousel extends React.Component {
       <div>
       <Grid container spacing={0}>
         <Grid item xs sm={1}>
+          <Hidden smDown>
           <Typography style={verticalText} variant="caption" color="secondary">
             Client – CBRE
           </Typography>
           <Divider style={verticalLine} />
+        </Hidden>
         </Grid>
         <Grid item xs={12} sm={7}>
           <Slider className={"noFocus carousel"}

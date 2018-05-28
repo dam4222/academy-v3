@@ -122,7 +122,7 @@ class Process extends React.Component {
               paddingBottom:'60px',
               maxWidth:'100%'
             }}
-            src='https://cdn1.academy-ny.com/product-relay.png'
+            src='https://cdn1.academyux.com/product-relay.png'
             />
           </Grid>
         <Grid item xs sm={1}></Grid>
@@ -216,7 +216,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academy-ny.com/Design-Sprint-Timeline.jpg"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
+              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline.jpg"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -224,7 +224,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academy-ny.com/Agile-Sprint-Timeline.jpg" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
+              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline.jpg" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -234,7 +234,7 @@ class Process extends React.Component {
           <Grid container spacing={8} style={{paddingBottom:'20px'}}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academy-ny.com/Design-Sprint-Timeline-Mobile.jpg"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
+              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline-Mobile.jpg"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -242,7 +242,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academy-ny.com/Agile-Sprint-Timeline-Mobile.jpg" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
+              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline-Mobile.jpg" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>

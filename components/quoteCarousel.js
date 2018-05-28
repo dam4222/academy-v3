@@ -44,7 +44,7 @@ class QuoteCarousel extends React.Component {
               <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
               Adam has a knack to boil down complex UX and product design concepts into simple, digestible ideas. He stands as an expert at the intersection of UX, Design Thinking, and Commerce. As a master facilitator, Adam spearheads a compelling workshop that will surely change the way your company builds products.
               </Typography>
-              <img style={{display:'inline', width:'60px'}} src="static/adam-fry-pierce@2x.jpg" />
+              <img style={{display:'inline', width:'60px'}} src="https://cdn1.academyux.com/adam-fry-pierce@2x.jpg" />
               <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
                 Adam Fry-Pierce
               </Typography>
@@ -61,7 +61,7 @@ class QuoteCarousel extends React.Component {
 
                 I would highly recommend this workshop to anyone looking to validate their own design process or looking for a spark to reinvigorate their design thinking. Adam has a real gift to lead and inspire.
               </Typography>
-              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="static/tj.jpg" />
+              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="https://cdn1.academyux.com/tj.jpg" />
               <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
                 TJ DeGarmo
               </Typography>
@@ -76,7 +76,7 @@ class QuoteCarousel extends React.Component {
               <Typography variant='headline' gutterBottom paragraph={true} style={{maxWidth:'600px', width:'80vw', margin: '0 auto', paddingBottom:'20px'}}>
                 Adam’s Design Sprints Workshop was a highly focused, interactive, collaborative day packed with valuable information and insights. The small setting and Adam’s enthusiasm made the session effective and inspiring. These forums are instrumental in shifting the mindset and advocating the principles of design-thinking within our organization.
               </Typography>
-              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="static/fred.jpg" />
+              <img style={{display:'inline', width:'60px', borderRadius:'100px'}} src="https://cdn1.academyux.com/fred.jpg" />
               <Typography variant='title' gutterBottom paragraph={true} style={{paddingTop:'20px'}}>
                 Fred LaSenna
               </Typography>

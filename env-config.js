@@ -1,3 +1,3 @@
 module.exports = {
-    'process.env.fetchUrl': 'admin.academyv3.tk'
+    'process.env.fetchUrl': 'admin.academyux.com'
 }

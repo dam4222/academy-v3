@@ -1,6 +1,6 @@
 # Current System Architecture
 
-![Current System Architecture](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/12013625/High-Level-Architecture.png)
+![Current System Architecture](http://cdn1.academyux.com/wp-content/uploads/2018/05/12013625/High-Level-Architecture.png)
 
 
 
@@ -80,7 +80,7 @@ Follow these steps to host a WordPress installation
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20System%20Log.1842ebdc9c91c6e4594d709fa10ff4d66036e3e2.png)
 
 	2. In the system log window, scroll through to the bottom to find the password that's surrounded by hash marks.
-	![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/14185321/WP-Password.png)
+	![Shown here](http://cdn1.academyux.com/wp-content/uploads/2018/05/14185321/WP-Password.png)
 
 	3. Now that you have your password, switch back to the tab that you used to access the WordPress **Hello World** page. Add **/admin** to the end of the URL so it looks something like **54.192.32.144/admin**. Hit enter. Enter the Username **user** and the **Password** that you read from the log file.
 	![Shown here](https://d1.awsstatic.com/Digital%20Marketing/House/other/launch-a-wordpress-website/Launch%20a%20WordPress%20Website%20-%20Login.c5abc6de858e49e17aed5459d90a368b17b5c562.png)
@@ -116,14 +116,14 @@ Follow these steps to host a WordPress installation
 		5. **IMPORTANT:** Scroll down to the Settings area and find the “Show in REST API” option. By default, this is set to False. If you don’t change it to True, you will not be able to query this CPT using the WP-API. Right underneath that option, you should see the “REST API base slug” option — you can enter blogs here.
 		6. Scroll all the way down and click **Add Post Type**.
 		> You should see a new Blogs option appear in the sidebar:
-		![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/12013659/CPT-UI.png)
+		![Shown here](http://cdn1.academyux.com/wp-content/uploads/2018/05/12013659/CPT-UI.png)
 		7. Similarly add `Projects` Post type
 
 	2. **Advanced Custom Fields**
 		1. Go to Custom Fields>Field Groups
 		2. Click **Add New**
 		3. For the Field Group title, enter something like `Blog Data`
-		4. Scroll down until you see the Location metabox. Set this Field Group to only show if Post Type is equal to Blog:![Shown here](http://cdn1.academy-ny.com/wp-content/uploads/2018/05/12013718/Custom-Field.png)
+		4. Scroll down until you see the Location metabox. Set this Field Group to only show if Post Type is equal to Blog:![Shown here](http://cdn1.academyux.com/wp-content/uploads/2018/05/12013718/Custom-Field.png)
 		5. Similarly Create `Projects` field group with appropriate data structure
 
 	3. **ACF to REST API**

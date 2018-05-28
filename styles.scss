@@ -438,8 +438,9 @@ p{
 
 }
 
-img {
+.parallax-banner-layer-0 + img {
   animation:600ms ease forwards fadeInUp;
+  transition: 1s all;
 
     @keyframes fadeInUp {
     0% {
@@ -621,11 +622,6 @@ img {
     }
 }
 
-.blogImg{
-
-
-}
-
 .designTinkering{
     text-align:center;
     justify-content: center;
@@ -636,4 +632,68 @@ img {
       padding-top:15vh;
     }
 
+}
+
+
+//this handles the transition wipe found in withRoot.js
+.transition{
+
+  &:before{
+    content:'';
+    position:fixed;
+    height:100%;
+    width:100%;
+    background: lightgray;
+    z-index: 9999999;
+    animation: wipe 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: .65s;
+  }
+
+  &:after{
+    content:'';
+    position:fixed;
+    height:100%;
+    width:100%;
+    background: white;
+    z-index: 9999999;
+    animation: wipe 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+
+
+    @keyframes wipe {
+    0% {
+      opacity: 1;
+      transform: translate(0, -100vh);
+
+    }
+    50% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 100vh);
+    }
+  }
+}
+
+//This handles the transition for the page
+#__next div{
+
+&:nth-child(2) {
+      animation:1.2s ease forwards moveUp;
+      animation-delay:1.5s;
+      opacity:0;
+
+        @keyframes moveUp {
+        0% {
+          opacity: 0;
+          transform: translate(0, 100px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0px);
+        }
+      }
+    }
 }
