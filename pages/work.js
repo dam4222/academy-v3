@@ -74,7 +74,6 @@ const styles = {
     justifyContent: 'flex-start',
   },
   progress: {
-
     width: '100px',
     margin: 'auto',
   },

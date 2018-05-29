@@ -111,7 +111,7 @@ class SimpleAppBar extends React.Component {
                     </IconButton>
                   </Grid>
 
-                  <Grid item xs={5} className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)} style={right}>
+                  <Grid item xs={5} className='show' style={right}>
                     <Hidden smDown>
                       <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="button" color="inherit">

@@ -59,7 +59,7 @@ const styles = theme => ({
   fixed: {
     position:'fixed',
     top:0,
-    height: '95vh',
+    height: '95%',
     overflow:'hidden'
   },
   spacing:{

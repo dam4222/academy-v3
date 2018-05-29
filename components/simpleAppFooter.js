@@ -80,6 +80,12 @@ class SimpleAppFooter extends React.Component {
                         </Typography>
                       </Button>
 
+                      <Button disableRipple={true} className={"underline"} href="https://angel.co/academy-5/jobs" style={spacing}>
+                        <Typography variant="button" color="inherit">
+                          Careers
+                        </Typography>
+                      </Button>
+
                       <Button disableRipple={true} className={"underline"} href="/blog" style={spacing}>
                         <Typography variant="button" color="inherit">
                           Design Tinkering
