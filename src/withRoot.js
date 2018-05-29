@@ -8,15 +8,26 @@ import SimpleAppBarTiny from '../components/simpleAppBarTiny';
 import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
+<<<<<<< HEAD
 import { CircularProgress } from 'material-ui/Progress';
 import Transition from '../components/transition';
 import Router from 'next/router';
+=======
+import { LinearProgress } from 'material-ui/Progress';
+import Router from 'next/router'
+>>>>>>> 5269c213609baa92177d982ae4992222324c43cd
+
+const loadDelay = 2
 
 function withRoot(Component) {
   class WithRoot extends React.Component {
+
+    
+
     constructor(props, context) {
       super(props, context);
       this.state = {
+        loading: true,
         loadTiny:false,
         loadTinyBack:false,
         loadAppBar:true
@@ -24,8 +35,14 @@ function withRoot(Component) {
       this.pageContext = this.props.pageContext || getPageContext();
     }
 
-    componentDidMount() {
+    slowLoad = () => {
+      //Start the timer
+        this.setState({loading: false}) 
+        
+    }
 
+    componentDidMount() {
+        setTimeout(this.slowLoad(), loadDelay * 1000)
         if(Router.router.route == "/blog"){
         this.setState({
           loadTiny:true,
@@ -68,6 +85,7 @@ function withRoot(Component) {
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
+<<<<<<< HEAD
           <Transition />
 
           {this.state.loadTiny ?
@@ -95,6 +113,37 @@ function withRoot(Component) {
           <CssBaseline />
           <Component {...this.props} />
           <SimpleAppFooter />
+=======
+        <CssBaseline />
+        { this.state.loading ? <LinearProgress color="secondary" /> :
+          <div >
+            { this.state.loadTiny ?
+              (
+                <SimpleAppBarTiny />
+              )
+              :(<SimpleAppBar />)
+            }
+
+            {this.state.loadTinyBack ?
+              (
+                <SimpleAppBarTinyBack />
+              )
+              :<span></span>
+            }
+
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <div style={{
+             opacity: '0', animation: 'fadeIn 3.2s forwards', animationDelay: '.3s'
+          }} >
+           
+            <Component {...this.props} />
+
+            <SimpleAppFooter />
+            </div>
+          </div>
+       }
+          
+>>>>>>> 5269c213609baa92177d982ae4992222324c43cd
         </MuiThemeProvider>
         </ParallaxProvider>
       );
