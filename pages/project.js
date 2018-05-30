@@ -13,9 +13,35 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import ReactPlayer from 'react-player';
 import { CircularProgress } from 'material-ui/Progress';
 import { Parallax } from 'react-scroll-parallax';
+import Plx from 'react-plx';
+
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
+
+const ParallaxData = [
+  {
+    start: 0,
+    end: 1500,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 300,
+        property: "translateY"
+      },
+      {
+        startValue: 1,
+        endValue: .75,
+        property: "scale"
+      },
+      {
+        startValue: 1,
+        endValue: 0,
+        property: "opacity"
+      }
+    ]
+  },
+];
 
 const styles = theme => ( {
   root:{
@@ -31,16 +57,9 @@ const styles = theme => ( {
   },
   content: {
     width: '100%',
-    marginTop: '95vh',
     background: 'white',
     position: 'relative',
     height: '100%',
-  },
-  fixed: {
-    position:'fixed',
-    top:0,
-    height: '95%',
-    overflow:'hidden'
   },
   spacer: {
     width: 'calc(100% + 16px)',
@@ -112,15 +131,14 @@ class Project extends React.Component {
       <div className={classes.root}>
       { this.state.fetching ? <CircularProgress className={classes.progress} size={200} /> : (
         <div>
-        <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(121deg, #f4f8fa, #f3f7fa)', paddingTop: '60px'}}>
+        <Grid container>
 
         <Grid container>
-        <Parallax
-            className="custom-class"
-            offsetYMax={100}
-            offsetYMin={-100}
-            slowerScrollRate={false}
-        >
+          <Plx
+          className='MyAwesomeParallax'
+          parallaxData={ ParallaxData } // your parallax effects, see beneath
+          animateWhenNotInViewport={ true }
+          >
               <img width="100%"
               style={{
                 paddingTop:'60px',
@@ -131,7 +149,7 @@ class Project extends React.Component {
               alt="featured image"
               />
 
-          </Parallax>
+          </Plx>
           </Grid>
         </Grid>
 

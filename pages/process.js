@@ -20,8 +20,32 @@ import Stats from '../assets/skills/stats.svg'
 import User from '../assets/skills/user.svg'
 import "../styles.scss"
 import { Parallax } from 'react-scroll-parallax';
+import Plx from 'react-plx';
 
 
+const ParallaxData = [
+  {
+    start: 0,
+    end: 1500,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 300,
+        property: "translateY"
+      },
+      {
+        startValue: 1,
+        endValue: .75,
+        property: "scale"
+      },
+      {
+        startValue: 1,
+        endValue: 0,
+        property: "opacity"
+      },
+    ]
+  },
+];
 
 const textStyles = {
   color: '#848484',
@@ -51,16 +75,9 @@ const styles = theme => ({
   },
   content: {
     width: '100%',
-    marginTop: '95vh',
     background: 'white',
     position: 'relative',
     height: '100%',
-  },
-  fixed: {
-    position:'fixed',
-    top:0,
-    height: '95%',
-    overflow:'hidden'
   },
   spacing:{
     paddingBottom:'100px',
@@ -90,15 +107,14 @@ class Process extends React.Component {
   return (
       <div className={classes.root}>
 
-      <Grid container className={classes.fixed} style={{display: 'flex', alignItems: 'center', background:'linear-gradient(119deg, #ebeff5, #faf5f5)', paddingTop: '60px'}}>
+      <Grid container style={{paddingTop: '200px', paddingBottom: '200px'}}>
 
       <Grid container>
-      <Parallax
-          className="custom-class"
-          offsetYMax={100}
-          offsetYMin={-100}
-          slowerScrollRate={false}
-      >
+        <Plx
+        className='MyAwesomeParallax'
+        parallaxData={ ParallaxData } // your parallax effects, see beneath
+        animateWhenNotInViewport={ true }
+        >
 
         <Grid container>
           <Grid item xs={1} sm={2}></Grid>
@@ -138,7 +154,7 @@ class Process extends React.Component {
           <Grid item xs></Grid>
         </Grid>
 
-        </Parallax>
+      </Plx>
         </Grid>
         </Grid>
 
