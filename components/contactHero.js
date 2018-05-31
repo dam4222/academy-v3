@@ -23,8 +23,19 @@ const spacing = {
   marginRight:'20px'
 }
 
-function ContactHero(props) {
-  const { classes } = props;
+class ContactHero extends React.Component {
+
+  state = {
+    multiline: '',
+  };
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+  render() {
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
@@ -51,12 +62,13 @@ function ContactHero(props) {
             label="Message"
             multiline
             rows="4"
-            value=""
+            value={this.state.multiline}
+            onChange={this.handleChange('multiline')}
             margin="normal"
             fullWidth
             placeholder="Type your message..."
           />
-          <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
+          <Grid item xs={12} style={{display:'flex', flexDirection:'row'}}>
             <Button disableRipple={true} className={"underline"} style={spacing}>
               <Typography variant="title" color="inherit">
               Send
@@ -69,6 +81,8 @@ function ContactHero(props) {
       </div>
     );
   }
+}
+
 
 ContactHero.propTypes = {
   classes: PropTypes.object.isRequired,

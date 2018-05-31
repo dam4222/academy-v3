@@ -60,7 +60,7 @@ const styles = theme => ({
   },
   right:{
     float: 'right',
-    maxWidth:'500px',
+    maxWidth:'400px',
     paddingTop:'100px',
     paddingBottom:'100px'
   },
@@ -71,12 +71,11 @@ const styles = theme => ({
 
 const verticalText = {
   transform: 'rotate(-90deg)',
-  position: 'absolute',
-  transformOrigin: 0,
-  width: '100vh',
-  height: '100vh',
-  display: 'flex',
-  alignItems: 'center',
+      position: 'absolute',
+      display: 'flex',
+      alignItems: 'center',
+      top: '30%',
+      left: '-20%',
 }
 
 const verticalLogo = {

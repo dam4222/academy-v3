@@ -107,7 +107,7 @@ class Process extends React.Component {
   return (
       <div className={classes.root}>
 
-      <Grid container style={{paddingTop: '200px', paddingBottom: '200px'}}>
+      <Grid container style={{paddingTop: '150px', paddingBottom: '200px'}}>
 
       <Grid container>
         <Plx
@@ -232,7 +232,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline.jpg"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
+              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline.png"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -240,7 +240,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline.jpg" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
+              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline.png" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -250,7 +250,7 @@ class Process extends React.Component {
           <Grid container spacing={8} style={{paddingBottom:'20px'}}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline-Mobile.jpg"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
+              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline-Mobile.png"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -258,7 +258,7 @@ class Process extends React.Component {
           <Grid container spacing={8} className={classes.spacing}>
             <Grid item xs={1} md={1} lg={1}></Grid>
             <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline-Mobile.jpg" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
+              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline-Mobile.png" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
             </Grid>
             <Grid item xs={1} md={1} lg={1}></Grid>
           </Grid>
@@ -381,7 +381,7 @@ class Process extends React.Component {
 
                 <Typography variant='body1' gutterBottom>
                   Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking
-                  and Our process is Product Relays™.
+                  and our process is Product Relays™.
 
                   We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is
                   being heard.

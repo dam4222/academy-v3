@@ -72,7 +72,7 @@ class SimpleAppFooter extends React.Component {
                       </Grid>
                   </Grid>
                   <Hidden mdUp><div style={{width:'100%', paddingTop:'15px'}}></div></Hidden>
-                  <Grid item xs={11} sm={11} md={5} lg={5} xl={5} style={{display:'flex', justifyContent:'flex-end', alignItems:'center'}}>
+                  <Grid item xs={11} sm={11} md={5} lg={5} xl={5} style={{display:'flex', justifyContent:'flex-end', alignItems:'center', flexWrap:'wrap'}}>
 
                       <Button disableRipple={true} className={"underline"} href="/about" style={spacing}>
                         <Typography variant="button" color="inherit">
@@ -83,12 +83,6 @@ class SimpleAppFooter extends React.Component {
                       <Button disableRipple={true} className={"underline"} href="https://angel.co/academy-5/jobs" style={spacing}>
                         <Typography variant="button" color="inherit">
                           Careers
-                        </Typography>
-                      </Button>
-
-                      <Button disableRipple={true} className={"underline"} href="/blog" style={spacing}>
-                        <Typography variant="button" color="inherit">
-                          Design Tinkering
                         </Typography>
                       </Button>
 
