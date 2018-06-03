@@ -190,13 +190,13 @@ class Post extends React.Component {
 
                     <Paper elevation={0} style={{padding:'30px', textAlign:'center', width: '100%', maxWidth: '605px'}} className="headlineHover">
                       <Typography variant="headline" paragraph>
-                      Title
+                        {post.acf.title}
                       </Typography>
                       <Typography variant="body1" gutterBottom>
-                        May 25th, 2018
+                        {this.formatDate(post.date)}
                       </Typography>
                       <Typography variant="caption" gutterBottom>
-                        By Adam Perlis
+                        By &nbsp; {post.acf.author.display_name}
                       </Typography>
                     </Paper>
                   </Grid>
