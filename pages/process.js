@@ -21,7 +21,7 @@ import User from '../assets/skills/user.svg'
 import "../styles.scss"
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
-
+import Head from 'next/head';
 
 const ParallaxData = [
   {
@@ -106,6 +106,11 @@ class Process extends React.Component {
 
   return (
       <div className={classes.root}>
+
+      <Head>
+        <title>Academy – Our Process</title>
+        <meta name="description" content="Short Description here" />
+      </Head>
 
       <Grid container style={{paddingTop: '150px', paddingBottom: '200px'}}>
 

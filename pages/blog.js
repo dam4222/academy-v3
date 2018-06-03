@@ -26,6 +26,7 @@ import { CircularProgress } from 'material-ui/Progress';
 import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
 
 import { FormControl } from 'material-ui/Form';
+import Head from 'next/head';
 
 
 const fetchUrl = process.env.fetchUrl;
@@ -248,6 +249,10 @@ class Blog extends React.Component {
     const { classes } = this.props;
      return (
       <div className={classes.root}>
+        <Head>
+          <title>Academy – Design Tinkering</title>
+          <meta name="description" content="Short Description here" />
+        </Head>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -342,54 +347,57 @@ class Blog extends React.Component {
 
             <Grid container spacing={8} style={{paddingTop:'100px'}}>
 
-    <Grid item xs={1} md={2}></Grid>
+              <Grid item xs={1} md={2}></Grid>
 
-    <Grid item xs={10} md={8}>
-      <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
-        Latest Posts
-      </Typography>
-    <Grid container spacing={24}>
-      {
-      Object.keys(this.state.blogs).map((blog) => {
-        return (
-
-          <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
-
-              <ParallaxBanner
-                className="heroImgWorkshops"
-                layers={[
-                    {
-                        image: this.state.blogs[blog].acf.featured_image,
-                        amount: 0.2,
-                        slowerScrollRate: false,
-                    },
-                ]}
-                style={{
-                    height: '20vh',
-                    top: '0',
-                    maxWidth:'605px'
-                }}
-              >
-              </ParallaxBanner>
-
-              <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
-                <Typography variant="headline" paragraph>
-                {this.state.blogs[blog].acf.title}
+              <Grid item xs={10} md={8}>
+                <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
+                  Latest Posts
                 </Typography>
-                <Typography variant="body1" gutterBottom>
-                  {this.formatDate(this.state.blogs[blog].date)}
-                </Typography>
-                <Typography variant="caption" gutterBottom>
-                  By {this.state.blogs[blog].acf.author.display_name}
-                </Typography>
-              </Paper>
+      
+                <Grid container spacing={24}>
+                {
+                Object.keys(this.state.blogs).map((blog) => {
+                  if (this.state.blogs[blog].acf.featured != true){
+                  return (
+
+                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
+
+                        <ParallaxBanner
+                          className="heroImgWorkshops"
+                          layers={[
+                              {
+                                  image: this.state.blogs[blog].acf.featured_image,
+                                  amount: 0.2,
+                                  slowerScrollRate: false,
+                              },
+                          ]}
+                          style={{
+                              height: '20vh',
+                              top: '0',
+                              maxWidth:'605px'
+                          }}
+                        >
+                        </ParallaxBanner>
+
+                        <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
+                          <Typography variant="headline" paragraph>
+                          {this.state.blogs[blog].acf.title}
+                          </Typography>
+                          <Typography variant="body1" gutterBottom>
+                            {this.formatDate(this.state.blogs[blog].date)}
+                          </Typography>
+                          <Typography variant="caption" gutterBottom>
+                            By {this.state.blogs[blog].acf.author.display_name}
+                          </Typography>
+                        </Paper>
 
 
-            </Grid>
-              )
-            })
-          }
-           </Grid>
+                    </Grid>
+                  )
+                  }
+                  })
+                  }
+                </Grid>
           </Grid>
           </Grid>
 

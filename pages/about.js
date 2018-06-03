@@ -11,6 +11,7 @@ import OurProcess from '../components/ourProcess'
 import OurWorkshops from '../components/ourWorkshops'
 import LatestNews from '../components/latestNews'
 import Carousel from '../components/carousel'
+import Head from 'next/head';
 
 const styles = theme => ({
   root: {
@@ -22,8 +23,12 @@ function About(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-
-          <AboutHero />
+        <Head>
+          <title>Academy – About Us</title>
+          <meta name="description" content="Short Description here" />
+        </Head>
+        
+        <AboutHero />
 
     </div>
     );
