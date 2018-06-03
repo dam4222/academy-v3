@@ -698,3 +698,16 @@ p{
       }
     }
 }
+
+.social-icons a{
+  transition: .5s all;
+  padding:5px;
+
+  svg path{  transition: .5s all; }
+
+  &:hover svg path{
+    transition: .5s all;
+    transform: scale(.9);
+    opacity:.5;
+  }
+}

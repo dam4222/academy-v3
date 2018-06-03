@@ -125,7 +125,7 @@ class SimpleDrawer extends React.Component {
               <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> UX & Design Thinking Studio </Typography>
               <Typography variant="title" style={{color:'#8b8b8b', paddingBottom:'20px'}}> 130 GRAND ST. SUITE #3D, BROOKLYN, NY 11249 </Typography>
             </Grid>
-            <div style={{display:'flex', flexDirection:'row'}}>
+            <div style={{display:'flex', flexDirection:'row'}} className="social-icons">
               <Button target="_blank" href="https://medium.com/@academyuxdesign" style={spacing}><Medium /></Button>
               <Button target="_blank" href="https://twitter.com/academyuxdesign" style={spacing}><Twitter /></Button>
               <Button target="_blank" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacing}><LinkedIn /></Button>
