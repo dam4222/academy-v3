@@ -30,7 +30,7 @@ class MyDocument extends Document {
          `}}
          />
 
-          <title>Academy – Field Engineer</title>
+          <title>Academy – UX & Design Thinking Studio</title>
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta

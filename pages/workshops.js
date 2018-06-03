@@ -16,7 +16,7 @@ import WorkshopCard from '../components/workshopCard';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import DesignBetterH from '../assets/design-better-horizontal.svg';
 import InVisionH from '../assets/invision-logo-pink-horizontal.svg';
-
+import Head from 'next/head'
 
 
 const textStyles = {
@@ -52,6 +52,11 @@ function Workshops(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
+
+    <Head>
+          <title>Academy – Workshops</title>
+          <meta name="description" content="Short Description here" />
+    </Head> 
 
     <Grid container className={classes.hero}>
 
