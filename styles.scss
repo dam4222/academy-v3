@@ -473,7 +473,23 @@ p{
 
 }
 
-.parallax-banner-layer-0 + img {
+img{
+  animation:600ms ease forwards fadeInUp;
+  transition: 1s all;
+
+    @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate(0, 100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+}
+
+.parallax-banner-layer-0 {
   animation:600ms ease forwards fadeInUp;
   transition: 1s all;
 
