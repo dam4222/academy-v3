@@ -25,8 +25,8 @@ const verticalText = {
   transform: 'rotate(-90deg)',
   position: 'relative',
   transformOrigin: 0,
-  width: '100vh',
-  height: '100vh',
+  width: '400px',
+  height: '760px',
   display: 'flex',
   alignItems: 'center',
 }
