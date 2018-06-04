@@ -474,8 +474,10 @@ p{
 }
 
 img{
-  animation:600ms ease forwards fadeInUp;
+  opacity:0;
+  animation:1.2s ease forwards fadeInUp;
   transition: 1s all;
+  animation-delay: 1s;
 
     @keyframes fadeInUp {
     0% {
@@ -490,8 +492,10 @@ img{
 }
 
 .parallax-banner-layer-0 {
-  animation:600ms ease forwards fadeInUp;
+  opacity:0;
+  animation:1.2s ease forwards fadeInUp;
   transition: 1s all;
+  animation-delay: 1s;
 
     @keyframes fadeInUp {
     0% {
