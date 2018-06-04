@@ -21,6 +21,7 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog'
 const fetchUrl = process.env.fetchUrl;
+import Head from 'next/head';
 
 const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?'
 
@@ -150,7 +151,10 @@ class Work extends React.Component {
     const { classes, backgroundColor } = this.props;
     return (
       <div className={classes.root}>
-
+        <Head>
+          <title>Academy – Work</title>
+          <meta name="description" content="Short Description here" />
+        </Head>
 
       <Dialog
           open={this.state.open}

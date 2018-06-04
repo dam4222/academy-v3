@@ -14,7 +14,7 @@ import ReactPlayer from 'react-player';
 import { LinearProgress } from 'material-ui/Progress';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
-
+import Head from 'next/head'
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
@@ -98,6 +98,7 @@ class Project extends React.Component {
         next_project_link:{}
       },
       moreProjects:[],
+      bgColor: '#ffffff'
     };
   }
 
@@ -110,6 +111,7 @@ class Project extends React.Component {
     await this.setState({
       project: project[0].acf,
       fetching: false,
+      bgColor: project[0].acf.project_theme_color,
     })
     //fetch more projects to display at the end
     const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
@@ -126,13 +128,18 @@ class Project extends React.Component {
       <div className={classes.root}>
       { this.state.fetching ? <LinearProgress className="progress" /> : (
         <div>
+          <Head>
+            <title>Academy – {this.state.project.client_name + " – " +  this.state.project.project_title}</title>
+            <meta name="description" content={this.state.project.project_description}/>
+          </Head>
         <Grid container>
 
-        <Grid container>
+        <Grid container style={{backgroundColor: this.state.bgColor}}>
           <Plx
           className='MyAwesomeParallax'
           parallaxData={ ParallaxData } // your parallax effects, see beneath
           animateWhenNotInViewport={ true }
+
           >
               <img width="100%"
               style={{
@@ -184,7 +191,7 @@ class Project extends React.Component {
               <Grid item xs={12} md={1}></Grid>
             </Grid>
 
-            <Grid container style={{background:'linear-gradient(121deg, #f4f8fa, #f3f7fa)'}}>
+            <Grid container style={{backgroundColor: this.state.bgColor}}>
               <Grid container spacing={24} direction="row-reverse" id="section-one" className={classes.process}>
                 <Grid item xs={1} md={2}></Grid>
                 <Grid item xs={10} md={3} >
@@ -285,7 +292,7 @@ class Project extends React.Component {
             </Grid>
 
 
-            <Grid container>
+            <Grid container style={{backgroundColor: this.state.bgColor}}>
               <Grid item xs={12} md={12}>
                 <img style={{ width: '100%', height:'100%' }} src={this.state.project.large_image} alt="large image 2" />
               </Grid>
@@ -312,13 +319,15 @@ class Project extends React.Component {
 
                     <Grid container>
                     {this.state.moreProjects.map((project) => {
+                      if(project.slug != Router.query.name){
                         return(
                           <Grid key={project.slug} item xs={4} md={4}>
                             <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + project.slug}>
-                              <Typography variant="button">{project.acf.client_name}</Typography>
+                              <Typography variant="button">{project.acf.client_name} | {project.acf.project_title}</Typography>
                             </a>
                           </Grid>
                         )
+                      }
                       })
                     }
                   </Grid>
