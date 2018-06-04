@@ -789,3 +789,42 @@ img{
   top:0;
   transition: 1s all;
 }
+
+.center {
+  height: 100vh;
+  display: flex;
+  text-align: right;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  margin-bottom: 280px;
+
+  @media (max-width: 599px) {
+    height: 55vh;
+  }
+}
+
+.projectLink{
+  text-decoration: none;
+  width: 100%;
+  height:100vh;
+  padding-top: 3%;
+  padding-right: 6%;
+
+  @media (max-width: 599px) {
+    height:50vh;
+    padding-top: 3%;
+    padding-right: 0;
+  }
+}
+
+.projectImg {
+  @media (max-width: 599px) {
+    height:50vh !important;
+  }
+}
+
+.sectionImg img{
+  width: 100%;
+  height: auto;
+}

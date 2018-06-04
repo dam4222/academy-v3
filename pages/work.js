@@ -57,15 +57,6 @@ const styles = {
   projectLegend: {
     display:'inline-block',
   },
-  center: {
-    height: '100vh',
-    display: 'flex',
-    textAlign: 'right',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: '100px',
-    marginBottom: '280px'
-  },
   contentCenter:{
     display: 'flex',
     alignItems: 'center',
@@ -196,7 +187,7 @@ class Work extends React.Component {
 
             return (
 
-              <Grid container className={classes.center}>
+              <Grid container className="center">
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={4} className={classes.contentCenter}>
 
@@ -226,9 +217,9 @@ class Work extends React.Component {
                 </Grid>
                   <Grid item xs={12} md={5} className={classes.contentCenter}>
                     <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
-                      <a style={{textDecoration: 'none', width: '100%', height:'100vh', paddingTop: '3%', paddingRight: '6%'}}>
+                      <a className="projectLink">
                         <ParallaxBanner
-                          className=""
+                          className="projectImg"
                           layers={[
                               {
                                   image: project.acf.featured_image,

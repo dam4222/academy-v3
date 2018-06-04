@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
 import Icon from 'material-ui/Icon';
 import SimpleAppBar from '../components/simpleAppBar';
 import Typography from 'material-ui/Typography';
@@ -131,6 +132,10 @@ class Project extends React.Component {
     })
   }
 
+  handleClick() {
+    Router.back()
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -145,6 +150,7 @@ class Project extends React.Component {
         <Grid container className="project" style={{height: '100vh'}}>
 
           <Grid item xs={12} md={4} style={{ zIndex: 999, backgroundColor: 'white', padding:'20px', position:'absolute', top:'25%', left:'5%' }}>
+            <div className={classes.projectLegend}><IconButton className="arrowBack" style={{top:'-56px', left:'-19px', transform:'scale(.5)'}} onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton></div>
             <div className={classes.projectLegend}>
               <Typography variant="title" color="secondary" className={classes.projectLegend}>
                 Client &nbsp;
@@ -193,103 +199,122 @@ class Project extends React.Component {
 
         <Grid container spacing={8} className={classes.content}>
 
-          <Grid item xs={12} sm={12}>
-
-
             <Grid container spacing={16} className={classes.spacer} style={{background:'white'}}>
-              <Grid item xs={10} md={1}></Grid>
+              <Grid item xs={1} md={3}></Grid>
 
-              <Grid item xs={10} md={4}>
-                <Typography variant="body1" style={{fontSize:'24px'}} gutterBottom>
-                  <div dangerouslySetInnerHTML={{__html: this.state.project.project_description}}></div>
-                </Typography>
-              </Grid>
+              <Grid item xs={10} md={6}>
+                <Grid container>
+                <Grid item xs={10} md={6}>
+                  <Typography variant="body1" style={{fontSize:'24px'}} gutterBottom paragraph>
+                    <div dangerouslySetInnerHTML={{__html: this.state.project.project_description}}></div>
+                  </Typography>
+                  <Typography variant="button" paragraph>
+                    <a href="#" className="underline" style={{textDecoration: 'none', color:'black'}}>
+                      Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
+                    </a>
+                  </Typography>
+                </Grid>
 
-              <Grid item xs={10} md={2}></Grid>
-              <Grid item xs={10} md={2}>
-                <Typography variant="button" paragraph>
-                  <a href="#section-one" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                    01   —   {this.state.project.section_1_title}
-                  </a>
-                </Typography>
-                <Typography variant="button" paragraph>
-                <a href="#section-two" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                    02   —   {this.state.project.section_2_title}
-                  </a>
-                </Typography>
-                <Typography variant="button" paragraph>
-                  <a href="#section-three" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                    03   —   {this.state.project.section_3_title}
-                  </a>
-                </Typography>
+                <Grid item xs={10} md={4}></Grid>
+                <Grid item xs={10} md={2} style={{display: 'flex', flexDirection:'column'}}>
+                  <Typography variant="button" paragraph>
+                    <a href="#section-one" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                      01   —   {this.state.project.section_1_title}
+                    </a>
+                  </Typography>
+                  <Typography variant="button" paragraph>
+                  <a href="#section-two" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                      02   —   {this.state.project.section_2_title}
+                    </a>
+                  </Typography>
+                  <Typography variant="button" paragraph gutterBottom>
+                    <a href="#section-three" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
+                      03   —   {this.state.project.section_3_title}
+                    </a>
+                  </Typography>
+                </Grid>
               </Grid>
-              <Grid item xs={12} md={1}></Grid>
+              </Grid>
+              <Grid item xs={1} md={3}></Grid>
             </Grid>
 
             <Grid container style={{backgroundColor: this.state.bgColor}}>
-              <Grid container spacing={24} direction="row-reverse" id="section-one" className={classes.process}>
-                <Grid item xs={1} md={2}></Grid>
-                <Grid item xs={10} md={3} >
-                  <Typography variant="body1" >
-                    <b>{this.state.project.section_1_title}</b>. {this.state.project.section_1_description}
-                  </Typography>
+              <Grid container spacing={24} id="section-one" className={classes.process}>
+                <Grid item xs={1} md={3}></Grid>
+                <Grid item xs={10} md={6}>
+                  <Grid container>
+                    <Grid item xs={10} sm={12} md={4} lg={4}>
+                      <Typography variant="body1" >
+                        <b>{this.state.project.section_1_title}</b>. {this.state.project.section_1_description}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                      <Parallax
+                          className="sectionImg"
+                          offsetYMax={25}
+                          offsetYMin={-25}
+                          slowerScrollRate={false}
+                      >
+                          <div dangerouslySetInnerHTML={{__html: this.state.project.section_1_media}}></div>
+                        </Parallax>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} md={5} >
-                  <Parallax
-                      className="custom-class"
-                      offsetYMax={25}
-                      offsetYMin={-25}
-                      slowerScrollRate={false}
-                  >
-                      <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_1_media}}></div>
-                    </Parallax>
-                </Grid>
-                <Grid item xs={1} md={2}></Grid>
+                <Grid item xs={1} md={3}></Grid>
               </Grid>
 
               <Grid container spacing={24} id="section-two" className={classes.process}>
-                <Grid item xs={1} md={2}></Grid>
-                <Grid item xs={10} md={3} >
-                    <Typography variant="body1" >
-                      <b>{this.state.project.section_2_title}</b>. {this.state.project.section_2_description}
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} md={5} >
-                  <Parallax
-                      className="custom-class"
-                      offsetYMax={25}
-                      offsetYMin={-25}
-                      slowerScrollRate={false}
-                  >
-                        <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_2_media}}></div>
+                <Grid item xs={1} md={3}></Grid>
+                <Grid item xs={10} md={6}>
+                  <Grid container style={{flexWrap: 'wrap-reverse'}}>
 
-                    </Parallax>
+                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                      <Parallax
+                          className="sectionImg"
+                          offsetYMax={25}
+                          offsetYMin={-25}
+                          slowerScrollRate={false}
+                      >
+                            <div dangerouslySetInnerHTML={{__html: this.state.project.section_2_media}}></div>
 
-                </Grid>
-                <Grid item xs={1} md={2}></Grid>
+                        </Parallax>
+
+                      </Grid>
+                      <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
+                      <Grid item xs={10} sm={12} md={4} lg={4} >
+                          <Typography variant="body1" >
+                            <b>{this.state.project.section_2_title}</b>. {this.state.project.section_2_description}
+                          </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                <Grid item xs={1} md={3}></Grid>
               </Grid>
 
-
-              <Grid container spacing={24} direction="row-reverse" id="section-three" className={classes.process}>
-                <Grid item xs={1} md={2}></Grid>
-                <Grid item xs={10} md={3} >
-                    <Typography variant="body1" >
-                      <b>{this.state.project.section_3_title}</b>. {this.state.project.section_3_description}
-                    </Typography>
+              <Grid container spacing={24} id="section-three" className={classes.process}>
+                <Grid item xs={1} md={3}></Grid>
+                <Grid item xs={10} md={6}>
+                  <Grid container>
+                    <Grid item xs={10} sm={12} md={4} lg={4}>
+                      <Typography variant="body1" >
+                        <b>{this.state.project.section_3_title}</b>. {this.state.project.section_3_description}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                      <Parallax
+                          className="sectionImg"
+                          offsetYMax={25}
+                          offsetYMin={-25}
+                          slowerScrollRate={false}
+                      >
+                          <div dangerouslySetInnerHTML={{__html: this.state.project.section_3_media}}></div>
+                        </Parallax>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} md={5} >
-                  <Parallax
-                      className="custom-class"
-                      offsetYMax={25}
-                      offsetYMin={-25}
-                      slowerScrollRate={false}
-                  >
-                        <div style={{display:'flex', justifyContent:'center'}} dangerouslySetInnerHTML={{__html: this.state.project.section_3_media}}></div>
-
-                    </Parallax>
-
-                </Grid>
-                <Grid item xs={1} md={2}></Grid>
+                <Grid item xs={1} md={3}></Grid>
               </Grid>
             </Grid>
 
@@ -315,7 +340,7 @@ class Project extends React.Component {
               <Grid item xs={1} md={1}></Grid>
             </Grid>
 
-            <Grid container justify="space-between" className={classes.spacer} style={{paddingBottom:'0'}}>
+            <Grid container justify="space-between" className={classes.spacer} style={{paddingBottom:'8px'}}>
                 <Grid container spacing={24}>
                   <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
                     <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.state.project.large_image_1} alt="large-image-1" />
@@ -388,7 +413,6 @@ class Project extends React.Component {
               <Grid item xs={1} md></Grid>
             </Grid>
 
-          </Grid>
         </Grid>
       </div>
       )}
