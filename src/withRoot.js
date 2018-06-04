@@ -46,22 +46,21 @@ function withRoot(Component) {
         })
       }
 
-        if(Router.router.route == "/post" || Router.router.route == "/project" ){
-        this.setState({
-          loadTiny:false,
-          loadTinyBack:true,
-          loadAppBar:false
-        })
-        }
+      if(Router.router.route == "/post"){
+      this.setState({
+        loadTiny:false,
+        loadAppBar:false,
+        loadTinyBack:true
+      })
+    }
 
-        if(!Router.router.route == "/post" || !Router.router.route == "/project" || !Router.router.route == "/blog" ){
+        if(!Router.router.route == "/post" || !Router.router.route == "/blog" ){
         this.setState({
           loadTiny:false,
           loadTinyBack:false,
           loadAppBar:true
         })
-        }
-
+      }
 
       // Remove the server-side injected CSS.
       const jssStyles = document.querySelector('#jss-server-side');
@@ -81,6 +80,8 @@ function withRoot(Component) {
           sheetsManager={this.pageContext.sheetsManager}
         >
           <Transition />
+
+          {console.log(this.state)}
 
           {this.state.loadTiny ?
             (

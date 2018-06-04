@@ -41,6 +41,7 @@ const styles = {
     flexGrow: 1,
     paddingLeft: '2.5vw',
     paddingRight: '2.5vw',
+    paddingTop: '60px',
   },
   featuredImage: {
     maxWidth: '100%',
@@ -302,8 +303,8 @@ class Blog extends React.Component {
             </Grid>
 
             <Grid container className="heroHover" spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
-              <Grid item xs={1} md={3}></Grid>
-              <Grid item xs={10} md={6}>
+              <Grid item xs={1} md={1}></Grid>
+              <Grid item xs={10} md={10}>
                 <Grid container spacing={8} className={classes.centerImg}>
                   <ParallaxBanner
                     className="heroImgWorkshops"
@@ -323,8 +324,8 @@ class Blog extends React.Component {
                   </ParallaxBanner>
                 </Grid>
                 <Grid container spacing={8} className="blogHeadline" >
-                  <Grid item xs={1} md={4} lg={6} xl={7}></Grid>
-                  <Grid item xs={10} md={8} lg={6} xl={5}>
+                  <Grid item xs={1} md={5} lg={6} xl={7}></Grid>
+                  <Grid item xs={10} md={7} lg={6} xl={5}>
                     <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
                     <Typography variant="display2" paragraph>
                       {this.state.featuredBlog[0].acf.title}
@@ -337,7 +338,7 @@ class Blog extends React.Component {
                     </Typography>
                   </Paper>
                   </Grid>
-                  <Grid item xs={1}></Grid>
+                  <Grid item xs={1} md={1}></Grid>
                 </Grid>
               </Grid>
             </Grid>
@@ -350,7 +351,7 @@ class Blog extends React.Component {
                 <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
                   Latest Posts
                 </Typography>
-      
+
                 <Grid container spacing={24}>
                 {
                 Object.keys(this.state.blogs).map((blog) => {

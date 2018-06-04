@@ -157,7 +157,7 @@ class Post extends React.Component {
           </Grid>
             </div>
         )}
-      
+
 
         <Grid container spacing={24}>
           <Grid xs={12} style={{margin:'0 2%', background: 'linear-gradient(116deg, #ebf5f4, #efebf5)'}}>
@@ -209,8 +209,8 @@ class Post extends React.Component {
             </Grid>
           </Grid>
         </Grid>
-        
-        
+
+
 
       </div>
 

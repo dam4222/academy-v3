@@ -45,14 +45,12 @@ const ParallaxData = [
 
 const styles = theme => ( {
   root:{
-    marginTop: '50px',
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
   },
   content: {
     width: '100%',
-    background: 'white',
     position: 'relative',
     height: '100%',
   },
@@ -125,7 +123,7 @@ class Project extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <div className={classes.root} style={{backgroundColor: this.state.bgColor}}>
       { this.state.fetching ? <LinearProgress className="progress" /> : (
         <div>
           <Head>
@@ -134,7 +132,7 @@ class Project extends React.Component {
           </Head>
         <Grid container>
 
-        <Grid container style={{backgroundColor: this.state.bgColor}}>
+        <Grid container className="project" style={{backgroundColor: this.state.bgColor}}>
           <Plx
           className='MyAwesomeParallax'
           parallaxData={ ParallaxData } // your parallax effects, see beneath
@@ -161,7 +159,7 @@ class Project extends React.Component {
           <Grid item xs={12} sm={12}>
 
 
-            <Grid container spacing={16} className={classes.spacer}>
+            <Grid container spacing={16} className={classes.spacer} style={{background:'white'}}>
               <Grid item xs={10} md={1}></Grid>
 
               <Grid item xs={10} md={4}>
@@ -258,7 +256,7 @@ class Project extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container spacing={16} justify="space-between" className={classes.spacer}>
+            <Grid container spacing={16} justify="space-between" className={classes.spacer} style={{background:'white'}}>
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
                 <Grid container>
@@ -280,7 +278,7 @@ class Project extends React.Component {
               <Grid item xs={1} md={1}></Grid>
             </Grid>
 
-            <Grid container justify="space-between" className={classes.spacer} style={{background:'#ebf1fa', paddingBottom:'0'}}>
+            <Grid container justify="space-between" className={classes.spacer} style={{paddingBottom:'0'}}>
                 <Grid container spacing={24}>
                   <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
                     <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.state.project.large_image_1} alt="large-image-1" />
@@ -292,7 +290,7 @@ class Project extends React.Component {
             </Grid>
 
 
-            <Grid container style={{backgroundColor: this.state.bgColor}}>
+            <Grid container style={{background:'white'}}>
               <Grid item xs={12} md={12}>
                 <img style={{ width: '100%', height:'100%' }} src={this.state.project.large_image} alt="large image 2" />
               </Grid>
@@ -336,7 +334,7 @@ class Project extends React.Component {
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} style={{
-                background:'linear-gradient(121deg, rgba(13, 72, 139, .1), rgba(234, 246, 255, 1))',
+                background:'#f6f6f6',
                 height:'100%', display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',

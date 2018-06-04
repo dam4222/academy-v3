@@ -139,6 +139,11 @@ const theme = createMuiTheme({
         backgroundColor: 'transparent',
       },
     },
+    MuiModal:{
+      root:{
+        zIndex:999999999,
+      }
+    }
   },
 });
 

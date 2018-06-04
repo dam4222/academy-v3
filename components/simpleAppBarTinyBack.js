@@ -26,8 +26,6 @@ const root = {
   display:'flex',
   flexFlow:'row wrap',
   width:'100%',
-  position:'fixed',
-  zIndex:9999999,
 }
 
 const left = {
@@ -64,7 +62,7 @@ class SimpleAppBarTinyBack extends React.Component {
             >
               <Toolbar>
                   <Grid item xs={11} style={left}>
-                    <IconButton className="iconLogo" disableRipple={true} href="/">
+                    <IconButton className="iconLogoPost" disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
                     <IconButton className="arrowBack" onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton>

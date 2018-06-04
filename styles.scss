@@ -3,6 +3,7 @@ html, body{
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
   overflow-y: auto;
+  transition: 1s all;
 }
 
 h3{
@@ -413,17 +414,46 @@ p{
       fill:white;
     }
   }
+
+}
+
+
+.iconLogoPost{
+  position: absolute !important;
+  left: 0;
+  width: 75px !important;
+  height: 75px !important;
+  background: black !important;
+  top: 0;
+
+  svg {
+    transition: 1s ease all;
+    transform: translate(0, 0);
+
+    &:hover{
+      cursor: pointer;
+      transform: translate(0, -5px);
+    }
+
+    path{
+      fill:white;
+    }
+  }
+
+  @media (max-width: 900px) {
+    left:75px;
+  }
 }
 
 .arrowBack{
   display: block;
-  position: relative !important;
+  position: absolute !important;
   width: 75px !important;
   height: 75px !important;
   background: black !important;
-  color:white !important;
-  top: 80px;
-  left: -24px;
+  color: white !important;
+  top: 75px;
+  left:0;
   transition: 1s ease all;
   padding:20px;
 
@@ -436,6 +466,10 @@ p{
     }
   }
 
+  @media (max-width: 900px) {
+    top: 0;
+    left:0;
+  }
 
 }
 
@@ -617,8 +651,8 @@ p{
     position: absolute;
     text-align: center;
 
-    @media (max-width: 599px) {
-      top: 30vh;
+    @media (max-width: 900px) {
+      top: 4vh;
       left: 0;
     }
 }
@@ -626,11 +660,11 @@ p{
 .designTinkering{
     text-align:center;
     justify-content: center;
-    padding-top:15vh;
+    padding-top:10vh;
     padding-bottom:10vh;
 
     @media (max-width: 599px) {
-      padding-top:15vh;
+      padding-top:10vh;
     }
 
 }
@@ -645,7 +679,7 @@ p{
     height:100%;
     width:100%;
     background: lightgray;
-    z-index: 9999999;
+    z-index: 999999999999999999999999;
     animation: wipe 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     animation-delay: .65s;
   }
@@ -656,7 +690,7 @@ p{
     height:100%;
     width:100%;
     background: white;
-    z-index: 9999999;
+    z-index: 9999999999999999999999999;
     animation: wipe 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   }
 
@@ -683,7 +717,7 @@ p{
 
 &:nth-child(2) {
       animation:1.2s ease forwards moveUp;
-      animation-delay:1.5s;
+      animation-delay:1.25s;
       opacity:0;
 
         @keyframes moveUp {
@@ -698,6 +732,23 @@ p{
       }
     }
 }
+
+.project{
+      animation:1.2s ease forwards moveUp;
+      animation-delay:1.5s;
+      opacity:0;
+
+        @keyframes moveUp {
+        0% {
+          opacity: 0;
+          transform: translate(0, 100px);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0px);
+        }
+      }
+    }
 
 .social-icons a{
   transition: .5s all;
@@ -716,4 +767,5 @@ p{
   width:100%;
   position: fixed !important;
   top:0;
+  transition: 1s all;
 }
