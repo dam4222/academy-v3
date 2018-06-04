@@ -11,7 +11,7 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import 'isomorphic-fetch'
-import { CircularProgress } from 'material-ui/Progress';
+import { LinearProgress } from 'material-ui/Progress';
 
 import TextField from 'material-ui/TextField';
 import Dialog, {
@@ -72,10 +72,6 @@ const styles = {
     paddingBottom: '50px',
     paddingTop: '50px',
     justifyContent: 'flex-start',
-  },
-  progress: {
-    width: '100px',
-    margin: 'auto',
   },
 };
 
@@ -188,7 +184,7 @@ class Work extends React.Component {
           </DialogActions>
         </Dialog>
 
-      {this.state.fetching ? <CircularProgress style={{marginTop: '100'}} className={classes.progress} size={200} /> : (
+      {this.state.fetching ? <LinearProgress className="progress" /> : (
 
         <Grid container>
 
@@ -226,7 +222,7 @@ class Work extends React.Component {
                 </Grid>
                   <Grid item xs={12} md={5} className={classes.contentCenter}>
                     <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
-                      <a style={{textDecoration: 'none', width: '100%', padding:'5%'}}>
+                      <a style={{textDecoration: 'none', width: '100%', height:'100vh', paddingTop: '3%', paddingRight: '6%'}}>
                         <ParallaxBanner
                           className=""
                           layers={[

@@ -8,7 +8,7 @@ import SimpleAppBarTiny from '../components/simpleAppBarTiny';
 import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { CircularProgress } from 'material-ui/Progress';
+import { LinearProgress } from 'material-ui/Progress';
 import Transition from '../components/transition';
 import Router from 'next/router';
 

@@ -26,6 +26,8 @@ const root = {
   display:'flex',
   flexFlow:'row wrap',
   width:'100%',
+  position:'fixed',
+  zIndex:9999999,
 }
 
 const left = {

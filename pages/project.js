@@ -11,7 +11,7 @@ import Grid from 'material-ui/Grid';
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import ReactPlayer from 'react-player';
-import { CircularProgress } from 'material-ui/Progress';
+import { LinearProgress } from 'material-ui/Progress';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 
@@ -49,11 +49,6 @@ const styles = theme => ( {
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
-  },
-  progress: {
-    margin: theme.spacing.unit * 2,
-    width: '100px',
-    margin: 'auto',
   },
   content: {
     width: '100%',
@@ -129,7 +124,7 @@ class Project extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      { this.state.fetching ? <CircularProgress className={classes.progress} size={200} /> : (
+      { this.state.fetching ? <LinearProgress className="progress" /> : (
         <div>
         <Grid container>
 

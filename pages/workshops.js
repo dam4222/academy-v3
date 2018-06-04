@@ -85,7 +85,7 @@ function Workshops(props) {
                 className="heroImgWorkshops"
                 layers={[
                     {
-                        image: 'https://cdn1.academyux.com/designbetter-class@2x.jpg',
+                        image: 'https://cdn1.academyux.com/designbetter-class.jpg',
                         amount: 0.1,
                         slowerScrollRate: false,
                     },
@@ -104,7 +104,7 @@ function Workshops(props) {
                   className="your-class"
                   layers={[
                       {
-                          image: 'https://cdn1.academyux.com/stickies-blur@2x.jpg',
+                          image: 'https://cdn1.academyux.com/stickies-blur@3x.jpg',
                           amount: 0.2,
                           slowerScrollRate: false,
                           position: 'bottom'

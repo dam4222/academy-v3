@@ -418,11 +418,11 @@ p{
 .arrowBack{
   display: block;
   position: relative !important;
-  width: 85px !important;
-  height: 85px !important;
+  width: 75px !important;
+  height: 75px !important;
   background: black !important;
   color:white !important;
-  top: 95px;
+  top: 80px;
   left: -24px;
   transition: 1s ease all;
   padding:20px;
@@ -612,7 +612,7 @@ p{
 }
 
 .blogHeadline{
-    top: 60vh;
+    top: 30vh;
     display: flex;
     position: absolute;
     text-align: center;
@@ -626,7 +626,7 @@ p{
 .designTinkering{
     text-align:center;
     justify-content: center;
-    padding-top:10vh;
+    padding-top:15vh;
     padding-bottom:10vh;
 
     @media (max-width: 599px) {
@@ -710,4 +710,10 @@ p{
     transform: scale(.9);
     opacity:.5;
   }
+}
+
+.progress{
+  width:100%;
+  position: fixed !important;
+  top:0;
 }

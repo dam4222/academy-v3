@@ -24,6 +24,8 @@ const root = {
   display:'flex',
   flexFlow:'row wrap',
   width:'100%',
+  position:'fixed',
+  zIndex:9999999,
 }
 
 const left = {
@@ -51,7 +53,7 @@ class SimpleAppBarTiny extends React.Component {
 
             <AppBar
             color="default"
-            style={{background:'#fafafa', height:'60px'}}
+            style={{background:'#fafafa', height:'60px', zIndex:'99999', position:'relative'}}
             className="tinyAppBar"
             >
               <Toolbar>

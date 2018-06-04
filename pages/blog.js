@@ -22,7 +22,7 @@ import Dialog, {
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import "../styles.scss"
 
-import { CircularProgress } from 'material-ui/Progress';
+import { LinearProgress } from 'material-ui/Progress';
 import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
 
 import { FormControl } from 'material-ui/Form';
@@ -38,6 +38,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
+    paddingLeft: '2.5vw',
+    paddingRight: '2.5vw',
   },
   featuredImage: {
     maxWidth: '100%',
@@ -59,10 +61,6 @@ const styles = {
   centerImg:{
     textAlign:'center',
     justifyContent: 'center',
-  },
-  progress: {
-    width: '100px',
-    margin: 'auto',
   },
 };
 
@@ -280,7 +278,7 @@ class Blog extends React.Component {
           </DialogActions>
         </Dialog>
 
-        { this.state.initFetching ? <CircularProgress className={classes.progress}  size={'50vw'} /> : (
+        { this.state.initFetching ? <LinearProgress className="progress" /> : (
         <Grid container spacing={8} className={classes.container}>
 
             <Grid container spacing={8}>
@@ -314,14 +312,14 @@ class Blog extends React.Component {
                     style={{
                         height: '80vh',
                         top: '0',
-                        maxWidth:'605px'
+                        maxWidth:'705px'
                     }}
                   >
                   </ParallaxBanner>
                 </Grid>
                 <Grid container spacing={8} className="blogHeadline" >
-                  <Grid item xs={1} md={4}></Grid>
-                  <Grid item xs={10} md={4} xl={3}>
+                  <Grid item xs={1} md={4} lg={6} xl={7}></Grid>
+                  <Grid item xs={10} md={8} lg={6} xl={5}>
                     <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
                     <Typography variant="display2" paragraph>
                       {this.state.featuredBlog[0].acf.title}
@@ -334,9 +332,8 @@ class Blog extends React.Component {
                     </Typography>
                   </Paper>
                   </Grid>
-                  <Grid item xs={1} md={4}></Grid>
+                  <Grid item xs={1}></Grid>
                 </Grid>
-              <Grid item xs={1} md={3}></Grid>
               </Grid>
             </Grid>
 
