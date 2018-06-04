@@ -83,7 +83,18 @@ const styles = theme => ( {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
+  projectLegend: {
+    display:'inline-block',
+  },
+  contentCenter:{
+    display: 'flex',
+    alignItems: 'center',
+    textAlign:'left',
+    paddingBottom: '50px',
+    paddingTop: '50px',
+    justifyContent: 'flex-start',
+  },
 });
 
 class Project extends React.Component {
@@ -130,28 +141,54 @@ class Project extends React.Component {
             <title>Academy – {this.state.project.client_name + " – " +  this.state.project.project_title}</title>
             <meta name="description" content={this.state.project.project_description}/>
           </Head>
-        <Grid container>
 
-        <Grid container className="project" style={{backgroundColor: this.state.bgColor}}>
-          <Plx
-          className='MyAwesomeParallax'
-          parallaxData={ ParallaxData } // your parallax effects, see beneath
-          animateWhenNotInViewport={ true }
+        <Grid container className="project" style={{height: '100vh'}}>
 
-          >
-              <img width="100%"
-              style={{
-                paddingTop:'60px',
-                paddingBottom:'60px',
-                maxWidth:'100%'
-              }}
-              src={this.state.project.featured_image}
-              alt="featured image"
-              />
-
-          </Plx>
+          <Grid item xs={12} md={4} style={{ zIndex: 999, backgroundColor: 'white', padding:'20px', position:'absolute', top:'25%', left:'5%' }}>
+            <div className={classes.projectLegend}>
+              <Typography variant="title" color="secondary" className={classes.projectLegend}>
+                Client &nbsp;
+              </Typography>
+              <Typography variant="title" color="primary" className={classes.projectLegend}>
+                {this.state.project.client_name}
+              </Typography>
+            </div>
+            <div className={classes.subLegend}>
+              <Typography variant="display2" color="inherit">
+                {this.state.project.project_title}
+              </Typography>
+            </div>
+            <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
+              Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
+            </Typography>
           </Grid>
-        </Grid>
+
+          <Grid item xs={1}></Grid>
+          <Grid item xs={10} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+
+            <Grid container className="project" style={{height:'100vh'}}>
+              <Grid item xs={1}></Grid>
+              <Grid item xs={10} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
+              <Plx
+              style={{bottom:0, position:'relative'}}
+              className='MyAwesomeParallax'
+              parallaxData={ ParallaxData } // your parallax effects, see beneath
+              animateWhenNotInViewport={ true }
+              >
+                  <img width="100%"
+                  style={{
+                    maxWidth:'100%',
+                  }}
+                  src={this.state.project.featured_image}
+                  alt="featured image"
+                  />
+
+              </Plx>
+              </Grid>
+              </Grid>
+          </Grid>
+          <Grid item xs={1} md={3}></Grid>
+          </Grid>
 
 
         <Grid container spacing={8} className={classes.content}>
@@ -321,7 +358,7 @@ class Project extends React.Component {
                         return(
                           <Grid key={project.slug} item xs={4} md={4}>
                             <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + project.slug}>
-                              <Typography variant="button">{project.acf.client_name} | {project.acf.project_title}</Typography>
+                              <Typography variant="button">{this.state.project.client_name} | {this.state.project.project_title}</Typography>
                             </a>
                           </Grid>
                         )
