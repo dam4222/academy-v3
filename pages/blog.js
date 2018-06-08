@@ -1,17 +1,14 @@
 import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
-import SimpleAppBar from '../components/simpleAppBar';
+
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import Grid from 'material-ui/Grid';
 import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
+
 import 'isomorphic-fetch'
 import Link from 'next/link';
-import Router from 'next/router';
-import Modal from 'material-ui/Modal';
 import TextField from 'material-ui/TextField';
 import Dialog, {
   DialogActions,
@@ -19,13 +16,8 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog'
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import "../styles.scss"
 
-import { LinearProgress } from 'material-ui/Progress';
-import Input, {InputLabel, InputAdornment } from 'material-ui/Input';
-
-import { FormControl } from 'material-ui/Form';
 import Head from 'next/head';
 
 
@@ -67,48 +59,20 @@ const styles = {
 };
 
 class Blog extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       /* initial state */
-      initFetching: true,
-      blogs: {},
-      isLoading: false,
       open: false,
-      blogPassword: '',
-      inputPassword: '',
-      currPost: null,
-      errorMessage: '',
-      blogSearch: '',
-      fetching: true,
-      featuredBlog: [{
-        date: '',
-        acf: {
-          featured_image: '',
-          author: {
-            display_name: ''
-          }
-        },
-      }],
+      isLoading: false,
+      loaded: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleClickOpen = this.handleClickOpen.bind(this);
-    this.onChange = this.onChange.bind(this);
-    this.verifyPassword = this.verifyPassword.bind(this);
-
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-
 
   async handleScroll() {
     //console.log(window.scrollY, window.outerHeight)
@@ -143,50 +107,19 @@ class Blog extends React.Component {
 
 
   //fetch list of blogs here
-  async UNSAFE_componentWillMount(){
-    //console.log(url)
-
-    let res = await fetch(url)
-    let blogs = await res.json()
-    //console.log(blogs)
-    await this.setState({
-      blogs: blogs
-    })
-
-    //fetch featured here
+  static async getInitialProps({ req }) {
+    //Fetching featured blog below, if more than one are featured, the latest one will be displayed
     const url_feat = "https://" + fetchUrl + "/wp-json/wp/v2/blogs/?featured=true";
     const res_feat = await fetch(url_feat);
-    const featured = await res_feat.json()
-    //console.log(featured[0]);
-    if (featured.length > 0){
-      await this.setState({
-        featuredBlog: featured,
-        initFetching: false,
-      })
-    }
-  }
+    const featuredBlog = await res_feat.json()
 
+    //fetching rest of the blogs
+    const res = await fetch(url)
+    const blogs = await res.json()
 
-
-  handleClose = (blog) => {
-    this.setState({ open: false });
-
-  }
-
-  handleClickOpen = (blog) => {
-
-    if (blog.acf.password == ""){
-      limit = "";
-      Router.push(
-        `/post?name=${blog.slug}`,
-
-      );
-    }else{
-      this.setState({
-        open: true,
-        currPost: blog.slug,
-        blogPassword: blog.acf.password,
-      });
+    return{
+      featuredBlog: featuredBlog,
+      blogs: blogs,
     }
   }
 
@@ -197,26 +130,7 @@ class Blog extends React.Component {
     });
   };
 
-  verifyPassword = () =>{
-
-
-    if (this.state.inputPassword == this.state.blogPassword){
-      //console.log("correct", this.state.blogPassword, this.state.inputPassword)
-      limit = "";
-      Router.push(
-        `/post?name=${this.state.currPost}`,
-
-      );
-    }
-    else{
-      //console.log("wrong", this.state.blogPassword, this.state.inputPassword)
-      this.setState({
-        errorMessage: 'Something wrong with the password. Ask for permission or try again!'
-      })
-    }
-  }
-
-   searchBlogs = blogSearch => event => {
+  searchBlogs = blogSearch => event => {
 
      this.fetchSearch(event.target.value);
   }
@@ -242,10 +156,9 @@ class Blog extends React.Component {
     return format;
   }
 
-
-
   render() {
     const { classes } = this.props;
+    const isBrowser = typeof window !== "undefined";
      return (
       <div className={classes.root}>
         <Head>
@@ -262,7 +175,7 @@ class Blog extends React.Component {
             <DialogContentText>
               Provide passsword to view blog post.
               <div style={{color: 'red'}}>
-              {this.state.errorMessage}
+              
                 </div>
             </DialogContentText>
             <TextField
@@ -284,7 +197,7 @@ class Blog extends React.Component {
           </DialogActions>
         </Dialog>
 
-        { this.state.initFetching ? <LinearProgress className="progress" /> : (
+        
         <Grid container spacing={8} className={classes.container}>
 
             <Grid container spacing={8}>
@@ -302,39 +215,35 @@ class Blog extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container className="heroHover" spacing={8} onClick={() => this.handleClickOpen(this.state.featuredBlog[0])}>
+
+            <Link href={{ pathname: 'post', query: { name: this.props.featuredBlog[0].slug }}}  as={`/post?${this.props.featuredBlog[0].slug}`} prefetch>
+            <Grid container className="heroHover" spacing={8} >
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
                 <Grid container spacing={8} className={classes.centerImg}>
-                  <ParallaxBanner
-                    className="heroImgWorkshops"
-                    layers={[
-                        {
-                            image: this.state.featuredBlog[0].acf.featured_image,
-                            amount: 0.2,
-                            slowerScrollRate: false,
-                        },
-                    ]}
+               
+                <img src={this.props.featuredBlog[0].acf.featured_image}
                     style={{
                         height: '80vh',
                         top: '0',
                         maxWidth:'705px'
                     }}
-                  >
-                  </ParallaxBanner>
+                    alt="featured Image"
+                  />
+                  
                 </Grid>
                 <Grid container spacing={8} className="blogHeadline" >
                   <Grid item xs={1} md={5} lg={6} xl={7}></Grid>
                   <Grid item xs={10} md={7} lg={6} xl={5}>
                     <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
                     <Typography variant="display2" paragraph>
-                      {this.state.featuredBlog[0].acf.title}
+                      {this.props.featuredBlog[0].acf.title}
                     </Typography>
                     <Typography variant="body1" gutterBottom>
-                    {this.formatDate(this.state.featuredBlog[0].date)}
+                    {this.formatDate(this.props.featuredBlog[0].date)}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
-                      By {this.state.featuredBlog[0].acf.author.display_name}
+                      By {this.props.featuredBlog[0].acf.author.display_name}
                     </Typography>
                   </Paper>
                   </Grid>
@@ -342,6 +251,7 @@ class Blog extends React.Component {
                 </Grid>
               </Grid>
             </Grid>
+            </Link>
 
             <Grid container spacing={8} style={{paddingTop:'100px'}}>
 
@@ -354,43 +264,35 @@ class Blog extends React.Component {
 
                 <Grid container spacing={24}>
                 {
-                Object.keys(this.state.blogs).map((blog) => {
-                  if (this.state.blogs[blog].acf.featured != true){
+                this.props.blogs.map((blog) => {
+                  if (blog.acf.featured != true){
                   return (
+                    <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
+                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}}  value={blog} >
+                    
+                          <img src={blog.acf.featured_image}
+                            style={{
+                                height: '20vh',
+                                top: '0',
+                                maxWidth:'605px'
+                            }}
+                            alt="featured Image"
+                          />
 
-                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}} key={this.state.blogs[blog].id} value={this.state.blogs[blog]} onClick={() => this.handleClickOpen(this.state.blogs[blog])}>
-
-                        <ParallaxBanner
-                          className="heroImgWorkshops"
-                          layers={[
-                              {
-                                  image: this.state.blogs[blog].acf.featured_image,
-                                  amount: 0.2,
-                                  slowerScrollRate: false,
-                              },
-                          ]}
-                          style={{
-                              height: '20vh',
-                              top: '0',
-                              maxWidth:'605px'
-                          }}
-                        >
-                        </ParallaxBanner>
-
-                        <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
-                          <Typography variant="headline" paragraph>
-                          {this.state.blogs[blog].acf.title}
-                          </Typography>
-                          <Typography variant="body1" gutterBottom>
-                            {this.formatDate(this.state.blogs[blog].date)}
-                          </Typography>
-                          <Typography variant="caption" gutterBottom>
-                            By {this.state.blogs[blog].acf.author.display_name}
-                          </Typography>
-                        </Paper>
-
-
+                          <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
+                            <Typography variant="headline" paragraph>
+                            {blog.acf.title}
+                            </Typography>
+                            <Typography variant="body1" gutterBottom>
+                              {this.formatDate(blog.date)}
+                            </Typography>
+                            <Typography variant="caption" gutterBottom>
+                              By {blog.acf.author.display_name}
+                            </Typography>
+                          </Paper>
+                        
                     </Grid>
+                    </Link>
                   )
                   }
                   })
@@ -401,7 +303,7 @@ class Blog extends React.Component {
 
           <Grid item xs={1} md={2}></Grid>
         </Grid>
-      )}
+      
 
       </div>
     );

@@ -82,18 +82,10 @@ function OurWorkshops(props) {
           <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <ParallaxBanner
-                  className=""
-                  layers={[
-                      {
-                          image: 'https://cdn1.academyux.com/workshop5.jpg',
-                          amount: 0.1,
-                          slowerScrollRate: false,
-                      },
-                  ]}
+                <img src='https://cdn1.academyux.com/workshop5.jpg'
                   style={imgStyle}
-                >
-                </ParallaxBanner>
+                />
+               
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -112,19 +104,9 @@ function OurWorkshops(props) {
             </Grid>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <ParallaxBanner
-                  className=""
-                  layers={[
-                      {
-                          image: 'https://cdn1.academyux.com/workshop9.jpg',
-                          amount: 0.1,
-                          slowerScrollRate: false,
-                          position:'bottom'
-                      },
-                  ]}
+                <img src='https://cdn1.academyux.com/workshop9.jpg'
                   style={imgStyle}
-                >
-                </ParallaxBanner>
+                />
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -144,18 +126,9 @@ function OurWorkshops(props) {
             <Grid container>
 
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <ParallaxBanner
-                  className=""
-                  layers={[
-                      {
-                          image: 'https://cdn1.academyux.com/workshop1.jpg',
-                          amount: 0.1,
-                          slowerScrollRate: false,
-                      },
-                  ]}
+                <img src='https://cdn1.academyux.com/workshop1.jpg'
                   style={imgStyle}
-                >
-                </ParallaxBanner>
+                />
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>

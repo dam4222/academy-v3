@@ -4,17 +4,16 @@ import SimpleAppBar from '../components/simpleAppBar';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
-import Router from 'next/router'
-import 'isomorphic-fetch'
+import { withRouter } from 'next/router'
+import Link from 'next/link';
 const fetchUrl = process.env.fetchUrl;
-import { LinearProgress } from 'material-ui/Progress'
 import Grid from 'material-ui/Grid';
 import Icon from 'material-ui/Icon';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import "../styles.scss"
 import Head from 'next/head'
+
 
 
 const styles = {
@@ -26,11 +25,13 @@ const styles = {
 
 class Post extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor(children, router, href) {
+    super(children, router, href);
+    //console.log(props);
     this.state = {
       /* initial state */
       fetching: true,
+      children: children,
       content: {
       },
       title: '',
@@ -38,7 +39,9 @@ class Post extends React.Component {
 
       ],
     };
+    
   }
+
 
   formatDate = (date) =>{
     let format = new Date(date);
@@ -55,15 +58,21 @@ class Post extends React.Component {
   }
 
   //fetch details of the blog here
-  async componentWillMount(){
+  static async getInitialProps(nextProps) {
+    
     //To share the post use the following plugin
-    console.log(window.location.href);
-    const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?slug=' + Router.query.name;
+    //console.log(window.location.href);
+    //console.log(this.state.children);
+    let path = nextProps.asPath
+    //console.log(path)
+    path = path.substr(6);
+    console.log(path)
+    const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?slug=' + path;
     const res = await fetch(url)
     const blog = await res.json()
-    //console.log(blog[0])
+    //console.log(blog)
+    if (blog.length > 0){
     let date_posted = new Date(blog[0].date);
-    date_posted = this.formatDate(date_posted);
 
     let raw_tags = blog[0].acf.tags === null ? [] : blog[0].acf.tags
     let tags = [];
@@ -73,8 +82,15 @@ class Post extends React.Component {
       });
     }
 
+    const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?per_page=4';
+    const res2 = await fetch(url2)
+    const moreArticles = await res2.json()
+    //console.log(blog)
+    
+      
 
-    await this.setState({
+    return({
+      currSlug: blog[0].slug,
       content: blog[0].content.rendered,
       short_description: blog[0].acf.short_description,
       title: blog[0].acf.title,
@@ -84,17 +100,10 @@ class Post extends React.Component {
       date_posted: date_posted,
       author_job_title: blog[0].acf.author_job_title,
       fetching: false,
+      moreArticles: moreArticles,
     })
-  }
-
-  async componentDidMount(){
-    const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?per_page=4';
-    const res = await fetch(url)
-    const blog = await res.json()
-    console.log(blog)
-    await this.setState({
-      moreArticles: blog,
-    })
+    }
+    
   }
 
 
@@ -103,44 +112,40 @@ class Post extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      {this.state.fetching ?
-        ( /*This is the load bar, when the post is being fetched*/
-        <div><LinearProgress variant="query" /><br/></div>
-        ) :
-        (
+      
           <div>
             <Head>
-              <title>Academy – {this.state.title}</title>
-              <meta name="description" content={this.state.short_description} />
+              <title>Academy – {this.props.title}</title>
+              <meta name="description" content={this.props.short_description} />
             </Head>
           <Grid container style={{marginBottom:'40px'}}>
           <Grid xs={1} md={3} lg={4} xl={4}></Grid>
           <Grid xs={10} md={6} lg={4} xl={4} >
           <div>
             <Typography variant="body1" style={{fontSize:'12px'}} paragraph>
-              {this.state.date_posted}
+              {this.formatDate(this.props.date_posted)}
             </Typography>
             <Typography variant="display4" paragraph>
-              {this.state.title}
+              {this.props.title}
             </Typography>
 
             <Grid xs={12} style={{paddingBottom:'40px'}}>
               <Grid container>
                 <Grid xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
-                <div className="author-profile" dangerouslySetInnerHTML={{__html: this.state.author_picture}}></div>
+                <div className="author-profile" dangerouslySetInnerHTML={{__html: this.props.author_picture}}></div>
                 <div style={{display: 'inline-block', paddingLeft: '15px'}}>
-                <Typography variant="button">by {this.state.author_name}</Typography>
-                <Typography variant="caption">{this.state.author_job_title}</Typography>
+                <Typography variant="button">by {this.props.author_name}</Typography>
+                <Typography variant="caption">{this.props.author_job_title}</Typography>
                 </div>
                 </Grid>
               </Grid>
             </Grid>
 
-              <div className="content" dangerouslySetInnerHTML={{__html: this.state.content}}>
+              <div className="content" dangerouslySetInnerHTML={{__html: this.props.content}}>
               </div>
 
             <div>
-              {this.state.tags.map((tag ) => {
+              {this.props.tags.map((tag ) => {
                 return(
                   <Chip label={tag} className={classes.chip} />
                 )
@@ -156,37 +161,30 @@ class Post extends React.Component {
 
           </Grid>
             </div>
-        )}
+        
 
 
         <Grid container spacing={24}>
           <Grid xs={12} style={{margin:'0 2%', background: 'linear-gradient(116deg, #ebf5f4, #efebf5)'}}>
             <Typography variant="title" style={{textAlign:'center', padding:'50px'}}>More Articles</Typography>
             <Grid container>
-              <Grid xs={1} sm={2} md={4}></Grid>
-
-              {this.state.moreArticles.map((post) => {
-                if (post.slug != Router.query.name ){
-                  console.log(post.slug)
+              <Grid item xs={1} sm={2} md={4}></Grid>
+              
+              {this.props.moreArticles.map((post) => {
+                if (post.slug != this.props.currSlug ){
+                  //console.log(post.slug)
                 return(
+                  <Link key={post.id} href={{ pathname: 'post', query: { name: post.slug }}}  as={`/post?${post.slug}`} prefetch>
                   <Grid item xs={10} sm={8} md={4} lg={2} className="heroHover" style={{paddingBottom:'50px'}}>
-
-                    <ParallaxBanner
-                      className="blogHeadline"
-                      layers={[
-                          {
-                              image: post.acf.featured_image,
-                              amount: 0.2,
-                              slowerScrollRate: false,
-                          },
-                      ]}
+                    
+                    <img
+                      src={post.acf.featured_image}
                       style={{
-                          height: '20vh',
-                          top: '0',
-                          maxWidth:'605px'
-                      }}
-                    >
-                    </ParallaxBanner>
+                        height: '20vh',
+                        top: '0',
+                        maxWidth:'605px'
+                    }}
+                    />
 
                     <Paper elevation={0} style={{padding:'30px', textAlign:'center', width: '100%', maxWidth: '605px'}} className="headlineHover">
                       <Typography variant="headline" paragraph>
@@ -200,6 +198,7 @@ class Post extends React.Component {
                       </Typography>
                     </Paper>
                   </Grid>
+                  </Link>
                     )
                     }
 
@@ -222,4 +221,4 @@ Post.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(Post));
+export default withRoot(withStyles(styles)(withRouter(Post)));
