@@ -187,32 +187,32 @@ class Work extends React.Component {
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={4} className={classes.contentCenter}>
 
-                <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
-                  <a style={{textDecoration: 'none', color:'black'}}>
-
-                      <div className={classes.projectLegend}>
+                <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
+                  
+                  <div>
+                      
                         <Typography variant="title" color="secondary" className={classes.projectLegend}>
                           Client &nbsp;
                         </Typography>
                         <Typography variant="title" color="primary" className={classes.projectLegend}>
                           {project.acf.client_name}
                         </Typography>
-                      </div>
-                      <div className={classes.subLegend}>
+                      
+                      
                         <Typography variant="display2" color="inherit">
                           {project.acf.project_title}
                         </Typography>
-                      </div>
+                      
                           <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"}>
                             <Typography variant="button" color="inherit">
                               Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                             </Typography>
                           </Button>
-                    </a>
+                    </div>
                   </Link>
                 </Grid>
                   <Grid item xs={12} md={5} className={classes.contentCenter}>
-                    <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
+                    <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
                       <a className="projectLink">
                         <img
                           className="projectImg"

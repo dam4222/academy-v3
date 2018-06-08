@@ -22,7 +22,7 @@ const styles = theme => ({
 
 function LatestNews(props) {
   const { classes } = props;
-
+  
     return (
       <div className={classes.root}>
 
@@ -44,49 +44,45 @@ function LatestNews(props) {
         <Grid item xs={1} sm={1} md={1} lg={1}></Grid>
         <Grid item xs={10} sm={11} md={11} lg={10}>
         <Grid container spacing={40}>
-          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
-            <Typography variant='title' gutterBottom>
-              Product Relays™
-            </Typography>
-            <br></br>
-            <Typography variant='body1' gutterBottom>
-            Product Relays are a framework that combines Design Sprints with a Modified Agile Sprints helping teams collaborate and work more efficiently together.
-            </Typography>
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/work">
-              <Typography variant="button" color="inherit">
-                Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+        {props.news.map((latestNews) => {
+          return(
+            <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
+              <Typography variant='title' gutterBottom>
+                {latestNews.acf.headline}
               </Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
-            <Typography variant='title' gutterBottom>
-              Product Relays™
-            </Typography>
-            <br></br>
-            <Typography variant='body1' gutterBottom>
-            Product Relays are a framework that combines Design Sprints with a Modified Agile Sprints helping teams collaborate and work more efficiently together.
-            </Typography>
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/work">
-              <Typography variant="button" color="inherit">
-                Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+              <br></br>
+              <Typography variant='body1' gutterBottom>
+              {latestNews.acf.short_description}
               </Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
-            <Typography variant='title' gutterBottom>
-              Product Relays™
-            </Typography>
-            <br></br>
-            <Typography variant='body1' gutterBottom>
-            Product Relays are a framework that combines Design Sprints with a Modified Agile Sprints helping teams collaborate and work more efficiently together.
-            </Typography>
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/work">
-              <Typography variant="button" color="inherit">
-                Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={latestNews.acf.link}>
+                <Typography variant="button" color="inherit">
+                  Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                </Typography>
+              </Button>
+            </Grid>
+          )
+        })}
+
+        {props.blogs.map((latestNews) => {
+          return(
+            <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
+              <Typography variant='title' gutterBottom>
+                {latestNews.acf.title}
               </Typography>
-            </Button>
-            <Hidden smUp><Divider style={{marginTop:'40px'}} /></Hidden>
-          </Grid>
+              <br></br>
+              <Typography variant='body1' gutterBottom noWrap={true}>
+              {latestNews.acf.short_description}
+              </Typography>
+              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={`post?${latestNews.slug}`}>
+                <Typography variant="button" color="inherit">
+                  Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                </Typography>
+              </Button>
+            </Grid>
+          )
+        })}
+          
+
           <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center'}}>
 
             <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/blog">
