@@ -68,6 +68,7 @@ class Blog extends React.Component {
       loaded: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
+    
   }
 
   componentDidMount() {
@@ -149,6 +150,8 @@ class Blog extends React.Component {
     })
   }
 
+  
+
   formatDate = (date) =>{
     let format = new Date(date);
     format = format.toDateString();
@@ -156,9 +159,17 @@ class Blog extends React.Component {
     return format;
   }
 
+  getAuthors = (authors) => {
+    let res = []
+    authors.map((author) => {
+      res.push(author.display_name)
+    })
+    return res.join(", ")
+  }
+
   render() {
     const { classes } = this.props;
-    const isBrowser = typeof window !== "undefined";
+    
      return (
       <div className={classes.root}>
         <Head>
@@ -243,7 +254,20 @@ class Blog extends React.Component {
                     {this.formatDate(this.props.featuredBlog[0].date)}
                     </Typography>
                     <Typography variant="caption" gutterBottom>
-                      By {this.props.featuredBlog[0].acf.author.display_name}
+                      <Grid container>
+                       {this.props.featuredBlog[0].acf.author.map((authors) => {
+                        return(
+                          
+                          <Grid item xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
+                          <div className="author-profile"   dangerouslySetInnerHTML={{__html: authors.user_avatar}}></div>
+                          <div style={{display: 'inline-block', paddingLeft: '15px'}}>
+                          <Typography variant="button">by {authors.display_name}</Typography>
+                          <Typography variant="caption"><span dangerouslySetInnerHTML={{__html:authors.user_description}}></span></Typography>
+                          </div>
+                        </Grid>
+                        )
+                      })}
+                      </Grid>
                     </Typography>
                   </Paper>
                   </Grid>
@@ -269,7 +293,6 @@ class Blog extends React.Component {
                   return (
                     <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
                     <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}}  value={blog} >
-                    
                           <img src={blog.acf.featured_image}
                             style={{
                                 height: '20vh',
@@ -278,7 +301,6 @@ class Blog extends React.Component {
                             }}
                             alt="featured Image"
                           />
-
                           <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
                             <Typography variant="headline" paragraph>
                             {blog.acf.title}
@@ -287,10 +309,9 @@ class Blog extends React.Component {
                               {this.formatDate(blog.date)}
                             </Typography>
                             <Typography variant="caption" gutterBottom>
-                              By {blog.acf.author.display_name}
+                              By {this.getAuthors(blog.acf.author)}
                             </Typography>
                           </Paper>
-                        
                     </Grid>
                     </Link>
                   )

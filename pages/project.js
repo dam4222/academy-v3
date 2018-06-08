@@ -94,9 +94,9 @@ const styles = theme => ( {
 });
 
 class Project extends React.Component {
-  constructor(props) {
-    super(props);
-    this.props = {
+  constructor(children, router, href) {
+    super(children, router, href);
+    this.state = {
       /* initial state */
       
     };
@@ -104,7 +104,9 @@ class Project extends React.Component {
 
   //fetch details of the project here
   static async getInitialProps(nextProps){
-    let path = nextProps.query.name
+    let path = nextProps.asPath
+    path = path.substr(8);
+    console.log(path)
     const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?slug=' + path;
     const res = await fetch(url)
     const project = await res.json()
@@ -114,8 +116,9 @@ class Project extends React.Component {
     const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
     const res2 = await fetch(url2)
     const moreProjects = await res2.json()
-    console.log(project)
+    //console.log(project)
     return{
+      currProject: project[0].slug,
       project: project[0].acf,
       fetching: false,
       bgColor: project[0].acf.project_theme_color,
@@ -197,10 +200,10 @@ class Project extends React.Component {
                 <Grid container>
                 <Grid item xs={10} md={6}>
                   <Typography variant="body1" style={{fontSize:'24px'}} gutterBottom paragraph>
-                    <div dangerouslySetInnerHTML={{__html: this.props.project.project_description}}></div>
+                    {this.props.project.project_description}
                   </Typography>
                   <Typography variant="button" paragraph>
-                    <a href="#" className="underline" style={{textDecoration: 'none', color:'black'}}>
+                    <a href={this.props.project.link} className="underline" style={{textDecoration: 'none', color:'black'}}>
                       Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
                     </a>
                   </Typography>
@@ -370,11 +373,11 @@ class Project extends React.Component {
 
                     <Grid container>
                     {this.props.moreProjects.map((project) => {
-                      if(project.slug != Router.query.name){
+                      if(project.slug != this.props.currProject){
                         return(
                           <Grid key={project.slug} item xs={4} md={4}>
-                            <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + project.slug}>
-                              <Typography variant="button">{this.props.project.client_name} | {this.props.project.project_title}</Typography>
+                            <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + project.slug}>
+                              <Typography variant="button">{project.acf.client_name} | {project.acf.project_title}</Typography>
                             </a>
                           </Grid>
                         )
@@ -395,8 +398,8 @@ class Project extends React.Component {
                 paddingBottom: '115px'
               }}>
                   <Typography variant="body1">
-                    Next Project    <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?name=' + this.props.project.next_project_link.post_name}>
-                      <b>{console.log(this.props.project.next_project_link.post_name)} <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon></b>
+                    Next Project    <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + this.props.project.next_project_link.post_name}>
+                      <b>{this.props.project.next_project_link.post_title} <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon></b>
                     </a>
                   </Typography>
               </Grid>
