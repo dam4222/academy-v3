@@ -19,7 +19,6 @@ import Star from '../assets/skills/star.svg'
 import Stats from '../assets/skills/stats.svg'
 import User from '../assets/skills/user.svg'
 import "../styles.scss"
-import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Head from 'next/head';
 

@@ -5,10 +5,6 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 import withRoot from '../src/withRoot';
 import Link from 'next/link'
-import { ParallaxBanner } from 'react-scroll-parallax';
-
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import 'isomorphic-fetch'
 import { LinearProgress } from 'material-ui/Progress';
@@ -218,22 +214,16 @@ class Work extends React.Component {
                   <Grid item xs={12} md={5} className={classes.contentCenter}>
                     <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}}>
                       <a className="projectLink">
-                        <ParallaxBanner
+                        <img
                           className="projectImg"
-                          layers={[
-                              {
-                                  image: project.acf.featured_image,
-                                  amount: 0.1,
-                                  slowerScrollRate: false,
-                              },
-                          ]}
+                          src={project.acf.featured_image}                          
                           style={{
                               height: '100vh',
                           }}
-                        >
+                        />
 
 
-                        </ParallaxBanner>
+                        
                       </a>
                     </Link>
                   </Grid>

@@ -22,7 +22,6 @@ function withRoot(Component) {
     constructor(props, context) {
       super(props, context);
       this.state = {
-        loading: true,
         loadTiny:false,
         loadTinyBack:false,
         loadAppBar:true
@@ -30,14 +29,8 @@ function withRoot(Component) {
       this.pageContext = this.props.pageContext || getPageContext();
     }
 
-    slowLoad = () => {
-      //Start the timer
-        this.setState({loading: false})
-
-    }
-
     componentDidMount() {
-        setTimeout(this.slowLoad(), loadDelay * 1000)
+    
         if(Router.router.route == "/blog"){
         this.setState({
           loadTiny:true,
@@ -80,8 +73,6 @@ function withRoot(Component) {
           sheetsManager={this.pageContext.sheetsManager}
         >
           <Transition />
-
-          {console.log(this.state)}
 
           {this.state.loadTiny ?
             (

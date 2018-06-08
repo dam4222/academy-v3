@@ -6,14 +6,9 @@ import withRoot from '../src/withRoot';
 import Grid from 'material-ui/Grid';
 import Hidden from 'material-ui/Hidden';
 import Icon from 'material-ui/Icon';
-import Link from 'next/link'
-import Paper from 'material-ui/Paper';
-import Divider from 'material-ui/Divider';
 import SimpleTabs from '../components/simpleTabs';
 import QuoteCarousel from '../components/quoteCarousel';
 import SimpleTabsMobile from '../components/simpleTabsMobile';
-import WorkshopCard from '../components/workshopCard';
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
 import DesignBetterH from '../assets/design-better-horizontal.svg';
 import InVisionH from '../assets/invision-logo-pink-horizontal.svg';
 import Head from 'next/head'
@@ -85,44 +80,28 @@ function Workshops(props) {
         <Grid item xs={10} sm={10} md={7} lg={6} xl={4}>
           <Grid container style={{flexWrap:'nowrap'}}>
             <Grid item xs={12} md={6}>
-
-              <ParallaxBanner
-                className="heroImgWorkshops"
-                layers={[
-                    {
-                        image: 'https://cdn1.academyux.com/designbetter-class.jpg',
-                        amount: 0.1,
-                        slowerScrollRate: false,
-                    },
-                ]}
-                style={{
+              
+                <div
+                  style={{
+                    background: `url(https://cdn1.academyux.com/designbetter-class.jpg)`,
+                    backgroundSize: 'cover',
                     height: '50vh',
                     top: '0',
-                    left: '-100px',
+                    transform: 'translateY(0) translateX(-100px)',
                 }}
-              >
-              </ParallaxBanner>
+                ></div>
 
               </Grid>
               <Grid item xs={12} md={6}>
-                <ParallaxBanner
-                  className="your-class"
-                  layers={[
-                      {
-                          image: 'https://cdn1.academyux.com/stickies-blur@3x.jpg',
-                          amount: 0.2,
-                          slowerScrollRate: false,
-                          position: 'bottom'
-                      },
-                  ]}
+                <div
                   style={{
-                      height: '50vh',
-                      top: '100px',
-                      left: '-200px',
-                      zIndex: -1,
+                    background: `url(https://cdn1.academyux.com/stickies-blur@3x.jpg)`,
+                    backgroundSize: 'cover',
+                    height: '50vh',
+                    transform: 'translateY(100px) translateX(-200px)',
+                    zIndex: -1,
                   }}
-                >
-                </ParallaxBanner>
+                ></div>
                 </Grid>
           </Grid>
         </Grid>
@@ -145,45 +124,31 @@ function Workshops(props) {
         <Grid item xs={10} sm={10} md={7} lg={7} xl={7}>
             <Grid container style={{flexWrap:'nowrap'}}>
               <Grid item xs={12} md={6} xl={4}>
-
-                <ParallaxBanner
-                  className="your-class"
-                  layers={[
-                      {
-                          image: 'https://cdn1.academyux.com/survival-kit@2x.jpg',
-                          amount: 0.1,
-                          slowerScrollRate: false,
-                          position: 'center'
-                      },
-                  ]}
+                
+                 <div
                   style={{
-                      height: '50vh',
-                      top: '0',
-                      left: '-100px',
-                  }}
-                >
-                </ParallaxBanner>
+                    background: `url(https://cdn1.academyux.com/survival-kit@2x.jpg)`,
+                    backgroundSize: 'cover',
+                    height: '50vh',
+                    top: '0',
+                    transform: ' translateX(-100px)',
+                }}
+                ></div>
 
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
-                  <ParallaxBanner
-                    className="your-class"
-                    layers={[
-                        {
-                            image: 'https://cdn1.academyux.com/process-stickies@2x.jpg',
-                            amount: 0.2,
-                            slowerScrollRate: false,
-                            position: 'left'
-                        },
-                    ]}
-                    style={{
-                        height: '50vh',
-                        top: '100px',
-                        left: '-200px',
-                        zIndex: -1,
-                    }}
-                  >
-                  </ParallaxBanner>
+
+                  <div
+                  style={{
+                    background: `url(https://cdn1.academyux.com/process-stickies@2x.jpg)`,
+                    backgroundSize: 'cover',
+                    height: '50vh',
+                    top: '0',
+                    transform: 'translateY(100px) translateX(-200px)',
+                    zIndex: -1,
+                  }}
+                  ></div>
+                  
                   </Grid>
             </Grid>
           </Grid>
