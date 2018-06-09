@@ -5,16 +5,23 @@ import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
+const mailUrl = process.env.mailUrl;
+import Snackbar from 'material-ui/Snackbar';
 
 const styles = theme => ({
   root: {
+    open: false,
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
     height: 'auto',
     paddingTop:'20vh',
     paddingBottom:'30vh',
-  }
+  },
+  close: {
+    width: theme.spacing.unit * 4,
+    height: theme.spacing.unit * 4,
+  },
 });
 
 const spacing = {
@@ -26,14 +33,76 @@ const spacing = {
 class ContactHero extends React.Component {
 
   state = {
-    multiline: '',
+    open: false,
+    message: '',
+    email: '',
+    disabled: true,
+    emailError: false,
+    messageError: false,
+    emailLabel: "Email Address",
+    messageLablel: "Message",
   };
+
+  handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    this.setState({ open: false });
+  };
+
 
   handleChange = name => event => {
     this.setState({
       [name]: event.target.value,
     });
+    //console.log(this.state)
   };
+
+  verifyInput = () => {
+    //@ in email id or . in email id
+    if (this.state.email.indexOf("@") === -1 || this.state.email.indexOf(".") === -1) {
+      this.setState({
+        emailError: true,
+        emailLabel: "Email Address is incorrect!"
+      })
+    } 
+    else if (this.state.email.length - this.state.email.indexOf('.') < 1 || this.state.email.indexOf('.') - this.state.email.indexOf("@") < 2 ){
+    // @ is before . and not before .
+      this.setState({
+        emailError: true,
+        emailLabel: "Email Address is incorrect!"
+      }) 
+    }
+    else if (this.state.email !== ""){
+      this.sendMail()
+    }
+    //console.log(this.state)
+  }
+
+  sendMail = async () => {
+    
+    const body = {
+      "email": this.state.email,
+      "message": this.state.message,
+    }
+    const options = {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+    const res = await fetch(mailUrl, options);
+    await this.setState({
+      emailLabel: "Email Address",
+      messageLablel: "Message",
+      open: true,
+    })
+    //console.log(mailUrl, res);  
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -52,32 +121,56 @@ class ContactHero extends React.Component {
           <TextField
             margin="dense"
             id="name"
-            label="Email Address"
+            label={this.state.emailLabel}
             type="email"
+            value={this.state.email}
+            onChange={this.handleChange('email')}
             fullWidth
             placeholder="Type your e-mail..."
+            error={this.state.emailError}
           />
           <TextField
-            id="multiline-flexible"
-            label="Message"
+            id="name"
+            label={this.state.messageLablel}
             multiline
             rows="4"
-            value={this.state.multiline}
-            onChange={this.handleChange('multiline')}
+            value={this.state.message}
+            onChange={this.handleChange('message')}
             margin="normal"
             fullWidth
             placeholder="Type your message..."
           />
           <Grid item xs={12} style={{display:'flex', flexDirection:'row'}}>
-            <Button disableRipple={true} className={"underline"} style={spacing}>
+            <Button onClick={this.verifyInput} disableRipple={true} className={"underline"} style={spacing}>
               <Typography variant="title" color="inherit">
               Send
               </Typography>
-            </Button>
+            </Button> 
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={1} sm={6}></Grid>
+
+      <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right',
+          }}
+          open={this.state.open}
+          autoHideDuration={6000}
+          onClose={this.handleClose}
+          ContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={<span id="message-id">Message Sent!</span>}
+          action={[
+            <Button key="undo" color="secondary" size="small" onClick={this.handleClose}>
+              CLOSE
+            </Button>,
+            
+            
+          ]}
+        />
       </div>
     );
   }
