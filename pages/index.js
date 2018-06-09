@@ -40,6 +40,7 @@ class Index extends React.Component {
     if (news.length == 3){
       return {
         news: news,
+        projects: projects,
       }
     }
     else{
