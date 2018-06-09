@@ -20,7 +20,6 @@ function Contact(props) {
           <meta name="description" content="Short Description here" />
         </Head>
         <ContactHero />
-
     </div>
     );
   }
