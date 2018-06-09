@@ -46,7 +46,7 @@ function LatestNews(props) {
         <Grid container spacing={40}>
         {props.news.map((latestNews) => {
           return(
-            <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
+            <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Typography variant='title' gutterBottom>
                 {latestNews.acf.headline}
               </Typography>
@@ -65,7 +65,7 @@ function LatestNews(props) {
 
         {props.blogs.map((latestNews) => {
           return(
-            <Grid item xs={12} sm={3} md={3} lg={3} className="latestNews">
+            <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Typography variant='title' gutterBottom>
                 {latestNews.acf.title}
               </Typography>

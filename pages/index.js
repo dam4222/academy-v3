@@ -30,6 +30,10 @@ class Index extends React.Component {
   }
 
   static async getInitialProps(nextProps){
+    const projectUrl = "https://" + fetchUrl + "/wp-json/wp/v2/projects?featured=true";
+    const projectRes = await fetch(projectUrl);
+    const projects = await projectRes.json();
+
     const url = "https://" + fetchUrl + "/wp-json/wp/v2/news?per_page=3";
     const res = await fetch(url);
     const news = await res.json();
@@ -46,6 +50,7 @@ class Index extends React.Component {
       return{
         news: news,
         blogs: blogs,
+        projects: projects,
       }
     }
   }
@@ -59,7 +64,7 @@ class Index extends React.Component {
 
           <Hero />
 
-          <Carousel />
+          <Carousel projects={this.props.projects} />
 
           <OurWork />
 
