@@ -88,19 +88,27 @@ class ContactHero extends React.Component {
     }
     const options = {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
     }
     const res = await fetch(mailUrl, options);
+    
+    //if sending was successful, as status code is 200
+    // Changing the state and showing snackbar
+    res.status === 200 
+    ?
     await this.setState({
       emailLabel: "Email Address",
       messageLablel: "Message",
       open: true,
+    }) 
+    : 
+    await this.setState({
+      emailLabel: "Error Occured. Try again!",
+      messageLablel: "Error Occured. Try again!",
     })
-    //console.log(mailUrl, res);  
   }
 
   render() {
