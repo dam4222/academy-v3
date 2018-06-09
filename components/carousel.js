@@ -10,6 +10,8 @@ import IconButton from 'material-ui/IconButton';
 import { Parallax } from 'react-scroll-parallax';
 import "../styles.scss"
 
+import { CircularProgress } from "material-ui/Progress";
+
 const expand = {
   display: 'flex',
   justifyContent: 'flex-end',
@@ -20,25 +22,31 @@ const expandBtn = {
   background: '#fafafa',
   position: 'relative',
   zIndex: 500,
-  padding:'25px',
+  padding: '25px',
   display: 'flex',
   alignItems: 'center'
 }
 
 const verticalText = {
-	transform: 'rotate(-90deg)',
+  transform: 'rotate(-90deg)',
   position: 'relative',
   top: '4vh'
 }
 
 const verticalLine = {
-	transform: 'rotate(-90deg)',
+  transform: 'rotate(-90deg)',
   position: 'relative',
   top: '22vh'
 }
 
 const iconMargin = {
   marginRight: '10px',
+}
+
+const centerAlign = {
+  width: '50%',
+  margin: '0 auto',
+   
 }
 
 const nextArrow = <IconButton><Icon>chevron_right</Icon></IconButton>
@@ -49,19 +57,36 @@ class Carousel extends React.Component {
     super(props);
     this.state = {
       nav1: null,
-      nav2: null
+      nav2: null,
+      loadingImage: true,
+      firstProject: this.props.projects[0],
+      activeSlide: 0,
+    activeSlide2: 0
     };
+    this.onLoad = this.onLoad.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
-      nav2: this.slider2
+      nav2: this.slider2,
+      
     });
   }
 
-  render() {
+  onLoad (id)  {
+    //console.log(id)
+    if (this.state.loadingImage && id == this.state.firstProject.id){
+    this.setState({
+      loadingImage: false,
+    })
+  }
+  }
 
+
+  
+  render() {
+    
     var settings = {
       infinite: true,
       speed: 500,
@@ -74,159 +99,120 @@ class Carousel extends React.Component {
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
       lazyLoad: 'ondemand',
       dots: true,
-      touchThreshold:5,
-      vertical:false,
-      verticalSwiping:false,
+      touchThreshold: 5,
+      vertical: false,
+      verticalSwiping: false,
       nextArrow,
-      prevArrow
+      prevArrow,
+      beforeChange: (current, next) => this.setState({ activeSlide: next }),
+      afterChange: current => this.setState({ activeSlide2: current })
     };
 
     return (
       <div>
-      <Grid container spacing={0}>
-        <Grid item xs sm={1}>
-          <Hidden smDown>
-          <Typography style={verticalText} variant="caption" color="secondary">
-            Client – CBRE
+        <Grid container spacing={0}>
+          <Grid item xs sm={1}>
+            <Hidden smDown>
+              <Typography style={verticalText} variant="caption" color="secondary">
+                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientName : null}
           </Typography>
-          <Divider style={verticalLine} />
-        </Hidden>
-        </Grid>
-        <Grid item xs={12} sm={7}>
-          <Slider className={"noFocus carousel"}
-            {...settings}
-            asNavFor={this.state.nav2}
-            ref={slider => (this.slider1 = slider)}
-          >
-            <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel carousel-inner"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh', display: 'flex'}}>
+              <Divider style={verticalLine} />
+            </Hidden>
+          </Grid>
+          <Grid item xs={12} sm={7}>
+            <Slider className={"noFocus carousel"}
+              {...settings}
+              asNavFor={this.state.nav2}
+              ref={slider => (this.slider1 = slider)}
 
-              <Grid item xs={5} sm={6} md={8} lg={8} xl={8} style={{justifyContent: 'flex-end', display: 'flex'}}>
-                {/*<Parallax
-                    className="custom-class"
-                    offsetYMax={0}
-                    offsetYMin={20}
-                    slowerScrollRate
-                    tag="figure"
-                >*/}
-
-                  <img src='/static/CBRE_Featured_1.png'
-                  style=
-                  {{
-                    height: '70vh',
-                  }} />
-                  {/*</Parallax>*/}
-
-                </Grid>
-              </div>
-            </div>
-            <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel carousel-inner"} style={{background:'#D99296', height:'80vh'}}>
-                <Typography variant="display4" color="secondary">
-                2
-                </Typography>
-                <img src='#' />
-              </div>
-            </div>
-            <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel carousel-inner"} style={{background:'#A18494', height:'80vh'}}>
-                <Typography variant="display4" color="secondary">
-                3
-                </Typography>
-                <img src='#' />
-                </div>
-            </div>
-            <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel carousel-inner"} style={{background:'#39696E', height:'80vh'}}>
-                <Typography variant="display4" color="secondary">
-                4
-                </Typography>
-                <img src='#' />
-              </div>
-            </div>
-            <div className={"noFocus carousel"}>
-              <div className={"noFocus carousel carousel-inner"} style={{background:'#849EA1', height:'80vh'}}>
-                <Typography variant="display4" color="secondary">
-                5
-                </Typography>
-                <img src='#' />
-              </div>
-            </div>
-          </Slider>
-        </Grid>
-
-        <Grid item xs={12} sm={4}>
-          <Slider
-            asNavFor={this.state.nav1}
-            ref={slider => (this.slider2 = slider)}
-            swipeToSlide={true}
-            arrows={false}
-            focusOnSelect={false}
-            speed={950}
-            cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
-            lazyLoad= {'ondemand'}
-            className={'slider-two'}
-            touchThreshold={5}
-            vertical={false}
-            verticalSwiping={false}
             >
-          <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two carousel-inner"} style={{background:'linear-gradient(to right, #c3d4cc, #bccdc5)', height:'80vh'}}>
-              {/*<Parallax
-                  className="custom-class"
-                  offsetXMax={-20}
-                  offsetXMin={20}
-                  slowerScrollRate
-                  tag="figure"
-              >*/}
 
-                <img src='/static/CBRE_Featured_2.png'
+              {this.props.projects.map((project) => {
+                return (
+                  <div key={project.id} clientName={project.acf.client_name} className={"noFocus carousel"}>
+                    <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
+                    
+                      <Grid item xs={5} sm={6} md={8} lg={8} xl={8} style={{ opacity: this.state.loadingImage ? '0' : '1', justifyContent: 'flex-end', display: 'flex' }}>
+                        {/*<Parallax
+                      className="custom-class"
+                      offsetYMax={0}
+                      offsetYMin={20}
+                      slowerScrollRate
+                      tag="figure"
+                  >*/}
+                        
+                          <img src={project.acf.carousel_image_1}
+                           
+                            style=
+                            {{
+                               
+                              height:'70vh',
+                            }}
+                            alt="carousel Image"
+                            hidden={this.state.loadingImage}
+                          />
+                         
+                         {/*</Parallax>*/}
 
-                style=
-                {{
-                  position: 'relative',
-                  width: '50vw'
-                }}
+                      </Grid>
+                      { this.state.loadingImage ? <CircularProgress style={centerAlign} style={{ opacity: 1}}  /> : null }
+                    </div>
+                    
+                  </div>
+                )
+              })}
 
-                />
-            {/*</Parallax>*/}
-            </div>
-          </div>
-          <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#D99296', height:'80vh'}}>
-              <Typography variant="display4" color="secondary">
-              2
-              </Typography>
-              <img src='#' />
-              </div>
-            </div>
-          <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#A18494', height:'80vh'}}>
-              <Typography variant="display4" color="secondary">
-              3
-              </Typography>
-              <img src='#' />
-              </div>
-          </div>
-          <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#39696E', height:'80vh'}}>
-              <Typography variant="display4" color="secondary">
-              4
-              </Typography>
-              <img src='#' />
-            </div>
-          </div>
-          <div className={"noFocus carousel-two"}>
-            <div className={"noFocus carousel-two carousel-inner"} style={{background:'#849EA1', height:'80vh'}}>
-              <Typography variant="display4" color="secondary">
-              5
-              </Typography>
-              <img src='#' />
-            </div>
-          </div>
-          </Slider>
 
-        </Grid>
+
+
+            </Slider>
+          </Grid>
+
+          <Grid item xs={12} sm={4}>
+            <Slider
+              asNavFor={this.state.nav1}
+              ref={slider => (this.slider2 = slider)}
+              swipeToSlide={true}
+              arrows={false}
+              focusOnSelect={false}
+              speed={950}
+              cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
+              lazyLoad={'ondemand'}
+              className={'slider-two'}
+              touchThreshold={5}
+              vertical={false}
+              verticalSwiping={false}
+            >
+              {this.props.projects.map((project) => {
+                return (
+                  <div key={project.id} className={"noFocus carousel-two"}>
+                    <div className={"noFocus carousel-two carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh' }}>
+                      {/*<Parallax
+                        className="custom-class"
+                        offsetXMax={-20}
+                        offsetXMin={20}
+                        slowerScrollRate
+                        tag="figure"
+                    >*/}
+                    { this.state.loadingImage ? <CircularProgress style={centerAlign}  /> : null }
+                      <img src={project.acf.carousel_image_2}
+                        onLoad={this.onLoad(project.id)}
+                        style=
+                        {{
+                          position: 'relative',
+                          width: this.state.loadingImage ? 0: '50vw'
+                        }}
+                      />
+                      {/*</Parallax>*/}
+                    </div>
+                  </div>
+                )
+              })
+              }
+
+            </Slider>
+
+          </Grid>
 
 
         </Grid>

@@ -15,7 +15,7 @@ import "../styles.scss"
 import Head from 'next/head'
 import Chip from 'material-ui/Chip'
 
-
+import 'isomorphic-fetch';
 
 const styles = {
   root:{
