@@ -63,7 +63,7 @@ function LatestNews(props) {
           )
         })}
 
-        {props.blogs.map((latestNews) => {
+        {(props.blog == undefined) ? null : props.blogs.map((latestNews) => {
           return(
             <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Typography variant='title' gutterBottom>
