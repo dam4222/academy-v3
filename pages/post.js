@@ -28,7 +28,7 @@ class Post extends React.Component {
 
   constructor(children, router, href) {
     super(children, router, href);
-    
+
     this.state = {
       /* initial state */
       fetching: true,
@@ -40,7 +40,7 @@ class Post extends React.Component {
 
       ],
     };
-    
+
   }
 
 
@@ -68,16 +68,16 @@ class Post extends React.Component {
 
   //fetch details of the blog here
   static async getInitialProps(nextProps) {
-    
+
     //To share the post use the following plugin
     //console.log(window.location.href);
-    
+
     let path = nextProps.asPath
     path = path.substr(6);
     const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?slug=' + path;
     const res = await fetch(url)
     const blog = await res.json()
-    
+
     if (blog.length > 0){
     let date_posted = new Date(blog[0].date);
 
@@ -97,16 +97,16 @@ class Post extends React.Component {
       moreArticles: moreArticles,
     })
     }
-    
+
   }
 
-  
+
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      
+
           <div>
             <Head>
               <title>Academy – {this.props.title}</title>
@@ -130,15 +130,15 @@ class Post extends React.Component {
                 <Grid item xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
                   <div className="author-profile"   dangerouslySetInnerHTML={{__html: author.user_avatar}}></div>
                   <div style={{display: 'inline-block', paddingLeft: '15px'}}>
-                  <Typography variant="button">by {author.display_name}</Typography>
+                  <Typography variant="button">{author.display_name}</Typography>
                   <Typography variant="caption"><span dangerouslySetInnerHTML={{__html:author.user_description}}></span></Typography>
                   </div>
                 </Grid>
                 )
-              
+
               })}
               </Grid>
-                
+
             </Grid>
 
               <div className="content" dangerouslySetInnerHTML={{__html: this.props.content}}>
@@ -161,7 +161,7 @@ class Post extends React.Component {
 
           </Grid>
             </div>
-        
+
 
 
         <Grid container spacing={24}>
@@ -169,14 +169,14 @@ class Post extends React.Component {
             <Typography variant="title" style={{textAlign:'center', padding:'50px'}}>More Articles</Typography>
             <Grid container>
               <Grid item xs={1} sm={2} md={4}></Grid>
-              
+
               {this.props.moreArticles.map((post) => {
                 if (post.slug != this.props.currSlug ){
-                  
+
                 return(
                   <Link key={post.id} href={{ pathname: 'post', query: { name: post.slug }}}  as={`/post?${post.slug}`} prefetch>
                   <Grid item xs={10} sm={8} md={4} lg={2} className="heroHover" style={{paddingBottom:'50px'}}>
-                    
+
                     <img
                       src={post.acf.featured_image}
                       style={{
