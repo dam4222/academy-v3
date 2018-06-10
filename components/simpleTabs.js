@@ -8,7 +8,7 @@ import SwipeableViews from 'react-swipeable-views';
 import Grid from 'material-ui/Grid';
 import TouchRipple from 'material-ui/ButtonBase/TouchRipple';
 import DesignBetter from '../assets/design-better.svg';
-import InVision from '../assets/invision-logo-pink.svg';
+import InVisionLogo from '../assets/invision-logo-pink-v2.svg';
 import SkillsGrid from './skillsGrid.js'
 
 TouchRipple.prototype.render = () => null;
@@ -107,7 +107,7 @@ class SimpleTabs extends React.Component {
       <Grid item xs={1} md={1} lg={2} xl={2}></Grid>
       <Grid item xs={10} md={7} lg={6} xl={4}>
         <Typography style={verticalText} variant="caption" color="secondary">
-          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVision style={verticalLogo} />
+          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVisionLogo style={verticalLogo} />
         </Typography>
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

@@ -22,7 +22,7 @@ const styles = theme => ({
 
 function LatestNews(props) {
   const { classes } = props;
-  
+
     return (
       <div className={classes.root}>
 
@@ -47,9 +47,11 @@ function LatestNews(props) {
         {props.news.map((latestNews) => {
           return(
             <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
-              <Typography variant='title' gutterBottom>
+              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link}>
+                <Typography variant='headline' gutterBottom>
                 {latestNews.acf.headline}
-              </Typography>
+                </Typography>
+              </Button>
               <br></br>
               <Typography variant='body1' gutterBottom>
               {latestNews.acf.short_description}
@@ -65,10 +67,12 @@ function LatestNews(props) {
 
         {(props.blog == undefined) ? null : props.blogs.map((latestNews) => {
           return(
-            <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
-              <Typography variant='title' gutterBottom>
+            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
+              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`}>
+                <Typography variant='headline' gutterBottom>
                 {latestNews.acf.title}
-              </Typography>
+                </Typography>
+              </Button>
               <br></br>
               <Typography variant='body1' gutterBottom noWrap={true}>
               {latestNews.acf.short_description}
@@ -81,7 +85,7 @@ function LatestNews(props) {
             </Grid>
           )
         })}
-          
+
 
           <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center'}}>
 

@@ -8,7 +8,7 @@ import Icon from 'material-ui/Icon';
 import WorkshopPanels from './workshopPanels';
 import Typography from 'material-ui/Typography';
 import DesignBetter from '../assets/design-better.svg';
-import InVision from '../assets/invision-logo-pink.svg';
+import InVisionLogo from '../assets/invision-logo-pink-v2.svg';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 const styles = theme => ({
@@ -77,14 +77,14 @@ function OurWorkshops(props) {
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={1} sm={1}>
         <Typography style={verticalText} variant="caption" color="secondary">
-          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVision style={verticalLogo} />
+          PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVisionLogo style={verticalLogo} />
         </Typography>
 
         </Grid>
           <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <div 
+                <div
                   style={{
                     background: 'url(https://cdn1.academyux.com/workshop5.jpg) center',
                     backgroundSize: 'cover',
@@ -94,7 +94,7 @@ function OurWorkshops(props) {
                     height: 'auto',
                   }}
                 ></div>
-               
+
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
@@ -113,7 +113,7 @@ function OurWorkshops(props) {
             </Grid>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <div 
+                <div
                   style={{
                     background: 'url(https://cdn1.academyux.com/workshop9.jpg) center',
                     backgroundSize: 'cover',
@@ -142,7 +142,7 @@ function OurWorkshops(props) {
             <Grid container>
 
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
-                <div 
+                <div
                   style={{
                     background: 'url(https://cdn1.academyux.com/workshop1.jpg) center',
                     backgroundSize: 'cover',
