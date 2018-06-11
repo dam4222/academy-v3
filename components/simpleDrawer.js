@@ -30,7 +30,13 @@ const styles = theme => ({
 const spacing = {
   display:'flex',
   justifyContent: 'space-between',
-  paddingRight:'40px'
+  paddingRight: '40px'
+};
+
+const spacingSocial = {
+  display:'flex',
+  justifyContent: 'space-between',
+  paddingLeft: '40px'
 };
 
 class SimpleDrawer extends React.Component {
@@ -71,7 +77,7 @@ class SimpleDrawer extends React.Component {
           <Grid item xs={1} md={1}></Grid>
           <Grid item xs={10} md={10}>
           <Grid container>
-          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column'}}>
+          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', position:'relative', top:'-100px'}}>
 
             <Button disableRipple={true} href="/work" style={spacing}>
               <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
@@ -126,11 +132,11 @@ class SimpleDrawer extends React.Component {
               <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> UX & Design Thinking Studio </Typography>
               <Typography variant="title" style={{color:'#8b8b8b', paddingBottom:'20px'}}> 130 GRAND ST. SUITE #3D, BROOKLYN, NY 11249 </Typography>
             <div style={{display:'flex', flexDirection:'row'}} className="social-icons">
-              <Button target="_blank" href="https://medium.com/@academyuxdesign" style={spacing}><Medium /></Button>
-              <Button target="_blank" href="https://twitter.com/academyuxdesign" style={spacing}><Twitter /></Button>
-              <Button target="_blank" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacing}><LinkedIn /></Button>
-              <Button target="_blank" href="#" style={spacing}><Dribbble /></Button>
-              <Button target="_blank" href="#" style={spacing}><Behance /></Button>
+              <Button target="_blank" href="https://medium.com/@academyuxdesign" style={spacingSocial}><Medium /></Button>
+              <Button target="_blank" href="https://twitter.com/academyuxdesign" style={spacingSocial}><Twitter /></Button>
+              <Button target="_blank" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacingSocial}><LinkedIn /></Button>
+              <Button target="_blank" href="#" style={spacingSocial}><Dribbble /></Button>
+              <Button target="_blank" href="#" style={spacingSocial}><Behance /></Button>
             </div>
 
           </Grid>
