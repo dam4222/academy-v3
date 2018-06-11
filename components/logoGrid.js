@@ -9,7 +9,7 @@ import CBRE from '../assets/cbre.svg';
 import Facebook from '../assets/facebook.svg';
 import Google from '../assets/google.svg';
 import LG from '../assets/lg.svg';
-import NBC from '../assets/nbc-logo.svg';
+import NBC from '../assets/nbc-logo-2.svg';
 import TIME from '../assets/time.svg';
 
  const tileData = [

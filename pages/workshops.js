@@ -10,7 +10,7 @@ import SimpleTabs from '../components/simpleTabs';
 import QuoteCarousel from '../components/quoteCarousel';
 import SimpleTabsMobile from '../components/simpleTabsMobile';
 import DesignBetterH from '../assets/design-better-horizontal.svg';
-import InVisionH from '../assets/invision-logo-pink-horizontal.svg';
+import InVisionLogoH from '../assets/invision-logo-pink-horizontal-v3.svg';
 import Head from 'next/head'
 
 
@@ -51,7 +51,7 @@ function Workshops(props) {
     <Head>
           <title>Academy – Workshops</title>
           <meta name="description" content="Short Description here" />
-    </Head> 
+    </Head>
 
     <Grid container className={classes.hero}>
 
@@ -80,7 +80,7 @@ function Workshops(props) {
         <Grid item xs={10} sm={10} md={7} lg={6} xl={4}>
           <Grid container style={{flexWrap:'nowrap'}}>
             <Grid item xs={12} md={6}>
-              
+
                 <div
                   style={{
                     background: `url(https://cdn1.academyux.com/designbetter-class.jpg)`,
@@ -124,7 +124,7 @@ function Workshops(props) {
         <Grid item xs={10} sm={10} md={7} lg={7} xl={7}>
             <Grid container style={{flexWrap:'nowrap'}}>
               <Grid item xs={12} md={6} xl={4}>
-                
+
                  <div
                   style={{
                     background: `url(https://cdn1.academyux.com/survival-kit@2x.jpg)`,
@@ -148,7 +148,7 @@ function Workshops(props) {
                     zIndex: -1,
                   }}
                   ></div>
-                  
+
                   </Grid>
             </Grid>
           </Grid>
@@ -184,7 +184,7 @@ function Workshops(props) {
                   padding: '30px',
                 }}>
                   <Typography variant="caption" color="secondary" style={{textAlign:'center'}}>
-                    PROUD PARTNERS OF <DesignBetterH style={{width:'50vh', marginBottom:'10px', marginTop:'10px'}}/> <InVisionH style={{width:'50vh'}} />
+                    PROUD PARTNERS OF <DesignBetterH style={{width:'50vh', marginBottom:'10px', marginTop:'10px'}}/><InVisionLogoH style={{width:'50vh'}} />
                   </Typography>
                 </Grid>
                 <Grid item xs={4}></Grid>

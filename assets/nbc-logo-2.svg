@@ -1,22 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg width="195px" height="88px" viewBox="0 0 195 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
-    <title>nbc</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-11.2%" y="-22.8%" width="122.3%" height="170.3%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="25" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="19.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0.776470588   0 0 0 0 0.776470588   0 0 0 0 0.776470588  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
-    <g id="Page-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Page-6" fill="none" fill-rule="evenodd">
         <g id="Desktop-HD-Copy-28" transform="translate(-924.000000, -2449.000000)" fill="#848484" fill-rule="nonzero">
-            <g id="clients" filter="url(#filter-1)" transform="translate(704.000000, 2281.000000)">
+            <g id="clients" transform="translate(704.000000, 2281.000000)">
                 <g id="Group-25" transform="translate(257.000000, 4.907834)">
                     <g id="nbc" transform="translate(0.000000, 174.940092)">
                         <g transform="translate(0.000000, -0.000000)" id="Shape">
