@@ -46,7 +46,7 @@ function LatestNews(props) {
         <Grid container spacing={40}>
         {props.news.map((latestNews) => {
           return(
-            <Grid  key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
+            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link}>
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.headline}
@@ -67,7 +67,7 @@ function LatestNews(props) {
 
         {(props.blog == undefined) ? null : props.blogs.map((latestNews) => {
           return(
-            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
+            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`}>
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.title}
@@ -87,7 +87,7 @@ function LatestNews(props) {
         })}
 
 
-          <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center'}}>
+          <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center', paddingLeft:'5%'}}>
 
             <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/blog">
               <Typography variant="button" color="inherit">

@@ -98,7 +98,7 @@ class Project extends React.Component {
     super(children, router, href);
     this.state = {
       /* initial state */
-      
+
     };
   }
 
@@ -127,14 +127,16 @@ class Project extends React.Component {
   }
 
   handleClick() {
-    Router.back()
+    Router.push({
+    pathname: '/work',
+    })
   }
 
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
-      
+
         <div>
           <Head>
             <title>Academy – {this.props.project.client_name + " – " +  this.props.project.project_title}</title>
@@ -199,7 +201,7 @@ class Project extends React.Component {
               <Grid item xs={10} md={6}>
                 <Grid container>
                 <Grid item xs={10} md={6}>
-                  <Typography variant="body1" style={{fontSize:'24px'}} gutterBottom paragraph>
+                  <Typography variant="body1" style={{fontSize:'calc(1em + .25vw)'}} gutterBottom paragraph>
                     {this.props.project.project_description}
                   </Typography>
                   <Typography variant="button" paragraph>
@@ -408,7 +410,7 @@ class Project extends React.Component {
 
         </Grid>
       </div>
-      
+
       </div>
     )
   }
