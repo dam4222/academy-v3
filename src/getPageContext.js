@@ -143,6 +143,13 @@ const theme = createMuiTheme({
       root:{
         zIndex:999999999,
       }
+    },
+    MuiChip:{
+      root:{
+        borderRadius:0,
+        marginRight:'10px',
+        marginBottom:'10px',
+      }
     }
   },
 });
