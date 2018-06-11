@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@zeit/next-sass": "^0.1.2",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "jss": "^9.8.1",
     "material-ui": "^1.0.0-beta.43",
@@ -26,24 +28,24 @@
     "react-slick": "^0.23.1",
     "react-swipeable-views": "^0.12.13",
     "react-waypoint": "^8.0.1",
+    "sitemap": "^1.13.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^3.2.3"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon server/server.js --watch server",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server/server.js"
   },
   "devDependencies": {
-    
     "@babel/core": "7.0.0-beta.44",
-    
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-inline-import-data-uri": "^1.0.1",
     "babel-plugin-inline-react-svg": "^0.2.0",
     "babel-plugin-transform-define": "^1.2.0",
     "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^3.0.2"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "nodemon": "^1.14.11"
   },
   "resolutions": {
     "ansi-regex": "^2.0.0",
