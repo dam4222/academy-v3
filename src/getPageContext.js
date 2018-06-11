@@ -71,7 +71,7 @@ const theme = createMuiTheme({
         fontWeight: 600,
         letterSpacing:'.5px',
         textTransform:'uppercase',
-        fontSize: '12px'
+        fontSize: 'calc(.5em + .25vw)'
       },
       headline: {
         fontFamily: 'Crimson Text, serif',
