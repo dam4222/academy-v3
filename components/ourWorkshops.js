@@ -73,7 +73,7 @@ function OurWorkshops(props) {
         </Grid>
       </Grid>
 
-      <Grid container>
+      <Grid container style={{paddingBottom:'10vh'}}>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={1} sm={1}>
         <Typography style={verticalText} variant="caption" color="secondary">

@@ -47,7 +47,7 @@ function LatestNews(props) {
         {props.news.map((latestNews) => {
           return(
             <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
-              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link}>
+              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link} target="_blank">
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.headline}
                 </Typography>
@@ -56,7 +56,7 @@ function LatestNews(props) {
               <Typography variant='body1' gutterBottom>
               {latestNews.acf.short_description}
               </Typography>
-              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={latestNews.acf.link}>
+              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={latestNews.acf.link} target="_blank">
                 <Typography variant="button" color="inherit">
                   Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                 </Typography>
@@ -68,7 +68,7 @@ function LatestNews(props) {
         {(props.blog == undefined) ? null : props.blogs.map((latestNews) => {
           return(
             <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
-              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`}>
+              <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`} target="_blank">
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.title}
                 </Typography>
@@ -77,7 +77,7 @@ function LatestNews(props) {
               <Typography variant='body1' gutterBottom noWrap={true}>
               {latestNews.acf.short_description}
               </Typography>
-              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={`post?${latestNews.slug}`}>
+              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={`post?${latestNews.slug}`} target="_blank">
                 <Typography variant="button" color="inherit">
                   Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                 </Typography>
@@ -89,7 +89,7 @@ function LatestNews(props) {
 
           <Grid item xs={12} sm={12} md={2} lg={3} style={{display: 'flex', alignItems:'center', paddingLeft:'5%'}}>
 
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/blog">
+            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/blog" target="_blank">
               <Typography variant="button" color="inherit">
                 See more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
               </Typography>
