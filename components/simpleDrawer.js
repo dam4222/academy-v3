@@ -77,7 +77,7 @@ class SimpleDrawer extends React.Component {
           <Grid item xs={1} md={1}></Grid>
           <Grid item xs={10} md={10}>
           <Grid container>
-          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', position:'relative', top:'-100px'}}>
+          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', position:'relative'}}>
 
             <Button disableRipple={true} href="/work" style={spacing}>
               <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
