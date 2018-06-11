@@ -30,7 +30,7 @@ const styles = theme => ({
 const spacing = {
   display:'flex',
   justifyContent: 'space-between',
-  marginLeft:'40px'
+  paddingRight:'40px'
 };
 
 class SimpleDrawer extends React.Component {
@@ -68,8 +68,10 @@ class SimpleDrawer extends React.Component {
 
 
           <Grid container style={{height:'100vh', display:'flex', alignItems:'center', background:'black'}}>
-          <Grid item xs={1} md={2}></Grid>
-          <Grid item xs={10} md={4} className="showDrawer" style={{display: 'flex', flexDirection: 'column'}}>
+          <Grid item xs={1} md={1}></Grid>
+          <Grid item xs={10} md={10}>
+          <Grid container>
+          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column'}}>
 
             <Button disableRipple={true} href="/work" style={spacing}>
               <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
@@ -94,7 +96,7 @@ class SimpleDrawer extends React.Component {
                 Design Tinkering
               </Typography>
             </Button>
-
+            <Grid container>
             <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
               <Button disableRipple={true} href="/about" style={spacing}>
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
@@ -113,18 +115,16 @@ class SimpleDrawer extends React.Component {
                   Contact Us
                 </Typography>
               </Button>
+            </Grid>
+            </Grid>
           </Grid>
 
-          </Grid>
-
-          <Grid item xs={10} md={4} className="showDrawer" style={{display: 'flex', flexDirection: 'column', alignItems:'flex-end', textAlign:'right', flexWrap:'wrap', position:'relative', top:'-100px'}}>
+          <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', alignItems:'flex-end', textAlign:'right', flexWrap:'wrap', position:'relative', justifyContent:'center'}}>
             <Button style={{width:'130px', height:'auto', paddingBottom:'20px'}} disableRipple={true} href="/">
                 <AcademyLogoWhite style={{width:'100%'}}/>
             </Button>
-            <Grid xs={8}>
               <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> UX & Design Thinking Studio </Typography>
               <Typography variant="title" style={{color:'#8b8b8b', paddingBottom:'20px'}}> 130 GRAND ST. SUITE #3D, BROOKLYN, NY 11249 </Typography>
-            </Grid>
             <div style={{display:'flex', flexDirection:'row'}} className="social-icons">
               <Button target="_blank" href="https://medium.com/@academyuxdesign" style={spacing}><Medium /></Button>
               <Button target="_blank" href="https://twitter.com/academyuxdesign" style={spacing}><Twitter /></Button>
@@ -134,9 +134,9 @@ class SimpleDrawer extends React.Component {
             </div>
 
           </Grid>
-
-
-          <Grid item xs={1} md={2}></Grid>
+          </Grid>
+          </Grid>
+          <Grid item xs={1} md={1}></Grid>
         </Grid>
         </div>
         </Drawer>
