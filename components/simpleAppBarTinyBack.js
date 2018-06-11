@@ -57,7 +57,7 @@ class SimpleAppBarTinyBack extends React.Component {
       {console.log(Router)}
             <AppBar
             color="default"
-            style={{background:'transparent', height:'60px'}}
+            style={{background:'#fafafa', height:'60px'}}
             className="tinyAppBar"
             >
               <Toolbar>
