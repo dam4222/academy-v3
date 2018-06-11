@@ -68,7 +68,7 @@ class Blog extends React.Component {
       loaded: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
-    
+
   }
 
   componentDidMount() {
@@ -150,7 +150,7 @@ class Blog extends React.Component {
     })
   }
 
-  
+
 
   formatDate = (date) =>{
     let format = new Date(date);
@@ -169,7 +169,7 @@ class Blog extends React.Component {
 
   render() {
     const { classes } = this.props;
-    
+
      return (
       <div className={classes.root}>
         <Head>
@@ -186,7 +186,7 @@ class Blog extends React.Component {
             <DialogContentText>
               Provide passsword to view blog post.
               <div style={{color: 'red'}}>
-              
+
                 </div>
             </DialogContentText>
             <TextField
@@ -208,7 +208,7 @@ class Blog extends React.Component {
           </DialogActions>
         </Dialog>
 
-        
+
         <Grid container spacing={8} className={classes.container}>
 
             <Grid container spacing={8}>
@@ -232,47 +232,40 @@ class Blog extends React.Component {
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
                 <Grid container spacing={8} className={classes.centerImg}>
-               
+
                 <img src={this.props.featuredBlog[0].acf.featured_image}
                     style={{
                         height: '80vh',
                         top: '0',
-                        maxWidth:'705px'
                     }}
                     alt="featured Image"
                   />
-                  
+
                 </Grid>
-                <Grid container spacing={8} className="blogHeadline" >
-                  <Grid item xs={1} md={5} lg={6} xl={7}></Grid>
-                  <Grid item xs={10} md={7} lg={6} xl={5}>
-                    <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
-                    <Typography variant="display2" paragraph>
-                      {this.props.featuredBlog[0].acf.title}
-                    </Typography>
-                    <Typography variant="body1" gutterBottom>
-                    {this.formatDate(this.props.featuredBlog[0].date)}
-                    </Typography>
-                    <Typography variant="caption" gutterBottom>
-                      <Grid container>
-                       {this.props.featuredBlog[0].acf.author.map((authors) => {
-                        return(
-                          
-                          <Grid item xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
-                          <div className="author-profile"   dangerouslySetInnerHTML={{__html: authors.user_avatar}}></div>
-                          <div style={{display: 'inline-block', paddingLeft: '15px'}}>
-                          <Typography variant="button">by {authors.display_name}</Typography>
-                          <Typography variant="caption"><span dangerouslySetInnerHTML={{__html:authors.user_description}}></span></Typography>
-                          </div>
-                        </Grid>
-                        )
-                      })}
-                      </Grid>
-                    </Typography>
-                  </Paper>
+
+                {
+                this.props.blogs.map((blog) => {
+                  return (
+                  <Grid container spacing={8} className="blogHeadline" >
+                    <Grid item xs={1} md={5} lg={6} xl={7}></Grid>
+                    <Grid item xs={10} md={7} lg={6} xl={5}>
+                      <Paper elevation={0} style={{padding:'3vh'}} className="headlineHover">
+                      <Typography variant="display2" paragraph>
+                        {this.props.featuredBlog[0].acf.title}
+                      </Typography>
+                      <Typography variant="body1" gutterBottom>
+                      {this.formatDate(this.props.featuredBlog[0].date)}
+                      </Typography>
+                      <Typography variant="caption" gutterBottom>
+                        By {this.getAuthors(blog.acf.author)}
+                      </Typography>
+                    </Paper>
+                    </Grid>
+                    <Grid item xs={1} md={1}></Grid>
                   </Grid>
-                  <Grid item xs={1} md={1}></Grid>
-                </Grid>
+                  )
+                  })
+                  }
               </Grid>
             </Grid>
             </Link>
@@ -291,17 +284,17 @@ class Blog extends React.Component {
                 this.props.blogs.map((blog) => {
                   if (blog.acf.featured != true){
                   return (
+
                     <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
-                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'50px'}}  value={blog} >
-                          <img src={blog.acf.featured_image}
-                            style={{
-                                height: '20vh',
-                                top: '0',
-                                maxWidth:'605px'
-                            }}
-                            alt="featured Image"
-                          />
-                          <Paper elevation={0} style={{padding:'30px', textAlign:'center'}} className="headlineHover">
+                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
+                      <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
+
+                          <div style={{width:'100%', overflow:'hidden'}}>
+
+                            <div style={{backgroundImage: "url("+blog.acf.featured_image+")", backgroundSize: 'cover', width:'110%', height: '300px', backgroundPosition: 'center'}}></div>
+
+                        </div>
+                        <div style={{padding:'30px', textAlign:'center',}}>
                             <Typography variant="headline" paragraph>
                             {blog.acf.title}
                             </Typography>
@@ -311,9 +304,12 @@ class Blog extends React.Component {
                             <Typography variant="caption" gutterBottom>
                               By {this.getAuthors(blog.acf.author)}
                             </Typography>
-                          </Paper>
+                          </div>
+
+                        </Paper>
                     </Grid>
                     </Link>
+
                   )
                   }
                   })
@@ -324,7 +320,7 @@ class Blog extends React.Component {
 
           <Grid item xs={1} md={2}></Grid>
         </Grid>
-      
+
 
       </div>
     );

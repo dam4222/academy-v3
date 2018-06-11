@@ -155,48 +155,51 @@ class Post extends React.Component {
 
           </div>
 
-            <Divider style={{margin:'100px'}}/>
+          <Divider style={{margin:'100px'}}/>
           </Grid>
           <Grid xs={1} md={3} lg={4} xl={4}></Grid>
 
           </Grid>
-            </div>
+          </div>
 
 
 
-        <Grid container spacing={24}>
-          <Grid xs={12} style={{margin:'0 2%', background: 'linear-gradient(116deg, #ebf5f4, #efebf5)'}}>
-            <Typography variant="title" style={{textAlign:'center', padding:'50px'}}>More Articles</Typography>
-            <Grid container>
-              <Grid item xs={1} sm={2} md={4}></Grid>
+          <Grid container spacing={8} style={{paddingTop:'100px'}}>
 
+            <Grid item xs={1} md={2}></Grid>
+
+            <Grid item xs={10} md={8}>
+              <Typography variant="title" style={{textAlign:'center', paddingBottom:'20px'}}>
+                More Articles
+              </Typography>
+
+              <Grid container spacing={24}>
               {this.props.moreArticles.map((post) => {
                 if (post.slug != this.props.currSlug ){
 
                 return(
-                  <Link key={post.id} href={{ pathname: 'post', query: { name: post.slug }}}  as={`/post?${post.slug}`} prefetch>
-                  <Grid item xs={10} sm={8} md={4} lg={2} className="heroHover" style={{paddingBottom:'50px'}}>
+                  <Link key={post.id} href={{ pathname: 'post', query: { name: post.slug }}} as={`/post?${post.slug}`}>
+                  <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={post}>
+                    <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
 
-                    <img
-                      src={post.acf.featured_image}
-                      style={{
-                        height: '20vh',
-                        top: '0',
-                        maxWidth:'605px'
-                    }}
-                    />
+                        <div style={{width:'100%', overflow:'hidden'}}>
 
-                    <Paper elevation={0} style={{padding:'30px', textAlign:'center', width: '100%', maxWidth: '605px'}} className="headlineHover">
-                      <Typography variant="headline" paragraph>
-                        {post.acf.title}
-                      </Typography>
-                      <Typography variant="body1" gutterBottom>
-                        {this.formatDate(post.date)}
-                      </Typography>
-                      <Typography variant="caption" gutterBottom>
-                        By &nbsp; {this.getAuthors(post.acf.author)}
-                      </Typography>
-                    </Paper>
+                          <div style={{backgroundImage: "url("+post.acf.featured_image+")", backgroundSize: 'cover', width:'110%', height: '300px', backgroundPosition: 'center'}}></div>
+
+                      </div>
+                      <div style={{padding:'30px', textAlign:'center',}}>
+                          <Typography variant="headline" paragraph>
+                          {post.acf.title}
+                          </Typography>
+                          <Typography variant="body1" gutterBottom>
+                            {this.formatDate(post.date)}
+                          </Typography>
+                          <Typography variant="caption" gutterBottom>
+                            By {this.getAuthors(post.acf.author)}
+                          </Typography>
+                        </div>
+
+                      </Paper>
                   </Grid>
                   </Link>
                     )
@@ -204,10 +207,12 @@ class Post extends React.Component {
 
                     })}
 
-              <Grid item xs={1} sm={2} md={4}></Grid>
+
+                  </Grid>
             </Grid>
+
+            <Grid item xs={1} md={2}></Grid>
           </Grid>
-        </Grid>
 
 
 
