@@ -11,6 +11,7 @@ import { LinearProgress } from 'material-ui/Progress';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Head from 'next/head'
+import Error from 'next/error';
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
@@ -104,25 +105,34 @@ class Project extends React.Component {
 
   //fetch details of the project here
   static async getInitialProps(nextProps){
+
+    //console.log(nextProps)
     let path = nextProps.asPath
-    path = path.substr(8);
-    console.log(path)
+    path = path.substr(9);
+    //console.log(path)
     const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?slug=' + path;
     const res = await fetch(url)
     const project = await res.json()
     //console.log(project[0])
-
-    //fetch more projects to display at the end
-    const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
-    const res2 = await fetch(url2)
-    const moreProjects = await res2.json()
-    //console.log(project)
-    return{
-      currProject: project[0].slug,
-      project: project[0].acf,
-      fetching: false,
-      bgColor: project[0].acf.project_theme_color,
-      moreProjects: moreProjects
+    if (( !("password" in nextProps.query) && project[0].acf.password === '')
+      ||
+      (nextProps.query.password === project[0].acf.password)
+    ){
+      //fetch more projects to display at the end
+      const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
+      const res2 = await fetch(url2)
+      const moreProjects = await res2.json()
+      //console.log(project)
+      return{
+        currProject: project[0].slug,
+        project: project[0].acf,
+        fetching: false,
+        bgColor: project[0].acf.project_theme_color,
+        moreProjects: moreProjects
+      }
+    }
+    return {
+      error: true,
     }
   }
 
@@ -134,6 +144,12 @@ class Project extends React.Component {
 
   render() {
     const { classes } = this.props;
+    if (this.props.error){
+      return(
+        /*Here we can create our custom component if needed*/
+        <Error statusCode={403} />
+      )
+    }
     return (
       <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
 

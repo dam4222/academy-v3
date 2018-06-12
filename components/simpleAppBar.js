@@ -59,7 +59,6 @@ class SimpleAppBar extends React.Component {
       this.setState({
         initLoad:false
       })
-      console.log(this.state.initLoad)
     }
   }
 
