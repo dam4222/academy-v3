@@ -10,6 +10,7 @@
 /build
 /dist
 /.next
+/static
 
 # misc
 package-lock.json
