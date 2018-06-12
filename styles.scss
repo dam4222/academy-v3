@@ -520,6 +520,20 @@ img{
 }
 
 .content{
+  ul{
+    background:white;
+    padding:20px;
+  }
+
+  li{
+    list-style-type:disc;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 18px;
+    margin-left: 24px;
+  }
+
   img{
     width:100%;
     height:auto;
@@ -530,14 +544,15 @@ img{
     font-family: Montserrat, sans-serif;
     font-weight: 300;
     line-height: 1.7;
-    font-size: 14px;
+    font-size: 18px;
+    padding-bottom:20px;
 
-    &:nth-child(2):first-letter {
+    &:nth-child(1):first-letter {
       color: black;
       float: left;
       font-family: CrimsonText;
-      font-size: 75px;
-      line-height: 60px;
+      font-size: 110px;
+      line-height: 80px;
       font-weight: 800;
       padding-top: 4px;
       padding-right: 8px;
@@ -549,6 +564,7 @@ img{
     font-family: 'Crimson Text, serif';
     font-weight: 400;
     font-size: calc(1em + .5vw);
+    padding-bottom:20px;
   }
 
   a{
@@ -575,7 +591,7 @@ img{
     transition: all ease 0.65s;
 
     &:before{
-      content:"See Article";
+      content:"See Link";
       font-size: 12px;
       display: block;
       text-transform: capitalize;

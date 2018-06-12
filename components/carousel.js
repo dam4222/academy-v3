@@ -46,7 +46,7 @@ const iconMargin = {
 const centerAlign = {
   width: '50%',
   margin: '0 auto',
-   
+
 }
 
 const nextArrow = <IconButton><Icon>chevron_right</Icon></IconButton>
@@ -70,7 +70,7 @@ class Carousel extends React.Component {
     this.setState({
       nav1: this.slider1,
       nav2: this.slider2,
-      
+
     });
   }
 
@@ -84,9 +84,9 @@ class Carousel extends React.Component {
   }
 
 
-  
+
   render() {
-    
+
     var settings = {
       infinite: true,
       speed: 500,
@@ -131,33 +131,20 @@ class Carousel extends React.Component {
                 return (
                   <div key={project.id} clientName={project.acf.client_name} className={"noFocus carousel"}>
                     <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
-                    
-                      <Grid item xs={5} sm={6} md={8} lg={8} xl={8} style={{ opacity: this.state.loadingImage ? '0' : '1', justifyContent: 'flex-end', display: 'flex' }}>
-                        {/*<Parallax
-                      className="custom-class"
-                      offsetYMax={0}
-                      offsetYMin={20}
-                      slowerScrollRate
-                      tag="figure"
-                  >*/}
-                        
+
+                      <div style={{ opacity: this.state.loadingImage ? '0' : '1', width:'100%', height:'100%', overflow:'hidden'}}>
+
+
                           <img src={project.acf.carousel_image_1}
-                           
-                            style=
-                            {{
-                               
-                              height:'70vh',
-                            }}
                             alt="carousel Image"
                             hidden={this.state.loadingImage}
+                            width='100%'
                           />
-                         
-                         {/*</Parallax>*/}
 
-                      </Grid>
-                      { this.state.loadingImage ? <CircularProgress style={centerAlign} style={{ opacity: 1}}  /> : null }
+                      </div>
+                      { this.state.loadingImage ? <CircularProgress style={centerAlign} style={{ opacity: 1 }}  /> : null }
                     </div>
-                    
+
                   </div>
                 )
               })}
@@ -187,23 +174,20 @@ class Carousel extends React.Component {
                 return (
                   <div key={project.id} className={"noFocus carousel-two"}>
                     <div className={"noFocus carousel-two carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh' }}>
-                      {/*<Parallax
-                        className="custom-class"
-                        offsetXMax={-20}
-                        offsetXMin={20}
-                        slowerScrollRate
-                        tag="figure"
-                    >*/}
+
                     { this.state.loadingImage ? <CircularProgress style={centerAlign}  /> : null }
+
+                      <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
                       <img src={project.acf.carousel_image_2}
                         onLoad={this.onLoad(project.id)}
                         style=
                         {{
                           position: 'relative',
-                          width: this.state.loadingImage ? 0: '50vw'
+                          height: this.state.loadingImage ? 0: '100%'
                         }}
                       />
-                      {/*</Parallax>*/}
+
+                    </div>
                     </div>
                   </div>
                 )
