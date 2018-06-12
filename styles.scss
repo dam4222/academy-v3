@@ -828,3 +828,9 @@ img{
   width: 100%;
   height: auto;
 }
+
+input{
+  &:hover{
+    cursor:pointer;
+  }
+}
