@@ -112,7 +112,7 @@ class Work extends React.Component {
     else{
       //console.log("wrong", this.state.blogPassword, this.state.inputPassword)
       this.setState({
-        errorMessage: 'Something wrong with the password. Ask for permission or try again!'
+        errorMessage: 'The password you attempted is incorrect. Please request permission by contacting hello@academyux.com'
       })
     }
   }
