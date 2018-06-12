@@ -125,18 +125,20 @@ class Post extends React.Component {
 
             <Grid item xs={12} style={{paddingBottom:'40px'}}>
               <Grid container>
+                <Grid item xs={12} md={6} style={{display:'flex', alignItems:'center'}}>
               {this.props.authors.map((author) => {
                 return(
-                <Grid item xs={6} md={6} style={{display:'flex', alignItems:'center'}}>
-                  <div className="author-profile"   dangerouslySetInnerHTML={{__html: author.user_avatar}}></div>
+                  <div style={{paddingRight:'20px', alignItems: 'center', display: 'flex'}}>
+                  <div className="author-profile" dangerouslySetInnerHTML={{__html: author.user_avatar}}></div>
                   <div style={{display: 'inline-block', paddingLeft: '15px'}}>
                   <Typography variant="button">{author.display_name}</Typography>
                   <Typography variant="caption"><span dangerouslySetInnerHTML={{__html:author.user_description}}></span></Typography>
                   </div>
-                </Grid>
+                  </div>
                 )
 
               })}
+                </Grid>
               </Grid>
 
             </Grid>
