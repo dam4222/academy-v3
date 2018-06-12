@@ -17,6 +17,7 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog'
 import "../styles.scss"
+import Plx from 'react-plx';
 
 import Head from 'next/head';
 
@@ -25,6 +26,21 @@ const fetchUrl = process.env.fetchUrl;
 let currPage = 1;
 let limit = '';
 const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
+
+const ParallaxData = [
+  {
+    start: 0,
+    end: 1500,
+    properties: [
+      {
+        startValue: 0,
+        endValue: 100,
+        property: "translateY"
+      },
+    ]
+  },
+];
+
 
 const styles = {
   root:{
@@ -228,9 +244,15 @@ class Blog extends React.Component {
 
 
             <Link href={{ pathname: 'post', query: { name: this.props.featuredBlog[0].slug }}}  as={`/post?${this.props.featuredBlog[0].slug}`} prefetch>
+
             <Grid container className="heroHover" spacing={8} >
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
+                <Plx
+                className='MyAwesomeParallax'
+                parallaxData={ ParallaxData } // your parallax effects, see beneath
+                animateWhenNotInViewport={ true }
+                >
                 <Grid container spacing={8} className={classes.centerImg}>
 
                 <img src={this.props.featuredBlog[0].acf.featured_image}
@@ -242,7 +264,7 @@ class Blog extends React.Component {
                   />
 
                 </Grid>
-
+                </Plx>
                 {
                 this.props.blogs.map((blog) => {
                   return (
@@ -270,7 +292,7 @@ class Blog extends React.Component {
             </Grid>
             </Link>
 
-            <Grid container spacing={8} style={{paddingTop:'100px'}}>
+            <Grid container spacing={8} style={{paddingTop:'200px'}}>
 
               <Grid item xs={1} md={2}></Grid>
 
