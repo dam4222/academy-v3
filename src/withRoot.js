@@ -30,7 +30,7 @@ function withRoot(Component) {
     }
 
     componentDidMount() {
-    
+
         if(Router.router.route == "/blog"){
         this.setState({
           loadTiny:true,
@@ -38,6 +38,14 @@ function withRoot(Component) {
           loadTinyBack:false
         })
       }
+
+      if(Router.router.route == "/search"){
+      this.setState({
+        loadTiny:true,
+        loadAppBar:false,
+        loadTinyBack:false
+      })
+    }
 
       if(Router.router.route == "/post"){
       this.setState({
@@ -47,7 +55,7 @@ function withRoot(Component) {
       })
     }
 
-        if(!Router.router.route == "/post" || !Router.router.route == "/blog" ){
+        if(!Router.router.route == "/post" || !Router.router.route == "/blog" || !Router.router.route == "/search" ){
         this.setState({
           loadTiny:false,
           loadTinyBack:false,

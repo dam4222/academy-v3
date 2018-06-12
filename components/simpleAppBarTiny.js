@@ -14,6 +14,8 @@ import AnimatedLogo from '../components/animatedLogo';
 import AnimatedLogoSmall from '../components/animatedLogoSmall';
 import Grid from 'material-ui/Grid';
 import styled from 'styled-components';
+import Input from 'material-ui/Input';
+import Icon from 'material-ui/Icon';
 import "../styles.scss"
 
 const styles = theme => ({
@@ -90,6 +92,13 @@ class SimpleAppBarTiny extends React.Component {
                         </Typography>
                       </Button>
                     </Hidden>
+
+                    <Input
+                      placeholder="Search"
+                      inputProps={{
+                        'aria-label': 'Description',
+                      }}
+                    />
 
                   </Grid>
 
