@@ -184,25 +184,25 @@ class Work extends React.Component {
             return (
 
               <Grid container className="center">
-                <Grid item xs={1} md={3}></Grid>
+                <Grid item xs={1} md={2}></Grid>
                 <Grid item xs={10} md={4} className={classes.contentCenter}>
 
                 <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
-                  
+
                   <div>
-                      
+
                         <Typography variant="title" color="secondary" className={classes.projectLegend}>
                           Client &nbsp;
                         </Typography>
                         <Typography variant="title" color="primary" className={classes.projectLegend}>
                           {project.acf.client_name}
                         </Typography>
-                      
-                      
+
+
                         <Typography variant="display2" color="inherit">
                           {project.acf.project_title}
                         </Typography>
-                      
+
                           <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"}>
                             <Typography variant="button" color="inherit">
                               Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
@@ -211,19 +211,19 @@ class Work extends React.Component {
                     </div>
                   </Link>
                 </Grid>
-                  <Grid item xs={12} md={5} className={classes.contentCenter}>
+                  <Grid item xs={12} md={6} className={classes.contentCenter}>
                     <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
                       <a className="projectLink">
                         <img
                           className="projectImg"
-                          src={project.acf.featured_image}                          
+                          src={project.acf.featured_image}
                           style={{
                               height: '100vh',
                           }}
                         />
 
 
-                        
+
                       </a>
                     </Link>
                   </Grid>

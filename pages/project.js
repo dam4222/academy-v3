@@ -18,7 +18,7 @@ const fetchUrl = process.env.fetchUrl;
 const ParallaxData = [
   {
     start: 0,
-    end: 1500,
+    end: 3000,
     properties: [
       {
         startValue: 0,
@@ -61,8 +61,8 @@ const styles = theme => ( {
     paddingBottom:'100px',
   },
   process:{
-    paddingBottom: '20vh',
-    paddingTop: '20vh',
+    paddingBottom: '10vh',
+    paddingTop: '10vh',
     height:'auto',
     display:'flex',
     alignItems:'center'
@@ -145,7 +145,7 @@ class Project extends React.Component {
 
         <Grid container className="project" style={{height: '100vh'}}>
 
-          <Grid item xs={12} md={4} style={{ zIndex: 999, backgroundColor: 'white', padding:'20px', position:'absolute', top:'25%', left:'5%' }}>
+          <Grid item xs={12} md={3} style={{ zIndex: 999, backgroundColor: 'white', padding:'40px', position:'absolute', top:'25%', left:'5%' }}>
             <div className={classes.projectLegend}><IconButton className="arrowBack" style={{top:'-56px', left:'-19px', transform:'scale(.5)'}} onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton></div>
             <div className={classes.projectLegend}>
               <Typography variant="title" color="secondary" className={classes.projectLegend}>
@@ -165,15 +165,13 @@ class Project extends React.Component {
             </Typography>
           </Grid>
 
-          <Grid item xs={1}></Grid>
-          <Grid item xs={10} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+          <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
 
             <Grid container className="project" style={{height:'100vh'}}>
-              <Grid item xs={1}></Grid>
-              <Grid item xs={10} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
+              <Grid item xs={12} md={12} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
               <Plx
               style={{bottom:0, position:'relative'}}
-              className='MyAwesomeParallax'
+              className='project-hero'
               parallaxData={ ParallaxData } // your parallax effects, see beneath
               animateWhenNotInViewport={ true }
               >
@@ -189,17 +187,16 @@ class Project extends React.Component {
               </Grid>
               </Grid>
           </Grid>
-          <Grid item xs={1} md={3}></Grid>
           </Grid>
 
 
-        <Grid container spacing={8} className={classes.content}>
+        <Grid container className={classes.content}>
 
-            <Grid container spacing={16} className={classes.spacer} style={{background:'white'}}>
+            <Grid container spacing={16} style={{background:'white'}}>
               <Grid item xs={1} md={3}></Grid>
 
               <Grid item xs={10} md={6}>
-                <Grid container>
+                <Grid container justify="space-between" className={classes.spacer}>
                 <Grid item xs={10} md={6}>
                   <Typography variant="body1" style={{fontSize:'calc(1em + .25vw)'}} gutterBottom paragraph>
                     {this.props.project.project_description}
@@ -235,7 +232,7 @@ class Project extends React.Component {
             </Grid>
 
             <Grid container style={{backgroundColor: this.props.bgColor}}>
-              <Grid container spacing={24} id="section-one" className={classes.process}>
+              <Grid container spacing={8} id="section-one" className={classes.process}>
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={6}>
                   <Grid container>
@@ -244,51 +241,35 @@ class Project extends React.Component {
                         <b>{this.props.project.section_1_title}</b>. {this.props.project.section_1_description}
                       </Typography>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                      <Parallax
-                          className="sectionImg"
-                          offsetYMax={25}
-                          offsetYMin={-25}
-                          slowerScrollRate={false}
-                      >
-                          <div dangerouslySetInnerHTML={{__html: this.props.project.section_1_media}}></div>
-                        </Parallax>
+                    <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={6}>
+                          <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_1_media}}></div>
                     </Grid>
                   </Grid>
                 </Grid>
                 <Grid item xs={1} md={3}></Grid>
               </Grid>
 
-              <Grid container spacing={24} id="section-two" className={classes.process}>
+              <Grid container spacing={8} id="section-two" className={classes.process}>
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={6}>
                   <Grid container style={{flexWrap: 'wrap-reverse'}}>
 
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                      <Parallax
-                          className="sectionImg"
-                          offsetYMax={25}
-                          offsetYMin={-25}
-                          slowerScrollRate={false}
-                      >
-                            <div dangerouslySetInnerHTML={{__html: this.props.project.section_2_media}}></div>
-
-                        </Parallax>
-
+                      <Grid item xs={12} sm={12} md={4} lg={6}>
+                        <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_2_media}}></div>
                       </Grid>
-                      <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
-                      <Grid item xs={10} sm={12} md={4} lg={4} >
-                          <Typography variant="body1" >
-                            <b>{this.props.project.section_2_title}</b>. {this.props.project.section_2_description}
-                          </Typography>
+                      <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
+                      <Grid item xs={10} sm={12} md={4} lg={4}>
+                        <Typography variant="body1">
+                          <b>{this.props.project.section_2_title}</b>. {this.props.project.section_2_description}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
                 <Grid item xs={1} md={3}></Grid>
               </Grid>
 
-              <Grid container spacing={24} id="section-three" className={classes.process}>
+              <Grid container spacing={8} id="section-three" className={classes.process}>
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={6}>
                   <Grid container>
@@ -297,16 +278,9 @@ class Project extends React.Component {
                         <b>{this.props.project.section_3_title}</b>. {this.props.project.section_3_description}
                       </Typography>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}></Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                      <Parallax
-                          className="sectionImg"
-                          offsetYMax={25}
-                          offsetYMin={-25}
-                          slowerScrollRate={false}
-                      >
-                          <div dangerouslySetInnerHTML={{__html: this.props.project.section_3_media}}></div>
-                        </Parallax>
+                    <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
+                    <Grid item xs={12} sm={12} md={4} lg={6}>
+                      <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_3_media}}></div>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -318,16 +292,16 @@ class Project extends React.Component {
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
                 <Grid container>
-                  <Grid item xs={6} md={3}>
+                  <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
                     <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_1} alt="flow-image-1" />
                   </Grid>
-                  <Grid item xs={6} md={3}>
+                  <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
                     <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_2} alt="flow-image-1" />
                   </Grid>
-                  <Grid item xs={6} md={3}>
+                  <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
                     <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_3} alt="flow-image-1" />
                   </Grid>
-                  <Grid item xs={6} md={3}>
+                  <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
                     <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_4} alt="flow-image-1" />
                   </Grid>
                 </Grid>
@@ -377,8 +351,8 @@ class Project extends React.Component {
                     {this.props.moreProjects.map((project) => {
                       if(project.slug != this.props.currProject){
                         return(
-                          <Grid key={project.slug} item xs={4} md={4}>
-                            <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + project.slug}>
+                          <Grid key={project.slug} item xs={8} md={6} lg={4} style={{marginBottom:'20px'}}>
+                            <a className="link" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + project.slug}>
                               <Typography variant="button">{project.acf.client_name} | {project.acf.project_title}</Typography>
                             </a>
                           </Grid>
@@ -393,11 +367,11 @@ class Project extends React.Component {
               </Grid>
               <Grid item xs={12} md={6} style={{
                 background:'#f6f6f6',
-                height:'100%', display: 'flex',
+                display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingTop: '115px',
-                paddingBottom: '115px'
+                paddingTop: '200px',
+                paddingBottom: '200px'
               }}>
                   <Typography variant="body1">
                     Next Project    <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + this.props.project.next_project_link.post_name}>

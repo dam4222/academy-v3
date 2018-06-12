@@ -69,8 +69,7 @@ class Carousel extends React.Component {
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
-      nav2: this.slider2,
-
+      nav2: this.slider2
     });
   }
 
@@ -93,11 +92,10 @@ class Carousel extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       focusOnSelect: false,
-      autoplay: false,
+      autoplay: true,
       speed: 750,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 5000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
-      lazyLoad: 'ondemand',
       dots: true,
       touchThreshold: 5,
       vertical: false,
@@ -134,12 +132,7 @@ class Carousel extends React.Component {
 
                       <div style={{ opacity: this.state.loadingImage ? '0' : '1', width:'100%', height:'100%', overflow:'hidden'}}>
 
-
-                          <img src={project.acf.carousel_image_1}
-                            alt="carousel Image"
-                            hidden={this.state.loadingImage}
-                            width='100%'
-                          />
+                          <div style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'110%', backgroundPosition:'center', height: '100%'}} hidden={this.state.loadingImage}></div>
 
                       </div>
                       { this.state.loadingImage ? <CircularProgress style={centerAlign} style={{ opacity: 1 }}  /> : null }
@@ -164,7 +157,6 @@ class Carousel extends React.Component {
               focusOnSelect={false}
               speed={950}
               cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
-              lazyLoad={'ondemand'}
               className={'slider-two'}
               touchThreshold={5}
               vertical={false}
@@ -178,14 +170,8 @@ class Carousel extends React.Component {
                     { this.state.loadingImage ? <CircularProgress style={centerAlign}  /> : null }
 
                       <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
-                      <img src={project.acf.carousel_image_2}
-                        onLoad={this.onLoad(project.id)}
-                        style=
-                        {{
-                          position: 'relative',
-                          height: this.state.loadingImage ? 0: '100%'
-                        }}
-                      />
+
+                      <div onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'110%', height: '100%', backgroundPosition:'center'}}></div>
 
                     </div>
                     </div>

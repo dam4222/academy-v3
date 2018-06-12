@@ -124,13 +124,17 @@ const theme = createMuiTheme({
     MuiIconButton: {
       // Name of the styleSheet
       root: {
-        borderRadius: '0',
+        borderRadius: '100px',
+        background:'rgba(255,255,255,.25)',
         // Name of the rule
         '&:hover': {
           textDecoration: 'none',
           // Reset on mouse devices
           backgroundColor: 'none',
         },
+        '&:focus':{
+          background:'rgba(255,255,255,.25)',
+        }
       },
     },
     MuiAppBar: {

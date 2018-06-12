@@ -850,3 +850,10 @@ input{
     cursor:pointer;
   }
 }
+
+.link span{
+  transition:.5s all;
+  &:hover{
+    opacity:.75;
+  }
+}
