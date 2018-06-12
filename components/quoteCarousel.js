@@ -27,7 +27,7 @@ class QuoteCarousel extends React.Component {
       focusOnSelect: false,
       autoplay: false,
       speed: 750,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 10000,
       cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
       lazyLoad: 'ondemand',
       autoplay:true,
