@@ -112,7 +112,7 @@ class Carousel extends React.Component {
           <Grid item xs sm={1}>
             <Hidden smDown>
               <Typography style={verticalText} variant="caption" color="secondary">
-                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientName : null}
+                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
           </Typography>
               <Divider style={verticalLine} />
             </Hidden>
@@ -127,7 +127,7 @@ class Carousel extends React.Component {
 
               {this.props.projects.map((project) => {
                 return (
-                  <div key={project.id} clientName={project.acf.client_name} className={"noFocus carousel"}>
+                  <div key={project.id} clientname={project.acf.client_name} className={"noFocus carousel"}>
                     <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
 
                       <div style={{ opacity: this.state.loadingImage ? '0' : '1', width:'100%', height:'100%', overflow:'hidden'}}>

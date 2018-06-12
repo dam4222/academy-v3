@@ -32,6 +32,7 @@ const data = async (postType) => {
             break
         
         Json.map((type) => {
+            if (type.acf.password === '')
             Posts.push({ slug: `${type.slug}` })
         })
         pageNo = pageNo + 1;

@@ -17,6 +17,7 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog'
 import "../styles.scss"
+import { withRouter } from 'next/router'
 
 import Head from 'next/head';
 
@@ -24,7 +25,8 @@ import Head from 'next/head';
 const fetchUrl = process.env.fetchUrl;
 let currPage = 1;
 let limit = '';
-const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
+const baseUrl = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs';
+
 
 const styles = {
   root:{
@@ -66,91 +68,24 @@ class Search extends React.Component {
       open: false,
       isLoading: false,
       loaded: false,
+      keyword: props.router.query.keyword,
     };
-    this.handleScroll = this.handleScroll.bind(this);
-
+    
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
 
-  async handleScroll() {
-    //console.log(window.scrollY, window.outerHeight)
-    if ( !this.state.isLoading && limit != "reached" && (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 64)){
-      currPage += 1;
-      await this.setState({
-        isLoading: true,
-        fetching: true
-      })
-      const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?page=' + currPage;
-
+  static async getInitialProps(nextProps) {
+      //console.log(1, nextProps.query.keyword)
+      const url = baseUrl + `?search=${nextProps.query.keyword}&page=` + currPage;
+      //console.log(url)
+      //fetching rest of the blogs
       const res = await fetch(url)
       const blogs = await res.json()
-      //console.log(this.state)
-      if ("code" in blogs){
-        limit = "reached"
-        return ;
+      console.log(blogs.length)
+      return{ 
+        blogs: blogs,
       }
-      else if (Object.keys(blogs).length < 10){
-        limit = "reached"
-        currPage = 1
-      }
-      let prevBlogs = this.state.blogs
-      await this.setState({
-        blogs:  ("code" in blogs ? prevBlogs : prevBlogs.concat(blogs)),
-        isLoading: false,
-        open: false,
-        fetching: false
-      })
-    }
   }
-
-
-  //fetch list of blogs here
-  static async getInitialProps({ req }) {
-    //Fetching featured blog below, if more than one are featured, the latest one will be displayed
-    const url_feat = "https://" + fetchUrl + "/wp-json/wp/v2/blogs/?featured=true";
-    const res_feat = await fetch(url_feat);
-    const featuredBlog = await res_feat.json()
-
-    //fetching rest of the blogs
-    const res = await fetch(url)
-    const blogs = await res.json()
-
-    return{
-      featuredBlog: featuredBlog,
-      blogs: blogs,
-    }
-  }
-
-  onChange = inputPassword => event => {
-    //console.log(event.target.value)
-    this.setState({
-      inputPassword: event.target.value,
-    });
-  };
-
-  searchBlogs = blogSearch => event => {
-
-     this.fetchSearch(event.target.value);
-  }
-
-  fetchSearch = async () =>{
-    await this.setState({
-      fetching: true
-    })
-    const url = 'https://' + fetchUrl + '/wp-json/wp/v2/blogs?search=' + event.target.value;
-    const res = await fetch(url)
-    const blogs = await res.json()
-    //console.log(blogs)
-    await this.setState({
-      blogs: blogs,
-      fetching: false
-    })
-  }
-
-
 
   formatDate = (date) =>{
     let format = new Date(date);
@@ -176,38 +111,6 @@ class Search extends React.Component {
           <title>Academy – Design Tinkering</title>
           <meta name="description" content="Short Description here" />
         </Head>
-        <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle id="form-dialog-title">Private post!</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Provide passsword to view blog post.
-              <div style={{color: 'red'}}>
-
-                </div>
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="password"
-              label="Password"
-              type="password"
-              onChange={this.onChange('password')}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Back
-            </Button>
-            <Button onClick={this.verifyPassword} color="primary">
-              View Post!
-            </Button>
-          </DialogActions>
-        </Dialog>
-
 
         <Grid container spacing={8} className={classes.container}>
 
@@ -219,7 +122,7 @@ class Search extends React.Component {
                     You searched for &nbsp;
                   </Typography>
                   <Typography variant="display1" gutterBottom>
-                    "UX"
+                    "{this.props.router.query.keyword}"
                   </Typography>
                 </Grid>
               <Grid item xs={3}></Grid>
@@ -237,10 +140,8 @@ class Search extends React.Component {
 
                 <Grid container spacing={24}>
                 {
-                this.props.blogs.map((blog) => {
-                  if (blog.acf.featured != true){
+                this.props.blogs.map((blog) => {              
                   return (
-
                     <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
                     <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
                       <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
@@ -265,9 +166,7 @@ class Search extends React.Component {
                         </Paper>
                     </Grid>
                     </Link>
-
-                  )
-                  }
+                  ) 
                   })
                   }
                 </Grid>
@@ -287,4 +186,4 @@ Search.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(Search));
+export default withRoot(withStyles(styles)(withRouter(Search)));

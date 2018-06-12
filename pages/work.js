@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import 'isomorphic-fetch'
 import { LinearProgress } from 'material-ui/Progress';
+import Router from 'next/router'
 
 import TextField from 'material-ui/TextField';
 import Dialog, {
@@ -73,6 +74,22 @@ class Work extends React.Component {
       fetching: true,
       open: false,
       errorMessage: '',
+      blogPassword: '',
+      currPost: undefined,
+    }
+
+  }
+
+  handleClick = (project) => {
+    if (project.acf.password === ''){
+      Router.push(`/project?${project.slug}`).then(() => window.scrollTo(0, 0));
+    }
+    else{
+      this.setState({
+        open: true,
+        blogPassword: project.acf.password,
+        currPost: project.slug,
+      })
     }
   }
 
@@ -81,40 +98,16 @@ class Work extends React.Component {
 
   }
 
-  handleClickOpen = (blog) => {
-
-    if (blog.acf.password == ""){
-      limit = "";
-      Router.push(
-        `/post?name=${blog.slug}`,
-
-      );
-    }else{
-      this.setState({
-        open: true,
-        currPost: blog.slug,
-        blogPassword: blog.acf.password,
-      });
-    }
-  }
-
-  onChange = inputPassword => event => {
-    //console.log(event.target.value)
-    this.setState({
-      inputPassword: event.target.value,
-    });
-  };
-
   verifyPassword = () =>{
-
-
     if (this.state.inputPassword == this.state.blogPassword){
       //console.log("correct", this.state.blogPassword, this.state.inputPassword)
-      limit = "";
-      Router.push(
-        `/post?name=${this.state.currPost}`,
-
-      );
+      Router.push({
+        pathname: '/project',
+        query: {
+          password: this.state.blogPassword,
+        },
+      },
+      `/project?${this.state.currPost}`).then(() => window.scrollTo(0, 0));;
     }
     else{
       //console.log("wrong", this.state.blogPassword, this.state.inputPassword)
@@ -124,15 +117,22 @@ class Work extends React.Component {
     }
   }
 
-  //fetch list of projects here
-  async componentWillMount (){
-    const res = await fetch(url)
-    const projects = await res.json()
-    await this.setState({
-      projects: projects,
-      fetching: false,
+  setPassword = event => {
+    this.setState({
+      inputPassword: event.target.value
     })
   }
+
+  //fetch list of projects here
+  static async getInitialProps({ req }) {
+    //Fetching featured blog below, if more than one are featured, the latest one will be displayed
+    const res = await fetch(url)
+    const projects = await res.json()
+    return {
+      projects: projects,
+    }
+  }
+
 
   render() {
     const { classes, backgroundColor } = this.props;
@@ -143,18 +143,18 @@ class Work extends React.Component {
           <meta name="description" content="Short Description here" />
         </Head>
 
-      <Dialog
+        <Dialog
           open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Private post!</DialogTitle>
+          <DialogTitle id="form-dialog-title">Private project!</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Provide passsword to view blog post.
-              <div style={{color: 'red'}}>
+              Provide passsword to view the project.
+              <br /><span style={{color: 'red'}}>
               {this.state.errorMessage}
-                </div>
+                </span>
             </DialogContentText>
             <TextField
               autoFocus
@@ -162,7 +162,7 @@ class Work extends React.Component {
               id="password"
               label="Password"
               type="password"
-              onChange={this.onChange('password')}
+              onChange={this.setPassword}
             />
           </DialogContent>
           <DialogActions>
@@ -175,21 +175,18 @@ class Work extends React.Component {
           </DialogActions>
         </Dialog>
 
-      {this.state.fetching ? <LinearProgress className="progress" /> : (
+
 
         <Grid container>
-
-          {this.state.projects.map((project, i) => {
-
+          {this.props.projects.map((project) => {
             return (
-
-              <Grid container className="center">
-                <Grid item xs={1} md={2}></Grid>
+              <Grid key={project.id} container className="center">
+                <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={4} className={classes.contentCenter}>
 
-                <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
 
-                  <div>
+
+                  <div onClick={this.handleClick.bind(this, project)}>
 
                         <Typography variant="title" color="secondary" className={classes.projectLegend}>
                           Client &nbsp;
@@ -209,31 +206,27 @@ class Work extends React.Component {
                             </Typography>
                           </Button>
                     </div>
-                  </Link>
+
                 </Grid>
-                  <Grid item xs={12} md={6} className={classes.contentCenter}>
-                    <Link key={i} href={{ pathname: 'project', query: { name: project.slug }}} as={`/project?${project.slug}`}>
-                      <a className="projectLink">
+                  <Grid item xs={12} md={5} className={classes.contentCenter}>
+
+                      <Button disableRipple={true}  className="projectLink" >
                         <img
                           className="projectImg"
-                          src={project.acf.featured_image}
+                          src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12042439/datingapp.png'}
                           style={{
                               height: '100vh',
                           }}
+                          onClick={this.handleClick.bind(this, project)}
                         />
-
-
-
-                      </a>
-                    </Link>
+                      </Button>
                   </Grid>
             </Grid>
             )
-
           })
           }
         </Grid>
-      )}
+
       <div className="mask"></div>
       </div>
     );
