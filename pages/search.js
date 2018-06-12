@@ -75,9 +75,9 @@ class Search extends React.Component {
 
 
   static async getInitialProps(nextProps) {
-      console.log(1, nextProps.query.keyword)
+      //console.log(1, nextProps.query.keyword)
       const url = baseUrl + `?search=${nextProps.query.keyword}&page=` + currPage;
-      console.log(url)
+      //console.log(url)
       //fetching rest of the blogs
       const res = await fetch(url)
       const blogs = await res.json()
