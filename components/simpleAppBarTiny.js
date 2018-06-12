@@ -17,6 +17,7 @@ import styled from 'styled-components';
 import Input from 'material-ui/Input';
 import Icon from 'material-ui/Icon';
 import "../styles.scss"
+import Router from 'next/router';
 
 const styles = theme => ({
 
@@ -47,6 +48,17 @@ const spacing = {
 }
 
 class SimpleAppBarTiny extends React.Component {
+
+  handleSearch = event => {
+    if (event.key === 'Enter' && event.target.value !== ''){
+      Router.push({
+        pathname: '/search',
+        query: {
+          keyword: event.target.value
+        }
+      })
+    } 
+  };
 
   render() {
 
@@ -94,10 +106,14 @@ class SimpleAppBarTiny extends React.Component {
                     </Hidden>
 
                     <Input
+                      id="searchKey"
+                      name="searchKey"
                       placeholder="Search"
                       inputProps={{
                         'aria-label': 'Description',
+                      
                       }}
+                      onKeyPress={this.handleSearch}
                     />
 
                   </Grid>
