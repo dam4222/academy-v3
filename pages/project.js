@@ -11,7 +11,16 @@ import { LinearProgress } from 'material-ui/Progress';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Head from 'next/head'
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 import Error from 'next/error';
+
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from 'material-ui/Dialog'
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
@@ -95,44 +104,89 @@ const styles = theme => ( {
 });
 
 class Project extends React.Component {
-  constructor(children, router, href) {
-    super(children, router, href);
+  constructor(props) {
+    super(props);
     this.state = {
       /* initial state */
-
+      dialogOpen: false,
     };
   }
 
   //fetch details of the project here
   static async getInitialProps(nextProps){
 
-    //console.log(nextProps)
+   
     let path = nextProps.asPath
     path = path.substr(9);
-    //console.log(path)
+    
     const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?slug=' + path;
     const res = await fetch(url)
     const project = await res.json()
-    //console.log(project[0])
+    
+    const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
+      const res2 = await fetch(url2)
+      const moreProjects = await res2.json()
     if (( !("password" in nextProps.query) && project[0].acf.password === '')
       ||
       (nextProps.query.password === project[0].acf.password)
     ){
       //fetch more projects to display at the end
-      const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
-      const res2 = await fetch(url2)
-      const moreProjects = await res2.json()
-      //console.log(project)
+      
       return{
         currProject: project[0].slug,
         project: project[0].acf,
         fetching: false,
         bgColor: project[0].acf.project_theme_color,
-        moreProjects: moreProjects
+        moreProjects: moreProjects,
+        projectPassword: project[0].acf.password,
       }
     }
+    
     return {
       error: true,
+      projectPassword: project[0].acf.password,
+      currProject: project[0].slug,
+      project: project[0].acf,
+      fetching: false,
+      bgColor: project[0].acf.project_theme_color,
+      moreProjects: moreProjects,
+      projectPassword: project[0].acf.password,
+    }
+  }
+
+  openDialog = () => {
+    this.state.dialogOpen ? null :
+    this.setState({
+      dialogOpen: true,
+    })
+  }
+
+  handleClose = () => {
+    this.setState({ dialogOpen: false });
+  }
+
+  setPassword = event => {
+    this.setState({
+      inputPassword: event.target.value
+    })
+  }
+
+  verifyPassword = () =>{
+    if (this.state.inputPassword == this.props.projectPassword){
+      
+      Router.push({
+        pathname: '/project',
+        query: {
+          password: this.state.inputPassword,
+        },
+      },
+      `/project?${this.props.currProject}`).then(() => window.scrollTo(0, 0));
+    }
+    else{
+      
+      this.setState({
+        errorMessage: 'The password you attempted is incorrect. Please request permission by contacting hello@academyux.com'
+      })
     }
   }
 
@@ -142,12 +196,52 @@ class Project extends React.Component {
     })
   }
 
+  componentWillMount = () => {
+    this.props.error ? this.openDialog() : null
+    
+  }
+
   render() {
     const { classes } = this.props;
     if (this.props.error){
+      
       return(
-        /*Here we can create our custom component if needed*/
+        <div >
         <Error statusCode={403} />
+        <Dialog
+          open={this.state.dialogOpen}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+        
+          <DialogTitle id="form-dialog-title">Private project!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Provide passsword to view the project.
+              <br /><span style={{color: 'red'}}>
+              {this.state.errorMessage}
+                </span>
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="password"
+              label="Password"
+              type="password"
+              onChange={this.setPassword}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Back
+            </Button>
+            <Button onClick={this.verifyPassword} color="primary">
+              View Post!
+            </Button>
+          </DialogActions>
+        </Dialog>
+          
+        </div>
       )
     }
     return (
@@ -337,12 +431,23 @@ class Project extends React.Component {
                 </Grid>
             </Grid>
 
-
+            {(this.props.project.large_video !== '' ? null :
+              (
+              <Grid container style={{background:'white'}}>
+                <Grid item xs={12} md={12}>
+                  <img style={{ width: '100%', height:'100%' }} src={this.props.project.large_image} alt="large image 2" />
+                </Grid>
+              </Grid>
+              )
+            )}
+            
             <Grid container style={{background:'white'}}>
               <Grid item xs={12} md={12}>
-                <img style={{ width: '100%', height:'100%' }} src={this.props.project.large_image} alt="large image 2" />
+                <div  dangerouslySetInnerHTML={{__html: this.props.project.large_video}} />
+
               </Grid>
             </Grid>
+            
 
             <Grid container className={classes.spacerNextProject} justify="space-between">
               <Grid item xs={1} md={1}></Grid>
