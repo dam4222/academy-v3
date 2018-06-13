@@ -400,6 +400,7 @@ p{
   height: 75px !important;
   background: black !important;
   top: 0;
+  border-radius: 0 !important;
 
   svg {
     transition: 1s ease all;
@@ -425,6 +426,7 @@ p{
   height: 75px !important;
   background: black !important;
   top: 0;
+  border-radius: 0 !important;
 
   svg {
     transition: 1s ease all;
@@ -474,23 +476,23 @@ p{
 
 }
 
-img{
-  opacity:0;
-  animation:1.2s ease forwards fadeInUp;
-  transition: 1s all;
-  animation-delay: 1s;
-
-    @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translate(0, 100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
-  }
-}
+// img{
+//   opacity:0;
+//   animation:1.2s ease forwards fadeInUp;
+//   transition: 1s all;
+//   animation-delay: 1s;
+//
+//     @keyframes fadeInUp {
+//     0% {
+//       opacity: 0;
+//       transform: translate(0, 100px);
+//     }
+//     100% {
+//       opacity: 1;
+//       transform: translate(0, 0px);
+//     }
+//   }
+// }
 
 .parallax-banner-layer-0 {
   opacity:0;

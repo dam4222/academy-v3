@@ -210,10 +210,10 @@ class Work extends React.Component {
                 </Grid>
                   <Grid item xs={12} md={5} className={classes.contentCenter}>
 
-                      <Button disableRipple={true}  className="projectLink" >
+                      <Button disableRipple={true} className="projectLink" >
                         <img
                           className="projectImg"
-                          src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12042439/datingapp.png'}
+                          src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12220205/p02svpws.jpg'}
                           style={{
                               height: '100vh',
                           }}

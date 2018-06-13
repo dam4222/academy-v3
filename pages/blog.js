@@ -307,7 +307,7 @@ class Blog extends React.Component {
                   if (blog.acf.featured != true){
                   return (
 
-                    <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
+                    <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`} prefetch>
                     <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
                       <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
 
