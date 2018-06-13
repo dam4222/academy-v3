@@ -30,13 +30,25 @@ const expandBtn = {
 const verticalText = {
   transform: 'rotate(-90deg)',
   position: 'relative',
-  top: '4vh'
+  top: '12vh'
 }
 
 const verticalLine = {
   transform: 'rotate(-90deg)',
   position: 'relative',
-  top: '22vh'
+  top: '32vh'
+}
+
+const horizontalText = {
+  position: 'relative',
+  left:'100px'
+}
+
+const horizontalLine = {
+  position: 'relative',
+  top: '-10px',
+  left: '10px',
+  width:' 80px',
 }
 
 const iconMargin = {
@@ -116,6 +128,12 @@ class Carousel extends React.Component {
           </Typography>
               <Divider style={verticalLine} />
             </Hidden>
+            <Hidden smUp>
+              <Typography style={horizontalText} variant="caption" color="secondary">
+                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
+          </Typography>
+              <Divider style={horizontalLine} />
+            </Hidden>
           </Grid>
           <Grid item xs={12} sm={7}>
             <Slider className={"noFocus carousel"}
@@ -132,7 +150,7 @@ class Carousel extends React.Component {
 
                       <div style={{ opacity: this.state.loadingImage ? '0' : '1', width:'100%', height:'100%', overflow:'hidden'}}>
 
-                          <div style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'110%', backgroundPosition:'center', height: '100%'}} hidden={this.state.loadingImage}></div>
+                          <div style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'100%', backgroundPosition:'center', height: '100%'}} hidden={this.state.loadingImage}></div>
 
                       </div>
                       { this.state.loadingImage ? <CircularProgress style={centerAlign} style={{ opacity: 1 }}  /> : null }
@@ -171,7 +189,7 @@ class Carousel extends React.Component {
 
                       <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
 
-                      <div onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'110%', height: '100%', backgroundPosition:'center'}}></div>
+                      <div onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'100%', height: '100%', backgroundPosition:'center'}}></div>
 
                     </div>
                     </div>
