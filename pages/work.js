@@ -100,7 +100,7 @@ class Work extends React.Component {
 
   verifyPassword = () =>{
     if (this.state.inputPassword == this.state.blogPassword){
-      //console.log("correct", this.state.blogPassword, this.state.inputPassword)
+      
       Router.push({
         pathname: '/project',
         query: {
@@ -110,7 +110,7 @@ class Work extends React.Component {
       `/project?${this.state.currPost}`).then(() => window.scrollTo(0, 0));;
     }
     else{
-      //console.log("wrong", this.state.blogPassword, this.state.inputPassword)
+      
       this.setState({
         errorMessage: 'The password you attempted is incorrect. Please request permission by contacting hello@academyux.com'
       })
