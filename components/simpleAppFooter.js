@@ -86,7 +86,7 @@ class SimpleAppFooter extends React.Component {
                         </Typography>
                       </Button>
 
-                      <SimpleForm />
+                      <SimpleForm title='Contact Us'/>
 
                       </Grid>
                     <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>

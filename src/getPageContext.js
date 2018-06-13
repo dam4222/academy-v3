@@ -154,6 +154,11 @@ const theme = createMuiTheme({
         marginRight:'10px',
         marginBottom:'10px',
       }
+    },
+    MuiDialogActions:{
+      root:{
+        margin:'8px 8px'
+      }
     }
   },
 });

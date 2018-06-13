@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Grid from 'material-ui/Grid';
 import 'isomorphic-fetch'
 import { LinearProgress } from 'material-ui/Progress';
+import SimpleForm from '../components/simpleForm';
 import Router from 'next/router'
 
 import TextField from 'material-ui/TextField';
@@ -100,7 +101,7 @@ class Work extends React.Component {
 
   verifyPassword = () =>{
     if (this.state.inputPassword == this.state.blogPassword){
-      
+
       Router.push({
         pathname: '/project',
         query: {
@@ -110,9 +111,9 @@ class Work extends React.Component {
       `/project?${this.state.currPost}`).then(() => window.scrollTo(0, 0));;
     }
     else{
-      
+
       this.setState({
-        errorMessage: 'The password you attempted is incorrect. Please request permission by contacting hello@academyux.com'
+        errorMessage: 'The password you attempted is incorrect. Please request access below and we will get back to your shortly.'
       })
     }
   }
@@ -148,10 +149,10 @@ class Work extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title">Private project!</DialogTitle>
+          <DialogTitle id="form-dialog-title">Top Secret Project</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Provide passsword to view the project.
+              Please provide a passsword to view this project.
               <br /><span style={{color: 'red'}}>
               {this.state.errorMessage}
                 </span>
@@ -166,16 +167,14 @@ class Work extends React.Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Back
-            </Button>
-            <Button onClick={this.verifyPassword} color="primary">
-              View Post!
+            <SimpleForm title='Request Access'/>
+            <Button onClick={this.verifyPassword} disableRipple={true} className={"underline"}>
+              <Typography variant="button" color="inherit">
+              Submit
+              </Typography>
             </Button>
           </DialogActions>
         </Dialog>
-
-
 
         <Grid container>
           {this.props.projects.map((project) => {
@@ -215,7 +214,7 @@ class Work extends React.Component {
                           className="projectImg"
                           src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12220205/p02svpws.jpg'}
                           style={{
-                              height: '100vh',
+                              height: '97vh',
                           }}
                           onClick={this.handleClick.bind(this, project)}
                         />

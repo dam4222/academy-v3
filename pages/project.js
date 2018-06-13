@@ -115,14 +115,14 @@ class Project extends React.Component {
   //fetch details of the project here
   static async getInitialProps(nextProps){
 
-   
+
     let path = nextProps.asPath
     path = path.substr(9);
-    
+
     const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?slug=' + path;
     const res = await fetch(url)
     const project = await res.json()
-    
+
     const url2 = 'https://' + fetchUrl + '/wp-json/wp/v2/projects';
       const res2 = await fetch(url2)
       const moreProjects = await res2.json()
@@ -131,7 +131,7 @@ class Project extends React.Component {
       (nextProps.query.password === project[0].acf.password)
     ){
       //fetch more projects to display at the end
-      
+
       return{
         currProject: project[0].slug,
         project: project[0].acf,
@@ -141,7 +141,7 @@ class Project extends React.Component {
         projectPassword: project[0].acf.password,
       }
     }
-    
+
     return {
       error: true,
       projectPassword: project[0].acf.password,
@@ -173,7 +173,7 @@ class Project extends React.Component {
 
   verifyPassword = () =>{
     if (this.state.inputPassword == this.props.projectPassword){
-      
+
       Router.push({
         pathname: '/project',
         query: {
@@ -183,9 +183,9 @@ class Project extends React.Component {
       `/project?${this.props.currProject}`).then(() => window.scrollTo(0, 0));
     }
     else{
-      
+
       this.setState({
-        errorMessage: 'The password you attempted is incorrect. Please request permission by contacting hello@academyux.com'
+        errorMessage: 'The password you attempted is incorrect. Please request access below and we will get back to your shortly.'
       })
     }
   }
@@ -198,26 +198,25 @@ class Project extends React.Component {
 
   componentWillMount = () => {
     this.props.error ? this.openDialog() : null
-    
+
   }
 
   render() {
     const { classes } = this.props;
     if (this.props.error){
-      
+
       return(
         <div >
         <Error statusCode={403} />
         <Dialog
-          open={this.state.dialogOpen}
+          open={this.state.open}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >
-        
-          <DialogTitle id="form-dialog-title">Private project!</DialogTitle>
+          <DialogTitle id="form-dialog-title">Top Secret Project</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Provide passsword to view the project.
+              Please provide a passsword to view this project.
               <br /><span style={{color: 'red'}}>
               {this.state.errorMessage}
                 </span>
@@ -232,15 +231,16 @@ class Project extends React.Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Back
-            </Button>
-            <Button onClick={this.verifyPassword} color="primary">
-              View Post!
+            <SimpleForm title='Request Access'/>
+            <Button onClick={this.verifyPassword} disableRipple={true} className={"underline"}>
+              <Typography variant="button" color="inherit">
+              Submit
+              </Typography>
             </Button>
           </DialogActions>
         </Dialog>
-          
+
+
         </div>
       )
     }
@@ -420,7 +420,7 @@ class Project extends React.Component {
               <Grid item xs={1} md={1}></Grid>
             </Grid>
 
-            <Grid container justify="space-between" className={classes.spacer} style={{paddingBottom:'8px'}}>
+            <Grid container justify="space-between" className={classes.spacer}>
                 <Grid container spacing={24}>
                   <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
                     <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.props.project.large_image_1} alt="large-image-1" />
@@ -440,14 +440,14 @@ class Project extends React.Component {
               </Grid>
               )
             )}
-            
+
             <Grid container style={{background:'white'}}>
               <Grid item xs={12} md={12}>
                 <div  dangerouslySetInnerHTML={{__html: this.props.project.large_video}} />
 
               </Grid>
             </Grid>
-            
+
 
             <Grid container className={classes.spacerNextProject} justify="space-between">
               <Grid item xs={1} md={1}></Grid>
@@ -487,7 +487,7 @@ class Project extends React.Component {
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} style={{
-                background:'#f6f6f6',
+                background:'white',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',

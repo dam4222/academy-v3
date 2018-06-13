@@ -64,13 +64,13 @@ export default class FormDialog extends React.Component {
         emailError: true,
         emailLabel: "Email Address is incorrect!"
       })
-    } 
+    }
     else if (this.state.email.length - this.state.email.indexOf('.') < 1 || this.state.email.indexOf('.') - this.state.email.indexOf("@") < 2 ){
     // @ is before . and not before .
       this.setState({
         emailError: true,
         emailLabel: "Email Address is incorrect!"
-      }) 
+      })
     }
     else if (this.state.email !== ""){
       this.sendMail()
@@ -79,7 +79,7 @@ export default class FormDialog extends React.Component {
   }
 
   sendMail = async () => {
-    
+
     const body = {
       "email": this.state.email,
       "message": this.state.message,
@@ -92,17 +92,17 @@ export default class FormDialog extends React.Component {
       body: JSON.stringify(body),
     }
     const res = await fetch(mailUrl, options);
-    
+
     //if sending was successful, as status code is 200
     // Changing the state and showing snackbar
-    res.status === 200 
+    res.status === 200
     ?
     await this.setState({
       emailLabel: "Email Address",
       messageLablel: "Message",
       snackbarOpen: true,
-    }) 
-    : 
+    })
+    :
     await this.setState({
       emailLabel: "Error Occured. Try again!",
       messageLablel: "Error Occured. Try again!",
@@ -114,7 +114,7 @@ export default class FormDialog extends React.Component {
       <div style={spacing}>
         <Button onClick={this.handleClickOpen} disableRipple={true} className={"underline"} style={spacing}>
           <Typography variant="button" color="inherit">
-            Contact Us
+            {this.props.title}
           </Typography>
         </Button>
         <Dialog
@@ -129,6 +129,7 @@ export default class FormDialog extends React.Component {
               We can answer any questions you might have. Just send us a note and we will get back to you promptly.
             </DialogContentText>
             <TextField
+            autoFocus
             margin="dense"
             id="name"
             label={this.state.emailLabel}
@@ -152,16 +153,17 @@ export default class FormDialog extends React.Component {
           />
           </DialogContent>
           <DialogActions>
-          <Button onClick={this.handleClose} disableRipple={true} className={"underline"} style={spacing}>
-            <Typography variant="title" color="inherit">
+            <small> {this.state.errorMessage} </small>
+            <Button onClick={this.handleClose} disableRipple={true} className={"underline"}>
+              <Typography variant="button" color="inherit">
               Cancel
-            </Typography>
-          </Button>
-          <Button onClick={this.verifyInput} disableRipple={true} className={"underline"} style={spacing}>
-            <Typography variant="title" color="inherit">
+              </Typography>
+            </Button>
+            <Button onClick={this.verifyInput} disableRipple={true} className={"underline"}>
+              <Typography variant="button" color="inherit">
               Send
-            </Typography> 
-          </Button> <small> {this.state.errorMessage} </small>
+              </Typography>
+            </Button>
           </DialogActions>
         </Dialog>
         <Snackbar
@@ -179,7 +181,7 @@ export default class FormDialog extends React.Component {
           action={[
             <Button key="undo" color="secondary" size="small" onClick={this.snackbarHandleClose}>
               CLOSE
-            </Button>, 
+            </Button>,
           ]}
         />
       </div>
