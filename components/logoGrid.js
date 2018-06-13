@@ -109,7 +109,7 @@ function LogoGrid(props) {
       <Grid item xs={12} className={classes.skillGrid} style={{flexWrap:'wrap-reverse', alignContent: 'center', justifyContent: 'center'}} >
         <Grid container spacing={8}>
           {tileData.map(tile => (
-          <Grid key={tile.title} item xs={4} sm={4} md={4}>
+          <Grid key={tile.title} item xs={4} sm={4} md={4} style={{alignContent: 'flex-end', display: 'flex'}}>
             <div className={classes.skillItem}>
               <div key={tile.img} className={classes.tile}>
                 {tile.img}
