@@ -161,7 +161,7 @@ class Post extends React.Component {
 
           <Divider style={{margin:'100px'}}/>
           </Grid>
-          <Grid xs={1} md={3} lg={3} xl={4}></Grid>
+          <Grid item xs={1} md={3} lg={3} xl={4}></Grid>
 
           </Grid>
           </div>
@@ -183,7 +183,7 @@ class Post extends React.Component {
 
                 return(
                   <Link key={post.id} href={{ pathname: 'post', query: { name: post.slug }}} as={`/post?${post.slug}`}>
-                  <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={post}>
+                  <Grid item xs={12} sm={6} md={6} lg={4} className="heroHover" style={{paddingTop:'100px'}}  value={post}>
                     <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
 
                         <div style={{width:'100%', overflow:'hidden'}}>

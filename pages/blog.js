@@ -308,7 +308,7 @@ class Blog extends React.Component {
                   return (
 
                     <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`} prefetch>
-                    <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
+                    <Grid item xs={12} sm={6} md={6} lg={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
                       <Paper elevation={0} style={{width:'100%', height:'100%'}} className="headlineHover">
 
                           <div style={{width:'100%', overflow:'hidden'}}>
