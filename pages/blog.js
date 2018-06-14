@@ -190,7 +190,7 @@ class Blog extends React.Component {
       <div className={classes.root}>
         <Head>
           <title>Academy – Design Tinkering</title>
-          <meta name="description" content="Short Description here" />
+          <meta name="description" content="An empathetic, diverse and highly opinionated blog on UX & Design Thinking" />
         </Head>
         <Dialog
           open={this.state.open}

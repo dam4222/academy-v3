@@ -70,7 +70,7 @@ class Search extends React.Component {
       loaded: false,
       keyword: props.router.query.keyword,
     };
-    
+
   }
 
 
@@ -82,7 +82,7 @@ class Search extends React.Component {
       const res = await fetch(url)
       const blogs = await res.json()
       console.log(blogs.length)
-      return{ 
+      return{
         blogs: blogs,
       }
   }
@@ -109,7 +109,7 @@ class Search extends React.Component {
       <div className={classes.root}>
         <Head>
           <title>Academy – Design Tinkering</title>
-          <meta name="description" content="Short Description here" />
+          <meta name="description" content="Academy is a UX & Design Thinking Studio. We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
         </Head>
 
         <Grid container spacing={8} className={classes.container}>
@@ -140,7 +140,7 @@ class Search extends React.Component {
 
                 <Grid container spacing={24}>
                 {
-                this.props.blogs.map((blog) => {              
+                this.props.blogs.map((blog) => {
                   return (
                     <Link key={blog.id} href={{ pathname: 'post', query: { name: blog.slug }}} as={`/post?${blog.slug}`}>
                     <Grid item xs={12} sm={8} md={4} className="heroHover" style={{paddingTop:'100px'}}  value={blog}>
@@ -166,7 +166,7 @@ class Search extends React.Component {
                         </Paper>
                     </Grid>
                     </Link>
-                  ) 
+                  )
                   })
                   }
                 </Grid>

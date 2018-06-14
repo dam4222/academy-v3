@@ -141,7 +141,7 @@ class Work extends React.Component {
       <div className={classes.root}>
         <Head>
           <title>Academy – Work</title>
-          <meta name="description" content="Short Description here" />
+          <meta name="description" content="We have worked with Agencies, Fortune 500 Companies, and Governments to deliver the top UX & Design Thinking experts in the field." />
         </Head>
 
         <Dialog
