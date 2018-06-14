@@ -112,29 +112,37 @@ class SimpleAppBar extends React.Component {
 
                   <Grid item xs={5} className='show' style={right}>
                     <Hidden smDown>
-                      <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
-                        <Typography variant="button" color="inherit">
-                          Work
-                        </Typography>
+                      <Button className={`underline`} disableRipple={true} style={spacing}>
+                        <Link href="/work" prefetch>
+                          <Typography variant="button" color="inherit">
+                            Work
+                          </Typography>
+                        </Link>
                       </Button>
 
-                      <Button className={`underline`} disableRipple={true} href="/process" style={spacing}>
-                        <Typography variant="button" color="inherit">
-                          Our Process
-                        </Typography>
+                      <Button className={`underline`} disableRipple={true} style={spacing}>
+                        <Link href="/process" prefetch>
+                          <Typography variant="button" color="inherit">
+                            Our Process
+                          </Typography>
+                        </Link>
                       </Button>
 
-                      <Button className={`underline`} disableRipple={true} href="/workshops" style={spacing}>
-                        <Typography variant="button" color="inherit">
-                          Workshops
-                        </Typography>
+                      <Button className={`underline`} disableRipple={true} style={spacing}>
+                        <Link href="/workshops" prefetch>
+                          <Typography variant="button" color="inherit">
+                            Workshops
+                          </Typography>
+                        </Link>
                       </Button>
 
 
-                      <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
-                        <Typography variant="button" color="inherit">
-                          Design Tinkering
-                        </Typography>
+                      <Button className={`underline`} disableRipple={true} style={spacing}>
+                        <Link href="/blog" prefetch>
+                          <Typography variant="button" color="inherit">
+                            Design Tinkering
+                          </Typography>
+                        </Link>
                       </Button>
                     </Hidden>
 

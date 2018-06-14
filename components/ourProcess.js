@@ -45,7 +45,7 @@ function OurProcess(props) {
             paddingTop:'60px',
             paddingBottom:'60px'
           }}
-          src='https://cdn1.academyux.com/product-relay.png'
+          src='https://cdn1.academyux.com/wp-content/uploads/2018/06/14002509/product-relay_opti.png'
           />
         </Grid>
         <Grid item xs={1} sm={1} md={2} lg={2}></Grid>
