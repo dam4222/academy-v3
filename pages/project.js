@@ -14,6 +14,8 @@ import Head from 'next/head'
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
 import Error from 'next/error';
+import SimpleForm from '../components/simpleForm';
+
 
 import Dialog, {
   DialogActions,
@@ -209,7 +211,7 @@ class Project extends React.Component {
         <div >
         <Error statusCode={403} />
         <Dialog
-          open={this.state.open}
+          open={this.state.dialogOpen}
           onClose={this.handleClose}
           aria-labelledby="form-dialog-title"
         >

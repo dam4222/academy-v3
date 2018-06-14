@@ -128,7 +128,7 @@ class SimpleAppBar extends React.Component {
 
                   <Grid item xs={5} className='show' style={right}>
                     <Hidden smDown>
-                      
+
                       <Link href="/work" prefetch>
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
@@ -136,7 +136,7 @@ class SimpleAppBar extends React.Component {
                           </Typography>
                         </Button>
                       </Link>
-                      
+
                       <Link href="/process" prefetch>
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">

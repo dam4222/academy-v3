@@ -225,7 +225,7 @@ class Blog extends React.Component {
         </Dialog>
 
 
-        <Grid container spacing={8} className={classes.container}>
+        <Grid container spacing={8} className={classes.container + " blogBackground"}>
 
             <Grid container spacing={8}>
               <Grid item xs={3}></Grid>
