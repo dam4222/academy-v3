@@ -113,8 +113,8 @@ class Post extends React.Component {
               <meta name="description" content={this.props.short_description} />
             </Head>
           <Grid container style={{marginBottom:'40px'}}>
-          <Grid item xs={1} md={3} lg={4} xl={4}></Grid>
-          <Grid item xs={10} md={6} lg={4} xl={4} >
+          <Grid item xs={1} md={3} lg={3} xl={4}></Grid>
+          <Grid item xs={10} md={6} lg={6} xl={4} >
           <div>
             <Typography variant="body1" style={{fontSize:'12px'}} paragraph>
               {this.formatDate(this.props.date_posted)}
@@ -161,7 +161,7 @@ class Post extends React.Component {
 
           <Divider style={{margin:'100px'}}/>
           </Grid>
-          <Grid xs={1} md={3} lg={4} xl={4}></Grid>
+          <Grid xs={1} md={3} lg={3} xl={4}></Grid>
 
           </Grid>
           </div>
