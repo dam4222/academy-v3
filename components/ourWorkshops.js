@@ -86,7 +86,7 @@ function OurWorkshops(props) {
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/workshop5.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003316/workshop_opti-1.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',
@@ -115,7 +115,7 @@ function OurWorkshops(props) {
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/workshop9.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003314/workshop_opti-2.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',
@@ -144,7 +144,7 @@ function OurWorkshops(props) {
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/workshop1.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003313/workshop_opti-0.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',

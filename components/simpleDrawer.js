@@ -78,37 +78,47 @@ class SimpleDrawer extends React.Component {
           <Grid item xs={10} md={10}>
           <Grid container>
           <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', position:'relative'}}>
-
-            <Button disableRipple={true} href="/work" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Work
-              </Typography>
-            </Button>
-
-            <Button disableRipple={true} href="/process" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Our Process
-              </Typography>
-            </Button>
-
-            <Button disableRipple={true} href="/workshops" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Workshops
-              </Typography>
-            </Button>
-
-            <Button disableRipple={true} href="/blog" style={spacing}>
-              <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                Design Tinkering
-              </Typography>
-            </Button>
-            <Grid container>
-            <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
-              <Button disableRipple={true} href="/about" style={spacing}>
-                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
-                  About Us
+            <Link  href="/work" prefetch>
+              <Button disableRipple={true} style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+                  Work
                 </Typography>
               </Button>
+            </Link>
+
+            <Link href="/process" prefetch>
+              <Button disableRipple={true}  style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+                  Our Process
+                </Typography>
+              </Button>
+            </Link>
+            
+            <Link href="/workshops" prefetch>
+              <Button disableRipple={true} style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+                  Workshops
+                </Typography>
+              </Button>
+            </Link>
+
+            <Link href="/blog" prefetch>
+              <Button disableRipple={true} style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+                  Design Tinkering
+                </Typography>
+              </Button>
+            </Link>
+
+            <Grid container>
+            <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
+              <Link href="/about" prefetch>
+                <Button disableRipple={true}  style={spacing}>
+                  <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
+                    About Us
+                  </Typography>
+                </Button>
+              </Link>
 
               <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing}>
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
@@ -116,11 +126,13 @@ class SimpleDrawer extends React.Component {
                 </Typography>
               </Button>
 
-              <Button disableRipple={true} href="/contact" style={spacing}>
-                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
-                  Contact Us
-                </Typography>
-              </Button>
+              <Link href="/contact" prefetch>
+                <Button disableRipple={true}  style={spacing}>
+                  <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
+                    Contact Us
+                  </Typography>
+                </Button>
+              </Link>
             </Grid>
             </Grid>
           </Grid>
