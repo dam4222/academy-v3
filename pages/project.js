@@ -37,7 +37,7 @@ const ParallaxData = [
       },
       {
         startValue: 1,
-        endValue: .75,
+        endValue: 1.25,
         property: "scale"
       },
       {
@@ -231,6 +231,12 @@ class Project extends React.Component {
             />
           </DialogContent>
           <DialogActions>
+            <Button href="/work" disableRipple={true} style={{position:'relative', left:'-65px', minHeight: '0px', display: 'inline-flex', justifyContent:'flex-start'}}>
+              <Icon style={{verticalAlign:'middle'}}>chevron_left</Icon>
+              <Typography className={"underline"} variant="button" color="inherit">
+              Back
+              </Typography>
+            </Button>
             <SimpleForm title='Request Access'/>
             <Button onClick={this.verifyPassword} disableRipple={true} className={"underline"}>
               <Typography variant="button" color="inherit">
@@ -256,7 +262,7 @@ class Project extends React.Component {
         <Grid container className="project" style={{height: '100vh'}}>
 
           <Grid item xs={12} md={3} style={{ zIndex: 999, backgroundColor: 'white', padding:'40px', position:'absolute', top:'25%', left:'5%' }}>
-            <div className={classes.projectLegend}><IconButton className="arrowBack" style={{top:'-56px', left:'-19px', transform:'scale(.5)'}} onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton></div>
+            <div className={classes.projectLegend}><IconButton className="arrowBack" style={{top:'-57px', left:'-19px', transform:'scale(.5)'}} onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton></div>
             <div className={classes.projectLegend}>
               <Typography variant="title" color="secondary" className={classes.projectLegend}>
                 Client &nbsp;

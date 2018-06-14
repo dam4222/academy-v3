@@ -102,10 +102,26 @@ class SimpleAppBar extends React.Component {
             >
               <Toolbar disableGutters>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)} style={{position: 'absolute', left: '-50px', width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)}
+                      style={{
+                        position: 'absolute',
+                        left: '-50px',
+                        width:'130px',
+                        height:'auto',
+                        borderRadius:'0 !important',
+                        background:'none !important'
+                        }}
+                        disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
-                    <IconButton className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)} style={{width:'130px', height:'auto'}} disableRipple={true} href="/">
+                    <IconButton
+                      className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)}
+                      style={{width:'130px',
+                      height:'auto',
+                      borderRadius:'0 !important',
+                      background:'none !important'
+                      }}
+                      disableRipple={true} href="/">
                         <AcademyLogo />
                     </IconButton>
                   </Grid>

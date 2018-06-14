@@ -180,8 +180,8 @@ class Work extends React.Component {
           {this.props.projects.map((project) => {
             return (
               <Grid key={project.id} container className="center">
-                <Grid item xs={1} md={3}></Grid>
-                <Grid item xs={10} md={4} className={classes.contentCenter}>
+                <Grid item xs={1} md={1} lg={1}></Grid>
+                <Grid item xs={10} md={10} lg={4} className={classes.contentCenter}>
 
 
 
@@ -195,7 +195,7 @@ class Work extends React.Component {
                         </Typography>
 
 
-                        <Typography variant="display2" color="inherit">
+                        <Typography variant="display2" color="inherit" style={{paddingRight: '100px'}}>
                           {project.acf.project_title}
                         </Typography>
 
@@ -207,9 +207,9 @@ class Work extends React.Component {
                     </div>
 
                 </Grid>
-                  <Grid item xs={12} md={5} className={classes.contentCenter}>
+                  <Grid item xs={12} md={12} lg={7} className={classes.contentCenter}>
 
-                      <Button disableRipple={true} className="projectLink" >
+                      <Button disableRipple={true} className="projectLink" style={{overflow:'hidden'}}>
                         <img
                           className="projectImg"
                           src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12220205/p02svpws.jpg'}

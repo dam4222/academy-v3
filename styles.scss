@@ -34,6 +34,20 @@ p{
     font-style:italic;
     font-weight: 400;
     font-size: calc(1em + .5vw);
+
+    &:nth-child(1):first-letter {
+      color: black;
+      float: left;
+      font-family: 'Crimson Text, serif';
+      font-style:italic;
+      font-weight: 400;
+      font-size: calc(1em + .5vw);
+      line-height: 80px;
+      padding-top: 0;
+      padding-right: 0;
+      padding-left: 0;
+      margin-top:-20px;
+    }
   }
 }
 
@@ -418,7 +432,6 @@ p{
 
 }
 
-
 .iconLogoPost{
   position: absolute !important;
   left: 0;
@@ -475,6 +488,7 @@ p{
   }
 
 }
+
 
 // img{
 //   opacity:0;
