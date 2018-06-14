@@ -23,34 +23,6 @@ p{
   letter-spacing: normal;
 }
 
-.content blockquote{
-
-  border-left: 3px solid black;
-  padding-left: 20px;
-  margin-left: 0px;
-
-  p{
-    font-family: 'Crimson Text, serif';
-    font-style:italic;
-    font-weight: 400;
-    font-size: calc(1em + .5vw);
-
-    &:nth-child(1):first-letter {
-      color: black;
-      float: left;
-      font-family: 'Crimson Text, serif';
-      font-style:italic;
-      font-weight: 400;
-      font-size: calc(1em + .5vw);
-      line-height: 80px;
-      padding-top: 0;
-      padding-right: 0;
-      padding-left: 0;
-      margin-top:-20px;
-    }
-  }
-}
-
 .scrolling {
   background: #eeeeee;
   border-radius: 0;
@@ -547,7 +519,7 @@ p{
     font-family: Montserrat, sans-serif;
     font-weight: 300;
     line-height: 1.7;
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 24px;
   }
 
@@ -580,7 +552,7 @@ p{
   h2{
     font-family: 'Crimson Text, serif';
     font-weight: 400;
-    font-size: calc(1em + .5vw);
+    font-size: calc(1.25em + .5vw);
     padding-bottom:20px;
   }
 
@@ -641,6 +613,33 @@ p{
 
     &:visited{
       color:black;
+    }
+  }
+  blockquote{
+
+    border-left: 3px solid black;
+    padding-left: 40px;
+    margin-left: 0px;
+
+    p{
+      font-family: 'Crimson Text, serif';
+      font-style:italic;
+      font-weight: 400;
+      font-size: calc(1.25em + .5vw);
+
+      &:nth-child(1):first-letter {
+        color: black;
+        float: left;
+        font-family: 'Crimson Text, serif';
+        font-style:italic;
+        font-weight: 400;
+        font-size: calc(1em + .5vw);
+        line-height: 80px;
+        padding-top: 0;
+        padding-right: 0;
+        padding-left: 0;
+        margin-top:-20px;
+      }
     }
   }
 }
