@@ -320,7 +320,7 @@ class Project extends React.Component {
                     {this.props.project.project_description}
                   </Typography>
                   <Typography variant="button" paragraph>
-                    <a href={this.props.project.link} className="underline" style={{textDecoration: 'none', color:'black'}}>
+                    <a href={this.props.project.link} target="_blank" rel="noopener" className="underline" style={{textDecoration: 'none', color:'black'}}>
                       Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
                     </a>
                   </Typography>

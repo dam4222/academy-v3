@@ -120,7 +120,7 @@ class SimpleDrawer extends React.Component {
                 </Button>
               </Link>
 
-              <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing}>
+              <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing} target="_blank" rel="noopener">
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
                   Careers
                 </Typography>
@@ -144,11 +144,11 @@ class SimpleDrawer extends React.Component {
               <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> UX & Design Thinking Studio </Typography>
               <Typography variant="title" style={{color:'#8b8b8b', paddingBottom:'20px'}}> 130 GRAND ST. SUITE #3D, BROOKLYN, NY 11249 </Typography>
             <div style={{display:'flex', flexDirection:'row'}} className="social-icons">
-              <Button target="_blank" href="https://medium.com/@academyuxdesign" style={spacingSocial}><Medium /></Button>
-              <Button target="_blank" href="https://twitter.com/academyuxdesign" style={spacingSocial}><Twitter /></Button>
-              <Button target="_blank" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacingSocial}><LinkedIn /></Button>
-              <Button target="_blank" href="#" style={spacingSocial}><Dribbble /></Button>
-              <Button target="_blank" href="#" style={spacingSocial}><Behance /></Button>
+              <Button target="_blank" rel="noopener" href="https://medium.com/@academyuxdesign" style={spacingSocial}><Medium /></Button>
+              <Button target="_blank" rel="noopener" href="https://twitter.com/academyuxdesign" style={spacingSocial}><Twitter /></Button>
+              <Button target="_blank" rel="noopener" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacingSocial}><LinkedIn /></Button>
+              <Button target="_blank" rel="noopener" href="#" style={spacingSocial}><Dribbble /></Button>
+              <Button target="_blank" rel="noopener" href="#" style={spacingSocial}><Behance /></Button>
             </div>
 
           </Grid>
