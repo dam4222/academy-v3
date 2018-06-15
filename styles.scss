@@ -931,3 +931,16 @@ input{
     opacity:.75;
   }
 }
+
+.hideCarouselImages{
+  display: none;
+}
+
+.showCarouselImages{
+  display: block;
+  animation: fadein 2s;
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}

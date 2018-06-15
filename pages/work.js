@@ -212,7 +212,7 @@ class Work extends React.Component {
                       <Button disableRipple={true} className="projectLink" style={{overflow:'hidden'}}>
                         <img
                           className="projectImg"
-                          src={project.acf.password === '' ? project.acf.featured_image: 'https://cdn1.academyux.com/wp-content/uploads/2018/06/12220205/p02svpws.jpg'}
+                          src={project.acf.password === '' ? project.acf.featured_image: project.acf.placeholder_image}
                           style={{
                               height: '97vh',
                           }}

@@ -111,7 +111,7 @@ class SimpleAppBar extends React.Component {
                         borderRadius:'0 !important',
                         background:'none !important'
                         }}
-                        disableRipple={true} href="/">
+                        disableRipple={true} href="/" prefetch>
                         <AcademyLogoSmall />
                     </IconButton>
                     <IconButton
@@ -121,7 +121,7 @@ class SimpleAppBar extends React.Component {
                       borderRadius:'0 !important',
                       background:'none !important'
                       }}
-                      disableRipple={true} href="/">
+                      disableRipple={true} href="/" prefetch>
                         <AcademyLogo />
                     </IconButton>
                   </Grid>
