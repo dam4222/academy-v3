@@ -293,13 +293,15 @@ class Project extends React.Component {
               parallaxData={ ParallaxData } // your parallax effects, see beneath
               animateWhenNotInViewport={ true }
               >
-                  <img width="100%"
+                <Grid item xs={12} md={12} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
+                  <img width="95%"
                   style={{
                     maxWidth:'100%',
                   }}
                   src={this.props.project.featured_image}
                   alt="featured image"
                   />
+                </Grid>
 
               </Plx>
               </Grid>
@@ -458,8 +460,7 @@ class Project extends React.Component {
 
 
             <Grid container className={classes.spacerNextProject} justify="space-between">
-              <Grid item xs={1} md={1}></Grid>
-              <Grid item xs={10} md={5}>
+              <Grid item xs={12} md={6}>
                 <Grid container style={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -491,7 +492,6 @@ class Project extends React.Component {
                     }
                   </Grid>
                 </Grid>
-                <Grid item xs={1} md={1}></Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} style={{
