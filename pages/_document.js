@@ -48,9 +48,9 @@ class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
           <meta property='og:title' content='Academy UX & Design Thinking Studio'/>
-          <meta property='og:image' content='cdn1.academyux.com/homepage.jpg'/>
+          <meta property='og:image' content='https://cdn1.academyux.com/homepage.jpg'/>
           <meta property='og:description' content='Think Better, Build Better with UX & Design Thinking. We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.'/>
-          <meta property='og:url' content='academyux.com' />
+          <meta property='og:url' content='https://academyux.com' />
 
         </Head>
         <body>
