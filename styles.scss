@@ -519,6 +519,10 @@ p{
     background:white;
     padding:40px;
 
+    @media (max-width: 599px) {
+        padding:20px;
+    }
+
     li{
       list-style-type:disc;
       font-family: Montserrat, sans-serif;
@@ -533,6 +537,10 @@ p{
   ol{
     background:white;
     padding:40px;
+
+    @media (max-width: 599px) {
+        padding:20px;
+    }
 
     li{
       font-family: Montserrat, sans-serif;
