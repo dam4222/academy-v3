@@ -102,7 +102,7 @@ function OurWorkshops(props) {
                   1 Day Workshop
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
+                Join top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">

@@ -62,6 +62,12 @@ const centerAlign = {
   padding: '10px',
 }
 
+const progress = {
+   margin: '0 auto',
+   height:'100%',
+   width:'100%'
+}
+
 const nextArrow = <IconButton><Icon>chevron_right</Icon></IconButton>
 const prevArrow = <IconButton><Icon>chevron_left</Icon></IconButton>
 
@@ -88,11 +94,11 @@ class Carousel extends React.Component {
   }
 
   onLoad (id)  {
-    
+
     if (this.state.loadingImage && id == this.state.firstProject.id){
-      
+
       this.setState({callCount: this.state.callCount++})
-      if (this.state.callCount >= 2) 
+      if (this.state.callCount >= 2)
         this.setState({
           loadingImage: false,
         })
@@ -150,16 +156,16 @@ class Carousel extends React.Component {
                 return (
                   <div key={project.id} clientname={project.acf.client_name} className={"noFocus carousel"}>
                     <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
-                { this.state.loadingImage ? <CircularProgress  /> : null }
+                { this.state.loadingImage ? <CircularProgress className={progress} /> : null }
                       <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
-                          
+
                           <Link href={`/project?${project.slug}`} prefetch>
                             <a title={`${project.acf.client_name} || ${project.acf.project_title}`}>
                               <div onLoad={this.onLoad(project.id)} className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'100%', backgroundPosition:'center', height: '100%'}} ></div>
                             </a>
                           </Link>
                       </div>
-                      
+
                     </div>
                   </div>
                 )
@@ -187,7 +193,7 @@ class Carousel extends React.Component {
                     <Link href={`/project?${project.slug}`} prefetch>
                     <a title={project.title.rendered}>
                       <div className={"noFocus carousel-two carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh' }}>
-                        { this.state.loadingImage ? <CircularProgress   /> : null }
+                        { this.state.loadingImage ? <CircularProgress /> : null }
                         <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
                           <div className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'100%', height: '100%', backgroundPosition:'center'}}></div>
                         </div>
