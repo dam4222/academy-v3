@@ -102,7 +102,7 @@ class SimpleAppBar extends React.Component {
             >
               <Toolbar disableGutters>
                   <Grid item xs={6} style={left}>
-                    <IconButton className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)}
+                    <Button className={this.state.initLoad ? 'hidden' : (`${sticky && !this.state.initLoad ? 'show' : 'hide'}`)}
                       style={{
                         position: 'absolute',
                         left: '-50px',
@@ -113,8 +113,8 @@ class SimpleAppBar extends React.Component {
                         }}
                         disableRipple={true} href="/" prefetch>
                         <AcademyLogoSmall />
-                    </IconButton>
-                    <IconButton
+                    </Button>
+                    <Button
                       className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)}
                       style={{width:'130px',
                       height:'auto',
@@ -123,7 +123,7 @@ class SimpleAppBar extends React.Component {
                       }}
                       disableRipple={true} href="/" prefetch>
                         <AcademyLogo />
-                    </IconButton>
+                    </Button>
                   </Grid>
 
                   <Grid item xs={5} className='show' style={right}>
@@ -133,6 +133,14 @@ class SimpleAppBar extends React.Component {
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Work
+                          </Typography>
+                        </Button>
+                      </Link>
+
+                      <Link href="/services" prefetch>
+                        <Button className={`underline`} disableRipple={true} style={spacing}>
+                          <Typography variant="button" color="inherit">
+                            Our Services
                           </Typography>
                         </Button>
                       </Link>

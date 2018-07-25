@@ -57,7 +57,7 @@ class SimpleAppBarTiny extends React.Component {
           keyword: event.target.value
         }
       })
-    } 
+    }
   };
 
   render() {
@@ -82,6 +82,12 @@ class SimpleAppBarTiny extends React.Component {
                       <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="button" color="inherit">
                           Work
+                        </Typography>
+                      </Button>
+
+                      <Button className={`underline`} disableRipple={true} href="/services" style={spacing}>
+                        <Typography variant="button" color="inherit">
+                          Our Services
                         </Typography>
                       </Button>
 
@@ -111,7 +117,7 @@ class SimpleAppBarTiny extends React.Component {
                       placeholder="Search"
                       inputProps={{
                         'aria-label': 'Description',
-                      
+
                       }}
                       onKeyPress={this.handleSearch}
                     />
