@@ -10,7 +10,6 @@
 /build
 /dist
 /.next
-/assets
 
 # misc
 package-lock.json
