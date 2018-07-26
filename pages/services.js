@@ -116,7 +116,7 @@ class Process extends React.Component {
 
       <Head>
         <title>Academy – Our Services</title>
-        <meta name="description" content="Product Relays™ unify Design Sprints and Agile Developement Sprints into one fluid process." />
+        <meta name="description" content="We are a Digtial Product Studio that takes UX & Design Thinking principles and applies them directly to your workflow and product build outs. We take a User-Centric approach to design and development and help transform organizations products, services, and strategies." />
       </Head>
 
       <Grid container style={{paddingTop: '150px', paddingBottom: '200px'}}>
