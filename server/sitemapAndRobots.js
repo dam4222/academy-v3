@@ -22,7 +22,7 @@ const createMap = async () => {
     })
   })
   .catch(err => console.error(err))
-    
+
   //fetching projects from dynamicLink.js and appending it to the sitemap
   await projects().then((posts) => {
     posts.map((project) => {
@@ -37,6 +37,12 @@ const createMap = async () => {
 
   sitemap.add({
     url: '/process',
+    changefreq: 'daily',
+    priority: 1
+  })
+
+  sitemap.add({
+    url: '/services',
     changefreq: 'daily',
     priority: 1
   })
