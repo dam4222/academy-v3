@@ -112,7 +112,7 @@ class SimpleAppBar extends React.Component {
                         background:'none !important'
                         }}
                         disableRipple={true} href="/" prefetch>
-                        <AcademyLogoSmall />
+                        <AcademyLogoSmall style={{width: '100%'}} />
                     </Button>
                     <Button
                       className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)}

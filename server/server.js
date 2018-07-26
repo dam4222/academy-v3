@@ -20,7 +20,7 @@ app.prepare().then(() => {
 
   sitemapAndRobots({ server })
 
-  server.get('*', (req, res) => handle(req, res))
+  server.get('/*', (req, res) => handle(req, res))
 
   // starting express server
   server.listen(port, (err) => {
