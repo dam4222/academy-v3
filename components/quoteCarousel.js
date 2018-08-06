@@ -1,9 +1,9 @@
 import Slider from "react-slick";
-import IconButton from 'material-ui/IconButton';
-import Icon from 'material-ui/Icon';
-import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import Quote from '../assets/quote.svg'
 
 const root = {

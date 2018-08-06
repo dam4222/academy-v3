@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import Link from 'next/link'
-import Paper from 'material-ui/Paper';
-import Icon from 'material-ui/Icon';
-import Hidden from 'material-ui/Hidden';
+import Paper from '@material-ui/core/Paper';
+import Icon from '@material-ui/core/Icon';
+import Hidden from '@material-ui/core/Hidden';
 import Card from '../components/card'
 import Browser from '../assets/skills/browser.svg'
 import Calender from '../assets/skills/calendar.svg'

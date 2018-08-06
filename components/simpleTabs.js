@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import Typography from 'material-ui/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
 import WorkshopCurriculum from '../assets/workshop-curriculum.svg';
 import SwipeableViews from 'react-swipeable-views';
-import Grid from 'material-ui/Grid';
-import TouchRipple from 'material-ui/ButtonBase/TouchRipple';
+import Grid from '@material-ui/core/Grid';
+import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple';
 import DesignBetter from '../assets/design-better.svg';
 import InVisionLogoV from '../assets/invision-logo-pink-v3.svg';
 import SkillsGrid from './skillsGrid.js'
