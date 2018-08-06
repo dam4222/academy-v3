@@ -928,6 +928,14 @@ opacity:0;
   }
 }
 
+.embed-team{
+  @media (max-width: 1024px) {
+    flex-wrap:wrap-reverse !important;
+
+
+  }
+}
+
 .sectionImg img{
   width: 100%;
   height: auto;

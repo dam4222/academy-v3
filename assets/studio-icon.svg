@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="168px" height="198px" viewBox="0 0 168 198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>studio-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(22.000000, 29.000000)">
+            <polyline stroke="#000000" stroke-width="3" points="0.94140625 4.09765625 0.94140625 139.429688 21.34375 139.429688"></polyline>
+            <path d="M21.3984375,44.28125 L21.3984375,117.269531 L93.6523438,117.269531 L21.3984375,44.28125 Z" stroke="#DBDBDB" stroke-dasharray="2"></path>
+            <polygon stroke="#000000" points="37.2246094 77.265466 37.2246094 103.302833 63 103.302833"></polygon>
+            <g transform="translate(46.000000, 0.000000)" stroke="#000000">
+                <polygon transform="translate(13.426845, 65.426845) rotate(-133.000000) translate(-13.426845, -65.426845) " points="13.4268446 55.9268446 22.9268446 74.9268446 3.92684459 74.9268446"></polygon>
+                <polyline points="15.6152344 50.1269531 65.6152344 0.126953125 78.0698242 13.3916016 28.9033203 64.4238281"></polyline>
+                <polyline stroke-width="3" points="65.6152344 0.126953125 78.0698242 13.3916016 28.9033203 64.4238281"></polyline>
+            </g>
+        </g>
+        <polygon stroke="#000000" points="22.9414062 33.0976562 22.9414062 168.429688 43.34375 168.429688 43.34375 33.0976562"></polygon>
+        <path d="M43.5429688,73.4492188 L136.847656,167.636719" stroke="#BFBFBF" stroke-dasharray="8"></path>
+    </g>
+</svg>

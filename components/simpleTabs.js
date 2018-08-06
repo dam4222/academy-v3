@@ -147,7 +147,7 @@ class SimpleTabs extends React.Component {
             <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
             label={
               <div><h3>Workshops</h3>
-              <p>Join NYCs top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
+              <p>Join top design leaders, project managers, developers, and innovators for a full-day workshop on mastering design sprints—led by sprint master Adam Perlis.
               </p>
               </div>
             }/>
