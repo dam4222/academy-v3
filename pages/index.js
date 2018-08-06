@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import Link from 'next/link'
 import Hero from '../components/hero'
 import OurWork from '../components/ourWork'
@@ -11,6 +11,8 @@ import OurProcess from '../components/ourProcess'
 import OurWorkshops from '../components/ourWorkshops'
 import LatestNews from '../components/latestNews'
 import Carousel from '../components/carousel'
+import Head from 'next/head';
+
 const fetchUrl = process.env.fetchUrl
 import 'isomorphic-fetch'
 
@@ -62,6 +64,11 @@ class Index extends React.Component {
 
   return (
     <div className={classes.root}>
+
+          <Head>
+            <title>Academy – UX & Design Thinking Studio</title>
+            <meta name="description" content="Think Better, Build Better with UX & Design Thinking. We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
+          </Head>
 
           <Hero />
 

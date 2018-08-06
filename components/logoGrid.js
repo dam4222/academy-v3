@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Airbnb from '../assets/airbnb.svg';
 import AmericanExpress from '../assets/american-express-1.svg';
 import ATT from '../assets/att-logo.svg';

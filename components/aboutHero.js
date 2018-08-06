@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Button from 'material-ui/Button';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Link from 'next/link'
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   root: {
@@ -46,7 +46,7 @@ function Hero(props) {
           </Paper>
           </Grid>
         </Grid>
-      <Grid item xs={1} sm={6}></Grid>
+      <Grid item xs={1} sm={3}></Grid>
       </div>
     );
   }

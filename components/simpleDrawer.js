@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Drawer from 'material-ui/Drawer';
-import Button from 'material-ui/Button';
-import Divider from 'material-ui/Divider';
-import Icon from 'material-ui/Icon';
-import IconButton from 'material-ui/IconButton';
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
 import Link from 'next/link';
-import Typography from 'material-ui/Typography';
-import Grid from 'material-ui/Grid';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import AcademyLogoWhite from '../assets/academy-logo-white-v2.svg';
 import Medium from '../assets/medium.svg';
 import Dribbble from '../assets/dribbble.svg';
@@ -119,7 +119,7 @@ class SimpleDrawer extends React.Component {
             </Link>
 
             <Grid container>
-            <Grid xs={12} style={{display:'flex', flexDirection:'row'}}>
+            <Grid item xs={12} style={{display:'flex', flexDirection:'row'}}>
               <Link href="/about" prefetch>
                 <Button disableRipple={true}  style={spacing}>
                   <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
