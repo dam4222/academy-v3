@@ -72,7 +72,6 @@ class SimpleTabsMobile extends React.Component {
           >
             <Tab label="Workshop" />
             <Tab label="Bootcamp" />
-            <Tab label="Embed w/ Team" href="#basic-tabs" />
           </Tabs>
 
         <SwipeableViews
@@ -86,16 +85,6 @@ class SimpleTabsMobile extends React.Component {
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <img src="https://cdn1.academyux.com/Bootcamp-curriculum.jpg" className={classes.center} />
-          </TabContainer>
-          <TabContainer dir={theme.direction}>
-            <Paper elevation={0} className={classes.center} style={{padding:'20px', border:'1px solid #e7e7e7'}}>
-                <Typography variant='body1' gutterBottom paragraph>
-                  If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.
-                </Typography>
-                <Typography variant="button" color="inherit">
-                  Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
-                </Typography>
-            </Paper>
           </TabContainer>
         </SwipeableViews>
         </Grid>

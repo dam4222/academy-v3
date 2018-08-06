@@ -158,12 +158,6 @@ class SimpleTabs extends React.Component {
               </p>
               </div>
             }/>
-            <Tab className={'tabHover'} classes={{textColorPrimary: classes.textColorPrimary, label:classes.label, root:classes.root, selected:classes.selected}}
-            label={
-              <div><h3>Embed w/ Team</h3>
-              <p>If you are missing any skills on your team or are in need of some product leadership, we can help fill the gaps providing a range of services. We will work side-by-side with you and train your team along the way.</p>
-              </div>
-            }/>
             </Tabs>
         </Grid>
         <Grid item xs={1} md={1} lg={1} xl={2}></Grid>

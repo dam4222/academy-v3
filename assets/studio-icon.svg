@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(22.000000, 29.000000)">
+        <g transform="translate(2.000000, 29.000000)">
             <polyline stroke="#000000" stroke-width="3" points="0.94140625 4.09765625 0.94140625 139.429688 21.34375 139.429688"></polyline>
             <path d="M21.3984375,44.28125 L21.3984375,117.269531 L93.6523438,117.269531 L21.3984375,44.28125 Z" stroke="#DBDBDB" stroke-dasharray="2"></path>
             <polygon stroke="#000000" points="37.2246094 77.265466 37.2246094 103.302833 63 103.302833"></polygon>
@@ -15,7 +15,7 @@
                 <polyline stroke-width="3" points="65.6152344 0.126953125 78.0698242 13.3916016 28.9033203 64.4238281"></polyline>
             </g>
         </g>
-        <polygon stroke="#000000" points="22.9414062 33.0976562 22.9414062 168.429688 43.34375 168.429688 43.34375 33.0976562"></polygon>
-        <path d="M43.5429688,73.4492188 L136.847656,167.636719" stroke="#BFBFBF" stroke-dasharray="8"></path>
+        <polygon stroke="#000000" points="2.94140625 33.0976562 2.94140625 168.429688 23.34375 168.429688 23.34375 33.0976562"></polygon>
+        <path d="M23.5429688,73.4492188 L116.847656,167.636719" stroke="#BFBFBF"></path>
     </g>
 </svg>

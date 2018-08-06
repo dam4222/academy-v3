@@ -277,7 +277,7 @@ class Process extends React.Component {
             <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Environment</Typography>
               <Typography variant="body1" color="inherit" gutterBottom>We will show you how to create a culture that inspires creativity and is liberated to think differently. Create a psychologically and physically ‘safe’ space for designer teams to work freely.
-</Typography>
+              </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Technical Specs</Typography>
@@ -290,7 +290,7 @@ class Process extends React.Component {
             <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Training</Typography>
               <Typography variant="body1" color="inherit" gutterBottom>We will run a <strong>Design Sprint Bootcamp</strong>, training your team to conduct research/usability studies, build prototypes, use Sketch, create design language systems, and how collaborate with Developers using Agile methodologies.
-</Typography>
+            </Typography>
             </Grid>
             </Grid>
           </Grid>
