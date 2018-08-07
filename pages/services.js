@@ -8,6 +8,7 @@ import Link from 'next/link'
 import Paper from 'material-ui/Paper';
 import Icon from 'material-ui/Icon';
 import Hidden from 'material-ui/Hidden';
+import Divider from 'material-ui/Divider';
 import Card from '../components/card'
 import Browser from '../assets/skills/browser.svg'
 import Calender from '../assets/skills/calendar.svg'
@@ -25,6 +26,7 @@ import StudioIcon from '../assets/studio-icon.svg'
 import "../styles.scss"
 import Plx from 'react-plx';
 import Head from 'next/head';
+import scrollToComponent from 'react-scroll-to-component-ssr';
 
 
 const ParallaxData = [
@@ -120,7 +122,7 @@ class Process extends React.Component {
         <meta name="description" content="We are a Digtial Product Studio that takes UX & Design Thinking principles and applies them directly to your workflow and product build outs. We take a User-Centric approach to design and development and help transform organizations products, services, and strategies." />
       </Head>
 
-      <Grid container style={{paddingTop: '150px', paddingBottom: '200px'}}>
+      <Grid container style={{paddingTop: '150px'}}>
 
       <Grid container>
         <Plx
@@ -129,8 +131,17 @@ class Process extends React.Component {
         animateWhenNotInViewport={ true }
         style={{width:'100%'}}
         >
+          <Grid container>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+              <Typography variant="headline" style={{fontSize:'24px'}} color="inherit" gutterBottom align="center">
+                We’ve helped multiple clients design and innovate  internally, using three approaches:
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+          </Grid>
 
-        <Grid container>
+        {/* <Grid container>
           <Grid item xs={1} sm={2}></Grid>
           <Grid item xs={10} sm={4} md={4} lg={3}>
             <Typography variant='display2'>
@@ -158,14 +169,65 @@ class Process extends React.Component {
             </Typography>
           </Grid>
           <Grid item xs></Grid>
-        </Grid>
+        </Grid> */}
 
       </Plx>
         </Grid>
         </Grid>
 
+        <Grid container style={{paddingBottom:'100px'}}>
+          <Grid item xs={1} sm={2} md={2} lg={2} xl={3}></Grid>
+        <Grid item xs={10} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
+          <Grid container>
+          <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+            <StudioIcon />
+            <Typography variant="headline" color="inherit" gutterBottom>Build In-House</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We work alongside the client to set up a design studio/innovation hub powered by their people, processes and technology.</Typography>
+            <Button onClick={() => scrollToComponent(this.Build, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
+              <Typography variant="button" color="inherit">
+                See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
+              </Typography>
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+            <TrainingIcon />
+            <Typography variant="headline" color="inherit" gutterBottom>Design Sprint Bootcamp</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We run a brief, intense and immersive  engagement, working together with the client  through a Design Sprint while training the team on how to run one themselves.</Typography>
+            <Button onClick={() => scrollToComponent(this.Bootcamp, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
+              <Typography variant="button" color="inherit">
+                See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
+              </Typography>
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+            <ConsultingIcon />
+            <Typography variant="headline" color="inherit" gutterBottom>Embed with Team</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.</Typography>
+            <Button onClick={() => scrollToComponent(this.Embed, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
+              <Typography variant="button" color="inherit">
+                See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
+              </Typography>
+            </Button>
+          </Grid>
+        </Grid>
+        </Grid>
+      <Grid item xs sm={1}></Grid>
+    </Grid>
+
+
+
+
         <Grid container className={classes.content}>
-          <Grid container style={{paddingTop:'100px',paddingBottom:'100px'}}>
+          <Grid container style={{paddingTop:'100px'}}>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+              <Typography variant="title" style={{fontSize:'14px'}} color="inherit" gutterBottom align="center">
+                Our Mission
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+          </Grid>
+          <Grid container style={{paddingBottom:'100px'}}>
             <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.services}>
                 <Typography variant="headline" color="inherit" paddingBottom>
@@ -180,57 +242,7 @@ class Process extends React.Component {
           </Grid>
           </Grid>
 
-
-          <Grid container style={{paddingTop:'100px'}}>
-            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
-            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
-              <Typography variant="headline" style={{fontSize:'24px'}} color="inherit" gutterBottom align="center">
-                We’ve helped multiple clients design and innovate  internally, using three approaches:
-              </Typography>
-            </Grid>
-            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
-          </Grid>
-
-          <Grid container style={{paddingTop:'100px',paddingBottom:'100px'}}>
-            <Grid item xs={1} sm={2} md={2} lg={2} xl={3}></Grid>
-          <Grid item xs={10} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
-            <Grid container>
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <StudioIcon />
-              <Typography variant="headline" color="inherit" gutterBottom>Build In-House</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We work alongside the client to set up a design studio/innovation hub powered by their people, processes and technology.</Typography>
-              <div style={{paddingTop:'10px', marginBottom:'40px'}}>
-                <Typography variant="button" color="inherit">
-                  See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <TrainingIcon />
-              <Typography variant="headline" color="inherit" gutterBottom>Design Sprint Bootcamp</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We run a brief, intense and immersive  engagement, working together with the client  through a Design Sprint while training the team on how to run one themselves.</Typography>
-              <div style={{paddingTop:'10px', marginBottom:'40px'}}>
-                <Typography variant="button" color="inherit">
-                  See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <ConsultingIcon />
-              <Typography variant="headline" color="inherit" gutterBottom>Embed with Team</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.</Typography>
-              <div style={{paddingTop:'10px', marginBottom:'40px'}}>
-                <Typography variant="button" color="inherit">
-                  See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
-                </Typography>
-              </div>
-            </Grid>
-          </Grid>
-          </Grid>
-        <Grid item xs sm={1}></Grid>
-      </Grid>
-
-      <Grid container className={classes.content} style={{paddingTop:'100px',paddingBottom:'100px'}}>
+      <Grid container ref={(section) => { this.Build = section; }} className={classes.content} style={{paddingTop:'100px',paddingBottom:'100px'}}>
         <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
         <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
           <Grid container>
@@ -247,7 +259,7 @@ class Process extends React.Component {
             <Typography variant="body1" color="inherit" gutterBottom align="center">6 Months - 3 years</Typography>
             <br></br>
             <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
-            <Typography variant="body" color="inherit" gutterBottom align="center">Building capabilities in-house</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom align="center">Building capabilities in-house</Typography>
             <Typography variant="body1" color="inherit" gutterBottom align="center">Kicking off cultural change</Typography>
             <br></br>
             <Typography variant="title" color="inherit" gutterBottom align="center">CHALLENGES</Typography>
@@ -308,7 +320,7 @@ class Process extends React.Component {
               background: `url(https://cdn1.academyux.com/workshop9.jpg)`,
               backgroundSize: 'cover',
               backgroundPosition:'left center',
-              height: '70vh',
+              height: '100vh',
               top: '0',
               zIndex: -1,
             }}
@@ -317,7 +329,7 @@ class Process extends React.Component {
           <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
 
           <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
-          <Grid container>
+          <Grid container ref={(section) => { this.Bootcamp = section; }}>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'40px'}}>
               <Typography variant="headline" color="inherit" gutterBottom align="center">Design Sprint Bootcamp</Typography>
               <br></br>
@@ -355,7 +367,7 @@ class Process extends React.Component {
       <Grid container className="embed-team">
           <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
           <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
-            <Grid container>
+            <Grid container ref={(section) => { this.Embed = section; }}>
             <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'40px'}}>
                 <Typography variant="headline" color="inherit" gutterBottom align="center">Embed w/ Team</Typography>
                 <br></br>
@@ -393,7 +405,7 @@ class Process extends React.Component {
               background: `url(https://cdn1.academyux.com/workshop2.jpg)`,
               backgroundSize: 'cover',
               backgroundPosition:'right center',
-              height: '70vh',
+              height: '100vh',
               top: '0',
               zIndex: -1,
             }}

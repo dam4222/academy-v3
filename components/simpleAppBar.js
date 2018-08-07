@@ -116,13 +116,13 @@ class SimpleAppBar extends React.Component {
                     </Button>
                     <Button
                       className={this.state.initLoad ? '' : (`${sticky && !this.state.initLoad ? 'hide' : 'show'}`)}
-                      style={{width:'130px',
+                      style={{width:'120px',
                       height:'auto',
                       borderRadius:'0 !important',
                       background:'none !important'
                       }}
                       disableRipple={true} href="/" prefetch>
-                        <AcademyLogo />
+                        <AcademyLogo style={{width: '120px'}}/>
                     </Button>
                   </Grid>
 
