@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Button from 'material-ui/Button';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Link from 'next/link'
-import Grid from 'material-ui/Grid';
-import Divider from 'material-ui/Divider';
-import Icon from 'material-ui/Icon';
+import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
+import Icon from '@material-ui/core/Icon';
 import WorkshopPanels from './workshopPanels';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import DesignBetter from '../assets/design-better.svg';
 import InVisionLogoV from '../assets/invision-logo-pink-v3.svg';
 import { ParallaxBanner } from 'react-scroll-parallax';

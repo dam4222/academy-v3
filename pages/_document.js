@@ -3,7 +3,7 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import JssProvider from 'react-jss/lib/JssProvider';
 import flush from 'styled-jsx/server';
 import getPageContext from '../src/getPageContext';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import "../styles.scss"
 import { GA_TRACKING_ID } from '../gtag'
 
@@ -34,8 +34,7 @@ class MyDocument extends Document {
          `}}
          />
 
-          <title>Academy – UX & Design Thinking Studio</title>
-          <meta name="description" content="Description here" />
+          
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
@@ -47,9 +46,7 @@ class MyDocument extends Document {
           />
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
-          <meta property='og:title' content='Academy UX & Design Thinking Studio'/>
           <meta property='og:image' content='https://cdn1.academyux.com/homepage.jpg'/>
-          <meta property='og:description' content='Think Better, Build Better with UX & Design Thinking. We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training.'/>
           <meta property='og:url' content='https://academyux.com' />
 
         </Head>

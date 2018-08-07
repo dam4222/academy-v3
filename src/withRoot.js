@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MuiThemeProvider } from 'material-ui/styles';
-import CssBaseline from 'material-ui/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import getPageContext from './getPageContext';
 import SimpleAppBar from '../components/simpleAppBar';
 import SimpleAppBarTiny from '../components/simpleAppBarTiny';
 import SimpleAppBarTinyBack from '../components/simpleAppBarTinyBack';
 import SimpleAppFooter from '../components/simpleAppFooter';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { LinearProgress } from 'material-ui/Progress';
+import { LinearProgress } from '@material-ui/core/LinearProgress';
 import Transition from '../components/transition';
 import Router from 'next/router';
 

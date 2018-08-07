@@ -1,21 +1,21 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import Hidden from 'material-ui/Hidden';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import Hidden from '@material-ui/core/Hidden';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import SimpleDrawer from './simpleDrawer';
 import Link from 'next/link'
 import AcademyLogoSmall from '../assets/academy-logo-small.svg'
 import AcademyLogo from '../assets/academy-logo.svg'
 import AnimatedLogo from '../components/animatedLogo';
 import AnimatedLogoSmall from '../components/animatedLogoSmall';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
-import Input from 'material-ui/Input';
-import Icon from 'material-ui/Icon';
+import Input from '@material-ui/core/Input';
+import Icon from '@material-ui/core/Icon';
 import "../styles.scss"
 import Router from 'next/router';
 

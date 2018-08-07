@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
-import Icon from 'material-ui/Icon';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs, { Tab } from '@material-ui/core/Tabs';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import Icon from '@material-ui/core/Icon';
 import WorkshopCurriculum from '../assets/workshop-curriculum.svg';
 import SwipeableViews from 'react-swipeable-views'
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import SkillsGrid from './skillsGrid.js'
 
 

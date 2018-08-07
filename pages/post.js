@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import SimpleAppBar from '../components/simpleAppBar';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
 import { withRouter } from 'next/router'
 import Link from 'next/link';
 const fetchUrl = process.env.fetchUrl;
-import Grid from 'material-ui/Grid';
-import Icon from 'material-ui/Icon';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
+import Grid from '@material-ui/core/Grid';
+import Icon from '@material-ui/core/Icon';
+import Divider from '@material-ui/core/Divider';
+import Paper from '@material-ui/core/Paper';
 import "../styles.scss"
 import Head from 'next/head'
-import Chip from 'material-ui/Chip'
+import Chip from '@material-ui/core/Chip'
 
 import 'isomorphic-fetch';
 

@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import IconButton from 'material-ui/IconButton';
-import Icon from 'material-ui/Icon';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
 import Link from 'next/link'
 import Router, { withRouter } from 'next/router'
-import Grid from 'material-ui/Grid';
-import { LinearProgress } from 'material-ui/Progress';
+import Grid from '@material-ui/core/Grid';
+import  LinearProgress  from '@material-ui/core/LinearProgress';
 import { Parallax } from 'react-scroll-parallax';
 import Plx from 'react-plx';
 import Head from 'next/head'
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import Error from 'next/error';
 import SimpleForm from '../components/simpleForm';
 
@@ -22,7 +22,7 @@ import Dialog, {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from 'material-ui/Dialog'
+} from '@material-ui/core/Dialog'
 
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
