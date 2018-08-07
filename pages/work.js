@@ -168,7 +168,7 @@ class Work extends React.Component {
           </DialogContent>
           <DialogActions>
             <SimpleForm title='Request Access'/>
-            <Button onClick={this.verifyPassword} disableRipple={true} className={"underline"}>
+            <Button style={{marginLeft:'20px', marginRight:'20px'}} onClick={this.verifyPassword} disableRipple={true} className={"underline"}>
               <Typography variant="button" color="inherit">
               Submit
               </Typography>
