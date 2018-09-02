@@ -33,13 +33,12 @@ const left = {
 
 const right = {
   display:'flex',
-  justifyContent: 'flex-end',
+  justifyContent: 'space-evenly',
 }
 
 const spacing = {
   display:'flex',
   justifyContent: 'flex-end',
-  marginRight: 40,
 }
 
 class SimpleAppBar extends React.Component {

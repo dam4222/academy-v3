@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Hero from '../components/hero'
 import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
-import OurWorkshops from '../components/ourWorkshops'
+import OurServices from '../components/ourServices'
 import LatestNews from '../components/latestNews'
 import Carousel from '../components/carousel'
 import Head from 'next/head';
@@ -25,9 +25,9 @@ class Index extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
-      /* initial state */ 
+      /* initial state */
     };
   }
 
@@ -78,7 +78,7 @@ class Index extends React.Component {
 
           <OurProcess />
 
-          <OurWorkshops />
+          <OurServices />
 
           <LatestNews blogs={this.props.blogs} news={this.props.news}/>
 
