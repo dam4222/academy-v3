@@ -113,7 +113,7 @@ class Work extends React.Component {
     else{
 
       this.setState({
-        errorMessage: 'The password you attempted is incorrect. Please request access below and we will get back to your shortly.'
+        errorMessage: 'The password you attempted is incorrect. Please request access below and we will get back to you shortly.'
       })
     }
   }
