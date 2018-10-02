@@ -176,7 +176,7 @@ class Process extends React.Component {
               It’s our secret sauce and sets us apart from any other design/development teams you will work with. See the above graphic for an example of our flow.
             </Typography>
             <Typography variant='body1' gutterBottom >
-            We are not an Agency, we are a UX & Design Thinking Studio. We take a collaborative, democratic and data-driven approach to design. You can learn more about our process below.
+            We are not an Agency, we are a Product Design Studio. We take a collaborative, democratic and data-driven approach to design. You can learn more about our process below.
             </Typography>
           </Grid>
           <Grid item xs={1} sm={2}></Grid>

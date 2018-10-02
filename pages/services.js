@@ -257,7 +257,7 @@ class Process extends React.Component {
                     <Typography variant="body1" color="inherit" gutterBottom align="center">We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
-                    <Typography variant="body1" color="inherit" gutterBottom align="center">.1-6 years</Typography>
+                    <Typography variant="body1" color="inherit" gutterBottom align="center">1-12 months</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">Driving digital transformation</Typography>
