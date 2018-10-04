@@ -32,7 +32,7 @@ function Hero(props) {
         </Typography>
         <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
           <Typography variant='body1' gutterBottom>
-          We are a Digital Product Studio that craft's experiences that make complex products seem simple using UX & Design Thinking. We offer end-to-end Design, Development, Research/Testing, & Analytics as well as team based Training.
+          We are a Product Design Studio that runs Design Sprints to help craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as Team-Based Training.
           </Typography>
         </Grid>
       </Grid>

@@ -45,7 +45,7 @@ function OurWork(props) {
         <Grid container spacing={8}>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Typography variant="body1" color="inherit" gutterBottom>
-            We are a Product Design Studio that takes a User-Centric approach to design and development and helps transform organizations products, services, and strategies.
+            We are a Product Design Studio that runs Design Sprints to help take a User-Centric approach to design and development and helps transform organizations products, services, and strategies.
           </Typography>
           <Button disableRipple={true} style={{paddingTop:'10px', marginBottom:'40px'}} className={"underline"} href="/work">
             <Typography variant="button" color="inherit">

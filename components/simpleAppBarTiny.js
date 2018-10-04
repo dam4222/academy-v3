@@ -71,14 +71,14 @@ class SimpleAppBarTiny extends React.Component {
             className="tinyAppBar"
             >
               <Toolbar>
-                  <Grid item xs={6} style={left}>
+                  <Grid item xs={2} style={left}>
                     <IconButton className="iconLogo" disableRipple={true} href="/">
                         <AcademyLogoSmall />
                     </IconButton>
                   </Grid>
 
-                  <Grid item xs={5} className='show' style={right}>
-                    <Hidden smDown>
+                  <Grid item xs={9} className='show' style={right}>
+                    <Hidden mdDown>
                       <Button className={`underline`} disableRipple={true} href="/work" style={spacing}>
                         <Typography variant="button" color="inherit">
                           Work
