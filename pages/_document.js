@@ -50,11 +50,14 @@ class MyDocument extends Document {
           <meta property='og:image' content='https://cdn1.academyux.com/homepage.jpg'/>
           <meta property='og:url' content='https://academyux.com' />
 
+
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4613579.js"></script>
+
       </html>
     );
   }
