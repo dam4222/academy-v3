@@ -425,6 +425,17 @@ class Process extends React.Component {
               <Grid item xs={12} sm={8} md={6} lg={5} xl={4} style={{alignContent: 'center', display: 'flex', flexWrap:'wrap'}}>
                 <Grid container spacing={8} style={{alignContent: 'center', justifyContent: 'center', display:'flex'}}>
                   <Grid item xs={6} sm={6} md={4}>
+                  <Paper elevation={0} className={classes.skillItem}>
+                    <Consulting style={{marginBottom:'20px'}} />
+                    <Typography variant='title' gutterBottom paragraph={true}>
+                      SPRINT FACILITATION
+                    </Typography>
+                    <Typography variant='body2' gutterBottom paragraph={true}>
+                      Unbiased, Team Leader, Empathetic, Problem Solver
+                    </Typography>
+                  </Paper>
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4}>
                     <Paper elevation={0} className={classes.skillItem}>
                       <MagnifyingGlass style={{marginBottom:'20px'}} />
                       <Typography variant='title' gutterBottom paragraph={true}>
@@ -498,17 +509,6 @@ class Process extends React.Component {
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
                       BI Dashboards, PowerBI, Tableau, Qlik Sense
-                    </Typography>
-                  </Paper>
-                  </Grid>
-                  <Grid item xs={6} sm={6} md={4}>
-                  <Paper elevation={0} className={classes.skillItem}>
-                    <Consulting style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
-                      CONSULTING
-                    </Typography>
-                    <Typography variant='body2' gutterBottom paragraph={true}>
-                      Workshops, Team Training, Strategy, Design Thinking
                     </Typography>
                   </Paper>
                   </Grid>
