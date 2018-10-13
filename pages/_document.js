@@ -57,7 +57,6 @@ class MyDocument extends Document {
           <NextScript />
         </body>
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4613579.js"></script>
-
       </html>
     );
   }

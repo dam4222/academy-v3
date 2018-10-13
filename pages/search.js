@@ -109,7 +109,7 @@ class Search extends React.Component {
       <div className={classes.root}>
         <Head>
           <title>Academy – Design Tinkering</title>
-          <meta name="description" content="Academy is a Product Design Studio. We craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
+          <meta name="description" content="We are a Product Design Studio that runs Design Sprints and helps craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
         </Head>
 
         <Grid container spacing={8} className={classes.container}>

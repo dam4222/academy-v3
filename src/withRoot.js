@@ -80,7 +80,7 @@ function withRoot(Component) {
           theme={this.pageContext.theme}
           sheetsManager={this.pageContext.sheetsManager}
         >
-          
+
 
           {this.state.loadTiny ?
             (
