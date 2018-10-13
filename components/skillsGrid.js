@@ -82,6 +82,17 @@ function SkillsGrid(props) {
       <Grid item xs={10} className={classes.skillGrid} style={{flexWrap:'wrap-reverse', alignContent: 'center', justifyContent: 'center'}} >
         <Grid container spacing={8}>
           <Grid item xs={6} sm={6} md={4}>
+          <Paper elevation={0} className={classes.skillItem}>
+            <Consulting style={{marginBottom:'20px'}} />
+            <Typography variant='title' gutterBottom paragraph={true}>
+              SPRINT FACILITATION
+            </Typography>
+            <Typography variant='body2' gutterBottom paragraph={true}>
+              Unbiased, Team Leader, Empathetic, Problem Solver
+            </Typography>
+          </Paper>
+          </Grid>
+          <Grid item xs={6} sm={6} md={4}>
             <Paper elevation={0} className={classes.skillItem}>
               <MagnifyingGlass style={{marginBottom:'20px'}} />
               <Typography variant='title' gutterBottom paragraph={true}>
@@ -155,17 +166,6 @@ function SkillsGrid(props) {
             </Typography>
             <Typography variant='body2' gutterBottom paragraph={true}>
               BI Dashboards, PowerBI, Tableau, Qlik Sense
-            </Typography>
-          </Paper>
-          </Grid>
-          <Grid item xs={6} sm={6} md={4}>
-          <Paper elevation={0} className={classes.skillItem}>
-            <Consulting style={{marginBottom:'20px'}} />
-            <Typography variant='title' gutterBottom paragraph={true}>
-              CONSULTING
-            </Typography>
-            <Typography variant='body2' gutterBottom paragraph={true}>
-              Workshops, Team Training, Strategy, Design Thinking
             </Typography>
           </Paper>
           </Grid>
