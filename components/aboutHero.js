@@ -36,7 +36,7 @@ function Hero(props) {
         </Grid>
 
           <Typography variant='body1' gutterBottom paragraph>
-            Academy is a Product Design Studio that believes that creating a culture of Human Centered Design in organizations can build a better world around us. We do this by running Design Sprints and bringing UX & Design Thinking into organizations to shift their mindset of Design so that together, we can design products, services, and strategies that matter.
+            Academy is a Brooklyn, NY based Product Design Studio that believes that creating a culture of Human Centered Design in organizations can build a better world around us. We do this by running Design Sprints and bringing UX & Design Thinking into organizations to shift their mindset of Design so that together, we can design products, services, and strategies that matter.
           </Typography>
           <Grid item xs={12} stlye={{display:'flex', justifyContent:'center'}}>
           <Paper elevation={0} style={{background:'#e7e7e7', padding:'30px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
