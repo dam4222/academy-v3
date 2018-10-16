@@ -72,14 +72,30 @@ const styles = theme => ({
     paddingTop: '100px',
     paddingBottom: '100px',
   },
+  mission: {
+    height:'auto',
+    paddingTop:'40px',
+    position: 'relative',
+    background:'white',
+  },
+  why: {
+    height:'auto',
+    paddingTop:'100px',
+    position: 'relative',
+  },
+  services: {
+    height:'auto',
+    padding:'40px'
+  },
   content: {
     width: '100%',
-    background: 'white',
     position: 'relative',
     height: '100%',
   },
   spacing:{
+    paddingTop:'100px',
     paddingBottom:'100px',
+    background:'white',
   },
   skillItem:{
     width:'100%',
@@ -163,24 +179,56 @@ class Process extends React.Component {
         </Grid>
 
         <Grid container className={classes.content}>
-        <Grid container>
-          <Grid item xs={1} sm={7}></Grid>
-          <Grid item xs={10} sm={3} style={{
-            paddingTop:'60px',
-            paddingBottom:'100px'
-          }}>
-            <Typography variant='body1' gutterBottom paragraph={true}>
-              <strong>Product Relays™</strong> unify Design Sprints and Agile Developement Sprints into one fluid process.
-            </Typography>
-            <Typography variant='body1' gutterBottom paragraph={true}>
-              It’s our secret sauce and sets us apart from any other design/development teams you will work with. See the above graphic for an example of our flow.
-            </Typography>
-            <Typography variant='body1' gutterBottom >
-            We are not an Agency, we are a Product Design Studio. We take a collaborative, democratic and data-driven approach to design. You can learn more about our process below.
-            </Typography>
+
+
+        <Grid container className={classes.mission}>
+          <Grid container style={{paddingTop:'100px'}}>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+              <Typography variant="title" style={{fontSize:'14px'}} color="inherit" gutterBottom align="center">
+                HOW WE WORK
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
           </Grid>
-          <Grid item xs={1} sm={2}></Grid>
-        </Grid>
+          <Grid container style={{paddingBottom:'100px'}}>
+            <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
+            <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.mission}>
+              <Typography variant='headline' gutterBottom paragraph={true}>
+                We run <strong>Design Sprints</strong> combined with <strong>Agile Developement</strong> Sprints to form a Product Relay™. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
+              </Typography>
+              <Paper style={{padding:'40px', background:'#F4F7FA'}}><Typography variant='headline' gutterBottom paragraph={true}>
+              The <strong>Design Sprint</strong> is a proven methodology for solving problems through designing, prototyping, and testing ideas with users. Design Sprints quickly align teams under a shared vision with clearly defined goals and deliverables. Ultimately, it is a tool for developing a hypothesis, prototyping an idea, and testing it rapidly with as little investment as possible in as real an environment as possible.
+            </Typography></Paper>
+            </Grid>
+            <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
+          </Grid>
+          </Grid>
+
+          <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+              <Typography variant="title" style={{fontSize:'14px'}} color="inherit" gutterBottom align="center">
+                WHY DESIGN SPRINTS?
+              </Typography>
+            </Grid>
+            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={1} sm={2} md={2} lg={2} xl={3}></Grid>
+          <Grid item xs={10} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
+            <Grid container>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+              <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+              <Typography variant="headline" color="inherit" gutterBottom>Validate new features on existing products</Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
+              <Typography variant="headline" color="inherit" gutterBottom>Improve existing product experiences</Typography>
+            </Grid>
+          </Grid>
+          </Grid>
+        <Grid item xs sm={1}></Grid>
+      </Grid>
 
           <Grid item xs={1} md={3} lg={4}></Grid>
 

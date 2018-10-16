@@ -55,7 +55,7 @@ function OurProcess(props) {
         <Grid item xs={1} sm={1} md={7} lg={7}></Grid>
         <Grid item xs={10} sm={10} md={3} lg={3}>
           <Typography variant='body1' gutterBottom>
-          Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and our process is Product Relays™ which combine Design Sprints and Agile Sprints into one fluid process.
+          Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and our process is Design Sprints.
           </Typography>
           <Typography variant='body1' gutterBottom>
           We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
