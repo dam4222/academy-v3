@@ -433,10 +433,10 @@ class Project extends React.Component {
             <Grid container justify="space-between" className={classes.spacer}>
                 <Grid container spacing={24}>
                   <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
-                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.props.project.large_image_1} alt="large-image-1" />
+                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative', objectFit: 'contain'}} src={this.props.project.large_image_1} alt="large-image-1" />
                   </Grid>
                   <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
-                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative'}} src={this.props.project.large_image_2} alt="large-image-2" />
+                    <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative', objectFit: 'contain'}} src={this.props.project.large_image_2} alt="large-image-2" />
                   </Grid>
                 </Grid>
             </Grid>
