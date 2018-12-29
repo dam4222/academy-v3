@@ -86,7 +86,7 @@ function OurServices(props) {
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003313/workshop_opti-0.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28215716/workshop10.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',
@@ -99,10 +99,10 @@ function OurServices(props) {
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Embed w/ Team
+                  Product Team as a Service
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.
+                We embed into your organization as your product team helping research, design, develop, manage and test innovations.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">
@@ -115,7 +115,7 @@ function OurServices(props) {
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003314/workshop_opti-2.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/06/14003313/workshop_opti-0.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',
@@ -127,10 +127,10 @@ function OurServices(props) {
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Design Sprint Bootcamp
+                  Design Sprint Facilitation
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We run a brief, intense and immersive engagement, working together with the client through a Design Sprint while training the team on how to run one themselves.
+                We help lead your team from concept through validation as your Design Sprint Facilitator. 
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
@@ -156,10 +156,10 @@ function OurServices(props) {
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Build In-House
+                  Workshops
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We work alongside the client to set up a design studio/innovation hub powered by their people, processes and technology.
+                We run a brief, immersive workshops, training teams on how to run Design Sprints and lead digital transformation.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="103px" height="133px" viewBox="0 0 103 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>design-icon</title>
+    <desc>Created with Sketch.</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-205.000000, -399.000000)" stroke="#000000">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(206.000000, 400.000000)">
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g transform="translate(0.000000, 43.666667)">
+                                                <polyline stroke-width="2.47169811" points="33.8842975 86.4947343 44.6134007 86.509434 44.6280992 45.3144654"></polyline>
+                                                <path d="M22.3140496,86.509434 L33.8842975,86.5259119" stroke-width="0.823899371"></path>
+                                                <path d="M3.3139792,48.6100629 L3.30578512,86.509434 M44.6133469,72.5031447 L44.6280992,3.39712311 L3.31602975,3.29559748 L3.30578512,48.5293781" stroke-width="0.823899371"></path>
+                                                <path d="M41.3075618,69.2075472 L41.322314,0.101525622 L0.0102446261,0 L0,45.2337806" stroke-width="0.823899371" opacity="0.25" stroke-dasharray="1.647798742138365"></path>
+                                            </g>
+                                            <g transform="translate(55.371901, 0.000000)">
+                                                <polyline stroke-width="2.47169811" points="33.8842975 86.4947343 44.6134007 86.509434 44.6280992 45.3144654"></polyline>
+                                                <path d="M22.3140496,86.509434 L33.8842975,86.5259119" stroke-width="0.823899371"></path>
+                                                <path d="M3.3139792,48.6100629 L3.30578512,86.509434 M44.6133469,72.5031447 L44.6280992,3.39712311 L3.31602975,3.29559748 L3.30578512,48.5293781" stroke-width="0.823899371" transform="translate(23.966942, 44.902516) scale(-1, 1) translate(-23.966942, -44.902516) "></path>
+                                                <path d="M41.3075618,69.2075472 L41.322314,0.101525622 L0.0102446261,0 L0,45.2337806" stroke-width="0.823899371" opacity="0.25" stroke-dasharray="1.647798742138365"></path>
+                                            </g>
+                                            <g transform="translate(22.314050, 77.446541)" stroke-width="0.823899371">
+                                                <ellipse cx="2.47933884" cy="46.1383648" rx="2.47933884" ry="2.47169811"></ellipse>
+                                                <ellipse cx="55.3719008" cy="2.47169811" rx="2.47933884" ry="2.47169811"></ellipse>
+                                                <path d="M7.63171488,46.1689392 C21.5532455,46.3355535 28.5140108,39.1367086 28.5140108,24.5724045 C28.5140108,10.0081004 36.3657886,2.72594831 52.069344,2.72594831" stroke-dasharray="1.647798742138365,4.119496855345912"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

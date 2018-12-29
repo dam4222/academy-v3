@@ -17,6 +17,7 @@ import Lab from '../assets/skills/lab.svg'
 import MagnifyingGlass from '../assets/skills/magnifying-glass.svg'
 import Star from '../assets/skills/star.svg'
 import Stats from '../assets/skills/stats.svg'
+import ProcessDiagram from '../assets/Product-Relay-v2.svg'
 import User from '../assets/skills/user.svg'
 import "../styles.scss"
 import Plx from 'react-plx';
@@ -57,6 +58,12 @@ const styles = theme => ({
     alignItems: 'center',
     flexWrap: 'wrap',
   },
+  hero:{
+    display: 'flex',
+    alignItems: 'center',
+    flexGrow: 1,
+    height: '50vh'
+  },
   centerAlign: {
     justifyContent:'center',
     display:'flex'
@@ -78,10 +85,18 @@ const styles = theme => ({
     position: 'relative',
     background:'white',
   },
+  approach: {
+    height:'auto',
+    paddingTop:'80px',
+    paddingBottom:'40px',
+    position: 'relative',
+    background:'white',
+  },
   why: {
     height:'auto',
     paddingTop:'100px',
     position: 'relative',
+    background:'#fafafa'
   },
   services: {
     height:'auto',
@@ -129,57 +144,89 @@ class Process extends React.Component {
 
       <Grid container style={{paddingTop: '150px', paddingBottom: '200px'}}>
 
-      <Grid container>
-        <Plx
-        className='MyAwesomeParallax'
-        parallaxData={ ParallaxData } // your parallax effects, see beneath
-        animateWhenNotInViewport={ true }
-        >
-
         <Grid container>
-          <Grid item xs={1} sm={2}></Grid>
-          <Grid item xs={10} sm={5}>
-            <Typography variant='display2'>
-              Introducing
-            </Typography>
-            <Typography variant='display1' gutterBottom>
-              Product Relays ™
-            </Typography>
+          <Plx
+          className='MyAwesomeParallax'
+          parallaxData={ ParallaxData } // your parallax effects, see beneath
+          animateWhenNotInViewport={ true }
+          >
+
+            <Grid container className={classes.hero}>
+            <Grid item xs={1} sm={3} md={3} lg={3} xl={3}></Grid>
+            <Grid item xs={10} sm={5} md={6} lg={5} xl={5}>
+              <Typography variant='display4'>
+                Think of us
+              </Typography>
+              <Typography variant='display3' gutterBottom>
+                as an extension of your team
+              </Typography>
+              <Grid item xs={10} sm={10} md={10} lg={10} xl={6}>
+                <Typography variant='body1' gutterBottom>
+                We work side-by-side with cross-functional teams – including domain experts, designers, developers, researchers, product managers and end users. Using proven methodologies in Design Thinking and UX we execute Design Sprints to help rapidly prototype and find solutions. Testing methodically, we continually validate our hypotheses and define the product roadmap so that we can remain agile, prioritize features, all while considering the technological feasibility and viability.
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item xs={1} sm={6} md={3} lg={2} xl={5}></Grid>
+            </Grid>
+
+          </Plx>
+        </Grid>
+      </Grid>
+
+        <Grid container className={classes.approach}>
+
+            <Grid item xs sm={1} md={1} lg={1} xl={1}></Grid>
+
+            <Grid item xs={12} sm={10} md={10} lg={10} xl={10} style={{display:'flex',flexWrap:'wrap', width:'100%', paddingBottom:'80px'}}>
+
+              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+                <Typography variant="title" color="inherit" gutterBottom>01</Typography>
+                <Typography variant="headline" color="inherit" gutterBottom>Research</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside your team to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+                <Typography variant="title" color="inherit" gutterBottom>02</Typography>
+                <Typography variant="headline" color="inherit" gutterBottom>Design Sprints</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>We run a 5 day concept driven Design Sprint that uses Design Thinking in cross-functional teams to design, prototype, and test solutions with users.</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Thinking</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>User Journey Maps</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Concept Validation</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+                <Typography variant="title" color="inherit" gutterBottom>03</Typography>
+                <Typography variant="headline" color="inherit" gutterBottom>Detailed Design Sprint</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>We create design language systems to scale and work through complex user journeys to ensure all scenarios are accounted for tested prior to launch.</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Language System</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Usability Testing</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Interactive Prototype</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+                <Typography variant="title" color="inherit" gutterBottom>04</Typography>
+                <Typography variant="headline" color="inherit" gutterBottom>Agile Development Sprints</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>Using our phased agile approach we work closely with the product team to create a minimum viable product. We develop a feature roadmap with milestones and KPIs for testing.</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Scrum</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Frontend / Backend</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>App, Mobile, Web</Typography>
+                <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Analytics</Typography>
+              </Grid>
+
+            </Grid>
+
+            <Grid item xs sm={1} md={1} lg={1} xl={1}></Grid>
+
+          <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+            <Grid item xs={12} sm={10} md={10} lg={10} xl={10}>
+              <img style={{margin:'0 auto', width:'100%'}} src='/static/Academy_Our_Process_V2.png' />
+            </Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
           </Grid>
-          <Grid item xs={1} sm={5}></Grid>
-        </Grid>
-
-        <Grid container>
-          <Grid item xs={1} sm={1} md={3} lg={4}></Grid>
-          <Grid item xs={12} sm={10} md={7} lg={6} xl={6}>
-            <img width="100%"
-            style={{
-              paddingTop:'60px',
-              paddingBottom:'60px',
-              maxWidth:'100%'
-            }}
-            src='https://cdn1.academyux.com/product-relay.png'
-            />
-          </Grid>
-        <Grid item xs sm={1}></Grid>
-        </Grid>
-
-        <Grid container>
-          <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
-          <Grid item xs={3} sm={3} md={1} lg={1} xl={1}>
-            <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
-              Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
-            </Typography>
-          </Grid>
-          <Grid item xs></Grid>
-        </Grid>
-
-      </Plx>
-        </Grid>
-        </Grid>
-
-        <Grid container className={classes.content}>
-
 
         <Grid container className={classes.mission}>
           <Grid container style={{paddingTop:'100px'}}>
@@ -214,7 +261,7 @@ class Process extends React.Component {
             </Grid>
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
             <Grid item xs={1} sm={2} md={2} lg={2} xl={3}></Grid>
-          <Grid item xs={10} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
+          <Grid item xs={12} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
             <Grid container>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
@@ -317,6 +364,7 @@ class Process extends React.Component {
           </Hidden>
 
           </Grid>
+
 
     </div>
     );

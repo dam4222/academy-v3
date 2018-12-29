@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from 'next/link'
 import Paper from '@material-ui/core/Paper';
 import Icon from '@material-ui/core/Icon';
+import Chip from '@material-ui/core/Chip';
 import Hidden from '@material-ui/core/Hidden';
 import Card from '../components/card'
 import Browser from '../assets/skills/browser.svg'
@@ -19,6 +20,7 @@ import Star from '../assets/skills/star.svg'
 import Stats from '../assets/skills/stats.svg'
 import User from '../assets/skills/user.svg'
 import DesignIcon from '../assets/design-icon.svg'
+import Facilitation from '../assets/facilitation.svg'
 import TrainingIcon from '../assets/training-icon.svg'
 import ConsultingIcon from '../assets/consulting-icon.svg'
 import StudioIcon from '../assets/studio-icon.svg'
@@ -116,6 +118,10 @@ class Process extends React.Component {
 
   const { classes } = this.props;
 
+  function handleDelete() {
+
+  }
+
 
   return (
       <div className={classes.root}>
@@ -136,9 +142,9 @@ class Process extends React.Component {
         >
           <Grid container>
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
-            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center', paddingBottom:'60px', paddingTop:'30px'}}>
               <Typography variant="headline" style={{fontSize:'24px'}} color="inherit" gutterBottom align="center">
-                We’ve helped multiple clients design and innovate  internally, using three approaches:
+                We’ve helped multiple clients design and innovate internally, using three approaches:
               </Typography>
             </Grid>
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
@@ -183,9 +189,18 @@ class Process extends React.Component {
         <Grid item xs={10} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
           <Grid container>
           <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-            <ConsultingIcon />
-            <Typography variant="headline" color="inherit" gutterBottom>Embed with Team</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom>We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.</Typography>
+            {/*<div>
+            <Chip
+               label="Recommended"
+               className={classes.chip}
+               style={{backgroundColor:'black', color:'white'}}
+               onDelete={handleDelete}
+               deleteIcon={<Icon style={{fontSize:'14px', verticalAlign: 'middle', color: 'white'}}>done</Icon>}
+             />
+             </div>*/}
+            <DesignIcon />
+            <Typography variant="headline" color="inherit" gutterBottom>Product Team as a Service</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We embed into your organization as your product team helping research, design, develop, manage and test innovations.</Typography>
             <Button onClick={() => scrollToComponent(this.Embed, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
               <Typography variant="button" color="inherit">
                 See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
@@ -193,9 +208,9 @@ class Process extends React.Component {
             </Button>
           </Grid>
           <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-            <TrainingIcon />
-            <Typography variant="headline" color="inherit" gutterBottom>Design Sprint Bootcamp</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom>We run a brief, intense and immersive  engagement, working together with the client  through a Design Sprint while training the team on how to run one themselves.</Typography>
+            <Facilitation />
+            <Typography variant="headline" color="inherit" gutterBottom>Design Sprint Facilitation</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We help lead your team from concept through validation as your Design Sprint Facilitator.</Typography>
             <Button onClick={() => scrollToComponent(this.Bootcamp, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
               <Typography variant="button" color="inherit">
                 See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
@@ -203,9 +218,9 @@ class Process extends React.Component {
             </Button>
           </Grid>
           <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-            <StudioIcon />
-            <Typography variant="headline" color="inherit" gutterBottom>Build In-House</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom>We work alongside the client to set up a design studio/innovation hub powered by their people, processes and technology.</Typography>
+            <TrainingIcon />
+            <Typography variant="headline" color="inherit" gutterBottom>Workshops</Typography>
+            <Typography variant="body1" color="inherit" gutterBottom>We run a brief, immersive workshops, training teams on how to run Design Sprints and lead digital transformation.</Typography>
             <Button onClick={() => scrollToComponent(this.Build, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
               <Typography variant="button" color="inherit">
                 See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
@@ -218,16 +233,7 @@ class Process extends React.Component {
     </Grid>
 
         <Grid container className={classes.content}>
-          <Grid container style={{paddingTop:'100px'}}>
-            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
-            <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
-              <Typography variant="title" style={{fontSize:'14px'}} color="inherit" gutterBottom align="center">
-                Our Mission
-              </Typography>
-            </Grid>
-            <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
-          </Grid>
-          <Grid container style={{paddingBottom:'100px'}}>
+          <Grid container style={{paddingTop:'70px', paddingBottom:'100px'}}>
             <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.mission}>
                 <Typography variant="headline" color="inherit" paddingBottom>
@@ -248,20 +254,20 @@ class Process extends React.Component {
               <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
                 <Grid container ref={(section) => { this.Embed = section; }}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'40px'}}>
-                    <Typography variant="headline" color="inherit" gutterBottom align="center">Embed w/ Team</Typography>
+                    <Typography variant="headline" color="inherit" gutterBottom align="center">Product Team as a Service</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">“Design for us”</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
-                    <Typography variant="body1" color="inherit" gutterBottom align="center">We set up a Academy-led design studio within the client’s organization, taking full responsibility for all the client’s design and digital requirements.</Typography>
+                    <Typography variant="body1" color="inherit" gutterBottom align="center">We embed into your organization as your product team helping research, design, develop, manage and test innovations</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
-                    <Typography variant="body1" color="inherit" gutterBottom align="center">1-12 months</Typography>
+                    <Typography variant="body1" color="inherit" gutterBottom align="center">As Needed</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">Driving digital transformation</Typography>
-                    <Typography variant="body1" color="inherit" gutterBottom align="center">Making an attractive business case</Typography>
+                    <Typography variant="body1" color="inherit" gutterBottom align="center">Scalability, Top Talent</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">CHALLENGES</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">Foreign body syndrome</Typography>
@@ -277,13 +283,14 @@ class Process extends React.Component {
               </Grid>
               <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
 
-              <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
+              <Grid item xs={0} sm={12} md={12} lg={7} xl={7}>
 
                 <div
                 style={{
-                  background: `url(https://cdn1.academyux.com/workshop2.jpg)`,
+                  background: `url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28231846/whiteboarding.jpg)`,
                   backgroundSize: 'cover',
-                  backgroundPosition:'right center',
+                  backgroundPosition:'center',
+                  backgroundRepeat:'no-repeat',
                   height: '100vh',
                   top: '0',
                   zIndex: -1,
@@ -296,12 +303,13 @@ class Process extends React.Component {
           </Grid>
 
       <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={7} xl={7}>
+          <Grid item xs={0} sm={12} md={12} lg={7} xl={7}>
             <div
             style={{
-              background: `url(https://cdn1.academyux.com/workshop9.jpg)`,
+              background: `url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28235945/workshop1.jpg)`,
               backgroundSize: 'cover',
-              backgroundPosition:'left center',
+              backgroundPosition:'center',
+              backgroundRepeat:'no-repeat',
               height: '100vh',
               top: '0',
               zIndex: -1,
@@ -313,20 +321,20 @@ class Process extends React.Component {
           <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
           <Grid container ref={(section) => { this.Bootcamp = section; }}>
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'40px', margin: '1px'}}>
-              <Typography variant="headline" color="inherit" gutterBottom align="center">Design Sprint Bootcamp</Typography>
+              <Typography variant="headline" color="inherit" gutterBottom align="center">Design Sprint Facilitation</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us learn by helping us do”</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom align="center">We run a brief, intense and immersive  engagement, working together with the client  through a Design Sprint while training the team on how to run one themselves.</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">We help lead your team from concept through validation as your Design Sprint Facilitator</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom align="center">30 days +</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">5 days</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">Co-creating as one: Learning by doing</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom align="center">Cultural change</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">Concept Validation</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">CHALLENGES</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">Attracting the right talent</Typography>
@@ -334,9 +342,9 @@ class Process extends React.Component {
               <Typography variant="body1" color="inherit" gutterBottom align="center">Making formal changes to ways of working</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">Broadening cultural change</Typography>
               <br></br>
-              <Button disableRipple={true} style={{padding:'20px', border:'1px solid black', display:"flex", justifyContent:'center'}} className="underline" href="/workshops">
+              <Button disableRipple={true} style={{padding:'20px', border:'1px solid black', display:"flex", justifyContent:'center'}} className="underline" href="/contact">
               <Typography variant="button" color="inherit">
-                See Curriculum <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_right</Icon>
+                Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_right</Icon>
               </Typography>
               </Button>
             </Grid>
@@ -346,74 +354,56 @@ class Process extends React.Component {
 
       </Grid>
 
-      <Grid container ref={(section) => { this.Build = section; }} className={classes.content} style={{paddingTop:'100px',paddingBottom:'100px'}}>
-        <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-        <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
-          <Grid container>
-          <Grid item xs={12} sm={12} md={12} lg={3} xl={3} style={{border:'1px dashed #3023ae', padding:'40px'}}>
-            <Typography variant="headline" color="inherit" gutterBottom align="center">Build In-House</Typography>
-            <br></br>
-            <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us to design ourselves”</Typography>
-            <br></br>
-            <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">We work alongside the client to set up a design studio/innovation hub powered by their people, processes and technology.</Typography>
-            <br></br>
-            <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">6 Months - 3 years</Typography>
-            <br></br>
-            <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">Building capabilities in-house</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">Kicking off cultural change</Typography>
-            <br></br>
-            <Typography variant="title" color="inherit" gutterBottom align="center">CHALLENGES</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">Attracting the right talent</Typography>
-            <Typography variant="body1" color="inherit" gutterBottom align="center">Sluggish culture adoption organization-wide</Typography>
-            <br></br>
-            <Button disableRipple={true} style={{padding:'20px', border:'1px solid black', display:"flex", justifyContent:'center'}} className="underline" href="/contact">
-            <Typography variant="button" color="inherit">
-              Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_right</Icon>
-            </Typography>
-            </Button>
+      <Grid container className="embed-team">
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+            <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
+              <Grid container  ref={(section) => { this.Build = section; }}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'40px'}}>
+              <Typography variant="headline" color="inherit" gutterBottom align="center">Workshops</Typography>
+              <br></br>
+              <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us to design ourselves”</Typography>
+              <br></br>
+              <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">We run a brief, immersive workshops, training teams on how to run Design Sprints and lead digital transformation</Typography>
+              <br></br>
+              <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">1 Hr - 1 Day</Typography>
+              <br></br>
+              <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">Building capabilities in-house</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">Kicking off cultural change</Typography>
+              <br></br>
+              <Typography variant="title" color="inherit" gutterBottom align="center">CHALLENGES</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">Scalability</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom align="center">Sluggish culture adoption organization-wide</Typography>
+              <br></br>
+              <Button disableRipple={true} style={{padding:'20px', border:'1px solid black', display:"flex", justifyContent:'center'}} className="underline" href="/workshops">
+              <Typography variant="button" color="inherit">
+                See Workshops <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_right</Icon>
+              </Typography>
+              </Button>
+              </Grid>
+              </Grid>
           </Grid>
           <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-          <Grid item xs={12} sm={12} md={12} lg={8} xl={8}>
 
+          <Grid item xs={0} sm={12} md={12} lg={7} xl={7}>
 
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{display:'flex', width:'100%'}}>
-            <Grid container>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Structure</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will help create the right organizational structure for a digital product design/development team.</Typography>
+            <div
+            style={{
+              background: `url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28235025/workshop9.jpg)`,
+              backgroundSize: 'cover',
+              backgroundPosition:'center',
+              backgroundRepeat:'no-repeat',
+              height: '100vh',
+              top: '0',
+              zIndex: -1,
+            }}
+            ></div>
+
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Leadership</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will help you appoint the right leaders from both inside and out of your organization and train them on how to create a Design Led Culture.</Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Environment</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will show you how to create a culture that inspires creativity and is liberated to think differently. Create a psychologically and physically ‘safe’ space for designer teams to work freely.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Technical Specs</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will deliver technical specifications for equipment, software and office space requirements.</Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Talent & Skills</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will work with you to develop a strategy on recruiting talent, defining roles to fill, headcount, and interviewing.</Typography>
-            </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Training</Typography>
-              <Typography variant="body1" color="inherit" gutterBottom>We will run a <strong>Design Sprint Bootcamp</strong>, training your team to conduct research/usability studies, build prototypes, use Sketch, create design language systems, and how collaborate with Developers using Agile methodologies.
-            </Typography>
-            </Grid>
-            </Grid>
-          </Grid>
-          </Grid>
-          </Grid>
-          </Grid>
-        <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
 
       </Grid>
 
