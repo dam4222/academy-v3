@@ -220,7 +220,7 @@ class Process extends React.Component {
 
           <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-            <Grid item xs={12} sm={10} md={10} lg={10} xl={10}>
+            <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
               <img style={{margin:'0 auto', width:'100%'}} src='/static/Academy_Our_Process_V2.png' />
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
