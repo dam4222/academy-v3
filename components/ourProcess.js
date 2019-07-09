@@ -25,8 +25,10 @@ function OurProcess(props) {
       <div className={classes.root}>
 
       <Grid container>
-        <Grid item xs={1} sm={1} md={2} lg={3} xl={3}></Grid>
-        <Grid item xs={10} sm={6} md={6} lg={6} xl={6}>
+      <Grid item xs={1} sm={2}></Grid>
+      <Grid item xs={10} sm={8} md={8} lg={8}>
+        <Grid container>
+        <Grid item xs={12} sm={6} md={4} lg={4} xl={4}>
           <Typography variant='display2'>
             Our Process
           </Typography>
@@ -34,26 +36,10 @@ function OurProcess(props) {
             is Collaborative
           </Typography>
         </Grid>
-        <Grid item xs={1} sm={5} md={4} lg={3} xl={3}></Grid>
-      </Grid>
 
-      <Grid container>
-        <Grid item xs={1} sm={1} md={4} lg={4}></Grid>
-        <Grid item xs={10} sm={10} md={6} lg={5}>
-          <img width="100%"
-          style={{
-            paddingTop:'60px',
-            paddingBottom:'60px'
-          }}
-          src='https://cdn1.academyux.com/wp-content/uploads/2018/06/14002509/product-relay_opti.png'
-          />
-        </Grid>
-        <Grid item xs={1} sm={1} md={2} lg={2}></Grid>
-      </Grid>
+        <Grid item xs={1}></Grid>
 
-      <Grid container>
-        <Grid item xs={1} sm={1} md={7} lg={7}></Grid>
-        <Grid item xs={10} sm={10} md={3} lg={3}>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
           <Typography variant='body1' gutterBottom>
           Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and our process is Design Sprints.
           </Typography>
@@ -65,6 +51,22 @@ function OurProcess(props) {
               Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
             </Typography>
           </Button>
+          </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={1} sm={2}></Grid>
+      </Grid>
+
+      <Grid container>
+        <Grid item xs={1} sm={1} md={1} lg={1}></Grid>
+        <Grid item xs={10} sm={10} md={10} lg={10}>
+          <img width="100%"
+          style={{
+            paddingTop:'60px',
+            paddingBottom:'60px'
+          }}
+          src='/static/Academy_Our_Process_V2.png'
+          />
         </Grid>
         <Grid item xs={1} sm={1} md={2} lg={2}></Grid>
       </Grid>
