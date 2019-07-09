@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="393px" height="282px" viewBox="0 0 393 282" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Asset / Process / Design Sprint Timeline</title>
+    <desc>Created with Sketch.</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-100.000000, -4006.000000)">
+            <g transform="translate(100.000000, 4006.000000)">
+                <g>
+                    <g>
+                        <rect fill="#FFFFFF" x="0" y="0.733746094" width="392.300895" height="281.024754" rx="2.92457663"></rect>
+                        <path d="M270.538978,0.771647614 L270.538978,281.110099 L391.634537,281.110099 L391.634537,0.771647614 L270.538978,0.771647614 Z" stroke="#E7E7E7" stroke-width="0.5" fill="#FFFFFF"></path>
+                        <path d="M149.146583,0.771647614 L149.146583,281.110099 L270.242142,281.110099 L270.242142,0.771647614 L149.146583,0.771647614 Z" stroke="#E7E7E7" stroke-width="0.5" fill="#FFFFFF"></path>
+                        <rect stroke="#E7E7E7" stroke-width="0.731144157" x="0.365572079" y="1.09931817" width="391.569751" height="280.29361" rx="2.92457663"></rect>
+                        <path d="M0.365572079,32.6530021 L391.935323,32.6530021 L391.935323,3.65832272 C391.935323,2.24502353 390.789618,1.09931817 389.376319,1.09931817 L2.92457663,1.09931817 C1.51127744,1.09931817 0.365572079,2.24502353 0.365572079,3.65832272 L0.365572079,32.6530021 Z" stroke="#E7E7E7" stroke-width="0.731144157"></path>
+                        <g transform="translate(161.262051, 11.739937)" fill="#848484" font-family="Montserrat-Medium, Montserrat" font-size="8.77372989" font-weight="400">
+                            <text>
+                                <tspan x="0" y="8.01779359">WEEK 1</tspan>
+                            </text>
+                            <text>
+                                <tspan x="121.679547" y="8.01779359">WEEK 2</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g transform="translate(11.083386, 46.938379)">
+                        <g>
+                            <g transform="translate(0.644764, 0.021371)">
+                                <path d="M139.99732,0.365572079 C138.58402,0.365572079 137.438315,1.51127744 137.438315,2.92457663 L137.438315,16.8865679 C137.438315,18.2998671 138.58402,19.4455725 139.99732,19.4455725 L255.827714,19.4455725 C257.241013,19.4455725 258.386718,18.2998671 258.386718,16.8865679 L258.386718,2.92457663 C258.386718,1.51127744 257.241013,0.365572079 255.827714,0.365572079 L139.99732,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                    <tspan x="0" y="12.1522369">UX RESEARCH</tspan>
+                                </text>
+                            </g>
+                            <text font-family="Montserrat-Medium, Montserrat" font-size="7.31144157" font-weight="400" fill="#EF485B">
+                                <tspan x="264.528119" y="12.1736081">Client Required</tspan>
+                            </text>
+                        </g>
+                        <g transform="translate(0.000000, 22.000000)">
+                            <g transform="translate(0.657627, 0.578448)">
+                                <g>
+                                    <path d="M261.252718,0.365572079 C259.839419,0.365572079 258.693713,1.51127744 258.693713,2.92457663 L258.693713,16.8865679 C258.693713,18.2998671 259.839419,19.4455725 261.252718,19.4455725 L279.957527,19.4455725 C281.370826,19.4455725 282.516531,18.2998671 282.516531,16.8865679 L282.516531,2.92457663 C282.516531,1.51127744 281.370826,0.365572079 279.957527,0.365572079 L261.252718,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                    <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                        <tspan x="0" y="12.1522369">TEAM UNDERSTANDING</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <text font-family="Montserrat-Medium, Montserrat" font-size="7.31144157" font-weight="400" fill="#EF485B">
+                                <tspan x="288.496312" y="13.4644314">Client Required</tspan>
+                            </text>
+                        </g>
+                        <g transform="translate(0.000000, 44.000000)">
+                            <g>
+                                <g>
+                                    <path d="M285.977193,0.365572079 C284.563894,0.365572079 283.418189,1.51127744 283.418189,2.92457663 L283.418189,16.1528218 C283.418189,17.566121 284.563894,18.7118264 285.977193,18.7118264 L304.682002,18.7118264 C306.095301,18.7118264 307.241007,17.566121 307.241007,16.1528218 L307.241007,2.92457663 C307.241007,1.51127744 306.095301,0.365572079 304.682002,0.365572079 L285.977193,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                    <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                        <tspan x="0" y="12.1522369">SKETCH / DECIDE</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <text font-family="Montserrat-Medium, Montserrat" font-size="7.31144157" font-weight="400" fill="#EF485B">
+                                <tspan x="312.475983" y="12.5540163">Client Required</tspan>
+                            </text>
+                        </g>
+                        <g transform="translate(0.000000, 66.000000)">
+                            <g>
+                                <path d="M310.701669,0.365572079 C309.28837,0.365572079 308.142664,1.51127744 308.142664,2.92457663 L308.142664,16.1528218 C308.142664,17.566121 309.28837,18.7118264 310.701669,18.7118264 L329.406478,18.7118264 C330.819777,18.7118264 331.965482,17.566121 331.965482,16.1528218 L331.965482,2.92457663 C331.965482,1.51127744 330.819777,0.365572079 329.406478,0.365572079 L310.701669,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                    <tspan x="0" y="12.1522369">DESIGN</tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <g transform="translate(0.000000, 88.000000)">
+                            <g>
+                                <path d="M334.573576,0.365572079 C333.160277,0.365572079 332.014572,1.51127744 332.014572,2.92457663 L332.014572,16.1528218 C332.014572,17.566121 333.160277,18.7118264 334.573576,18.7118264 L353.278385,18.7118264 C354.691684,18.7118264 355.83739,17.566121 355.83739,16.1528218 L355.83739,2.92457663 C355.83739,1.51127744 354.691684,0.365572079 353.278385,0.365572079 L334.573576,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                    <tspan x="0" y="12.1522369">PROTOTYPE</tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <g transform="translate(0.000000, 110.000000)">
+                            <g>
+                                <path d="M359.298052,0.365572079 C357.884753,0.365572079 356.739047,1.51127744 356.739047,2.92457663 L356.739047,16.1528218 C356.739047,17.566121 357.884753,18.7118264 359.298052,18.7118264 L378.002861,18.7118264 C379.41616,18.7118264 380.561865,17.566121 380.561865,16.1528218 L380.561865,2.92457663 C380.561865,1.51127744 379.41616,0.365572079 378.002861,0.365572079 L359.298052,0.365572079 Z" stroke="#E7E7E7" stroke-width="0.731144157" fill="#4302B2"></path>
+                                <text font-family="Montserrat-Regular, Montserrat" font-size="7.31144157" font-weight="normal" fill="#000000">
+                                    <tspan x="0" y="11.2988118">TEST</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(11.728149, 11.739937)" fill="#000000" font-family="Montserrat-Medium, Montserrat" font-size="8.77372989" font-weight="400">
+                        <text>
+                            <tspan x="0.207804584" y="8.22580705">DESIGN SPRINT</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

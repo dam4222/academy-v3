@@ -100,7 +100,7 @@ const styles = theme => ({
   },
   services: {
     height:'auto',
-    padding:'40px'
+    padding:'38px'
   },
   content: {
     width: '100%',
@@ -152,7 +152,7 @@ class Process extends React.Component {
           >
 
             <Grid container className={classes.hero}>
-            <Grid item xs={1} sm={3} md={3} lg={3} xl={3}></Grid>
+            <Grid item xs={1} sm={3} md={3} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={5} md={6} lg={5} xl={5}>
               <Typography variant='display4'>
                 Think of us
@@ -173,16 +173,14 @@ class Process extends React.Component {
         </Grid>
       </Grid>
 
-        <Grid container className={classes.approach}>
+        <Grid container spacing={24} className={classes.approach}>
 
-            <Grid item xs sm={1} md={1} lg={1} xl={1}></Grid>
-
-            <Grid item xs={12} sm={10} md={10} lg={10} xl={10} style={{display:'flex',flexWrap:'wrap', width:'100%', paddingBottom:'80px'}}>
+            <Grid item xs={12} sm={10} md={12} lg={12} xl={12} style={{display:'flex',flexWrap:'wrap', width:'100%', paddingBottom:'80px'}}>
 
               <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
                 <Typography variant="title" color="inherit" gutterBottom>01</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Research</Typography>
-                <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside your team to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside yours to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
@@ -209,7 +207,7 @@ class Process extends React.Component {
               <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
                 <Typography variant="title" color="inherit" gutterBottom>04</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Agile Development Sprints</Typography>
-                <Typography variant="body1" color="inherit" gutterBottom>Using our phased agile approach we work closely with the product team to create a minimum viable product. We develop a feature roadmap with milestones and KPIs for testing.</Typography>
+                <Typography variant="body1" color="inherit" gutterBottom>Using Agile methodologies we work closely with the development team to create an MVP. We develop a feature roadmap with milestones and KPIs.</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Scrum</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Frontend / Backend</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>App, Mobile, Web</Typography>
@@ -218,7 +216,7 @@ class Process extends React.Component {
 
             </Grid>
 
-            <Grid item xs sm={1} md={1} lg={1} xl={1}></Grid>
+
 
           <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
@@ -242,7 +240,7 @@ class Process extends React.Component {
             <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.mission}>
               <Typography variant='headline' gutterBottom paragraph={true}>
-                We run <strong>Design Sprints</strong> combined with <strong>Agile Developement</strong> Sprints to form a Product Relay™. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
+                We run <strong>Design Sprints</strong> combined with <strong>Agile Development</strong> Sprints to form a Product Relay™. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
               </Typography>
               <Paper style={{padding:'40px', background:'#F4F7FA'}}><Typography variant='headline' gutterBottom paragraph={true}>
               The <strong>Design Sprint</strong> is a proven methodology for solving problems through designing, prototyping, and testing ideas with users. Design Sprints quickly align teams under a shared vision with clearly defined goals and deliverables. Ultimately, it is a tool for developing a hypothesis, prototyping an idea, and testing it rapidly with as little investment as possible in as real an environment as possible.
@@ -264,7 +262,7 @@ class Process extends React.Component {
           <Grid item xs={12} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
             <Grid container>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
+              <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Validate new features on existing products</Typography>
@@ -287,8 +285,8 @@ class Process extends React.Component {
               </Hidden>
               <Grid item xs={1} sm={2} md={3} lg={4} xl={4}></Grid>
             </Grid>
-            <Grid item xs={1} sm={1} md={2} lg={3} xl={3}></Grid>
-            <Grid item xs={10} sm={10} md={8} lg={6} xl={6}>
+            <Grid item xs={1} sm={1} md={2} lg={2} xl={3}></Grid>
+            <Grid item xs={10} sm={10} md={8} lg={8} xl={6}>
               <Grid container spacing={24}>
                 <Grid item xs={12} sm={6} md={6} lg={6}>
                     <Card
@@ -325,43 +323,9 @@ class Process extends React.Component {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={1} sm={1} md={2} lg={3} xl={3}></Grid>
+          <Grid item xs={1} sm={1} md={2} lg={2} xl={3}></Grid>
 
-          <Hidden mdDown>
-          <Grid container spacing={8} className={classes.spacing}>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline.png"  style={{width:"100%", height:"100%", maxWidth:'80%'}}/>
-            </Grid>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-          </Grid>
 
-          <Grid container spacing={8} className={classes.spacing}>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline.png" style={{width:"100%", height:"100%", maxWidth:'80%'}} />
-            </Grid>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-          </Grid>
-          </Hidden>
-
-          <Hidden lgUp>
-          <Grid container spacing={8} style={{paddingBottom:'20px'}}>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Design-Sprint-Timeline-Mobile.png"  style={{width:"100%", height:"100%", maxWidth:'400px'}}/>
-            </Grid>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-          </Grid>
-
-          <Grid container spacing={8} className={classes.spacing}>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-            <Grid item xs={10} md={10} lg={10} className={classes.centerAlign}>
-              <img src="https://cdn1.academyux.com/Agile-Sprint-Timeline-Mobile.png" style={{width:"100%", height:"100%", maxWidth:'400px'}} />
-            </Grid>
-            <Grid item xs={1} md={1} lg={1}></Grid>
-          </Grid>
-          </Hidden>
 
           </Grid>
 
