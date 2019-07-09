@@ -265,7 +265,7 @@ class Process extends React.Component {
               <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Validate new features on existing products</Typography>
+              <Typography variant="headline" color="inherit" gutterBottom>Validate new features on existing products</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
               <Typography variant="headline" color="inherit" gutterBottom>Improve existing product experiences</Typography>
