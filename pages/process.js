@@ -262,13 +262,13 @@ class Process extends React.Component {
           <Grid item xs={12} sm={8} md={8} lg={8} xl={6} style={{display:'flex', width:'100%'}}>
             <Grid container>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Validate entirely new products</Typography>
+              <Typography variant="headline" align="center" color="inherit" gutterBottom>Validate entirely new products</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Validate new features on existing products</Typography>
+              <Typography variant="headline" align="center" color="inherit" gutterBottom>Validate new features on existing products</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg={4} xl={4} className={classes.services}>
-              <Typography variant="headline" color="inherit" gutterBottom>Improve existing product experiences</Typography>
+              <Typography variant="headline" align="center" color="inherit" gutterBottom>Improve existing product experiences</Typography>
             </Grid>
           </Grid>
           </Grid>
