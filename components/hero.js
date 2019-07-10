@@ -38,7 +38,7 @@ function Hero(props) {
       </Grid>
       <Grid item xs={1} sm={6} md={3} lg={2} xl={5}></Grid>
       <Grid container style={{position: 'absolute', bottom: '-26px'}}>
-        <Grid item xs={10} sm={8}></Grid>
+        <Grid item xs={1} sm={8}></Grid>
         <Grid item xs={2} sm={4}>
           <div class="scroll-down" role="button" style={{opacity: '1', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
             <span></span>

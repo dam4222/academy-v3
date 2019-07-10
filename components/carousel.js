@@ -42,14 +42,16 @@ const verticalLine = {
 
 const horizontalText = {
   position: 'relative',
-  left:'100px'
+  left:'-100px',
+  float:'right'
 }
 
 const horizontalLine = {
   position: 'relative',
-  top: '-10px',
-  left: '10px',
-  width:' 80px',
+  top: '10px',
+  left: '74px',
+  width: '80px',
+  float: 'right'
 }
 
 const iconMargin = {
