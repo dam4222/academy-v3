@@ -46,16 +46,14 @@ function LatestNews(props) {
         <Grid container spacing={40}>
         {props.news.map((latestNews) => {
           return(
-            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
+            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link} target="_blank" rel="noopener">
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.headline}
                 </Typography>
               </Button>
               <br></br>
-              <Typography variant='body1' gutterBottom>
-              {latestNews.acf.short_description}
-              </Typography>
+
               <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href={latestNews.acf.link} target="_blank" rel="noopener">
                 <Typography variant="button" color="inherit">
                   Read more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
@@ -67,7 +65,7 @@ function LatestNews(props) {
 
         {(props.blog == undefined) ? null : props.blogs.map((latestNews) => {
           return(
-            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews" style={{padding:'5%'}}>
+            <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`} target="_blank">
                 <Typography variant='headline' gutterBottom>
                 {latestNews.acf.title}
