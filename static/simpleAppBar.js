@@ -110,7 +110,7 @@ class SimpleAppBar extends React.Component {
                         borderRadius:'0 !important',
                         background:'none !important'
                         }}
-                        disableRipple={true} href="/" prefetch>
+                        disableRipple={true} href="/">
                         <AcademyLogoSmall style={{width: '100%'}} />
                     </Button>
                     <Button
@@ -120,7 +120,7 @@ class SimpleAppBar extends React.Component {
                       borderRadius:'0 !important',
                       background:'none !important'
                       }}
-                      disableRipple={true} href="/" prefetch>
+                      disableRipple={true} href="/">
                         <AcademyLogo style={{width: '120px'}}/>
                     </Button>
                   </Grid>
@@ -128,7 +128,7 @@ class SimpleAppBar extends React.Component {
                   <Grid item xs={5} className='show' style={right}>
                     <Hidden smDown>
 
-                      <Link href="/work" prefetch>
+                      <Link href="/work">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Work
@@ -136,7 +136,7 @@ class SimpleAppBar extends React.Component {
                         </Button>
                       </Link>
 
-                      <Link href="/services" prefetch>
+                      <Link href="/services">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Our Services
@@ -144,7 +144,7 @@ class SimpleAppBar extends React.Component {
                         </Button>
                       </Link>
 
-                      <Link href="/process" prefetch>
+                      <Link href="/process">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Our Process
@@ -152,7 +152,7 @@ class SimpleAppBar extends React.Component {
                         </Button>
                       </Link>
 
-                      <Link href="/workshops" prefetch>
+                      <Link href="/workshops">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Workshops
@@ -160,7 +160,7 @@ class SimpleAppBar extends React.Component {
                         </Button>
                       </Link>
 
-                      <Link href="/blog" prefetch>
+                      <Link href="/blog">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Design Tinkering

@@ -76,7 +76,7 @@ const theme = createMuiTheme({
       headline: {
         fontFamily: 'Crimson Text, serif',
         fontWeight: 400,
-        fontSize: 'calc(1.6em + .5vw)',
+        fontSize: 'calc(1.2em + .5vw)',
       },
       button: {
         fontFamily: 'Montserrat, sans-serif',

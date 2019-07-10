@@ -17,6 +17,9 @@ const styles = theme => ({
     paddingBottom:'100px',
     paddingTop:'100px',
     background:'#f5f5f5',
+  },
+  lastestNewsHeadline:{
+    fontSize:'22px'
   }
 });
 
@@ -48,7 +51,7 @@ function LatestNews(props) {
           return(
             <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={latestNews.acf.link} target="_blank" rel="noopener">
-                <Typography variant='headline' gutterBottom>
+                <Typography variant='headline' className={classes.lastestNewsHeadline} gutterBottom>
                 {latestNews.acf.headline}
                 </Typography>
               </Button>
@@ -67,7 +70,7 @@ function LatestNews(props) {
           return(
             <Grid key={latestNews.id} item xs={12} sm={3} md={3} lg={3} className="latestNews">
               <Button style={{paddingTop:'10px', textTransform:'none', letterSpacing:0}} disableRipple={true} href={`post?${latestNews.slug}`} target="_blank">
-                <Typography variant='headline' gutterBottom>
+                <Typography variant='headline' className={classes.lastestNewsHeadline} gutterBottom>
                 {latestNews.acf.title}
                 </Typography>
               </Button>

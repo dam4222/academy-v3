@@ -67,7 +67,7 @@ class SimpleAppFooter extends React.Component {
                       <Grid item xs={12} sm={12} md={12} lg={9} xl={10}>
                         <Divider style={divider}/>
                         <Typography variant="title" style={{fontSize:9.5}} color="inherit">
-                          130 GRAND ST. SUITE #3D | BROOKLYN, NY 11249
+                          147 MANHATTAN AVE. SUITE #3B | BROOKLYN, NY 11206
                         </Typography>
                       </Grid>
                   </Grid>
