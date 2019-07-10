@@ -160,7 +160,7 @@ class Process extends React.Component {
               <Typography variant='display3' gutterBottom>
                 as an extension of your team
               </Typography>
-              <Grid item xs={10} sm={10} md={10} lg={10} xl={6}>
+              <Grid item xs={12} sm={10} md={10} lg={10} xl={6}>
                 <Typography variant='body1' gutterBottom>
                 We work side-by-side with cross-functional teams – including domain experts, designers, developers, researchers, product managers and end users. Using proven methodologies in Design Thinking and UX we execute Design Sprints to help rapidly prototype and find solutions. Testing methodically, we continually validate our hypotheses and define the product roadmap so that we can remain agile, prioritize features, all while considering the technological feasibility and viability.
                 </Typography>
@@ -179,7 +179,7 @@ class Process extends React.Component {
 
               <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
                 <Typography variant="title" color="inherit" gutterBottom>01</Typography>
-                <Typography variant="headline" color="inherit" gutterBottom>Research</Typography>
+                <Typography variant="headline" color="inherit" gutterBottom>Research & Strategy</Typography>
                 <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside yours to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
@@ -218,13 +218,7 @@ class Process extends React.Component {
 
 
 
-          <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-            <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
-              <img style={{margin:'0 auto', width:'100%'}} src='/static/Academy_Our_Process_V2.png' />
-            </Grid>
-            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-          </Grid>
+
 
         <Grid container className={classes.mission}>
           <Grid container style={{paddingTop:'100px'}}>
@@ -248,6 +242,14 @@ class Process extends React.Component {
             </Grid>
             <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
           </Grid>
+          </Grid>
+
+          <Grid container style={{paddingBottom:'100px'}}>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+            <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
+              <img style={{margin:'0 auto', width:'100%'}} src='/static/Academy_Our_Process_V2.png' />
+            </Grid>
+            <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
           </Grid>
 
           <Grid container style={{paddingBottom:'100px'}} className={classes.why}>

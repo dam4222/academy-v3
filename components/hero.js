@@ -30,7 +30,7 @@ function Hero(props) {
         <Typography variant='display3' gutterBottom>
           with UX & Design Thinking
         </Typography>
-        <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
+        <Grid item xs={12} sm={10} md={10} lg={10} xl={10}>
           <Typography variant='body1' gutterBottom>
           We are a Product Design Studio that runs Design Sprints to help craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as Team-Based Training.
           </Typography>
