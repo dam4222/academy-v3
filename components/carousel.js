@@ -135,7 +135,7 @@ class Carousel extends React.Component {
       <div>
         <Grid container spacing={0}>
           <Grid item xs sm={1}>
-            <Hidden smDown>
+          <Hidden smDown>
               <Typography style={verticalText} variant="caption" color="secondary">
                 Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
           </Typography>
@@ -148,6 +148,7 @@ class Carousel extends React.Component {
               <Divider style={horizontalLine} />
             </Hidden>
           </Grid>
+          <Hidden xsUp>
           <Grid item xs={12} sm={7}>
             <Slider className={"noFocus carousel"}
               {...settings}
@@ -158,7 +159,7 @@ class Carousel extends React.Component {
                 return (
                   <div key={project.id} clientname={project.acf.client_name} className={"noFocus carousel"}>
                     <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
-                { this.state.loadingImage ? <CircularProgress className={progress} /> : null }
+                { this.state.loadingImage ? <CircularProgress style={progress} /> : null }
                       <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
 
                           <Link href={`/project?${project.slug}`} prefetch>
@@ -174,20 +175,13 @@ class Carousel extends React.Component {
               })}
             </Slider>
           </Grid>
+          </Hidden>
 
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={11}>
             <Slider
               asNavFor={this.state.nav1}
               ref={slider => (this.slider2 = slider)}
-              swipeToSlide={true}
-              arrows={false}
-              focusOnSelect={false}
-              speed={950}
-              cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
-              className={'slider-two'}
-              touchThreshold={5}
-              vertical={false}
-              verticalSwiping={false}
+              {...settings}
             >
               {this.props.projects.map((project) => {
                 return (
@@ -197,7 +191,7 @@ class Carousel extends React.Component {
                       <div className={"noFocus carousel-two carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh' }}>
                         { this.state.loadingImage ? <CircularProgress /> : null }
                         <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
-                          <div className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'100%', height: '100%', backgroundPosition:'center'}}></div>
+                          <div className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'100%', height: '100%', backgroundPosition:'center'}}></div>
                         </div>
                       </div>
                     </a>
@@ -208,6 +202,7 @@ class Carousel extends React.Component {
               }
             </Slider>
           </Grid>
+
         </Grid>
       </div>
     );

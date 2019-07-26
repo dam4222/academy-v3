@@ -59,7 +59,7 @@ class SimpleAppFooter extends React.Component {
                       |
                     </Typography>
                     <Typography variant="body2" color="secondary" gutterBottom>
-                      Product Design Studio
+                      Product Design Agency
                     </Typography>
                     </div>
 

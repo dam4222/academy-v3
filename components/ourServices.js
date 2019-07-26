@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import DesignBetter from '../assets/design-better.svg';
 import InVisionLogoV from '../assets/invision-logo-pink-v3.svg';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import Hidden from '@material-ui/core/Hidden';
 
 const styles = theme => ({
   root: {
@@ -29,6 +30,11 @@ const verticalText = {
   height: '760px',
   display: 'flex',
   alignItems: 'center',
+}
+
+const horizontalText = {
+  transform: 'rotate(0deg)',
+  position: 'relative',
 }
 
 const verticalLogo = {
@@ -76,9 +82,12 @@ function OurServices(props) {
       <Grid container style={{paddingBottom:'10vh'}}>
         <Grid item xs={1} sm={2}></Grid>
         <Grid item xs={1} sm={1}>
+
+
         <Typography style={verticalText} variant="caption" color="secondary">
           PROUD PARTNERS OF <DesignBetter style={verticalLogo} /><InVisionLogoV style={verticalLogo}/>
         </Typography>
+
 
         </Grid>
           <Grid item xs={10} sm={7}>
@@ -102,7 +111,7 @@ function OurServices(props) {
                   Product Team as a Service
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We embed into your organization as your product team helping research, design, develop, manage and test innovations.
+                We offer end-to-end Product Strategy, Design, Research & Analytics and Team-Based Training.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">
@@ -130,9 +139,9 @@ function OurServices(props) {
                   Design Sprint Facilitation
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We help lead your team from concept through validation as your Design Sprint Facilitator. 
+                We help lead your team from concept through validation as your Design Sprint Facilitator.
                 </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>
@@ -161,7 +170,7 @@ function OurServices(props) {
                 <Typography variant='body1' gutterBottom>
                 We run a brief, immersive workshops, training teams on how to run Design Sprints and lead digital transformation.
                 </Typography>
-                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                   </Typography>

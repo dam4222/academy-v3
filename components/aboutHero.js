@@ -36,12 +36,14 @@ function Hero(props) {
         </Grid>
 
           <Typography variant='body1' gutterBottom paragraph>
-            Academy is a Brooklyn, NY based Product Design Studio that believes that creating a culture of Human Centered Design in organizations can build a better world around us. We do this by running Design Sprints and bringing UX & Design Thinking into organizations to shift their mindset of Design so that together, we can design products, services, and strategies that matter.
+            Academy is a Brooklyn, NY based Product Design Agency that believes that creating a culture of Human Centered Design in organizations can build a better world around us. We do this by running Design Sprints and bringing UX & Design Thinking into organizations to shift their mindset of Design so that together, we can design products, services, and strategies that matter.
           </Typography>
           <Grid item xs={12} stlye={{display:'flex', justifyContent:'center'}}>
           <Paper elevation={0} style={{background:'#e7e7e7', padding:'30px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <Typography variant='body1' gutterBottom>
-            Founded in 2017 by Adam Perlis. He is the former Design/UX Director for TIME Magazine where he oversaw the redesign of TIME, Fortune and Money.com. His award-winning work has been featured on Awwwards, The FWA, and TechCrunch. He has been a Speaker at SXSW, Web Summit, Northside Festival, Fifteen Second Festival, and Tech Open Air. Working as both a designer and developer his diverse skill set includes UX/UI design, front-end and back-end development, 2D & 3D motion graphics, and video production. He also has served on the Rutgers University Design Thinking Advisory Board, DesignBetter.co Instructor, InVision Design Leadership Forum, Working Not Working Members Board, and as a guest lecturer at General Assembly.
+            Founded in 2017 by Adam Perlis. He is the former Head of Design/UX for TIME Magazine where he oversaw the redesign of TIME, Fortune and Money.com. His award-winning work has been featured on Awwwards, The FWA, and TechCrunch. He has been a speaker at SXSW, Web Summit, Northside Festival, Fifteen Second Festival, Tech Open Air. Working as both a designer and developer his diverse skill set includes UX/UI design, front-end and back-end development, 2D & 3D motion graphics, video production. He is a Design Sprint Facilitator, User Experience Expert, and Design Thinking Expert with a passion for human-centered design. He also has served on the InVision Design Leadership Forum, DesignBetter.co Instructor, Working Not Working Members Board, Rutgers University Design Thinking Advisory Board, and as a guest lecturer at General Assembly.
+
+
           </Typography>
           </Paper>
           </Grid>

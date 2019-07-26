@@ -25,14 +25,14 @@ function Hero(props) {
       <Grid item xs={1} sm={3} md={3} lg={3} xl={3}></Grid>
       <Grid item xs={10} sm={5} md={6} lg={5} xl={4}>
         <Typography variant='display4'>
-          Think Better, Build Better
+          Product Design Agency
         </Typography>
         <Typography variant='display3' gutterBottom>
-          with UX & Design Thinking
+          Human-Centered Approach
         </Typography>
         <Grid item xs={12} sm={10} md={10} lg={10} xl={10}>
           <Typography variant='body1' gutterBottom>
-          We are a Product Design Studio that runs Design Sprints to help craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as Team-Based Training.
+          We make complex problems seem simple. Specializing in UX and UI, we craft digital products using Design Sprints to provide Product Strategy, Design, Research, & Analytics as well as Team-Based Training to help employ Design Thinking principles.
           </Typography>
         </Grid>
       </Grid>

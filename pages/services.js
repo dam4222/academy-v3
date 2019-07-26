@@ -26,8 +26,9 @@ import ConsultingIcon from '../assets/consulting-icon.svg'
 import StudioIcon from '../assets/studio-icon.svg'
 import "../styles.scss"
 import Plx from 'react-plx';
-import Head from 'next/head';
 import scrollToComponent from 'react-scroll-to-component-ssr';
+import Head from 'next/head';
+
 
 
 const ParallaxData = [
@@ -149,36 +150,6 @@ class Process extends React.Component {
             </Grid>
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
           </Grid>
-
-        {/* <Grid container>
-          <Grid item xs={1} sm={2}></Grid>
-          <Grid item xs={10} sm={4} md={4} lg={3}>
-            <Typography variant='display2'>
-              Our
-            </Typography>
-            <Typography variant='display1' gutterBottom>
-              Services
-            </Typography>
-            <Typography variant="body1" color="inherit" gutterBottom>
-              We are a Digtial Product Studio that takes UX & Design Thinking principles and applies them directly to your workflow and product build outs. We take a User-Centric approach to design and development and help transform organizations products, services, and strategies.
-            </Typography>
-          </Grid>
-          <Grid item xs={1} sm={5}></Grid>
-        </Grid>
-
-        <Grid container>
-
-        </Grid>
-
-        <Grid container>
-          <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
-          <Grid item xs={3} sm={3} md={1} lg={1} xl={1}>
-            <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
-              Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
-            </Typography>
-          </Grid>
-          <Grid item xs></Grid>
-        </Grid> */}
 
       </Plx>
         </Grid>

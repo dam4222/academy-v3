@@ -146,17 +146,15 @@ class SimpleDrawer extends React.Component {
           </Grid>
 
           <Grid item xs={12} md={6} className="showDrawer" style={{display: 'flex', flexDirection: 'column', alignItems:'flex-end', textAlign:'right', flexWrap:'wrap', position:'relative', justifyContent:'center'}}>
-            <Button style={{width:'130px', height:'auto', paddingBottom:'20px'}} disableRipple={true} href="/">
+            <Button style={{width:'130px', height:'auto', paddingBottom:'5px'}} disableRipple={true} href="/">
                 <AcademyLogoWhite style={{width:'100%'}}/>
             </Button>
-              <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> Product Design Studio </Typography>
+              <Typography variant="headline" style={{fontSize:'16px', color:'#8b8b8b', paddingBottom:'20px'}}> Product Design Agency </Typography>
               <Typography variant="title" style={{color:'#8b8b8b', paddingBottom:'20px'}}> 147 MANHATTAN AVE. SUITE #3B | BROOKLYN, NY 11206 </Typography>
             <div style={{display:'flex', flexDirection:'row'}} className="social-icons">
               <Button target="_blank" rel="noopener" href="https://medium.com/@academyuxdesign" style={spacingSocial}><Medium /></Button>
               <Button target="_blank" rel="noopener" href="https://twitter.com/academyuxdesign" style={spacingSocial}><Twitter /></Button>
-              <Button target="_blank" rel="noopener" href="https://www.linkedin.com/company/academy-ux-design-thinking-studio/" style={spacingSocial}><LinkedIn /></Button>
-              <Button target="_blank" rel="noopener" href="#" style={spacingSocial}><Dribbble /></Button>
-              <Button target="_blank" rel="noopener" href="#" style={spacingSocial}><Behance /></Button>
+              <Button target="_blank" rel="noopener" href="https://www.linkedin.com/company/academy-ux/" style={spacingSocial}><LinkedIn /></Button>
             </div>
 
           </Grid>

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs, { Tab } from '@material-ui/core/Tabs';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Icon from '@material-ui/core/Icon';
@@ -61,7 +62,7 @@ class SimpleTabsMobile extends React.Component {
 
     return (
       <div className={classes.root}>
-          <Grid xs={12}>
+          <Grid item xs={12}>
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
@@ -78,7 +79,6 @@ class SimpleTabsMobile extends React.Component {
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
-
         >
           <TabContainer dir={theme.direction}>
             <img src="https://cdn1.academyux.com/workshop.jpg" className={classes.center} />

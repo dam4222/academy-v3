@@ -66,8 +66,8 @@ class Index extends React.Component {
     <div className={classes.root}>
 
           <Head>
-            <title>Academy – Product Design Studio</title>
-            <meta name="description" content="Think Better, Build Better with UX & Design Thinking. We are a Product Design Studio that runs Design Sprints and helps craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
+            <title>Academy – Product Design Agency</title>
+            <meta name="description" content="We are a Product Design Agency with a Human-Centered Approach. We make complex problems seem simple. Specializing in UX and UI, we craft digital products using Design Sprints to provide Product Strategy, Design, Research, & Analytics as well as Team-Based Training to help employ Design Thinking principles." />
           </Head>
 
           <Hero />

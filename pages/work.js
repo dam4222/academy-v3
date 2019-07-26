@@ -4,12 +4,12 @@ import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
-import Link from 'next/link'
+import Link from 'next/link';
 import Grid from '@material-ui/core/Grid';
-import 'isomorphic-fetch'
+import 'isomorphic-fetch';
 import { LinearProgress } from '@material-ui/core/LinearProgress';
 import SimpleForm from '../components/simpleForm';
-import Router from 'next/router'
+import Router from 'next/router';
 
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';

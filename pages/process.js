@@ -174,46 +174,54 @@ class Process extends React.Component {
       </Grid>
 
         <Grid container spacing={24} className={classes.approach}>
+            <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
+            <Grid item xs={12} sm={10} md={8} lg={8} xl={8} style={{display:'flex',flexWrap:'wrap', width:'100%', paddingBottom:'80px'}}>
 
-            <Grid item xs={12} sm={10} md={12} lg={12} xl={12} style={{display:'flex',flexWrap:'wrap', width:'100%', paddingBottom:'80px'}}>
-
-              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className={classes.services}>
+                <div style={{height: '40%'}}>
                 <Typography variant="title" color="inherit" gutterBottom>01</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Research & Strategy</Typography>
                 <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside yours to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
+                </div>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className={classes.services}>
+                <div style={{height: '40%'}}>
                 <Typography variant="title" color="inherit" gutterBottom>02</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Design Sprints</Typography>
                 <Typography variant="body1" color="inherit" gutterBottom>We run a 5 day concept driven Design Sprint that uses Design Thinking in cross-functional teams to design, prototype, and test solutions with users.</Typography>
+                </div>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Thinking</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>User Journey Maps</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Concept Validation</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className={classes.services}>
+                <div style={{height: '40%'}}>
                 <Typography variant="title" color="inherit" gutterBottom>03</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Detailed Design Sprint</Typography>
                 <Typography variant="body1" color="inherit" gutterBottom>We create design language systems to scale and work through complex user journeys to ensure all scenarios are accounted for tested prior to launch.</Typography>
+                </div>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Language System</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Usability Testing</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Interactive Prototype</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
               </Grid>
-              <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={classes.services}>
+              <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className={classes.services}>
+                <div style={{height: '40%'}}>
                 <Typography variant="title" color="inherit" gutterBottom>04</Typography>
                 <Typography variant="headline" color="inherit" gutterBottom>Agile Development Sprints</Typography>
                 <Typography variant="body1" color="inherit" gutterBottom>Using Agile methodologies we work closely with the development team to create an MVP. We develop a feature roadmap with milestones and KPIs.</Typography>
+                </div>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Scrum</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Frontend / Backend</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>App, Mobile, Web</Typography>
                 <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Analytics</Typography>
               </Grid>
-
+              <Grid item xs={1} sm={1} md={2} lg={2} xl={2}></Grid>
             </Grid>
 
 
@@ -231,7 +239,7 @@ class Process extends React.Component {
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
           </Grid>
           <Grid container style={{paddingBottom:'100px'}}>
-            <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
+            <Grid item sm={1} md={1} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.mission}>
               <Typography variant='headline' gutterBottom paragraph={true}>
                 We run <strong>Design Sprints</strong> combined with <strong>Agile Development</strong> Sprints to form a Product Relay™. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
@@ -240,7 +248,7 @@ class Process extends React.Component {
               The <strong>Design Sprint</strong> is a proven methodology for solving problems through designing, prototyping, and testing ideas with users. Design Sprints quickly align teams under a shared vision with clearly defined goals and deliverables. Ultimately, it is a tool for developing a hypothesis, prototyping an idea, and testing it rapidly with as little investment as possible in as real an environment as possible.
             </Typography></Paper>
             </Grid>
-            <Grid item xs sm={1} md={1} lg={2} xl={3}></Grid>
+            <Grid item sm={1} md={1} lg={2} xl={3}></Grid>
           </Grid>
           </Grid>
 

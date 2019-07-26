@@ -17,7 +17,7 @@ function Contact(props) {
     <div className={classes.root}>
         <Head>
           <title>Academy – Contact Us</title>
-          <meta name="description" content="We are a Product Design Studio that runs Design Sprints and helps craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
+          <meta name="description" content="We are a Product Design Agency that runs Design Sprints and helps craft digital experiences that make complex products seem simple. We offer end-to-end Design, Development, Research, & Analytics as well as team based Training." />
         </Head>
         <ContactHero />
     </div>

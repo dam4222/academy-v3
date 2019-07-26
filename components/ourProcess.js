@@ -41,10 +41,7 @@ function OurProcess(props) {
 
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <Typography variant='body1' gutterBottom>
-          Our belief is that working with people from a diverse set of skills leads to building better products. Our religion is Design Thinking and our process is Design Sprints.
-          </Typography>
-          <Typography variant='body1' gutterBottom>
-          We bring Designers, Engineers, Product Managers, UX Researchers and Decision Makers together early in the process so everyone feels like their voice is being heard.
+          We bring Designers, Engineers, Product Managers, UX Researchers and other key decision makers together to engage in the design thinking process.
           </Typography>
           <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/process">
             <Typography variant="button" color="inherit">
