@@ -303,6 +303,18 @@ p{
   }
 }
 
+.services{
+
+  height:auto;
+  padding:40px;
+
+  @media (max-width: 599px) {
+    svg{
+      padding-bottom:40px;
+    }
+  }
+}
+
 .workshopImg{
   .parallax-outer:nth-child(1) {
     transform: translate(-100px,0); z-index: 2;

@@ -60,7 +60,7 @@ function OurProcess(props) {
           <img width="100%"
           style={{
             paddingTop:'60px',
-            paddingBottom:'60px'
+            paddingBottom:'15%'
           }}
           src='/static/Academy_Our_Process_V2.png'
           />

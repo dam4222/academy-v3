@@ -93,6 +93,38 @@ function OurServices(props) {
           <Grid item xs={10} sm={7}>
             <Grid container>
               <Grid item xs={10} sm={10} md={6} style={imgContainer}>
+                {/*<div
+                  style={{
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28215716/workshop10.jpg) center',
+                    backgroundSize: 'cover',
+                    width:'100%',
+                    maxWidth: '375px',
+                    margin: '0 auto',
+                    height: 'auto',
+                  }}
+                ></div>*/}
+                <video autoPlay loop muted playsInline width="100%" style={{maxWidth:'375px'}}>
+                <source src="https://cdn.dribbble.com/users/4859/videos/49/cuberto_showreel_dribbble_3.mp4" type="video/mp4"></source>
+                </video>
+
+              </Grid>
+              <Grid item xs={1} sm={1} md={1}></Grid>
+              <Grid item xs={10} sm={10} md={4}>
+                <Typography variant='headline' style={{paddingBottom:'20px'}}>
+                  Product Design Services
+                </Typography>
+                <Typography variant='body1' gutterBottom>
+                We embed into your organization as your product team helping research, strategize, design, manage and test innovations.
+                </Typography>
+                <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
+                  <Typography variant="button" color="inherit">
+                    Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                  </Typography>
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
                 <div
                   style={{
                     background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28215716/workshop10.jpg) center',
@@ -103,16 +135,15 @@ function OurServices(props) {
                     height: 'auto',
                   }}
                 ></div>
-
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
+
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Product Team as a Service
+                  Product Strategy & Research
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We offer end-to-end Product Strategy, Design, Research & Analytics and Team-Based Training.
-                </Typography>
+                We conduct research to frame your new or current products problems and help you develop a clear product roadmap with effective strategies to tackle issues and establish your goals.                </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">
                     Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
@@ -134,12 +165,13 @@ function OurServices(props) {
                 ></div>
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>
+
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
                   Design Sprint Facilitation
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We help lead your team from concept through validation as your Design Sprint Facilitator.
+                  We help lead your team from concept through validation as your Design Sprint Facilitator.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/services">
                   <Typography variant="button" color="inherit">
@@ -165,10 +197,10 @@ function OurServices(props) {
               <Grid item xs={1} sm={1} md={1}></Grid>
               <Grid item xs={10} sm={10} md={4}>
                 <Typography variant='headline' style={{paddingBottom:'20px'}}>
-                  Workshops
+                  Team-Based Training
                 </Typography>
                 <Typography variant='body1' gutterBottom>
-                We run a brief, immersive workshops, training teams on how to run Design Sprints and lead digital transformation.
+                We run a brief, immersive workshops and bootcamps, training teams on how to run Design Sprints, learn UX skills and lead digital transformation.
                 </Typography>
                 <Button style={{paddingTop:'10px', marginBottom:'100px'}} disableRipple={true} className={"underline"} href="/workshops">
                   <Typography variant="button" color="inherit">

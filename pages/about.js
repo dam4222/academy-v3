@@ -25,9 +25,9 @@ function About(props) {
     <div className={classes.root}>
         <Head>
           <title>Academy – About Us</title>
-          <meta name="description" content="Short Description here" />
+          <meta name="description" content="We are a Product Design Agency with a Human-Centered Approach. We make complex problems seem simple. Specializing in UX and UI, we craft digital products using Design Sprints to provide Product Strategy, Design, Research, & Analytics as well as Team-Based Training to help employ Design Thinking principles." />
         </Head>
-        
+
         <AboutHero />
 
     </div>
