@@ -71,33 +71,34 @@ const progress = {
 }
 
 const PrevArrow = ({ currentSlide, slideCount, ...props }) => (
-      <IconButton
-        {...props}
-        className={
-          "slick-prev slick-arrow" +
-          (currentSlide === 0 ? " slick-disabled" : "")
-        }
-        aria-hidden="true"
-        aria-disabled={currentSlide === 0 ? true : false}
-        type="button"
-      >
-        <Icon>chevron_left</Icon>
-      </IconButton>
-    );
-    const NextArrow = ({ currentSlide, slideCount, ...props }) => (
-      <IconButton
-        {...props}
-        className={
-          "slick-next slick-arrow" +
-          (currentSlide === slideCount - 1 ? " slick-disabled" : "")
-        }
-        aria-hidden="true"
-        aria-disabled={currentSlide === slideCount - 1 ? true : false}
-        type="button"
-      >
-      <Icon>chevron_right</Icon>
-      </IconButton>
-    );
+    <IconButton
+      {...props}
+      className={
+        "slick-prev slick-arrow" +
+        (currentSlide === 0 ? " slick-disabled" : "")
+      }
+      aria-hidden="true"
+
+      type="button"
+    >
+      <Icon>chevron_left</Icon>
+    </IconButton>
+  );
+
+const NextArrow = ({ currentSlide, slideCount, ...props }) => (
+    <IconButton
+      {...props}
+      className={
+        "slick-next slick-arrow" +
+        (currentSlide === slideCount - 1 ? " slick-disabled" : "")
+      }
+      aria-hidden="true"
+      aria-disabled={currentSlide === slideCount - 1 ? true : false}
+      type="button"
+    >
+    <Icon>chevron_right</Icon>
+    </IconButton>
+  );
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -174,7 +175,7 @@ class Carousel extends React.Component {
               <Divider style={horizontalLine} />
             </Hidden>
           </Grid>
-          <Grid item xs={12} sm={7}>
+          <Grid item xs={12} sm={11}>
             <Slider className={"noFocus carousel"}
               {...settings}
               asNavFor={this.state.nav2}
@@ -200,7 +201,7 @@ class Carousel extends React.Component {
               })}
             </Slider>
           </Grid>
-
+          <Hidden xsUp>
           <Grid item xs={12} sm={4}>
             <Slider
               asNavFor={this.state.nav1}
@@ -234,6 +235,7 @@ class Carousel extends React.Component {
               }
             </Slider>
           </Grid>
+          </Hidden>
         </Grid>
       </div>
     );
