@@ -33,7 +33,10 @@
     "sitemap": "^1.13.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^3.2.3",
-    "vivus": "^0.4.4"
+    "vivus": "^0.4.4",
+    "lodash": "^4.17.13",
+    "mem": "^4.0.0",
+    "jquery": ">=1.8.0"
   },
   "scripts": {
     "dev": "nodemon server/server.js --watch server",
