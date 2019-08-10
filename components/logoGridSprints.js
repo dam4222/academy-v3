@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import AirbnbLogo from '../assets/airbnb-2.svg';
+import AirbnbLogo from '../assets/Airbnb-2.svg';
 import ATTLogo from '../assets/att-2.svg';
 import FacebookLogo from '../assets/facebook-2.svg';
 import GoogleLogo from '../assets/google-2.svg';
