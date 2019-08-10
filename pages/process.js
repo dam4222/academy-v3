@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../src/withRoot';
 import Grid from '@material-ui/core/Grid';
+import Chip from '@material-ui/core/Chip';
 import Link from 'next/link'
 import Paper from '@material-ui/core/Paper';
 import Icon from '@material-ui/core/Icon';
@@ -20,6 +21,7 @@ import Stats from '../assets/skills/stats.svg'
 import ProcessDiagram from '../assets/Product-Relay-v2.svg'
 import User from '../assets/skills/user.svg'
 import "../styles.scss"
+import LogoGridSprints from '../components/logoGridSprints'
 import Plx from 'react-plx';
 import Head from 'next/head';
 
@@ -239,7 +241,7 @@ class Process extends React.Component {
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
           </Grid>
           <Grid container style={{paddingBottom:'100px'}}>
-            <Grid item sm={1} md={1} lg={2} xl={3}></Grid>
+            <Grid item xs={1} sm={1} md={1} lg={2} xl={3}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={8} xl={6} className={classes.mission}>
               <Typography variant='headline' gutterBottom paragraph={true}>
                 We run <strong>Design Sprints</strong> combined with <strong>Agile Development</strong> Sprints to form a Product Relay™. It’s our secret sauce and sets us apart from any other design/development teams you will work with.
@@ -248,14 +250,14 @@ class Process extends React.Component {
               The <strong>Design Sprint</strong> is a proven methodology for solving problems through designing, prototyping, and testing ideas with users. Design Sprints quickly align teams under a shared vision with clearly defined goals and deliverables. Ultimately, it is a tool for developing a hypothesis, prototyping an idea, and testing it rapidly with as little investment as possible in as real an environment as possible.
             </Typography></Paper>
             </Grid>
-            <Grid item sm={1} md={1} lg={2} xl={3}></Grid>
+            <Grid item xs={1} sm={1} md={1} lg={2} xl={3}></Grid>
           </Grid>
           </Grid>
 
           <Grid container style={{paddingBottom:'100px'}}>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
-              <img style={{margin:'0 auto', width:'100%'}} src='/static/Academy_Our_Process_V2.png' />
+              <img style={{margin:'0 auto', width:'100%', paddingBottom:'10%', paddingTop:'10%'}} src='/static/Academy_Our_Process_V2.png' />
             </Grid>
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
           </Grid>
@@ -282,7 +284,59 @@ class Process extends React.Component {
             </Grid>
           </Grid>
           </Grid>
-        <Grid item xs sm={1}></Grid>
+          <Grid item xs sm={1}></Grid>
+        </Grid>
+
+      <Grid container style={{paddingBottom:'100px'}} className={classes.spacing}>
+        <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+        <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+          <Typography variant="title" style={{fontSize:'14px'}} color="inherit" gutterBottom align="center">
+            COMPANIES USING DESIGN SPRINTS
+          </Typography>
+        </Grid>
+        <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
+        <LogoGridSprints />
+      </Grid>
+
+      <Grid container style={{paddingBottom:'100px'}} className={classes.why}>
+        <Grid item xs={1} sm={1} md={1} lg={3} xl={3}></Grid>
+        <Grid item xs={10} sm={10} md={10} lg={6} xl={6} style={{display:'flex', width:'100%', justifyContent:'center'}}>
+          <Grid container>
+
+
+            <Link href={`#`}>
+
+            <Grid container>
+
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6} style={{display:"flex", flexDirection:"column", justifyContent:"center" }}>
+              <Chip
+                 label="Our Article on InVision's Blog!"
+                 className={classes.chip}
+                 style={{backgroundColor:'black', color:'white', fontSize:'12px', maxWidth:'200px'}}
+               />
+
+              <Typography variant="display3" color="inherit" gutterBottom>
+                Dual Track Agile, What do you mean?
+              </Typography>
+              <Button disableRipple={true} style={{paddingTop:'10px', marginBottom:'40px'}} className={"underline"} href="#">
+                <Typography variant="button" color="inherit">
+                  Go To Article <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                </Typography>
+              </Button>
+              </Grid>
+              <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+              <Grid className="heroHover" item xs={12} sm={12} md={4} lg={4} xl={5}>
+                <img width='100%' src="https://s3.amazonaws.com/www-inside-design/uploads/2017/11/12-wireframe-examples-from-some-of-our-favorite-UX-designers-feature-810x810.jpg"/>
+              </Grid>
+
+
+            </Grid>
+            </Link>
+
+        </Grid>
+
+      </Grid>
+          <Grid item xs={1} sm={1} md={1} lg={3} xl={3}></Grid>
       </Grid>
 
           <Grid item xs={1} md={3} lg={4}></Grid>

@@ -47,7 +47,7 @@ class MyDocument extends Document {
           />
           {/* PWA primary color */}
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
-          <meta property='og:image' content='https://cdn1.academyux.com/homepage.jpg'/>
+          <meta property='og:image' content='https://cdn1.academyux.com/wp-content/uploads/2019/08/10014904/homepage.jpg'/>
           <meta property='og:url' content='https://academyux.com' />
 
 

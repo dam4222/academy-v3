@@ -104,7 +104,7 @@ function OurServices(props) {
                   }}
                 ></div>*/}
                 <video autoPlay loop muted playsInline width="100%" style={{maxWidth:'375px'}}>
-                <source src="https://cdn.dribbble.com/users/4859/videos/49/cuberto_showreel_dribbble_3.mp4" type="video/mp4"></source>
+                <source src="/static/product-design.mp4" type="video/mp4"></source>
                 </video>
 
               </Grid>

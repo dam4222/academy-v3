@@ -340,6 +340,19 @@ p{
   }
 }
 
+.product-design{
+  height:100vh;
+  left: -22%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  @media (max-width: 1224px) {
+    left: -35%;
+  }
+
+}
+
 .heroHover{
 
   transition: all 650ms ease;
