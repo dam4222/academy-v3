@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import AirbnbLogo from '../assets/Airbnb-2.svg';
-import ATTLogo from '../assets/Att-2.svg';
+import ATTLogo from '../assets/att-2.svg';
 import FacebookLogo from '../assets/Facebook-2.svg';
 import GoogleLogo from '../assets/Google-2.svg';
 import TIMELogo from '../assets/Time-2.svg';
