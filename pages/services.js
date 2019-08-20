@@ -336,9 +336,9 @@ class Process extends React.Component {
 
               <Grid item xs={0} sm={12} md={12} lg={7} xl={7} style={{width: "100%", height: "100%", position: "relative", overflow: "hidden"}}>
 
-                {/*<div
+                <div
                 style={{
-                  background: `url(https://cdn.dribbble.com/users/4859/videos/49/cuberto_showreel_dribbble_3.mp4)`,
+                  background: `url(https://cdn1.academyux.com/wp-content/uploads/2019/08/20165640/product-design.jpg)`,
                   backgroundSize: 'cover',
                   backgroundPosition:'center',
                   backgroundRepeat:'no-repeat',
@@ -346,11 +346,11 @@ class Process extends React.Component {
                   top: '0',
                   zIndex: -1,
                 }}
-                ></div>*/}
-                <video autoPlay loop muted playsInline class="product-design">
+                ></div>
+                {/*<video autoPlay loop muted playsInline class="product-design">
                 <source src="/static/product-design.mp4" type="video/mp4"></source>
                 </video>
-
+*/}
                 </Grid>
                 <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
 
