@@ -264,7 +264,7 @@ class Process extends React.Component {
 
               <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
               <Grid container ref={(section) => { this.Strategy = section; }}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'30px', margin: '1px'}}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px', margin: '1px'}}>
                   <Typography variant="headline" color="inherit" gutterBottom align="center">Product Strategy & Research</Typography>
                   <br></br>
                   <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
@@ -303,7 +303,7 @@ class Process extends React.Component {
               <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
               <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
                 <Grid container ref={(section) => { this.Design = section; }}>
-                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'30px'}}>
+                <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px'}}>
                     <Typography variant="headline" color="inherit" gutterBottom align="center">Product Design Services</Typography>
                     <br></br>
                     <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
@@ -374,7 +374,7 @@ class Process extends React.Component {
 
           <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
           <Grid container ref={(section) => { this.Facilitate = section; }}>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'30px', margin: '1px'}}>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px', margin: '1px'}}>
               <Typography variant="headline" color="inherit" gutterBottom align="center">Design Sprint Facilitation</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
@@ -413,7 +413,7 @@ class Process extends React.Component {
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
             <Grid item xs={10} sm={10} md={10} lg={3} xl={3} style={{alignItems: 'center', display: 'flex', marginTop:'40px', marginBottom:'40px'}}>
               <Grid container  ref={(section) => { this.Training = section; }}>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{border:'1px dashed #3023ae', padding:'30px'}}>
+              <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px'}}>
               <Typography variant="headline" color="inherit" gutterBottom align="center">Team-Based Training</Typography>
               <br></br>
               <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>

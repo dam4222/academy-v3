@@ -52,6 +52,14 @@ const imgContainer = {
   minHeight: '250px'
 }
 
+
+const vidContainer = {
+  justifyContent: 'center',
+  display: 'flex',
+  alignItems: 'flex-start',
+  paddingBottom:'20px'
+}
+
 const imgStyle = {
   backgroundSize: 'cover',
   width:'100%',
@@ -92,7 +100,7 @@ function OurServices(props) {
         </Grid>
           <Grid item xs={10} sm={7}>
             <Grid container>
-              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
+              <Grid item xs={10} sm={10} md={6} style={vidContainer}>
                 {/*<div
                   style={{
                     background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28215716/workshop10.jpg) center',
@@ -104,7 +112,7 @@ function OurServices(props) {
                   }}
                 ></div>*/}
                 <video autoPlay loop muted playsInline width="100%" style={{maxWidth:'375px'}}>
-                <source src="/static/product-design.mp4" type="video/mp4"></source>
+                <source src="https://cdn1.academyux.com/wp-content/uploads/2019/08/21164529/MASTER_ACADEMY.mp4" type="video/mp4"></source>
                 </video>
 
               </Grid>

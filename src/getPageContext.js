@@ -38,7 +38,7 @@ const theme = createMuiTheme({
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 300,
         lineHeight: 1.7,
-        fontSize: 10,
+        fontSize: 13,
       },
       display4: {
         fontFamily: 'Crimson Text, serif',
@@ -81,7 +81,7 @@ const theme = createMuiTheme({
       button: {
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 400,
-        fontSize: 12,
+        fontSize: 13,
         color: '#2f2f40',
         textTransform:'none',
         letterSpacing: 'normal',
@@ -91,7 +91,7 @@ const theme = createMuiTheme({
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 300,
         lineHeight: 1.75,
-        fontSize: 12,
+        fontSize: 13,
       }
     },
     overrides: {
@@ -103,7 +103,7 @@ const theme = createMuiTheme({
           border: 0,
           height: 'auto',
           padding: '0px',
-          fontSize: 12,
+          fontSize: 13,
           fontFamily: 'Montserrat, sans-serif',
           fontWeight: 600,
           letterSpacing:'1.8px',
