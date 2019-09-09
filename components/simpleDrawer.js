@@ -128,7 +128,7 @@ class SimpleDrawer extends React.Component {
                 </Button>
               </Link>
 
-              <Button disableRipple={true} href="https://angel.co/academy-5/jobs" style={spacing} target="_blank" rel="noopener">
+              <Button disableRipple={true} href="https://angel.co/company/academy-ux" style={spacing} target="_blank" rel="noopener">
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(.75em + .5vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'#8b8b8b'}} color="inherit">
                   Careers
                 </Typography>
