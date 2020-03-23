@@ -105,21 +105,22 @@ class Carousel extends React.Component {
     super(props);
     this.state = {
       nav1: null,
-      nav2: null,
       loadingImage: true,
       firstProject: this.props.projects[0],
       activeSlide: 0,
-    activeSlide2: 0,
-    callCount: 0
+      activeSlide2: 0,
+      callCount: 0
     };
     this.onLoad = this.onLoad.bind(this);
   }
 
+
   componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2
-    });
+
+      this.setState({
+        nav1: this.slider1
+      });
+
   }
 
   onLoad (id)  {
@@ -127,7 +128,7 @@ class Carousel extends React.Component {
     if (this.state.loadingImage && id == this.state.firstProject.id){
 
       this.setState({callCount: this.state.callCount++})
-      if (this.state.callCount >= 2)
+      if (this.state.callCount >= 0)
         this.setState({
           loadingImage: false,
         })
@@ -165,13 +166,13 @@ class Carousel extends React.Component {
             <Hidden smDown>
               <Typography style={verticalText} variant="caption" color="secondary">
                 Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
-          </Typography>
+              </Typography>
               <Divider style={verticalLine} />
             </Hidden>
             <Hidden smUp>
               <Typography style={horizontalText} variant="caption" color="secondary">
                 Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
-          </Typography>
+              </Typography>
               <Divider style={horizontalLine} />
             </Hidden>
           </Grid>
@@ -201,41 +202,9 @@ class Carousel extends React.Component {
               })}
             </Slider>
           </Grid>
-          <Hidden xsUp>
-          <Grid item xs={12} sm={4}>
-            <Slider
-              asNavFor={this.state.nav1}
-              ref={slider => (this.slider2 = slider)}
-              swipeToSlide={true}
-              arrows={false}
-              focusOnSelect={false}
-              speed={950}
-              cssEase={"cubic-bezier(0.19, 1, 0.22, 1)"}
-              className={'slider-two'}
-              touchThreshold={5}
-              vertical={false}
-              verticalSwiping={false}
-            >
-              {this.props.projects.map((project) => {
-                return (
-                  <div key={project.id} className={"noFocus carousel-two"}>
-                    <Link href={`/project?${project.slug}`} prefetch>
-                    <a title={project.title.rendered}>
-                      <div className={"noFocus carousel-two carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh' }}>
-                        { this.state.loadingImage ? <CircularProgress /> : null }
-                        <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
-                          <div className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} onLoad={this.onLoad(project.id)} height={this.state.loadingImage ? 0: '100%'} style={{backgroundImage: "url("+ project.acf.carousel_image_2 +")", backgroundSize:'cover', width:'100%', height: '100%', backgroundPosition:'center'}}></div>
-                        </div>
-                      </div>
-                    </a>
-                    </Link>
-                  </div>
-                )
-              })
-              }
-            </Slider>
-          </Grid>
-          </Hidden>
+
+
+
         </Grid>
       </div>
     );
