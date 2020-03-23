@@ -66,6 +66,15 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left',
+    },
+    [theme.breakpoints.up('lg')]: {
+      textAlign: 'left',
+    },
   },
   centerAlign: {
     justifyContent:'center',
@@ -106,7 +115,7 @@ const styles = theme => ({
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
-  }
+  },
 });
 
 
@@ -540,11 +549,12 @@ class Process extends React.Component {
                 </Grid>
               </Grid>
 
-              <Grid item xs={8} sm={8} md={2} style={{paddingBottom:'20px', paddingTop:'20px'}}>
-                <Typography variant='display2'>
+              <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
+              <Grid item xs={10} sm={8} md={2} style={{paddingBottom:'20px', paddingTop:'20px'}}>
+                <Typography variant='headline'>
                   Our Areas
                 </Typography>
-                <Typography variant='display1' gutterBottom>
+                <Typography variant='headline' style={{color:'#848484', paddingBottom:'1rem'}} gutterBottom>
                   of Expertise
                 </Typography>
 

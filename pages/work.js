@@ -226,7 +226,6 @@ class Work extends React.Component {
           }
         </Grid>
 
-      <div className="mask"></div>
       </div>
     );
   }

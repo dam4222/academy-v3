@@ -27,7 +27,7 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      /* initial state */
+      display: 'block'
     };
   }
 
@@ -58,6 +58,20 @@ class Index extends React.Component {
     }
   }
 
+  componentDidMount(){
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll=()=>{
+    if (window.pageYOffset > 200) {
+      this.setState({ display: 'none' });
+
+    }else{
+      this.setState({ display: 'block' });
+    }
+
+  }
+
   render() {
 
   const { classes } = this.props;
@@ -71,6 +85,15 @@ class Index extends React.Component {
           </Head>
 
           <Hero />
+
+          <Grid container style={{position: 'fixed', bottom: '0'}}>
+            <Grid item xs={1} sm={8}></Grid>
+            <Grid item xs={2} sm={4}>
+              <div className={"scroll-down"} role="button" style={{display:this.state.display, transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <span></span>
+              </div>
+            </Grid>
+          </Grid>
 
           <Carousel projects={this.props.projects} />
 

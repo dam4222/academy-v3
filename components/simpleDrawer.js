@@ -42,7 +42,7 @@ const spacingSocial = {
 class SimpleDrawer extends React.Component {
 
   state = {
-    top: false
+    top: false,
   };
 
   toggleDrawer = (side, open) => () => {

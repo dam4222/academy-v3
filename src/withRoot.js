@@ -98,7 +98,7 @@ function withRoot(Component) {
 
           {this.state.loadAppBar ?
             (
-              <SimpleAppBar />
+              <SimpleAppBar style={{filter: 'invert(1)'}}/>
             )
             :<span></span>
           }

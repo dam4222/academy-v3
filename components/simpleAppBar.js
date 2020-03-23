@@ -56,7 +56,7 @@ class SimpleAppBar extends React.Component {
   handleInitLoad = () => {
     if(window.scrollY > 50){
       this.setState({
-        initLoad:false
+        initLoad:false,
       })
     }
   }
@@ -65,10 +65,12 @@ class SimpleAppBar extends React.Component {
     if (window.scrollY > 50) {
       this.setState({
         sticky: true,
+
       })
     } else {
       this.setState({
         sticky: false,
+
       })
     }
   }
@@ -76,6 +78,7 @@ class SimpleAppBar extends React.Component {
   state = {
 		sticky: false,
     initLoad: true,
+
 	};
 
 	setSticky = sticky => this.setState({ sticky });

@@ -16,7 +16,6 @@ import TextField from '@material-ui/core/TextField';
 import Error from 'next/error';
 import SimpleForm from '../components/simpleForm';
 
-
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -56,6 +55,7 @@ const styles = theme => ( {
     display: 'flex',
     alignItems: 'center',
     flexGrow: 1,
+    transition: 'all .5s cubic-bezier(.02, .01, .47, 1)'
   },
   content: {
     width: '100%',
@@ -111,6 +111,7 @@ class Project extends React.Component {
     this.state = {
       /* initial state */
       dialogOpen: false,
+      backgroundColor: this.props.project.project_theme_color,
     };
   }
 
@@ -192,6 +193,20 @@ class Project extends React.Component {
     }
   }
 
+  componentDidMount(){
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll=()=>{
+    if (window.pageYOffset > 10) {
+      this.setState({ backgroundColor: 'white' });
+
+    }else{
+      this.setState({ backgroundColor: this.props.project.project_theme_color });
+    }
+
+  }
+
   handleClick() {
     Router.push({
     pathname: '/work',
@@ -201,6 +216,7 @@ class Project extends React.Component {
   componentWillMount = () => {
     this.props.error ? this.openDialog() : null
 
+
   }
 
   render() {
@@ -208,7 +224,7 @@ class Project extends React.Component {
     if (this.props.error){
 
       return(
-        <div >
+        <div>
         <Error statusCode={403} />
         <Dialog
           open={this.state.dialogOpen}
@@ -253,105 +269,149 @@ class Project extends React.Component {
       )
     }
     return (
-      <div className={classes.root} style={{backgroundColor: this.props.bgColor}}>
+      <div className={classes.root} style={{backgroundColor: this.state.backgroundColor, position: 'relative'}}>
 
         <div>
           <Head>
-            <title>Academy – {this.props.project.client_name + " – " +  this.props.project.project_title}</title>
+            <title>Academy – {this.props.project.client_name + " – " + this.props.project.project_title}</title>
             <meta name="description" content={this.props.project.project_description}/>
           </Head>
 
-        <Grid container className="project" style={{height: '100vh'}}>
+        <Grid container className="project" style={{height:'100%', position:'relative'}}>
+          <Grid item xs={1} md={2}></Grid>
+          <Grid item xs={10} md={8}>
+          <Grid container>
+            <Grid item xs={12} md={2} lg={4}></Grid>
+            <Grid item xs={12} md={10} lg={8} style={{padding: '12rem 0rem 7rem 0rem'}}>
+              <div className={classes.projectLegend} style={{padding: '0rem 0rem 1rem 0rem'}}>
+                <Typography variant="title" style={{opacity:'.5', color: this.props.project.project_font_color}} className={classes.projectLegend}>
+                  Client&nbsp;
+                </Typography>
+                <Typography variant="title" className={classes.projectLegend} style={{color: this.props.project.project_font_color}}>
+                  {this.props.project.client_name}
+                </Typography>
+              </div>
+              <div className={classes.subLegend}>
+                <Typography variant="display2" style={{color: this.props.project.project_font_color}}>
+                  {this.props.project.project_title}
+                </Typography>
+              </div>
 
-          <Grid item xs={12} md={3} style={{ zIndex: 999, backgroundColor: 'white', padding:'40px', position:'absolute', top:'25%', left:'5%' }}>
-            <div className={classes.projectLegend}><IconButton className="arrowBack" style={{top:'-57px', left:'-19px', transform:'scale(.5)'}} onClick={this.handleClick}><Icon>chevron_left</Icon></IconButton></div>
-            <div className={classes.projectLegend}>
-              <Typography variant="title" color="secondary" className={classes.projectLegend}>
-                Client &nbsp;
-              </Typography>
-              <Typography variant="title" color="primary" className={classes.projectLegend}>
-                {this.props.project.client_name}
-              </Typography>
-            </div>
-            <div className={classes.subLegend}>
-              <Typography variant="display2" color="inherit">
-                {this.props.project.project_title}
-              </Typography>
-            </div>
-            <Typography variant="button" color="inherit" style={{paddingTop:'20px'}}>
-              Read More <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>arrow_downwards</Icon>
-            </Typography>
+            </Grid>
+            </Grid>
           </Grid>
 
-          <Grid item xs={12} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <Grid item xs={1} md={2}></Grid>
 
-            <Grid container className="project" style={{height:'100vh'}}>
-              <Grid item xs={12} md={12} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
-              <Plx
-              style={{bottom:0, position:'relative'}}
-              className='project-hero'
-              parallaxData={ ParallaxData } // your parallax effects, see beneath
-              animateWhenNotInViewport={ true }
-              >
-                <Grid item xs={12} md={12} style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}}>
-                  <img width="95%"
-                  style={{
-                    maxWidth:'100%',
-                  }}
-                  src={this.props.project.featured_image}
-                  alt="featured image"
-                  />
+        <Grid container style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <Grid item xs={1} md={3}></Grid>
+            <Grid item xs={10} md={6}>
+              <Grid container className="project" >
+
+                <img width='95%'
+                src={this.props.project.featured_image}
+                alt="featured image"
+                style={{padding: '0rem 0rem 7rem 0rem'}}
+                />
+                </Grid>
                 </Grid>
 
-              </Plx>
-              </Grid>
-              </Grid>
-          </Grid>
-          </Grid>
+              <Grid item xs={1} md={3}></Grid>
+        </Grid>
+        </Grid>
 
 
         <Grid container className={classes.content}>
+            <Grid item xs={12}>
 
-            <Grid container spacing={16} style={{background:'white'}}>
-              <Grid item xs={1} md={3}></Grid>
+              <Grid container>
+              <Grid item xs={1} md={2}></Grid>
+              <Grid item xs={10} md={8}>
 
-              <Grid item xs={10} md={6}>
-                <Grid container justify="space-between" className={classes.spacer}>
-                <Grid item xs={10} md={6}>
-                  <Typography variant="body1" style={{fontSize:'calc(1em + .25vw)'}} gutterBottom paragraph>
+                <Grid container style={{paddingBottom:'5rem'}}>
+                <Grid item xs={12} md={12} lg={4}><Typography variant="title" style={{fontSize:'1rem' ,paddingBottom:'2rem'}}>Introduction</Typography></Grid>
+                <Grid item xs={12} md={12} lg={8}>
+                  <Typography variant="display4" style={{fontSize:'calc(1.6em + .25vw)'}} gutterBottom paragraph>
                     {this.props.project.project_description}
                   </Typography>
-                  <Typography variant="button" paragraph>
-                    <a href={this.props.project.link} target="_blank" rel="noopener" className="underline" style={{textDecoration: 'none', color:'black'}}>
-                      Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
-                    </a>
-                  </Typography>
+
+
+                  {this.props.project.link.length > 0 &&
+                    <Typography variant="button" paragraph>
+                      <a href={this.props.project.link} target="_blank" rel="noopener" className="underline" style={{textDecoration: 'none', color:'black'}}>
+                        Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
+                      </a>
+                    </Typography>
+                  }
+
+                </Grid>
                 </Grid>
 
-                <Grid item xs={10} md={4}></Grid>
-                <Grid item xs={10} md={2} style={{display: 'flex', flexDirection:'column'}}>
-                  <Typography variant="button" paragraph>
-                    <a href="#section-one" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                      01   —   {this.props.project.section_1_title}
-                    </a>
-                  </Typography>
-                  <Typography variant="button" paragraph>
-                  <a href="#section-two" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                      02   —   {this.props.project.section_2_title}
-                    </a>
-                  </Typography>
-                  <Typography variant="button" paragraph gutterBottom>
-                    <a href="#section-three" className="underline" style={{textDecoration: 'none', color:'rgba(0, 0, 0, .5)'}}>
-                      03   —   {this.props.project.section_3_title}
-                    </a>
-                  </Typography>
-                </Grid>
               </Grid>
+              <Grid item xs={1} md={2}></Grid>
               </Grid>
-              <Grid item xs={1} md={3}></Grid>
-            </Grid>
 
-            <Grid container style={{backgroundColor: this.props.bgColor}}>
+              <Grid container>
+              <Grid item xs={1} md={2}></Grid>
+              <Grid item xs={10} md={8}>
+
+                <Grid container style={{paddingBottom:'5rem'}}>
+                <Grid item xs={12} md={12} lg={4}></Grid>
+
+                  <Grid item xs={12} md={12} lg={8}>
+                    <Grid container>
+                      <Grid item xs={12} md={10} lg={5}>
+                        <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                          KPIs
+                        </Typography>
+                        <Typography variant="body1" gutterBottom paragraph>
+                          {this.props.project.project_kpis} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris occaecat. Et nisi m
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={1} md={1}></Grid>
+
+                      <Grid item xs={12} md={10} lg={5}>
+                        <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                          Tasks
+                        </Typography>
+                        <Typography variant="body1" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                          {this.props.project.project_tasks} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris occaecat. Et nisi m
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                    <hr className="divider" style={{marginTop:'4rem'}}></hr>
+                  </Grid>
+
+                </Grid>
+
+                <Grid container style={{paddingBottom:'5rem'}}>
+                <Grid item xs={12} md={12} lg={4}></Grid>
+
+                  <Grid item xs={12} md={12} lg={8}>
+                    <Grid container>
+                      <Grid item xs={12} md={12} lg={12}>
+                        <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                          Goals
+                        </Typography>
+                        <Typography variant="body1" gutterBottom paragraph>
+                          {this.props.project.project_goals} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris occaecat. Et nisi m
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={1} md={1}></Grid>
+
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+              </Grid>
+              <Grid item xs={1} md={2}></Grid>
+              </Grid>
+
+
+
+
+            <Grid container>
               <Grid container spacing={8} id="section-one" className={classes.process}>
                 <Grid item xs={1} md={3}></Grid>
                 <Grid item xs={10} md={6}>
@@ -397,6 +457,7 @@ class Project extends React.Component {
                       <Typography variant="body1" >
                         <b>{this.props.project.section_3_title}</b>. {this.props.project.section_3_description}
                       </Typography>
+
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
                     <Grid item xs={12} sm={12} md={4} lg={6}>
@@ -408,7 +469,7 @@ class Project extends React.Component {
               </Grid>
             </Grid>
 
-            <Grid container spacing={16} justify="space-between" className={classes.spacer} style={{background:'white'}}>
+            <Grid container spacing={16} justify="space-between" className={classes.spacer}>
               <Grid item xs={1} md={1}></Grid>
               <Grid item xs={10} md={10}>
                 <Grid container>
@@ -427,8 +488,11 @@ class Project extends React.Component {
                 </Grid>
               </Grid>
 
+
               <Grid item xs={1} md={1}></Grid>
             </Grid>
+
+
 
             <Grid container justify="space-between" className={classes.spacer}>
                 <Grid container spacing={24}>
@@ -453,14 +517,16 @@ class Project extends React.Component {
 
             <Grid container style={{background:'white'}}>
               <Grid item xs={12} md={12}>
+
                 <div  dangerouslySetInnerHTML={{__html: this.props.project.large_video}} />
 
               </Grid>
             </Grid>
 
 
-            <Grid container className={classes.spacerNextProject} justify="space-between">
+            <Grid container className={classes.spacerNextProject} justify="space-between" style={{backgroundColor:"rgb(247,247,247)"}}>
               <Grid item xs={12} md={6}>
+
                 <Grid container style={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -495,7 +561,7 @@ class Project extends React.Component {
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} style={{
-                background:'white',
+                background:'rgb(237,237,237)',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -510,11 +576,13 @@ class Project extends React.Component {
               </Grid>
               <Grid item xs={1} md></Grid>
             </Grid>
+      </Grid>
+  </Grid>
 
-        </Grid>
       </div>
 
       </div>
+
     )
   }
 }
