@@ -7,11 +7,12 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import { Parallax } from 'react-scroll-parallax';
 import "../styles.scss"
 import Link from 'next/link';
 
+
 import CircularProgress from "@material-ui/core/CircularProgress";
+
 
 const expand = {
   display: 'flex',
@@ -70,142 +71,46 @@ const progress = {
    width:'100%'
 }
 
-const PrevArrow = ({ currentSlide, slideCount, ...props }) => (
-    <IconButton
-      {...props}
-      className={
-        "slick-prev slick-arrow" +
-        (currentSlide === 0 ? " slick-disabled" : "")
-      }
-      aria-hidden="true"
-
-      type="button"
-    >
-      <Icon>chevron_left</Icon>
-    </IconButton>
-  );
-
-const NextArrow = ({ currentSlide, slideCount, ...props }) => (
-    <IconButton
-      {...props}
-      className={
-        "slick-next slick-arrow" +
-        (currentSlide === slideCount - 1 ? " slick-disabled" : "")
-      }
-      aria-hidden="true"
-      aria-disabled={currentSlide === slideCount - 1 ? true : false}
-      type="button"
-    >
-    <Icon>chevron_right</Icon>
-    </IconButton>
-  );
 
 class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nav1: null,
-      loadingImage: true,
-      firstProject: this.props.projects[0],
-      activeSlide: 0,
-      activeSlide2: 0,
-      callCount: 0
-    };
-    this.onLoad = this.onLoad.bind(this);
-  }
-
-
-  componentDidMount() {
-
-      this.setState({
-        nav1: this.slider1
-      });
-
-  }
-
-  onLoad (id)  {
-
-    if (this.state.loadingImage && id == this.state.firstProject.id){
-
-      this.setState({callCount: this.state.callCount++})
-      if (this.state.callCount >= 0)
-        this.setState({
-          loadingImage: false,
-        })
-    }
-  }
 
 
 
   render() {
 
     var settings = {
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      focusOnSelect: false,
-      autoplay: true,
-      speed: 750,
-      autoplaySpeed: 5000,
-      cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
-      dots: true,
-      touchThreshold: 5,
-      vertical: false,
-      verticalSwiping: false,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-      beforeChange: (current, next) => this.setState({ activeSlide: next }),
-      afterChange: current => this.setState({ activeSlide2: current })
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
     };
 
     return (
       <div>
-        <Grid container spacing={0}>
-          <Grid item xs sm={1}>
-            <Hidden smDown>
-              <Typography style={verticalText} variant="caption" color="secondary">
-                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
-              </Typography>
-              <Divider style={verticalLine} />
-            </Hidden>
-            <Hidden smUp>
-              <Typography style={horizontalText} variant="caption" color="secondary">
-                Client – {(this.state.nav1 != null && "props" in this.state.nav1) ? this.state.nav1.props.children[this.state.activeSlide].props.clientname : null}
-              </Typography>
-              <Divider style={horizontalLine} />
-            </Hidden>
-          </Grid>
-          <Grid item xs={12} sm={11}>
-            <Slider className={"noFocus carousel"}
-              {...settings}
-              asNavFor={this.state.nav2}
-              ref={slider => (this.slider1 = slider)}
-            >
-              {this.props.projects.map((project) => {
-                return (
-                  <div key={project.id} clientname={project.acf.client_name} className={"noFocus carousel"}>
-                    <div className={"noFocus carousel carousel-inner"} style={{ background: project.acf.project_theme_color, height: '80vh', display: 'flex' }}>
-                { this.state.loadingImage ? <CircularProgress /> : null }
-                      <div style={{ width:'100%', height:'100%', overflow:'hidden'}}>
 
-                          <Link href={`/project?${project.slug}`} prefetch>
-                            <a title={`${project.acf.client_name} || ${project.acf.project_title}`}>
-                              <div onLoad={this.onLoad(project.id)} className={this.state.loadingImage ? 'hideCarouselImages' : 'showCarouselImages'} style={{backgroundImage: "url("+ project.acf.carousel_image_1 +")", backgroundSize:'cover', width:'100%', backgroundPosition:'center', height: '100%'}} ></div>
-                            </a>
-                          </Link>
-                      </div>
+                <h2> Single Item</h2>
+                <Slider {...settings}>
+                <div>
+                  <h3>1</h3>
+                </div>
+                <div>
+                  <h3>2</h3>
+                </div>
+                <div>
+                  <h3>3</h3>
+                </div>
+                <div>
+                  <h3>4</h3>
+                </div>
+                <div>
+                  <h3>5</h3>
+                </div>
+                <div>
+                  <h3>6</h3>
+                </div>
+              </Slider>
 
-                    </div>
-                  </div>
-                )
-              })}
-            </Slider>
-          </Grid>
-
-
-
-        </Grid>
       </div>
     );
   }

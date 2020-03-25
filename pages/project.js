@@ -16,6 +16,7 @@ import TextField from '@material-ui/core/TextField';
 import Error from 'next/error';
 import SimpleForm from '../components/simpleForm';
 
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -412,20 +413,22 @@ class Project extends React.Component {
 
 
             <Grid container>
+              <Grid item xs={12}>
+
               <Grid container spacing={8} id="section-one" className={classes.process}>
-                <Grid item xs={1} md={3}></Grid>
-                <Grid item xs={10} md={6}>
-                  <Grid container>
-                    <Grid item xs={10} sm={12} md={4} lg={4}>
-                      <Typography variant="body1" >
-                        <b>{this.props.project.section_1_title}</b>. {this.props.project.section_1_description}
-                      </Typography>
+                <Grid item xs={1} md={2}></Grid>
+                  <Grid item xs={10} md={8}>
+
+                    <Grid container style={{paddingBottom:'5rem'}}>
+                    <Grid item xs={12} md={12} lg={4}><Typography variant="title" style={{fontSize:'1rem' ,paddingBottom:'2rem'}}>Quotes</Typography></Grid>
+                    <Grid item xs={12} md={12} lg={8}>
+
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={6}>
-                          <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_1_media}}></div>
                     </Grid>
+
                   </Grid>
+                  <Grid item xs={1} md={2}></Grid>
+
                 </Grid>
                 <Grid item xs={1} md={3}></Grid>
               </Grid>
@@ -467,6 +470,7 @@ class Project extends React.Component {
                 </Grid>
                 <Grid item xs={1} md={3}></Grid>
               </Grid>
+            </Grid>
             </Grid>
 
             <Grid container spacing={16} justify="space-between" className={classes.spacer}>
@@ -577,7 +581,7 @@ class Project extends React.Component {
               <Grid item xs={1} md></Grid>
             </Grid>
       </Grid>
-  </Grid>
+
 
       </div>
 
