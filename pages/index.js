@@ -10,7 +10,6 @@ import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
 import OurServices from '../components/ourServices'
 import LatestNews from '../components/latestNews'
-import Carousel from '../components/carousel'
 import Head from 'next/head';
 
 const fetchUrl = process.env.fetchUrl
@@ -79,32 +78,39 @@ class Index extends React.Component {
   return (
     <div className={classes.root}>
 
-          <Head>
-            <title>Academy – Product Design Agency</title>
-            <meta name="description" content="We are a Product Design Agency with a Human-Centered Approach. We make complex problems seem simple. Specializing in UX and UI, we craft digital products using Design Sprints to provide Product Strategy, Design, Research, & Analytics as well as Team-Based Training to help employ Design Thinking principles." />
-          </Head>
+    <Head>
+      <title>Academy – Product Design Agency</title>
+      <meta name="description" content="We are a Product Design Agency with a Human-Centered Approach. We make complex problems seem simple. Specializing in UX and UI, we craft digital products using Design Sprints to provide Product Strategy, Design, Research, & Analytics as well as Team-Based Training to help employ Design Thinking principles." />
+    </Head>
 
-          <Hero />
+    <Hero />
 
-          <Grid container style={{position: 'fixed', bottom: '0'}}>
-            <Grid item xs={1} sm={8}></Grid>
-            <Grid item xs={2} sm={4}>
-              <div className={"scroll-down"} role="button" style={{display:this.state.display, transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
-                <span></span>
-              </div>
-            </Grid>
-          </Grid>
+    <Grid container style={{position: 'fixed', bottom: '0'}}>
+      <Grid item xs={1} sm={8}></Grid>
+      <Grid item xs={2} sm={4}>
+        <div className={"scroll-down"} role="button" style={{display:this.state.display, transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+          <span></span>
+        </div>
+      </Grid>
+    </Grid>
 
-          <Carousel projects={this.props.projects} />
+    <Grid container style={{paddingBottom:'5rem'}}>
+      <Grid item xs={12} sm={2}></Grid>
+      <Grid item xs={12} sm={8}>
+        <div className="circle"></div>
+        <video autoPlay loop muted playsInline width="100%">
+        <source src="https://cdn1.academyux.com/wp-content/uploads/2020/03/24233226/Academy-v4.mp4" type="video/mp4"></source>
+        </video>
+      </Grid>
+    </Grid>
 
-          <OurWork />
+    <OurWork />
 
-          <OurProcess />
+    <OurProcess style={{paddingBottom:'400px'}}/>
 
-          <OurServices />
+    <OurServices />
 
-          <LatestNews blogs={this.props.blogs} news={this.props.news}/>
-
+    <LatestNews blogs={this.props.blogs} news={this.props.news}/>
     </div>
     );
   }

@@ -8,6 +8,7 @@ module.exports = {
   "plugins": [
     [ "inline-react-svg" ],
     ["transform-define", env],
-    ["dynamic-import-node"]
+    ["dynamic-import-node"],
+
   ]
 }

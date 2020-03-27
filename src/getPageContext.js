@@ -69,7 +69,7 @@ const theme = createMuiTheme({
       title: {
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 400,
-        letterSpacing:'.5px',
+        letterSpacing:'0px',
         fontSize: 'calc(.5em + .5vw)'
       },
       headline: {

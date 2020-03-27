@@ -39,7 +39,7 @@ function OurProcess(props) {
 
         <Grid item xs={1}></Grid>
 
-        <Grid item xs={12} sm={6} md={6} lg={6}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <Typography variant='body1' gutterBottom>
           We bring Designers, Engineers, Product Managers, UX Researchers and other key decision makers together to engage in the design thinking process.
           </Typography>
@@ -55,12 +55,13 @@ function OurProcess(props) {
       </Grid>
 
       <Grid container>
-        <Grid item xs={1} sm={1} md={1} lg={1}></Grid>
-        <Grid item xs={10} sm={10} md={10} lg={10}>
+        <Grid item xs={1} sm={1} md={2} lg={5}></Grid>
+        <Grid item xs={10} sm={10} md={8} lg={6}>
           <img width="100%"
           style={{
             paddingTop:'60px',
-            paddingBottom:'15%'
+            paddingBottom:'15%',
+            maxWidth:'1400px',
           }}
           src='/static/Academy_Our_Process_V2.png'
           />
