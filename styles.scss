@@ -13,6 +13,20 @@ h3{
   text-transform: uppercase;
 }
 
+hr{
+    margin-block-start: 0em;
+}
+
+ul{
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 16px;
+}
+
 p{
   font-family:Montserrat;
   font-size: 12px;
@@ -22,6 +36,38 @@ p{
   line-height: 1.17;
   letter-spacing: normal;
 }
+
+.solution-gallery{
+  max-width: 50%;
+  @media (max-width: 1440px) {
+    max-width: 80%;
+  }
+}
+
+.solution {
+
+  list-style-type: none;
+  padding-left: 0em;
+
+    li {
+      position: relative;
+      margin-bottom: 1rem;
+
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: .75em;
+        width: .75em;
+        }
+
+        span{
+          display: inline-block;
+          margin-left: calc(10px + 1rem);
+        }
+    }
+  }
+
 
 .scrolling {
   background: #eeeeee;
@@ -532,6 +578,13 @@ p{
   ul{
     background:white;
     padding:40px;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
 
     @media (max-width: 599px) {
         padding:20px;

@@ -156,13 +156,13 @@ class SimpleAppBar extends React.Component {
                         </Button>
                       </Link>
 
-                      <Link href="/workshops">
+                      {/*<Link href="/workshops">
                         <Button className={`underline`} disableRipple={true} style={spacing}>
                           <Typography variant="button" color="inherit">
                             Workshops
                           </Typography>
                         </Button>
-                      </Link>
+                      </Link>*/}
 
                       <Link href="/blog">
                         <Button className={`underline`} disableRipple={true} style={spacing}>

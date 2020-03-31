@@ -14,8 +14,9 @@ import TextField from '@material-ui/core/TextField';
 import Error from 'next/error';
 import SimpleForm from '../components/simpleForm';
 import Hidden from '@material-ui/core/Hidden';
-import Carousel from 'nuka-carousel';
-import Card from '../components/card'
+import SolutionArrow from '../static/solution-arrow.svg';
+
+
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -27,29 +28,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import 'isomorphic-fetch'
 const fetchUrl = process.env.fetchUrl;
 
-const ParallaxData = [
-{
-start: 0,
-end: 3000,
-properties: [
-{
-startValue: 0,
-endValue: 300,
-property: "translateY"
-},
-{
-startValue: 1,
-endValue: 1.25,
-property: "scale"
-},
-{
-startValue: 1,
-endValue: 0,
-property: "opacity"
-}
-]
-},
-];
 
 const styles = theme => ( {
 root:{
@@ -255,41 +233,27 @@ return(
 )
 }
 
-var settings = {
-infinite: true,
-speed: 500,
-slidesToShow: 1,
-slidesToScroll: 1,
-focusOnSelect: false,
-autoplay: true,
-speed: 750,
-autoplaySpeed: 5000,
-cssEase: "cubic-bezier(0.19, 1, 0.22, 1)",
-dots: true,
-touchThreshold: 5,
-vertical: false,
-verticalSwiping: false
-};
 
 return (
 <div className={classes.root} style={{backgroundColor: this.state.backgroundColor, position: 'relative'}}>
-  <div>
+<div>
+
   <Head>
     <title>Academy – {this.props.project.client_name + " – " + this.props.project.project_title}</title>
     <meta name="description" content={this.props.project.project_description} />
   </Head>
 
   <Grid container className="project" style={{height:'100%', position:'relative'}}>
-    <Grid item xs={1} md={1}></Grid>
-    <Grid item xs={10} md={10}>
+    <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
+    <Grid item xs={10} md={10} lg={8} xl={6}>
       <Grid container>
-        <Grid item xs={12} md={4} lg={4}></Grid>
-        <Grid item xs={12} md={8} lg={8} xl={6} style={{padding: '12rem 0rem 7rem 0rem'}}>
+        <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+        <Grid item xs={12} md={8} lg={8} xl={8} style={{padding: '12rem 0rem 4rem 0rem'}}>
           <div className={classes.projectLegend} style={{padding: '0rem 0rem 1rem 0rem'}}>
-            <Typography variant="title" style={{opacity:'.5', color: this.props.project.project_font_color}} className={classes.projectLegend}>
+            <Typography variant="title" style={{opacity:'.5', fontSize:'.8rem', color: this.props.project.project_font_color}} className={classes.projectLegend}>
               Client&nbsp;
             </Typography>
-            <Typography variant="title" className={classes.projectLegend} style={{color: this.props.project.project_font_color}}>
+            <Typography variant="title" className={classes.projectLegend} style={{color: this.props.project.project_font_color, fontSize:'.8rem',}}>
               {this.props.project.client_name}
             </Typography>
           </div>
@@ -301,268 +265,219 @@ return (
 
         </Grid>
       </Grid>
-    </Grid>
+  </Grid>
 
-    <Grid item xs={1} md={2}></Grid>
-
-    <Grid container style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <Grid item xs={1} md={3}></Grid>
-      <Grid item xs={10} md={6}>
-        <Grid container className="project">
-
-          <img width='95%' src={this.props.project.featured_image} alt="featured image" style={{padding: '0rem 0rem 7rem 0rem'}} />
-        </Grid>
+    <Grid container style={{paddingBottom:'4rem'}}>
+      <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
+      <Grid item xs={10} md={10} lg={10} xl={8}>
+        <img width="100%" style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}} src={this.props.project.featured_image} />
       </Grid>
-
-      <Grid item xs={1} md={3}></Grid>
+      <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
     </Grid>
   </Grid>
+
 
 
   <Grid container className={classes.content}>
     <Grid item xs={12}>
 
   {/* Introduction */}
+  <Grid container style={{paddingBottom:'4rem'}}>
+    <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
+    <Grid item xs={10} md={10} lg={8} xl={6}>
 
-      <Grid container>
-        <Grid item xs={1} md={1}></Grid>
-        <Grid item xs={10} md={10}>
-
-          <Grid container style={{paddingBottom:'5rem'}}>
-            <Grid item xs={1} md={1}></Grid>
-            <Grid item xs={12} md={3} lg={3}>
-              <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Introduction</Typography>
-            </Grid>
-            <Grid item xs={12} md={8} lg={8} xl={6}>
-              <Typography variant="display4" style={{fontSize:'calc(1.6em + .25vw)'}} gutterBottom paragraph>
-                {this.props.project.project_description}
-              </Typography>
-
-
-              {!this.props.project.link === undefined ?
-              <Typography variant="button" paragraph>
-                <a href={this.props.project.link} target="_blank" rel="noopener" className="underline" style={{textDecoration: 'none', color:'black'}}>
-                  Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
-                </a></Typography> : null
-              }
-
-            </Grid>
-          </Grid>
-
-        </Grid>
-        <Grid item xs={1} md={1}></Grid>
+    <Grid container>
+      <Grid item xs={12} md={4} lg={4} xl={4}>
+        <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Introduction</Typography>
       </Grid>
 
-      <Grid container>
-        <Grid item xs={1} md={1}></Grid>
-        <Grid item xs={10} md={10}>
-
-          <Grid container style={{paddingBottom:'5rem'}}>
-            <Grid item xs={12} md={4} lg={4}></Grid>
-
-            <Grid item xs={12} md={8} lg={8} xl={6}>
-              <Grid container>
-                <Grid item xs={12} md={5} lg={5} style={{paddingBottom:'4rem'}}>
-                  <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                    KPIs
-                  </Typography>
-                  <Typography variant="body1" gutterBottom paragraph>
-                    {this.props.project.project_kpis} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                    occaecat. Et nisi m
-                  </Typography>
-                </Grid>
-                <Grid item xs={1} md={1}></Grid>
-
-                <Grid item xs={12} md={5} lg={5} style={{paddingBottom:'4rem'}}>
-                  <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                    Tasks
-                  </Typography>
-                  <Typography variant="body1" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                    {this.props.project.project_tasks} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim
-                    laboris occaecat. Et nisi m
-                  </Typography>
-                </Grid>
-              </Grid>
-              <hr className="divider" style={{marginTop:'4rem'}}>
-              </hr>
-            </Grid>
-
-          </Grid>
-
-          <Grid container style={{paddingBottom:'5rem'}}>
-            <Grid item xs={12} md={4} lg={4}></Grid>
-
-            <Grid item xs={12} md={8} lg={8} xl={6}>
-              <Grid container>
-                <Grid item xs={12} md={12} lg={12}>
-                  <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                    Goals
-                  </Typography>
-                  <Typography variant="body1" gutterBottom paragraph>
-                    {this.props.project.project_goals} Lorum IpsumMinim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim
-                    laboris occaecat. Et nisi m
-                  </Typography>
-                </Grid>
-                <Grid item xs={1} md={1}></Grid>
-
-              </Grid>
-            </Grid>
-
-          </Grid>
-
-        </Grid>
-        <Grid item xs={1} md={1}></Grid>
+      <Grid item xs={12} md={8} lg={8} xl={8}>
+        <Typography variant="display4" style={{fontSize:'calc(1.3em + .25vw)', paddingBottom:'2rem'}} gutterBottom paragraph>
+          {this.props.project.project_description}
+        </Typography>
       </Grid>
+
+    </Grid>
+
+          {this.props.project.link == '' ? null :
+          <Grid container style={{paddingBottom:'4rem'}}>
+            <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+            <Grid item xs={12} md={8} lg={8} xl={8}>
+
+            <Typography variant="button" paragraph>
+              <a href={this.props.project.link} target="_blank" rel="noopener" className="underline" style={{textDecoration: 'none', color:'black'}}>
+                Visit Site <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>chevron_right</Icon>
+              </a></Typography>
+            </Grid>
+          </Grid>
+          }
+
+        {this.props.project.project_kpis == '' ? null :
+              <Grid container>
+              <Grid container style={{paddingBottom:'2rem'}}>
+                <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+
+                <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+                  <Grid container>
+                    <Grid item xs={12} sm={5} md={5} lg={5} xl={5} style={{paddingBottom:'2rem'}}>
+                      <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                        KPIs
+                      </Typography>
+                      <Typography variant="body1" gutterBottom paragraph>
+                        <div dangerouslySetInnerHTML={{__html: this.props.project.project_kpis}} />
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={1} md={2} lg={2} xl={2}></Grid>
+
+                    <Grid item xs={12} sm={5} md={5} lg={5} xl={5}>
+                      <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                        Tasks
+                      </Typography>
+                      <Typography variant="body1" gutterBottom paragraph>
+                          <div dangerouslySetInnerHTML={{__html: this.props.project.project_tasks}} />
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+
+              </Grid>
+
+              <Grid container style={{paddingBottom:'4rem'}}>
+
+                <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+
+                <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+                  <hr className="divider" style={{marginTop:'1rem', marginBottom:'4rem'}}></hr>
+                  <Grid container>
+                    <Grid item xs={12} md={12} lg={12}>
+                      <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
+                        Goals
+                      </Typography>
+                      <Typography variant="body1" gutterBottom paragraph>
+                        {this.props.project.project_goals}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={1} md={1}></Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+    }
+    </Grid>
+    </Grid>
+
+
 
 {/* Quotes */}
 
-{!this.props.project.quote_1 === undefined ?
-    <Grid container>
-      <Grid item xs={12}>
+{this.props.project.quote_1 == '' ? null :
+  <Grid container style={{paddingBottom:'6rem'}}>
+    <Grid item xs={12} style={{background:'#fafafa', paddingBottom:'8rem', paddingTop:'8rem'}}>
 
-        <Grid container spacing={8} id="section-one" className={classes.process}>
-          <Grid item xs={1} md={2}></Grid>
-          <Grid item xs={10} md={8}>
-
-            <Grid container style={{paddingBottom:'5rem'}}>
-              <Grid item xs={12} md={12} lg={4}>
-                <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Quotes</Typography>
-              </Grid>
-              <Grid item xs={12} md={12} lg={8}>
-
-                <Carousel>
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide2" />
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide3" />
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide4" />
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide5" />
-                  <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide6" />
-                </Carousel>
-
-              </Grid>
-            </Grid>
-
-          </Grid>
-          <Grid item xs={1} md={2}></Grid>
-
+      <Grid container spacing={8} id="quotes" style={{display:'flex', justifyContent:'center'}}>
+        <Grid item xs={10} md={8}>
+            <Typography variant="display4" style={{paddingBottom:'2rem', textAlign:'center'}}>{this.props.project.quote_1}</Typography>
+            <Typography variant="headline" style={{paddingBottom:'2rem', textAlign:'center'}}>―{this.props.project.quote_1_author}</Typography>
         </Grid>
-        <Grid item xs={1} md={3}></Grid>
       </Grid>
-      </Grid> : null
-    }
+      </Grid>
+  </Grid>
+}
+
+
 
   {/* Problem */}
 
-    <Grid container>
-      <Grid item xs={1} md={1}></Grid>
-      <Grid item xs={10} md={10}>
+    <Grid container style={{paddingBottom:'5rem'}}>
+      <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
+      <Grid item xs={10} md={10} lg={8} xl={6}>
 
-        <Grid container style={{paddingBottom:'5rem'}}>
-          <Grid item xs={1} md={1}></Grid>
-          <Grid item xs={12} md={3} lg={3}>
+        <Grid container>
+          <Grid item xs={12} md={4} lg={4} xl={4}>
             <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Problem</Typography>
           </Grid>
-          <Grid item xs={12} md={8} lg={8} xl={6}>
-            <Typography variant="display4" style={{fontSize:'calc(1.6em + .25vw)'}} gutterBottom paragraph>
+          <Grid item xs={12} md={8} lg={8} xl={8}>
+            <Typography variant="display4" style={{fontSize:'calc(1.3em + .25vw)'}} gutterBottom paragraph>
               {this.props.project.problem_description}
             </Typography>
 
           </Grid>
         </Grid>
 
-      </Grid>
-      <Grid item xs={1} md={1}></Grid>
-    </Grid>
 
-    <Grid container>
-      <Grid item xs={1} md={1}></Grid>
-      <Grid item xs={10} md={10}>
 
-        <Grid container style={{paddingBottom:'5rem'}}>
-          <Grid item xs={12} md={4} lg={4}></Grid>
+        {this.props.project.key_takeaway_1 !== '' ?
+        <Grid container>
+          <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+          <Grid item xs={12} md={8} lg={8} xl={8}>
 
-          <Grid item xs={12} md={8} lg={8} xl={6}>
-            <hr className="divider" style={{marginBottom:'4rem'}}>
-            </hr>
+            <hr className="divider" style={{marginBottom:'4rem', marginTop:'4rem'}}></hr>
+
             <Grid container>
-              <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'4rem'}}>
+              <Grid item xs={12} md={10} lg={3} xl={3} style={{paddingBottom:'2rem'}}>
                 <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                  {this.props.project.keytakeaway_1_title} Lorum Ipsum
+                  {this.props.project.key_takeaway_1_title}
                 </Typography>
                 <Typography variant="body1" gutterBottom paragraph>
-                  {this.props.project.keytakeaway_1} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                  occaecat. Et nisi m
+                  {this.props.project.key_takeaway_1}
                 </Typography>
               </Grid>
               <Grid item xs={1} md={1}></Grid>
 
-              <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'4rem'}}>
+              <Grid item xs={12} md={10} lg={3} xl={3} style={{paddingBottom:'2rem'}}>
                 <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                  {this.props.project.keytakeaway_2_title} Lorum Ipsum
+                  {this.props.project.key_takeaway_2_title}
                 </Typography>
                 <Typography variant="body1" gutterBottom paragraph>
-                  {this.props.project.keytakeaway_2} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                  occaecat. Et nisi m
+                  {this.props.project.key_takeaway_2}
                 </Typography>
               </Grid>
               <Grid item xs={1} md={1}></Grid>
-              <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'4rem'}}>
+              <Grid item xs={12} md={10} lg={3} xl={3} style={{paddingBottom:'2rem'}}>
                 <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                  {this.props.project.keytakeaway_3_title} Lorum Ipsum
+                  {this.props.project.key_takeaway_3_title}
                 </Typography>
                 <Typography variant="body1" gutterBottom paragraph>
-                  {this.props.project.keytakeaway_3} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                  occaecat. Et nisi m
+                  {this.props.project.key_takeaway_3}
                 </Typography>
               </Grid>
             </Grid>
 
           </Grid>
 
-        </Grid>
+        </Grid> : null
+      }
 
-      </Grid>
-      <Grid item xs={1} md={1}></Grid>
+    </Grid>
     </Grid>
 
-  {/* Problem Gallery */}
+    {/* Problem Gallery */}
 
-    {!this.props.project.problem_image_1 === undefined ?
-        <Grid container>
-          <Grid item xs={12}>
-
-                <Grid container style={{paddingBottom:'5rem'}}>
-
-                  <Grid item xs={12} md={12} lg={12}>
-
-
-                      <img width="100%" src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-
-
-                  </Grid>
-                </Grid>
-
-
-            </Grid>
-
-          </Grid> : null
-        }
+    {this.props.project.problem_image_1 !== '' ?
+         <Grid container style={{paddingBottom:'6rem'}}>
+           <Grid item xs={1} md={2}></Grid>
+           <Grid item xs={10} md={8}>
+             <img width="100%" style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}} src={this.props.project.problem_image_1} />
+           </Grid>
+           <Grid item xs={1} md={2}></Grid>
+         </Grid> : null
+    }
 
     {/* Process */}
 
         <Grid container>
-          <Grid item xs={1} md={1}></Grid>
-          <Grid item xs={10} md={10}>
+          <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
+          <Grid item xs={10} md={10} lg={8} xl={6}>
 
             <Grid container style={{paddingBottom:'5rem'}}>
-              <Grid item xs={1} md={1}></Grid>
-              <Grid item xs={12} md={3} lg={3}>
-                <Typography variant="title" style={{fontSize:'.8rem' ,paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Process</Typography>
+              <Grid item xs={12} md={4} lg={4} xl={4}>
+                <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', opacity: 0.5, color: "rgb(10, 10, 10)"}}>Process</Typography>
               </Grid>
-              <Grid item xs={12} md={8} lg={8} xl={6}>
+              <Grid item xs={12} md={8} lg={8} xl={8}>
                 <Grid container>
-                <Grid item xs={12} sm={12} md={12} lg={3} style={{paddingBottom:'100px'}}>
-                  <div style={{height: '40%'}}>
+                <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem'}}>
+                  <div style={{height: '45%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Research & Strategy</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside yours to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
@@ -570,15 +485,15 @@ return (
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
+                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
                 </Grid>
-                <Grid item xs={12} md={12} lg={1}>
-                  <Hidden lgUp>
-                  <hr className={"divider"} style={{marginBottom:'4em', borderColor:'black', borderBottomWidth:"1px"}}></hr>
-                  </Hidden>
+                <Grid item xs={12} md={12} lg={12}>
+
+                  <hr className={"divider"} style={{borderColor:'black', borderBottomWidth:"1px"}}></hr>
+
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={3} style={{paddingBottom:'100px'}}>
-                  <div style={{height: '40%'}}>
+                <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem', paddingTop:'4rem'}}>
+                  <div style={{height: '45%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Design Sprints</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>We run a 5 day concept driven Design Sprint that uses Design Thinking in cross-functional teams to design, prototype, and test solutions with users.</Typography>
@@ -586,15 +501,14 @@ return (
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Thinking</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>User Journey Maps</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Concept Validation</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
+                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
                 </Grid>
-                <Grid item xs={12} md={12} lg={1}>
-                  <Hidden lgUp>
-                  <hr className={"divider"} style={{marginBottom:'4em', borderColor:'black', borderBottomWidth:"1px"}}></hr>
-                  </Hidden>
+                <Grid item xs={12} md={12} lg={12}>
+                  <hr className={"divider"} style={{borderColor:'black', borderBottomWidth:"1px"}}></hr>
+
                 </Grid>
-                <Grid item xs={12} sm={12} md={12} lg={3} style={{paddingBottom:'100px'}}>
-                  <div style={{height: '40%'}}>
+                <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem', paddingTop:'4rem'}}>
+                  <div style={{height: '45%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Detailed Design Sprint</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>We create design language systems to scale and work through complex user journeys to ensure all scenarios are accounted for tested prior to launch.</Typography>
@@ -602,7 +516,7 @@ return (
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Language System</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Usability Testing</Typography>
                   <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Interactive Prototype</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
+                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
                 </Grid>
                 </Grid>
 
@@ -611,214 +525,139 @@ return (
             </Grid>
 
           </Grid>
-          <Grid item xs={1} md={1}></Grid>
+          <Grid item xs={1} md={2}></Grid>
         </Grid>
 
-    {/* Process Gallery */}
+      {/* Process Gallery */}
 
-      {!this.props.project.process_image_1 === undefined ?
-          <Grid container>
-            <Grid item xs={12}>
-
-                  <Grid container style={{paddingBottom:'5rem'}}>
-
-                    <Grid item xs={12} md={12} lg={12}>
-
-
-                        <img width="100%" src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-
-
-                    </Grid>
-                  </Grid>
-
-
-              </Grid>
-
-            </Grid> : null
-          }
-
-        {/* Solution */}
-
-              <Grid container>
-                <Grid item xs={1} md={1}></Grid>
-                <Grid item xs={10} md={10}>
-
-                  <Grid container style={{paddingBottom:'5rem'}}>
-                    <Grid item xs={1} md={1}></Grid>
-                    <Grid item xs={12} md={3} lg={3}>
-                      <Typography variant="title" style={{fontSize:'1rem', paddingBottom:'2rem', color:'rgba(36,39,49,.4)'}}>Solution</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={8} lg={8} xl={6}>
-                      <Typography variant="display4" style={{fontSize:'calc(1.6em + .25vw)'}} gutterBottom paragraph>
-                        {this.props.project.solution_description}
-                      </Typography>
-
-                    </Grid>
-                  </Grid>
-
-                </Grid>
-                <Grid item xs={1} md={2}></Grid>
-              </Grid>
-
-              <Grid container>
-                <Grid item xs={1} md={1}></Grid>
-                <Grid item xs={10} md={10}>
-
-                  <Grid container style={{paddingBottom:'5rem'}}>
-                    <Grid item xs={1} md={1}></Grid>
-                    <Grid item xs={12} md={3} lg={3}></Grid>
-
-                    <Grid item xs={12} md={8} lg={8} xl={6}>
-                      <hr className="divider" style={{marginBottom:'4rem'}}>
-                      </hr>
-                      <Grid container>
-                        <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'100px'}}>
-                          <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                            {this.props.project.solution_1_title} Lorum Ipsum
-                          </Typography>
-                          <Typography variant="body1" gutterBottom paragraph>
-                            {this.props.project.solution_1} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                            occaecat. Et nisi m
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={1} md={1}></Grid>
-
-                        <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'100px'}}>
-                          <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                            {this.props.project.solution_2_title} Lorum Ipsum
-                          </Typography>
-                          <Typography variant="body1" gutterBottom paragraph>
-                            {this.props.project.solution_2} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                            occaecat. Et nisi m
-                          </Typography>
-                        </Grid>
-                        <Grid item xs={1} md={1}></Grid>
-                        <Grid item xs={12} md={10} lg={3} style={{paddingBottom:'100px'}}>
-                          <Typography variant="title" style={{fontSize:'1rem'}} gutterBottom paragraph>
-                            {this.props.project.solution_3_title} Lorum Ipsum
-                          </Typography>
-                          <Typography variant="body1" gutterBottom paragraph>
-                            {this.props.project.solution_3} Lorum Ipsum Minim esse dolor cupidatat veniam exercitation laborum reprehenderit velit laboris ut. Magna anim tempor aliquip nulla ex esse anim nisi deserunt aliqua nisi laboris dolore enim laboris
-                            occaecat. Et nisi m
-                          </Typography>
-                        </Grid>
-                      </Grid>
-
-                    </Grid>
-
-                  </Grid>
-
-                </Grid>
-                <Grid item xs={1} md={1}></Grid>
-              </Grid>
-
-            {/* Solution Gallery */}
-
-                {!this.props.project.solution_image_1 === undefined ?
-                    <Grid container>
-                      <Grid item xs={12}>
-
-                            <Grid container style={{paddingBottom:'5rem'}}>
-
-                              <Grid item xs={12} md={12} lg={12}>
-
-
-                                  <img width="100%" src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-
-
-                              </Grid>
-                            </Grid>
-
-
-                        </Grid>
-
-                      </Grid> : null
-                    }
-
-      <Grid container spacing={8} id="section-two" className={classes.process}>
-        <Grid item xs={1} md={3}></Grid>
-        <Grid item xs={10} md={6}>
-          <Grid container style={{flexWrap: 'wrap-reverse'}}>
-
-            <Grid item xs={12} sm={12} md={4} lg={6}>
-              <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_2_media}}></div>
-            </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
-            <Grid item xs={10} sm={12} md={4} lg={4}>
-              <Typography variant="body1">
-                <b>{this.props.project.section_2_title}</b>. {this.props.project.section_2_description}
-              </Typography>
-            </Grid>
-          </Grid>
+      {this.props.project.process_image_1 !== '' ?
+      <Grid container style={{paddingBottom:'4rem'}}>
+        <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
+        <Grid item xs={10} md={10} lg={10} xl={8}>
+          <img width="100%" style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}} src={this.props.project.process_image_1} />
         </Grid>
-        <Grid item xs={1} md={3}></Grid>
-      </Grid>
+        <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
+      </Grid> : null
+        }
 
-      <Grid container spacing={8} id="section-three" className={classes.process}>
-        <Grid item xs={1} md={3}></Grid>
-        <Grid item xs={10} md={6}>
+      {/* Solution */}
+
+      <Grid container style={{paddingBottom:'4rem'}}>
+        <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
+        <Grid item xs={10} md={10} lg={8} xl={6}>
+
           <Grid container>
-            <Grid item xs={10} sm={12} md={4} lg={4}>
-              <Typography variant="body1">
-                <b>{this.props.project.section_3_title}</b>. {this.props.project.section_3_description}
+
+            <Grid item xs={12} md={4} lg={4} xl={4}>
+              <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', color:'rgba(36,39,49,.4)'}}>Solution</Typography>
+            </Grid>
+            <Grid item xs={12} md={8} lg={8} xl={8}>
+              <Typography variant="display4" style={{fontSize:'calc(1.3em + .25vw)'}} gutterBottom paragraph>
+                {this.props.project.solution_description}
               </Typography>
 
             </Grid>
-            <Grid item xs={12} sm={12} md={4} lg={2}></Grid>
-            <Grid item xs={12} sm={12} md={4} lg={6}>
-              <div className="sectionImg" dangerouslySetInnerHTML={{__html: this.props.project.section_3_media}}></div>
-            </Grid>
           </Grid>
+
+      {this.props.project.solution_result_1 !== '' ?
+      <Grid container>
+        <Grid item xs={12} md={4} lg={4} xl={4}></Grid>
+        <Grid item xs={12} md={8} lg={8} xl={8}>
+
+
+              <Grid container>
+                <Grid item xs={12} md={12} lg={12} style={{paddingBottom:'4rem'}}>
+                <hr className="divider" style={{marginBottom:'4rem', marginTop:'4rem'}}></hr>
+                <Grid container>
+                <Grid item xs={12} md={10} lg={5} style={{paddingBottom:'2rem'}}>
+
+                  <ul className="solution">
+                    <li>
+                      <SolutionArrow />
+                      <span>
+                        <Typography variant="body1" gutterBottom paragraph>
+                          <strong>{this.props.project.solution_result_1_title}</strong>{this.props.project.solution_result_1}
+                        </Typography>
+                      </span>
+                    </li>
+                  </ul>
+
+                </Grid>
+
+                <Grid item xs={1} md={1}></Grid>
+
+                <Grid item xs={12} md={10} lg={5} style={{paddingBottom:'2rem'}}>
+                  <ul className="solution">
+                    <li>
+                      <SolutionArrow />
+                      <span>
+                        <Typography variant="body1" gutterBottom paragraph>
+                          <strong>{this.props.project.solution_result_2_title}</strong>{this.props.project.solution_result_2}
+                        </Typography>
+                      </span>
+                    </li>
+                  </ul>
+                </Grid>
+                <Grid item xs={1} md={1}></Grid>
+                <Grid item xs={12} md={10} lg={5} style={{paddingBottom:'2rem'}}>
+                  <ul className="solution">
+                    <li>
+                      <SolutionArrow />
+                      <span>
+                        <Typography variant="body1" gutterBottom paragraph>
+                          <strong>{this.props.project.solution_result_3_title}</strong>{this.props.project.solution_result_3}
+                        </Typography>
+                      </span>
+                    </li>
+                  </ul>
+                </Grid>
+                </Grid>
+                </Grid>
+
+              </Grid>
+
+
         </Grid>
-        <Grid item xs={1} md={3}></Grid>
-      </Grid>
+        <Grid item xs={1} md={2}></Grid>
+      </Grid> : null
+        }
+    </Grid>
     </Grid>
 
-    <Grid container spacing={16} justify="space-between" className={classes.spacer}>
-      <Grid item xs={1} md={1}></Grid>
-      <Grid item xs={10} md={10}>
-        <Grid container>
-          <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
-            <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_1} alt="flow-image-1" />
-          </Grid>
-          <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
-            <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_2} alt="flow-image-1" />
-          </Grid>
-          <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
-            <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_3} alt="flow-image-1" />
-          </Grid>
-          <Grid item xs={6} md={3} style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
-            <img style={{ maxWidth: '90%', paddingBottom:'20px' }} src={this.props.project.flow_image_4} alt="flow-image-1" />
-          </Grid>
-        </Grid>
-      </Grid>
+
+    {/* Solution Gallery */}
+
+    {this.props.project.solution_image_1 !== '' ?
+       <Grid container style={{paddingBottom:'6rem'}}>
+         <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
+         <Grid item xs={12} md={12} lg={10} xl={12}>
+           <Grid container style={{paddingBottom:'6rem'}}>
+             <Grid item xs={12} md={12} style={{paddingBottom:'6rem'}}>
+               <img width="100%" src={this.props.project.solution_image_1} />
+             </Grid>
+
+              <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
+                <img width="100%" className="solution-gallery" src={this.props.project.solution_image_2} />
+              </Grid>
 
 
-      <Grid item xs={1} md={1}></Grid>
-    </Grid>
+              <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
+                <img width="100%" className="solution-gallery" src={this.props.project.solution_image_3} />
+              </Grid>
+
+               <Grid xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
+                 <img width="100%" className="solution-gallery" src={this.props.project.solution_image_4} />
+               </Grid>
+             </Grid>
+         </Grid>
+         <Grid item xs={1} md={1}></Grid>
+       </Grid> : null
+      }
 
 
+    {/*Video*/}
 
-    <Grid container justify="space-between" className={classes.spacer}>
-      <Grid container spacing={24}>
-        <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
-          <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative', objectFit: 'contain'}} src={this.props.project.large_image_1} alt="large-image-1" />
-        </Grid>
-        <Grid item xs={12} md={6} style={{display:'flex', justifyContent:'center'}}>
-          <img style={{maxWidth:'80%', height:'100%', width:'100%', position: 'relative', objectFit: 'contain'}} src={this.props.project.large_image_2} alt="large-image-2" />
-        </Grid>
-      </Grid>
-    </Grid>
-
-    {(this.props.project.large_video !== '' ? null :
-    (
-    <Grid container style={{background:'white'}}>
-      <Grid item xs={12} md={12}>
-        <img style={{ width: '100%', height:'100%' }} src={this.props.project.large_image} alt="large image 2" />
-      </Grid>
-    </Grid>
-    )
-    )}
+    {this.props.project.large_video !== '' ?
 
     <Grid container style={{background:'white'}}>
       <Grid item xs={12} md={12}>
@@ -826,68 +665,56 @@ return (
         <div dangerouslySetInnerHTML={{__html: this.props.project.large_video}} />
 
       </Grid>
+    </Grid> : null
+    }
+
+    <Grid container>
+      <Grid item xs={12}>
+        <hr className={"divider"} style={{marginBottom:'4em', borderColor:'black', borderBottomWidth:".5px"}}></hr>
+      </Grid>
     </Grid>
 
+    {/*Next Projects*/}
 
-    <Grid container className={classes.spacerNextProject} justify="space-between" style={{backgroundColor:"rgb(247,247,247)"}}>
-      <Grid item xs={12} md={6}>
+    <Grid container>
+      <Grid item xs={1} md={1} lg={3} xl={3}></Grid>
+      <Grid item xs={10} md={10} lg={6} xl={6}>
 
-        <Grid container style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height:'100%',
-                  paddingTop: '100px',
-                  paddingBottom: '100px'
-                }}>
-          <Grid item xs={1} md={1}></Grid>
-          <Grid item xs={10} md={10}>
-            <Grid container>
-              <Typography variant="headline" style={{fontSize:'16px', color:' #848484', paddingBottom:'10px'}}>
-                More Projects
-              </Typography>
+        <Grid container style={{paddingBottom:'5rem'}}>
+          <Grid item xs={12} md={4} lg={4} xl={4}>
+            <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', color:'rgba(36,39,49,.4)'}} gutterBottom>More Projects</Typography>
+          </Grid>
+          <Grid item xs={12} md={8} lg={8} xl={8}>
+            {this.props.moreProjects.map((project) => {
+            if(project.slug != this.props.currProject){
+            return(
+            <Grid key={project.slug} item xs={12} md={10} lg={10} style={{marginBottom:'20px'}}>
+              <a className="link" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + project.slug}>
+                <Typography variant="title" style={{fontSize:'.8rem'}}>{project.acf.client_name}</Typography>
+                <Typography variant="headline" style={{fontSize:'1.1rem'}}>{project.acf.project_title}</Typography>
+                <hr className="divider" style={{marginTop:'1rem', marginBottom:'1rem'}}></hr>
+              </a>
             </Grid>
+            )
+            }
+            })
+            }
 
-            <Grid container>
-              {this.props.moreProjects.map((project) => {
-              if(project.slug != this.props.currProject){
-              return(
-              <Grid key={project.slug} item xs={8} md={6} lg={4} style={{marginBottom:'20px'}}>
-                <a className="link" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + project.slug}>
-                  <Typography variant="button">{project.acf.client_name} | {project.acf.project_title}</Typography>
-                </a>
-              </Grid>
-              )
-              }
-              })
-              }
-            </Grid>
           </Grid>
         </Grid>
+
       </Grid>
-      <Grid item xs={12} md={6} style={{
-                background:'rgb(237,237,237)',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                paddingTop: '200px',
-                paddingBottom: '200px'
-              }}>
-        <Typography variant="body1">
-          Next Project <a className="underline" style={{textDecoration: 'none', color: '#000000'}} href={'/project?' + this.props.project.next_project_link.post_name}>
-            <b>{this.props.project.next_project_link.post_title} <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon></b>
-          </a>
-        </Typography>
-      </Grid>
-      <Grid item xs={1} md></Grid>
+      <Grid item xs={1} md={2}></Grid>
     </Grid>
+
+
+  </Grid>
   </Grid>
 
-
-  </div>
+</div>
 </div>
 
-)
+);
 }
 }
 

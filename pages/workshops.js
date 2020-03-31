@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Icon from '@material-ui/core/Icon';
 import SimpleTabs from '../components/simpleTabs';
-import QuoteCarousel from '../components/quoteCarousel';
+
 import SimpleTabsMobile from '../components/simpleTabsMobile';
 import DesignBetterH from '../assets/design-better-horizontal.svg';
 import InVisionLogoH from '../assets/invision-logo-pink-horizontal-v3.svg';
@@ -198,8 +198,6 @@ function Workshops(props) {
           <Hidden smDown>
             <SimpleTabs />
           </Hidden>
-
-          <QuoteCarousel />
 
     </div>
     );

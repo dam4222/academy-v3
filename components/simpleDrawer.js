@@ -102,13 +102,13 @@ class SimpleDrawer extends React.Component {
               </Button>
             </Link>
 
-            <Link href="/workshops" prefetch>
+            {/*<Link href="/workshops" prefetch>
               <Button disableRipple={true} style={spacing}>
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
                   Workshops
                 </Typography>
               </Button>
-            </Link>
+            </Link>*/}
 
             <Link href="/blog" prefetch>
               <Button disableRipple={true} style={spacing}>

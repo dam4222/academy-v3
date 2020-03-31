@@ -38,7 +38,7 @@ const theme = createMuiTheme({
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 300,
         lineHeight: 1.7,
-        fontSize: 13,
+        fontSize: 11,
       },
       display4: {
         fontFamily: 'Crimson Text, serif',
@@ -70,7 +70,8 @@ const theme = createMuiTheme({
         fontFamily: 'Montserrat, sans-serif',
         fontWeight: 400,
         letterSpacing:'0px',
-        fontSize: 'calc(.5em + .5vw)'
+        fontSize: 'calc(.5em + .5vw)',
+        letterSpacing: '-0.5px'
       },
       headline: {
         fontFamily: 'Crimson Text, serif',
