@@ -477,15 +477,15 @@ return (
               <Grid item xs={12} md={8} lg={8} xl={8}>
                 <Grid container>
                 <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem'}}>
-                  <div style={{height: '45%'}}>
+                  <div style={{height: '35%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Research & Strategy</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>Our team embeds alongside yours to help define the strategic vision, conduct research and learn how to drive business value while building products users love.</Typography>
                   </div>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
-                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Ethnographic Research</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Quantative Analysis</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Stakeholder Interviews</Typography>
+                  <Typography style={{paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Persona Identification</Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
 
@@ -493,30 +493,30 @@ return (
 
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem', paddingTop:'4rem'}}>
-                  <div style={{height: '45%'}}>
+                  <div style={{height: '35%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Design Sprints</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>We run a 5 day concept driven Design Sprint that uses Design Thinking in cross-functional teams to design, prototype, and test solutions with users.</Typography>
                   </div>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Thinking</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>User Journey Maps</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Concept Validation</Typography>
-                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Thinking</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>User Journey Maps</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Concept Validation</Typography>
+                  <Typography style={{paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Feature Roadmap</Typography>
                 </Grid>
                 <Grid item xs={12} md={12} lg={12}>
                   <hr className={"divider"} style={{borderColor:'black', borderBottomWidth:"1px"}}></hr>
 
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} style={{paddingBottom:'6rem', paddingTop:'4rem'}}>
-                  <div style={{height: '45%'}}>
+                  <div style={{height: '35%'}}>
 
                   <Typography variant="title" style={{fontSize:'1rem'}} color="inherit" gutterBottom paragraph>Detailed Design Sprint</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom>We create design language systems to scale and work through complex user journeys to ensure all scenarios are accounted for tested prior to launch.</Typography>
                   </div>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Language System</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Usability Testing</Typography>
-                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Interactive Prototype</Typography>
-                  <Typography style={{paddingBottom:'10px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Design Language System</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Usability Testing</Typography>
+                  <Typography style={{borderBottom: '1px solid #e7e7e7', paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Interactive Prototype</Typography>
+                  <Typography style={{paddingBottom:'20px', paddingTop:'20px'}} variant="body2" color="inherit" gutterBottom>Detailed User Flows</Typography>
                 </Grid>
                 </Grid>
 
@@ -627,32 +627,41 @@ return (
 
     {/* Solution Gallery */}
 
-    {this.props.project.solution_image_1 !== '' ?
-       <Grid container style={{paddingBottom:'6rem'}}>
+{this.props.project.solution_image_1 == '' ? null :
+       <Grid container>
          <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
          <Grid item xs={12} md={12} lg={10} xl={12}>
            <Grid container style={{paddingBottom:'6rem'}}>
+             {this.props.project.solution_image_1 == '' ? null :
              <Grid item xs={12} md={12} style={{paddingBottom:'6rem'}}>
                <img width="100%" src={this.props.project.solution_image_1} />
              </Grid>
 
+            }
+            {this.props.project.solution_image_2 == '' ? null :
               <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
                 <img width="100%" className="solution-gallery" src={this.props.project.solution_image_2} />
               </Grid>
 
-
+             }
+             {this.props.project.solution_image_3 == '' ? null :
               <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
                 <img width="100%" className="solution-gallery" src={this.props.project.solution_image_3} />
               </Grid>
 
+             }
+            {this.props.project.solution_image_4 == '' ? null :
                <Grid xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem'}}>
                  <img width="100%" className="solution-gallery" src={this.props.project.solution_image_4} />
                </Grid>
+
+              }
              </Grid>
          </Grid>
          <Grid item xs={1} md={1}></Grid>
-       </Grid> : null
-      }
+       </Grid>
+     }
+
 
 
     {/*Video*/}

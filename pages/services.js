@@ -106,7 +106,7 @@ const styles = theme => ({
   },
   skillItem:{
     width:'100%',
-    height:'210px',
+    height:'310px',
     background: 'rgba(255, 255, 255, .3)',
     textAlign: 'center',
     padding:'20px',
@@ -165,7 +165,7 @@ class Process extends React.Component {
           <Grid item xs={1} sm={2} md={2} lg={1} xl={2}></Grid>
         <Grid item xs={10} sm={8} md={8} lg={10} xl={8} style={{display:'flex', width:'100%'}}>
           <Grid container>
-          <Grid item xs={12} sm={12} md={4} lg={3} xl={3} className={"services"}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={"services"}>
             {/*<div>
             <Chip
                label="Recommended"
@@ -183,16 +183,16 @@ class Process extends React.Component {
             <Typography variant="headline" color="inherit" gutterBottom>Product Strategy & Research</Typography>
 
             <Typography variant="body1" color="inherit" gutterBottom>We conduct research to frame your new or current products problems and help you develop a clear product roadmap with effective strategies to tackle issues and establish your goals.
-</Typography>
+            </Typography>
             <Button onClick={() => scrollToComponent(this.Strategy, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
               <Typography variant="button" color="inherit">
                 See More <Icon style={{fontSize:'14px', verticalAlign: 'middle'}}>arrow_downwards</Icon>
               </Typography>
             </Button>
           </Grid>
-          <Grid item xs={12} sm={12} md={4} lg={3} xl={3} className={"services"}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={"services"}>
             <div style={{height:'45%'}}>
-            <DesignIcon />
+            <DesignIcon style={{paddingBottom:'20px'}}/>
             </div>
 
             <Typography variant="headline" color="inherit" gutterBottom>Product Design Services</Typography>
@@ -204,7 +204,7 @@ class Process extends React.Component {
               </Typography>
             </Button>
           </Grid>
-          <Grid item xs={12} sm={12} md={4} lg={3} xl={3} className={"services"}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={"services"}>
             <div style={{height:'45%'}}>
             <Facilitation />
             </div>
@@ -219,7 +219,7 @@ class Process extends React.Component {
             </Button>
           </Grid>
 
-          <Grid item xs={12} sm={12} md={4} lg={3} xl={3} className={"services"}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3} className={"services"}>
             <div style={{height:'45%'}}>
             <TrainingIcon />
             </div>
@@ -276,16 +276,16 @@ class Process extends React.Component {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px', margin: '1px'}}>
                   <Typography variant="headline" color="inherit" gutterBottom align="center">Product Strategy & Research</Typography>
                   <br></br>
-                  <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
+                  <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us learn our areas of opportunity”</Typography>
                   <br></br>
-                  <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
+                  <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom align="center">We conduct research to frame new or current products problems and help you develop a clear product roadmap with effective strategies to tackle issues and establish your goals.</Typography>
                   <br></br>
-                  <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
+                  <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">DURATION</Typography>
                   <Typography variant="body1" color="inherit" gutterBottom align="center">2-3 Weeks</Typography>
                   <br></br>
-                  <Typography variant="title" color="inherit" align="center">TASKS</Typography>
+                  <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" align="center">TASKS</Typography>
                   <Typography variant="body1" color="inherit" align="center">Stakeholder Interviews</Typography>
                   <Typography variant="body1" color="inherit" align="center">Usability Studies</Typography>
                   <Typography variant="body1" color="inherit" align="center">Competitive Audit</Typography>
@@ -315,16 +315,16 @@ class Process extends React.Component {
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px'}}>
                     <Typography variant="headline" color="inherit" gutterBottom align="center">Product Design Services</Typography>
                     <br></br>
-                    <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
+                    <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">“Design for us”</Typography>
                     <br></br>
-                    <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
+                    <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">We embed into your organization as your product team helping you strategize, design, prototype, test and validate your product with your users. We will provide UX Leadership, UX Researchers, Product Designers, and Product Managers.</Typography>
                     <br></br>
-                    <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
+                    <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">DURATION</Typography>
                     <Typography variant="body1" color="inherit" gutterBottom align="center">As Needed</Typography>
                     <br></br>
-                    <Typography variant="title" color="inherit" gutterBottom align="center">TASKS</Typography>
+                    <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">TASKS</Typography>
 
                     <Typography variant="body1" color="inherit" align="center">Map User Journeys</Typography>
                     <Typography variant="body1" color="inherit" align="center">Build Systems Architecture + User Flows</Typography>
@@ -386,17 +386,17 @@ class Process extends React.Component {
           <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px', margin: '1px'}}>
               <Typography variant="headline" color="inherit" gutterBottom align="center">Design Sprint Facilitation</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us learn by helping us do”</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">We help lead your team from concept through validation as your Design Sprint Facilitator</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">DURATION</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">5 days</Typography>
               <br></br>
 
-              <Typography variant="title" color="inherit" gutterBottom align="center">TASKS</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">TASKS</Typography>
               <Typography variant="body1" color="inherit" align="center">Facilitate with an Impartial Voice</Typography>
               <Typography variant="body1" color="inherit" align="center">Conduct Design Thinking Exercises</Typography>
               <Typography variant="body1" color="inherit" align="center">Surface Key Opportunity Areas</Typography>
@@ -425,16 +425,16 @@ class Process extends React.Component {
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12} style={{padding:'30px'}}>
               <Typography variant="headline" color="inherit" gutterBottom align="center">Team-Based Training</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN A NUTSHELL</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">“Help us to design ourselves”</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">IN PRACTICE</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">Teams will learn Design Sprint Facilitation, UX, Product Design (UX/UI), Prototyping, Testing and Agile Development methodologies. We will recommend org structures, conduct interviews, staff teams, and implement processes.</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">DURATION</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">DURATION</Typography>
               <Typography variant="body1" color="inherit" gutterBottom align="center">As Needed</Typography>
               <br></br>
-              <Typography variant="title" color="inherit" gutterBottom align="center">BENEFITS</Typography>
+              <Typography variant="title" style={{fontSize:'.8em'}} color="inherit" gutterBottom align="center">BENEFITS</Typography>
 
               <Typography variant="body1" color="inherit" align="center">Training in Research, Design, Prototyping, Testing, Design Sprints and Design Thinking</Typography>
               <Typography variant="body1" color="inherit" align="center">How to get “Buy-In”</Typography>
@@ -472,15 +472,16 @@ class Process extends React.Component {
 
           <Grid item xs={1} md={3} lg={4}></Grid>
 
-            <Grid container spacing={8} className={classes.skillGrid} style={{flexWrap:'wrap-reverse'}} >
-              <Grid item xs={1} sm={1} lg={1}></Grid>
-
+            <Grid container spacing={8} className={classes.skillGrid}>
+              <Grid item xs={1} sm={2} lg={2}></Grid>
+              <Grid item xs={10} sm={10} lg={10}>
+                <Grid container  style={{flexWrap:'wrap-reverse'}}>
               <Grid item xs={12} sm={8} md={6} lg={5} xl={4} style={{alignContent: 'center', display: 'flex', flexWrap:'wrap'}}>
                 <Grid container spacing={8} style={{alignContent: 'center', justifyContent: 'center', display:'flex'}}>
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
                     <Consulting style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
+                    <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                       SPRINT FACILITATION
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
@@ -491,7 +492,7 @@ class Process extends React.Component {
                   <Grid item xs={6} sm={6} md={4}>
                     <Paper elevation={0} className={classes.skillItem}>
                       <MagnifyingGlass style={{marginBottom:'20px'}} />
-                      <Typography variant='title' gutterBottom paragraph={true}>
+                      <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                         RESEARCH
                       </Typography>
                       <Typography variant='body2' gutterBottom paragraph={true}>
@@ -502,7 +503,7 @@ class Process extends React.Component {
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
                     <Img style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
+                    <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                       UX/UI DESIGN
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
@@ -513,7 +514,7 @@ class Process extends React.Component {
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
                     <Lab style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
+                    <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                       PROTOTYPING
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
@@ -525,7 +526,7 @@ class Process extends React.Component {
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
                     <Calender style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
+                    <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                       PRODUCT MANAGEMENT
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
@@ -537,7 +538,7 @@ class Process extends React.Component {
                   <Grid item xs={6} sm={6} md={4}>
                   <Paper elevation={0} className={classes.skillItem}>
                     <Stats style={{marginBottom:'20px'}} />
-                    <Typography variant='title' gutterBottom paragraph={true}>
+                    <Typography variant='title' style={{fontSize:'.6em'}} gutterBottom paragraph={true}>
                       BUSINESS ANALYTICS
                     </Typography>
                     <Typography variant='body2' gutterBottom paragraph={true}>
@@ -549,8 +550,10 @@ class Process extends React.Component {
                 </Grid>
               </Grid>
 
-              <Grid item xs={1} sm={1} md={1} lg={1} xl={1}></Grid>
-              <Grid item xs={10} sm={8} md={2} style={{paddingBottom:'20px', paddingTop:'20px'}}>
+              <Grid item xs={1} sm={1} lg={3}></Grid>
+
+              <Grid item xs={12} sm={8} md={3} style={{paddingBottom:'20px', paddingTop:'20px'}}>
+
                 <Typography variant='headline'>
                   Our Areas
                 </Typography>
@@ -566,8 +569,11 @@ class Process extends React.Component {
                   being heard.
                 </Typography>
               </Grid>
+              </Grid>
 
-              <Grid item xs={1} sm={1} lg={1}></Grid>
+
+            </Grid>
+            <Grid item xs={1} sm={1} lg={1}></Grid>
             </Grid>
 
     </div>
