@@ -10,7 +10,6 @@ import OurWork from '../components/ourWork'
 import OurProcess from '../components/ourProcess'
 import OurWorkshops from '../components/ourWorkshops'
 import LatestNews from '../components/latestNews'
-import Carousel from '../components/carousel'
 import Head from 'next/head';
 
 const styles = theme => ({
