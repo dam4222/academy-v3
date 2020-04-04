@@ -112,7 +112,7 @@ class SimpleAppBar extends React.Component {
                         height:'auto',
                         borderRadius:'0 !important',
                         background:'none !important',
-                        top: '25%'
+                        top: '15%'
                         }}
                         disableRipple={true} href="/">
                         <AcademyLogoSmall style={{width: '100%'}} />

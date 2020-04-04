@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>explore</title>
+    <desc>Created with Sketch.</desc>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <circle fill="#000000" cx="128" cy="128" r="128"></circle>
+            <text font-family="CrimsonText-Regular, Crimson Text" font-size="28" font-weight="normal" fill="#FFFFFF">
+                <tspan x="49.0527344" y="133">Explore Work</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

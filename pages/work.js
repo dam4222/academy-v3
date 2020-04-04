@@ -17,6 +17,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import VisibilitySensor from 'react-visibility-sensor';
+
 
 const fetchUrl = process.env.fetchUrl;
 import Head from 'next/head';
@@ -70,6 +72,7 @@ class Work extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       /* initial state */
       fetching: true,
@@ -179,48 +182,58 @@ class Work extends React.Component {
         <Grid container>
           {this.props.projects.map((project) => {
             return (
-              <Grid key={project.id} container className="center">
-                <Grid item xs={1} md={1} lg={1}></Grid>
-                <Grid item xs={10} md={10} lg={4} className={classes.contentCenter}>
+
+              <Grid key={project.id} container style={{borderBottom: '1px solid black' }}>
 
 
+              <Grid item xs={1} md={1} lg={1}></Grid>
+              <Grid item xs={10} md={10} lg={10} className="center">
+                <VisibilitySensor partialVisibility={true}>
+                {({isVisible}) =>
+                <Grid container className={isVisible ? 'moveUp' : 'moveDown'}>
+                  <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
+                    <div onClick={this.handleClick.bind(this, project)}>
 
-                  <div onClick={this.handleClick.bind(this, project)}>
-
-                        <Typography variant="title" color="secondary" className={classes.projectLegend}>
-                          Client &nbsp;
-                        </Typography>
-                        <Typography variant="title" color="primary" className={classes.projectLegend}>
-                          {project.acf.client_name}
-                        </Typography>
+                          <Typography variant="title" color="secondary" className={classes.projectLegend}>
+                            Client &nbsp;
+                          </Typography>
+                          <Typography variant="title" color="primary" className={classes.projectLegend}>
+                            {project.acf.client_name}
+                          </Typography>
 
 
-                        <Typography variant="display2" color="inherit" style={{paddingRight: '100px'}}>
-                          {project.acf.project_title}
-                        </Typography>
+                          <Typography variant="display2" color="inherit" style={{paddingRight: '100px'}}>
+                            {project.acf.project_title}
+                          </Typography>
 
-                          <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"}>
-                            <Typography variant="button" color="inherit">
-                              Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
-                            </Typography>
-                          </Button>
-                    </div>
 
-                </Grid>
-                  <Grid item xs={12} md={12} lg={7} className={classes.contentCenter}>
+                      </div>
+                  </Grid>
+
+
+                  <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
 
                       <Button disableRipple={true} className="projectLink" style={{overflow:'hidden'}}>
                         <img
                           className="projectImg"
                           src={project.acf.password === '' ? project.acf.featured_image: project.acf.placeholder_image}
                           style={{
-                              height: '97vh',
+                              height: 'auto',
+                              width: '100%'
                           }}
                           onClick={this.handleClick.bind(this, project)}
                         />
                       </Button>
+
+                    </Grid>
                   </Grid>
+                }
+                </VisibilitySensor>
+
+                </Grid>
+
             </Grid>
+
             )
           })
           }

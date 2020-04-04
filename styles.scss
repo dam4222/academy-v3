@@ -37,12 +37,38 @@ p{
   letter-spacing: normal;
 }
 
-.solution-gallery{
-  max-width: 50%;
-  @media (max-width: 1440px) {
-    max-width: 80%;
-  }
-}
+
+
+// .hero-video{
+//     &:after{
+//     content:url(https://cdn1.academyux.com/wp-content/uploads/2020/04/03195032/explore.svg);
+//     opacity:0;
+//     position: absolute;
+//     top: 60%;
+//     left: 50%;
+//     width: 128px;
+//     height: 128px;
+//     margin-top: -64px; /* Half the height */
+//     margin-left: -64px; /* Half the width */
+//     transition: cubic-bezier(0.19, 1, 0.22, 1) 0.85s all;
+//     }
+// }
+//
+// .hero-video:hover{
+//     &:after{
+//     content:url(https://cdn1.academyux.com/wp-content/uploads/2020/04/03195032/explore.svg);
+//     opacity:1;
+//     position: absolute;
+//      top: 50%;
+//      left: 50%;
+//      width: 128px;
+//      height: 128px;
+//      margin-top: -64px; /* Half the height */
+//      margin-left: -64px; /* Half the width */
+//     }
+//
+//
+// }
 
 .solution {
 
@@ -892,6 +918,37 @@ p{
   }
 }
 
+.moveUp{
+  animation: 2s cubic-bezier(0.19, 1, 0.22, 1) forwards moveUp !important;
+  animation-delay:.2s !important;
+}
+
+.moveDown{
+  animation: 2s cubic-bezier(0.19, 1, 0.22, 1) forwards moveDown !important;
+}
+
+@keyframes moveUp {
+0% {
+  opacity: 0;
+  transform: translate(0, 100px);
+}
+100% {
+  opacity: 1;
+  transform: translate(0, 0px);
+}
+}
+
+@keyframes moveDown {
+0% {
+  opacity: 1;
+  transform: translate(0, 0px);
+}
+100% {
+  opacity: 0;
+  transform: translate(0, 100px);
+}
+}
+
 img {
 animation:1.2s ease forwards moveUp;
 opacity:0;
@@ -988,11 +1045,9 @@ opacity:0;
   text-align: right;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
-  margin-bottom: 280px;
 
   @media (max-width: 599px) {
-    height: 55vh;
+
   }
 }
 
@@ -1011,9 +1066,7 @@ opacity:0;
 }
 
 .projectImg {
-  @media (max-width: 599px) {
-    height:50vh !important;
-  }
+
 }
 
 .embed-team{

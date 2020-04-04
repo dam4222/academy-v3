@@ -97,8 +97,7 @@ class Index extends React.Component {
     <Grid container style={{paddingBottom:'5rem'}}>
       <Grid item xs={12} sm={2}></Grid>
       <Grid item xs={12} sm={8}>
-        <div className="circle"></div>
-        <video autoPlay loop muted playsInline width="100%">
+      <video autoPlay loop muted playsInline width="100%">
         <source src="https://cdn1.academyux.com/wp-content/uploads/2020/03/24233226/Academy-v4.mp4" type="video/mp4"></source>
         </video>
       </Grid>
