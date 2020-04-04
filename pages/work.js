@@ -189,7 +189,7 @@ class Work extends React.Component {
               <Grid item xs={1} md={1} lg={1}></Grid>
               <Grid item xs={10} md={10} lg={10} className="center">
 
-                <Grid container className={isVisible ? 'moveUp' : 'moveDown'}>
+                <Grid container>
                   <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
                     <div onClick={this.handleClick.bind(this, project)}>
 
@@ -227,7 +227,7 @@ class Work extends React.Component {
                     </Grid>
                   </Grid>
                 }
-              
+
 
                 </Grid>
 
