@@ -17,7 +17,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import VisibilitySensor from 'react-visibility-sensor/visibility-sensor';
+
 
 
 const fetchUrl = process.env.fetchUrl;
@@ -188,8 +188,7 @@ class Work extends React.Component {
 
               <Grid item xs={1} md={1} lg={1}></Grid>
               <Grid item xs={10} md={10} lg={10} className="center">
-                <VisibilitySensor partialVisibility={true}>
-                {({isVisible}) =>
+
                 <Grid container className={isVisible ? 'moveUp' : 'moveDown'}>
                   <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
                     <div onClick={this.handleClick.bind(this, project)}>
@@ -228,7 +227,7 @@ class Work extends React.Component {
                     </Grid>
                   </Grid>
                 }
-                </VisibilitySensor>
+              
 
                 </Grid>
 
