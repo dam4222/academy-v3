@@ -226,7 +226,7 @@ class Work extends React.Component {
 
                     </Grid>
                   </Grid>
-                }
+
 
 
                 </Grid>
