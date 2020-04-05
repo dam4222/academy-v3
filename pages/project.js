@@ -561,7 +561,7 @@ return (
         <Grid item xs={1} md={1} lg={2} xl={3}></Grid>
         <Grid item xs={10} md={10} lg={8} xl={6}>
 
-          <Grid container style={{paddingBottom:'6rem', paddingTop:'4rem'}}>
+          <Grid container style={{paddingTop:'4rem'}}>
 
             <Grid item xs={12} md={4} lg={4} xl={4}>
               <Typography variant="title" style={{fontSize:'.8rem', paddingBottom:'2rem', color:'rgba(36,39,49,.4)'}}>Solution</Typography>
