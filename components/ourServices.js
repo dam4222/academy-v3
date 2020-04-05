@@ -100,20 +100,18 @@ function OurServices(props) {
         </Grid>
           <Grid item xs={10} sm={7}>
             <Grid container>
-              <Grid item xs={10} sm={10} md={6} style={vidContainer}>
-                {/*<div
+              <Grid item xs={10} sm={10} md={6} style={imgContainer}>
+                <div
                   style={{
-                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2018/12/28215716/workshop10.jpg) center',
+                    background: 'url(https://cdn1.academyux.com/wp-content/uploads/2019/08/20165640/product-design.jpg) center',
                     backgroundSize: 'cover',
                     width:'100%',
                     maxWidth: '375px',
                     margin: '0 auto',
                     height: 'auto',
                   }}
-                ></div>*/}
-                <video autoPlay loop muted playsInline width="100%" style={{maxWidth:'375px'}}>
-                <source src="https://cdn1.academyux.com/wp-content/uploads/2019/08/21164529/MASTER_ACADEMY.mp4" type="video/mp4"></source>
-                </video>
+                ></div>
+
 
               </Grid>
               <Grid item xs={1} sm={1} md={1}></Grid>

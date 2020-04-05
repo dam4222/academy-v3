@@ -358,7 +358,6 @@ return (
     </Grid>
 
 
-
 {/* Quotes */}
 
 {this.props.project.quote_1 == '' ? null :
@@ -367,9 +366,9 @@ return (
   <Grid container style={{paddingBottom:'6rem'}}>
 
     <Grid container>
-      
+
       <Grid item xs={12} className="divider"></Grid>
-      
+
     </Grid>
 
     <Grid item xs={12} style={{paddingBottom:'8rem', paddingTop:'8rem'}}>
@@ -383,9 +382,9 @@ return (
       </Grid>
 
       <Grid container>
-        
+
         <Grid item xs={12} className="divider"></Grid>
-        
+
       </Grid>
   </Grid>
 }
@@ -544,8 +543,13 @@ return (
       {this.props.project.process_image_1 !== '' ?
       <Grid container style={{paddingBottom:'4rem'}}>
         <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
+        <Grid container style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
         <Grid item xs={10} md={10} lg={10} xl={8}>
-          <img width="100%" style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}} src={this.props.project.process_image_1} />
+          <img width="100%" src={this.props.project.process_image_1} />
+        </Grid>
+        <Grid item xs={10} md={10} lg={10} xl={8}>
+          <img width="100%" src={this.props.project.process_image_2} />
+        </Grid>
         </Grid>
         <Grid item xs={1} md={1} lg={1} xl={2}></Grid>
       </Grid> : null
@@ -638,37 +642,41 @@ return (
 
     {/* Solution Gallery */}
 
-{this.props.project.solution_image_1 == '' ? null :
+    {this.props.project.solution_image_1 == '' ? null :
        <Grid container>
          <Grid item xs={1} md={1} lg={1} xl={1}></Grid>
          <Grid item xs={10} md={10} lg={10} xl={10}>
-           <Grid container style={{paddingBottom:'6rem'}}>
-             {this.props.project.solution_image_1 == '' ? null :
-             <Grid item xs={12} md={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+
+            {this.props.project.solution_image_1 == '' ? null :
+            <Grid container style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+             <Grid item xs={12} md={12}>
                <img width="100%" className="solution-gallery" src={this.props.project.solution_image_1} />
              </Grid>
-
+            </Grid>
             }
-            {this.props.project.solution_image_2 == '' ? null :
-              <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+
+             {this.props.project.solution_image_2 == '' ? null :
+             <Grid container style={{display:'flex', justifyContent:'space-between', paddingBottom:'6rem', alignItems:'flex-start'}}>
+              <Grid item xs={12} md={12} lg={5} xl={5}>
                 <img width="100%" className="solution-gallery" src={this.props.project.solution_image_2} />
               </Grid>
-
-             }
-             {this.props.project.solution_image_3 == '' ? null :
-              <Grid item xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+              <Grid item xs={12} md={12} lg={1} xl={1} style={{paddingBottom:'6rem'}}></Grid>
+              <Grid item xs={12} md={12} lg={5} xl={5}>
                 <img width="100%" className="solution-gallery" src={this.props.project.solution_image_3} />
+              </Grid>
               </Grid>
 
              }
             {this.props.project.solution_image_4 == '' ? null :
-               <Grid xs={12} md={12} lg={12} xl={12} style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+             <Grid container style={{display:'flex', justifyContent:'center', paddingBottom:'6rem', alignItems:'flex-start'}}>
+               <Grid item xs={12} md={12} lg={12} xl={12}>
                  <img width="100%" className="solution-gallery" src={this.props.project.solution_image_4} />
                </Grid>
+              </Grid>
 
               }
              </Grid>
-         </Grid>
+
          <Grid item xs={1} md={1}></Grid>
        </Grid>
      }

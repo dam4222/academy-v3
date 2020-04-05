@@ -23,7 +23,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 const fetchUrl = process.env.fetchUrl;
 import Head from 'next/head';
 
-const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?'
+const url = 'https://' + fetchUrl + '/wp-json/wp/v2/projects?per_page=100'
 
 const styles = {
   root : {
@@ -59,10 +59,7 @@ const styles = {
   },
   contentCenter:{
     display: 'flex',
-    alignItems: 'center',
     textAlign:'left',
-    paddingBottom: '50px',
-    paddingTop: '50px',
     justifyContent: 'flex-start',
   },
 };
@@ -79,7 +76,7 @@ class Work extends React.Component {
       open: false,
       errorMessage: '',
       blogPassword: '',
-      currPost: undefined,
+      currPost: undefined
     }
 
   }
@@ -134,7 +131,9 @@ class Work extends React.Component {
     const projects = await res.json()
     return {
       projects: projects,
+
     }
+
   }
 
 
@@ -179,50 +178,72 @@ class Work extends React.Component {
           </DialogActions>
         </Dialog>
 
+
+
+
         <Grid container>
-          {this.props.projects.map((project) => {
+          {this.props.projects.map((project, index) => {
             return (
 
-              <Grid key={project.id} container style={{borderBottom: '1px solid black' }}>
+              <Grid key={index} container>
 
+              <Grid item xs={12} md={12} lg={12} className="center" style={{margin: '0rem 2rem 0rem 2rem'}}>
 
-              <Grid item xs={1} md={1} lg={1}></Grid>
-              <Grid item xs={10} md={10} lg={10} className="center">
+                <Grid container style={{height:'88%'}}>
+                  <Grid item xs={12} sm={7} md={7} lg={7} className={classes.contentCenter}>
 
-                <Grid container>
-                  <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
-                    <div onClick={this.handleClick.bind(this, project)}>
-
-                          <Typography variant="title" color="secondary" className={classes.projectLegend}>
-                            Client &nbsp;
+                  <Grid container>
+                    <Grid item xs={1}></Grid>
+                    <Grid item xs={10} style={{display:'flex'}}>
+                    <div onClick={this.handleClick.bind(this, project)} style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
+                      <Grid item xs={12} md={12} lg={12} className="work-card-title">
+                          <Typography variant="title" color="secondary" className={classes.projectLegend} gutterBottom paragraph>
+                            <span style={{color:'black'}}>Client</span> &nbsp;{project.acf.client_name}
                           </Typography>
-                          <Typography variant="title" color="primary" className={classes.projectLegend}>
-                            {project.acf.client_name}
-                          </Typography>
 
 
-                          <Typography variant="display2" color="inherit" style={{paddingRight: '100px'}}>
+                          <Typography variant="display4" style={{lineHeight:'1'}} color="inherit" gutterBottom paragraph>
                             {project.acf.project_title}
                           </Typography>
 
+                          <Typography variant="body1" style={{lineHeight:'1'}} color="inherit" paragraph>
+                          {/*{project.acf.tags}*/}
+                          </Typography>
 
+                          <Typography variant="button" color="inherit">
+                            Learn more <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
+                          </Typography>
+
+
+                        </Grid>
+
+
+
+                        <Grid item xs={12} sm={12} className="work-card-index">
+
+
+                              <Typography variant="display1" color="inherit">
+
+                                { index+1 < 10 ? "0" : "" }
+                              {index+1}
+                              </Typography>
+                              <div className={"scroll-down"} role="button" style={{transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                                <span></span>
+                              </div>
+
+
+                          </Grid>
                       </div>
+
+                  </Grid>
+                  </Grid>
                   </Grid>
 
 
-                  <Grid item xs={12} md={6} lg={6} className={classes.contentCenter}>
 
-                      <Button disableRipple={true} className="projectLink" style={{overflow:'hidden'}}>
-                        <img
-                          className="projectImg"
-                          src={project.acf.password === '' ? project.acf.featured_image: project.acf.placeholder_image}
-                          style={{
-                              height: 'auto',
-                              width: '100%'
-                          }}
-                          onClick={this.handleClick.bind(this, project)}
-                        />
-                      </Button>
+
+                  <Grid item xs={12} sm={5} md={5} lg={5} className={classes.contentCenter+" work-image"} onClick={this.handleClick.bind(this, project)} style={project.acf.password === '' ? { backgroundImage:'url('+ project.acf.featured_image+')', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'} : { background:'url('+ project.acf.placeholder_image+')', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+
 
                     </Grid>
                   </Grid>
@@ -233,8 +254,7 @@ class Work extends React.Component {
 
             </Grid>
 
-            )
-          })
+          )})
           }
         </Grid>
 

@@ -70,6 +70,42 @@ p{
 //
 // }
 
+.center {
+  height: 100vh;
+  display: flex;
+  text-align: right;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  @media (max-width: 599px) {
+    height: 85vh;
+  }
+}
+
+.work-card-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 1;
+}
+
+.work-card-index{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 3;
+  padding-top:100px;
+
+  @media (max-width: 599px) {
+    flex-shrink: 1;
+    padding-top:0px;
+  }
+}
+
 .solution {
 
   list-style-type: none;
@@ -1037,18 +1073,6 @@ opacity:0;
   position: fixed !important;
   top:0;
   transition: 1s all;
-}
-
-.center {
-  height: 100vh;
-  display: flex;
-  text-align: right;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 599px) {
-
-  }
 }
 
 .projectLink{
