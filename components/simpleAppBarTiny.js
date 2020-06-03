@@ -87,22 +87,21 @@ class SimpleAppBarTiny extends React.Component {
 
                       <Button className={`underline`} disableRipple={true} href="/services" style={spacing}>
                         <Typography variant="button" color="inherit">
-                          Our Services
+                          Services
                         </Typography>
                       </Button>
 
                       <Button className={`underline`} disableRipple={true} href="/process" style={spacing}>
                         <Typography variant="button" color="inherit">
-                          Our Process
+                          Process
                         </Typography>
                       </Button>
 
-                      <Button className={`underline`} disableRipple={true} href="/workshops" style={spacing}>
+                      <Button className={`underline`} disableRipple={true} href="/staffing" style={spacing}>
                         <Typography variant="button" color="inherit">
-                          Workshops
+                          Staffing
                         </Typography>
                       </Button>
-
 
                       <Button className={`underline`} disableRipple={true} href="/blog" style={spacing}>
                         <Typography variant="button" color="inherit">

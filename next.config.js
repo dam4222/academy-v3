@@ -7,5 +7,5 @@ module.exports = withSass({
       config.devtool = 'cheap-module-source-map';
     }
     return config;
-  }
+  },
 });

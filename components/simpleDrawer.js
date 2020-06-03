@@ -89,7 +89,7 @@ class SimpleDrawer extends React.Component {
             <Link href="/services" prefetch>
               <Button disableRipple={true}  style={spacing}>
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                  Our Services
+                  Services
                 </Typography>
               </Button>
             </Link>
@@ -97,7 +97,15 @@ class SimpleDrawer extends React.Component {
             <Link href="/process" prefetch>
               <Button disableRipple={true}  style={spacing}>
                 <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
-                  Our Process
+                  Process
+                </Typography>
+              </Button>
+            </Link>
+
+            <Link href="/staffing" prefetch>
+              <Button disableRipple={true}  style={spacing}>
+                <Typography variant="button" className={`underline-white`} style={{fontSize:'calc(1em + 1vw)', lineHeight:'1.5', marginBottom:'30px', paddingBottom:'10px', color:'white'}} color="inherit">
+                  Staffing
                 </Typography>
               </Button>
             </Link>

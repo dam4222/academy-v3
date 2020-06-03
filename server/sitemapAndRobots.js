@@ -82,6 +82,12 @@ const createMap = async () => {
     changefreq: 'daily',
     priority: 1
   })
+
+  sitemap.add({
+    url: '/staffing',
+    changefreq: 'daily',
+    priority: 1
+  })
 }
 
 
