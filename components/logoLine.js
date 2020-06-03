@@ -7,7 +7,7 @@ import AmericanExpress from '../assets/amex-3.svg';
 import ATT from '../assets/att-3.svg';
 import CBRE from '../assets/cbre-3.svg';
 import Facebook from '../assets/facebook-3.svg';
-import Google from '../assets/google-3.svg';
+import Google from '../assets/google-4.svg';
 import LG from '../assets/lg-3.svg';
 import NBC from '../assets/nbc-4.svg';
 import TIME from '../assets/time-3.svg';
