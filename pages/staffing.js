@@ -166,6 +166,15 @@ class Staffing extends React.Component {
         </Grid>
         </Grid>
 
+        <Grid container className={classes.content + " peoples-work"}>
+
+            <Typography variant="display3" gutterBottom style={{position:'absolute', top:'50%', left:'50%', transform: 'translate(-50%, -50%)', textAlign:'center', zIndex:'10', color:'white'}}>Our Peoples Work</Typography>
+
+            <SimpleImageGrid />
+
+
+        </Grid>
+
         <Grid container style={{paddingBottom:'100px'}}>
           <Grid item xs={1} sm={1} md={1} lg={1} xl={2}></Grid>
         <Grid item xs={10} sm={10} md={10} lg={10} xl={8} style={{display:'flex', width:'100%'}}>
@@ -219,16 +228,6 @@ class Staffing extends React.Component {
         </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={2}></Grid>
     </Grid>
-
-    <Grid container className={classes.content + " peoples-work"}>
-
-        <Typography variant="display3" gutterBottom style={{position:'absolute', top:'50%', left:'50%', transform: 'translate(-50%, -50%)', textAlign:'center', zIndex:'10', color:'white'}}>Our Peoples Work</Typography>
-
-        <SimpleImageGrid />
-
-
-    </Grid>
-
 
         <Grid container className={classes.content}>
           <Grid container style={{paddingTop:'70px'}}>
