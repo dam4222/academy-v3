@@ -32,7 +32,7 @@ import Typography from '@material-ui/core/Typography';
     createData("https://cdn1.academyux.com/wp-content/uploads/2018/06/12185815/ATT_Future_3.png"),
     createData("/static/wnw_journey.jpg"),
     createData("https://cdn1.academyux.com/wp-content/uploads/2018/07/05223541/Group.jpg"),
-    createData("http://www.sergiovilatimo.com/wp-content/uploads/2019/11/nikenycthumb.jpg"),
+    createData("/static/sergio_vz.gif"),
     createData("/static/pride_march.jpg")
   ];
 
