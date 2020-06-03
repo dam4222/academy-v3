@@ -150,7 +150,7 @@ class Staffing extends React.Component {
           <Grid container>
             <Grid item xs={1} sm={1} md={4} lg={4} xl={4}></Grid>
             <Grid item xs={10} sm={10} md={4} lg={4} xl={4} style={{display:'flex', width: '100%', justifyContent:'center', paddingBottom:'60px', paddingTop:'30px'}}>
-              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact-us">
+              <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact">
                 <Typography variant="button" color="inherit">
                   Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
                 </Typography>
@@ -339,7 +339,7 @@ class Staffing extends React.Component {
             <Typography align="center" variant="body1" color="inherit" style={{paddingBottom:'30px'}}>
             We work on a negotiable % comission based on a candidates experience and total yearly compensation.
             </Typography>
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact-us">
+            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact">
               <Typography variant="button" color="inherit">
                 Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle',}}>chevron_right</Icon>
               </Typography>
@@ -367,7 +367,7 @@ class Staffing extends React.Component {
             <Typography align="center" variant="body1" color="inherit" style={{paddingBottom:'30px', color:'white'}}>
             We will work with you to determine your needs and put together and all-star team of top UX talent to work side-by-side with your organization.
             </Typography>
-            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact-us">
+            <Button style={{paddingTop:'10px'}} disableRipple={true} className={"underline"} href="/contact">
               <Typography variant="button" color="inherit" style={{color:'white'}}>
                 Contact Us <Icon style={{fontSize:'14px', verticalAlign: 'middle', color:'white'}}>chevron_right</Icon>
               </Typography>
