@@ -237,7 +237,7 @@ class Staffing extends React.Component {
                 OUR PROMISE
                 </Typography>
                 <Typography variant="headline" color="inherit">
-                  We get fruststrated when outside recruiters lack the knowledge and expertise to bring in the the right people into your product organization. Finding the best quality talent is tough and its important that you work with people you trust because bringing in the best should be a top priority.
+                  We get frustrated when outside recruiters lack the knowledge and expertise to bring in the the right people into your product organization. Finding the best quality talent is tough and its important that you work with people you trust because bringing in the best should be a top priority.
                 </Typography>
             </Grid>
             <Grid item xs sm={1} md={1} lg={1} xl={2}></Grid>
