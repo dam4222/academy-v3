@@ -265,7 +265,7 @@ class Staffing extends React.Component {
 
               <Typography variant="headline" color="inherit" gutterBottom>We understand your needs</Typography>
 
-              <Typography variant="body1" color="inherit" gutterBottom>Our leadership team has over 15 years of experience working as UX practicioners in various fields. We know our stuff.</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom>Our leadership team has over 15 years of experience working as UX practitioners in various fields. We know our stuff.</Typography>
               <Button variant="text" onClick={() => scrollToComponent(this.Design, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
 
               </Button>
@@ -277,7 +277,7 @@ class Staffing extends React.Component {
 
               <Typography variant="headline" color="inherit" gutterBottom>We thoroughly vet our talent</Typography>
 
-              <Typography variant="body1" color="inherit" gutterBottom>Every person we represent is vetted through a rigourous interview process which is evalutated by industry experts.</Typography>
+              <Typography variant="body1" color="inherit" gutterBottom>Every person we represent is vetted through a rigorous interview process which is evaluated by industry experts.</Typography>
               <Button variant="text" onClick={() => scrollToComponent(this.Facilitate, { offset: 0, align: 'middle', duration: 1000, ease:'outExpo'})} disableRipple={true} className="underline" style={{paddingTop:'10px', marginBottom:'40px'}}>
 
               </Button>
